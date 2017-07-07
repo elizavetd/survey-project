@@ -1,0 +1,105 @@
+.auth-form {
+    width: 90%;    
+    color: $colorGrey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.auth-form > * {
+    width: 100%;
+}
+
+.auth-form__heading {
+    font-family: $headingFont;
+    font-weight: 400;
+    font-size: 40px;
+    margin: 50px 0 30px 0;
+    border-bottom: 3px solid $colorRed;
+}
+
+.auth-form__group {
+    display: flex;
+    * {
+        width: 100%;
+        * {
+            display: block;
+        }
+    }
+
+    *:first-child {
+        margin-right: 10%;
+    }
+}
+
+.auth-form__label {
+    color: $colorLightGrey;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    line-height: 2;
+    margin: 15px 0;
+}
+
+.auth-form__input {
+    height: 40px;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 20px;
+    font-family: $mainFont;
+    color: opacify($colorGrey, 0.5);
+    letter-spacing: 1.5px;
+    line-height: 2;
+    border: none;
+    border-bottom: 1px $colorLightGrey solid;
+}
+
+.auth-form__help-buttons {
+    height: 50px;
+    font-size: 15.5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    * {
+        color: $colorLightGrey;
+    }
+    .auth-form__link {
+        text-decoration: underline;
+    }
+    .auth-form__link:only-child {
+        text-decoration: none;
+        color: $colorBlue;
+        font-weight: 600;
+    }
+    .auth-form__link:hover {
+        text-decoration: underline;
+        color: $colorGrey;
+    }
+    .auth-form__link:only-child:hover {
+        text-decoration: underline;
+        color: $colorBlue;
+    }
+}
+
+.auth-form__submit-button {
+    width: 230px;
+    height: 50px;
+    cursor: pointer;
+    background-color: $colorRed;
+    opacity: 1;
+    border-radius: 25px;
+    border: none;
+    font-family: $mainFont;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: white;
+    margin: 45px 0 50px 0;
+    align-self: center; 
+}
+
+.auth-form__submit-button:hover {
+    opacity: 0.85;
+}
