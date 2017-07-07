@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,400,500');
+
+@import 'reset';
+
+$mainColor: #F7F7F7;
+$colorRed: #EB1C23;
+$colorGrey: #535558;
+$colorLightGrey: #BDBDBD;
+$colorBlue: #7485c5;
+$colorRose: #F4CBC6;
+
+$headingFont: 'Oswald', sans-serif;
+$mainFont: 'Open Sans', sans-serif;
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    height: auto;
+    background-color: $mainColor;
+    font-family: $mainFont;
+    font-size: 18px;
+    position: relative;
+}
+
+.header {
+    background-color: white;
+    font-size: 17px;
+    font-family: $headingFont;
+    font-weight: lighter;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    box-shadow: 0px 3px 25.52px 3.48px rgba(112, 112, 112, 0.05);
+}
+
+.head {
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .head__logo {
+        margin: 15px 35px;
+        width: 100%;
+        flex-grow: 2;
+    }
+
+    .head__auth {
+        flex-grow: 1;
+        margin: 0 35px;
+        list-style-type: none;
+        
+        .head__auth_signin {
+            text-decoration: none;
+            color: $colorGrey;
+            border: 1px solid $colorGrey;
+            border-radius: 10px;
+            padding: 4px 10px;
+        }
+    }
+}
+
+.menu-container {
+    display: none;/////////////////////////////////////////////////
+    height: 35px;
+    //display: flex;
+    flex-wrap: nowrap;
+}
+
+.menu {
+    list-style-type: none;
+    display: flex;
+
+    .menu__item {
+        text-decoration: none;
+        color: $colorGrey;
+        margin: 0 35px;
+        flex-grow: 1;
+    }
+}
+
+.menu_left {
+    justify-content: flex-start;
+    flex-grow: 3;
+
+    .menu__item:hover, .menu__item:active {
+        color: black;
+        border-bottom: 2px solid $colorRed;
+    }
+    
+}
+
+.menu_right {
+    justify-content: flex-end;
+    flex-grow: 1;
+
+    .menu__item {
+        color: white;
+        padding: 4px 10px;
+        background-color: $colorRed;
+        border-radius: 10px;
+        font-weight: 400;
+    }
+}
+
+.content {
+   display: flex;
+   justify-content: center;
+   width: 100%;
+}
+.content_centered {
+    margin: 100px 15px 0 15px;
+    background-color: white;
+    width: 1100px;
+    box-shadow: 0px 3px 25.52px 3.48px rgba(112, 112, 112, 0.29);
+}
+
+.auth-form {
+    width: 90%;    
+    color: $colorGrey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.auth-form > * {
+    width: 100%;
+}
+
+.auth-form__heading {
+    font-family: $headingFont;
+    font-weight: 400;
+    font-size: 40px;
+    margin: 50px 0 30px 0;
+    border-bottom: 2px solid $colorRed;
+}
+
+.auth-form__group {
+    display: flex;
+    * {
+        width: 100%;
+        * {
+            display: block;
+        }
+    }
+
+    *:first-child {
+        margin-right: 10%;
+    }
+}
+
+.auth-form__label {
+    color: $colorLightGrey;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    line-height: 2;
+    margin: 15px 0;
+}
+
+.auth-form__input {
+    height: 40px;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 20px;
+    font-family: $mainFont;
+    color: opacify($colorGrey, 0.5);
+    letter-spacing: 1.5px;
+    line-height: 2;
+    border: none;
+    border-bottom: 1px $colorLightGrey solid;
+}
+
+.auth-form__help-buttons {
+    height: 50px;
+    font-size: 15.5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    * {
+        color: $colorLightGrey;
+    }
+    .auth-form__link {
+        text-decoration: underline;
+    }
+    .auth-form__link:only-child {
+        text-decoration: none;
+        color: $colorBlue;
+        font-weight: 600;
+    }
+    .auth-form__link:hover {
+        text-decoration: underline;
+        color: $colorGrey;
+    }
+    .auth-form__link:only-child:hover {
+        text-decoration: underline;
+        color: $colorBlue;
+    }
+}
+
+.auth-form__submit-button {
+    width: 230px;
+    height: 50px;
+    cursor: pointer;
+    background-color: $colorRed;
+    opacity: 1;
+    border-radius: 25px;
+    border: none;
+    font-family: $mainFont;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: white;
+    margin: 45px 0 50px 0;
+    align-self: center; 
+}
+
+.auth-form__submit-button:hover {
+    opacity: 0.85;
+}
+
+.footer {
+    height: 50px;
+    width: 100%;
+    background-color: $colorGrey;
+    color: white;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    box-shadow: 0px 3px 25.52px 3.48px rgba(112, 112, 112, 0.2);
+}
+
+.content-filler {
+    height: 300px;
+    background-color: $mainColor;
+    padding-bottom: 50px;
+}

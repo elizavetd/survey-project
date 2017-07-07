@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Survey Project</title>
+
+	<script src="./bundle.js"></script>
+</head>
+
+<body>
+	<header class="header">
+		<div class="head">
+			<a class="head__logo" href="/index.html"><img src="./img/logo.png"></a>
+			<ul class="head__auth">
+				<li><a class="head__auth_signin" href="/signin.html">Вход</a></li>
+			</ul>
+		</div>
+		<nav class="menu-container">
+			<ul class="menu menu_left">
+				<li><a class="menu__item" href="#">Мои опросы</a></li>
+				<li><a class="menu__item" href="#">Шаблоны опросов</a></li>
+				<li><a class="menu__item" href="#">О компании</a></li>
+			</ul>
+			<ul class="menu menu_right">
+				<li><a class="menu__item" href="#">+ Создать опрос</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<div class="content">
+		<section class="content content_centered">
+			<form class="auth-form">
+				<h2 class="auth-form__heading">Вход</h2>
+				<label class="auth-form__label">Введите ваш E-mail:</label>
+				<input class="auth-form__input" type="email" name="login" placeholder="john.doe@example.com">
+				<label class="auth-form__label">Введите пароль:</label>
+				<input class="auth-form__input" type="password" name="password" placeholder="********">
+				<div class="auth-form__help-buttons">
+					<p>Еще нет аккаунта? <a class="auth-form__link" href="/signup.html">Зарегистрируйтесь</a></p>
+					<a class="auth-form__link" href="#">Забыли пароль?</a>
+				</div>
+				<input class="auth-form__submit-button" type="submit" value="Войти">
+			</form>
+		</section>
+	</div>
+
+	<footer class="footer">
+		<p class="footer__copyright-text">Copyright @ 2017 iTechArt</p>
+	</footer>
+</body>
+
+</html>
