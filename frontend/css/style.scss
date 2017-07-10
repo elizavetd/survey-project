@@ -123,9 +123,12 @@ body {
 }
 
 .content {
-   display: flex;
-   justify-content: center;
    width: 100%;
+}
+
+.content_flex {
+    display: flex;
+    justify-content: center;
 }
 
 .content_white {
@@ -274,6 +277,80 @@ body {
         width: 100%;
     }
 
+}
+
+.template-operations {
+    margin: 4%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    * {
+        font-family: $mainFont;
+        font-size: 17px;
+        padding: 5px;
+    }
+    .template-operations__search {
+        height: 50px;
+        width: 60%;
+        background-color: transparent;
+        color: $colorLightGrey;
+        border: 2px solid $colorLightGrey;
+        flex-flow: 2;
+    }
+    .template-operations__new-template {
+        height: 40px;
+        width: 200px;
+        flex-flow: 1;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        background-color: $colorBlue;
+        margin-right: 50px;
+    }
+}
+
+.template-list {
+    margin: 4% 4% 0 4%;
+    padding-bottom: 200px;
+    display: flex;
+    justify-content: flex-start;
+
+    .template-preview {
+        width: 30%;
+        height: 500px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: white;
+        padding: 15px;
+        box-shadow: 0px 3px 25.52px 3.48px rgba(112, 112, 112, 0.1);
+
+        .template-preview__edit-buttons {
+            align-self: flex-end;
+            position: absolute;
+            bottom: 100%;
+            
+            * {
+                width: 30px;
+                height: 30px;
+                color: $colorLightGrey;
+                font-size: 20px;
+                border: none;
+                background-color: transparent;
+            }
+            *:hover {
+                cursor: pointer;
+                color: $colorGrey;
+            }
+        }
+        
+    }
+    .template-preview:hover {
+        box-shadow: 0px 3px 25.52px 3.48px rgba(112, 112, 112, 0.39);
+    }
 }
 
 .footer {
