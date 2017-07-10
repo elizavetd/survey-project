@@ -128,6 +128,10 @@ body {
    width: 100%;
 }
 
+.content_white {
+    background-color: white;
+}
+
 .content_centered {
     margin: 100px 15px 0 15px;
     background-color: white;
@@ -239,6 +243,37 @@ body {
             }
         }
     }
+}
+
+.about-us {
+    width: 100%;
+
+    .about-us__article {
+        display: flex;
+        justify-content: center;
+        padding: 4%;
+
+        .about-us__heading {
+            color: $colorGrey;
+            font-family: $headingFont;
+            font-weight: 300;
+            font-size: 45px;
+            padding: 5px 0 5px 15px;
+            margin-bottom: 30px;
+        }
+
+        
+    }
+
+    .about-us__article:first-of-type {
+        padding-top: 0;
+    }
+
+    .about-us__article_img-background {
+        padding: 0;
+        width: 100%;
+    }
+
 }
 
 .footer {
