@@ -15,6 +15,7 @@
 			<a class="head__logo" href="/index.html"><img src="./img/logo.png"></a>
 			<ul class="head__auth">
 				<li><a class="head__auth_signin" href="/signin.html">Вход</a></li>
+				<li><a class="head__auth_signup" href="/signup.html">Регистрация</a></li>
 			</ul>
 		</div>
 		<nav class="menu-container">
@@ -32,9 +33,36 @@
 	<div class="content">
 		<section class="welcome-section">
 			<img src="./img/1.png">
-			<h1>Создать опрос просто</h1>
+			<div class="welcome-section__content">
+				<div class="welcome-section__text">
+					<h1 class="welcome-section__heading">Создать опрос просто!</h1>
+					<ul>
+						<li>
+							<h4 class="welcome-section__list-item">Добавляйте вопросы:</h4>
+							<p class="welcome-section__description">Удобный конструктор анкет с шаблонами. 6 типов вопросов и настройка логических правил.</p>
+						</li>
+						<li>
+							<h4 class="welcome-section__list-item">Получайте ответы:</h4>
+							<p class="welcome-section__description">Разошлите по электронной почте, укажите ссылку на веб-страницу или опубликуйте в социальных сетях.</p>
+						</li>
+						<li>
+							<h4 class="welcome-section__list-item">Анализируйте результат:</h4>
+							<p class="welcome-section__description">Просматривайте результаты опроса в удобном формате в виде графиков и диаграмм.</p>
+						</li>
+					</ul>
+				</div>
+				<form class="welcome-section__create-survey">
+					<fieldset>
+						<legend>Создание опроса</legend>
+						<input class="welcome-section__form-input" type="text" name="survey-name" placeholder="Введите название опроса">
+						<input class="welcome-section__form-button" type="submit" value="+ Добавить вопросы">
+						<p>или</p>
+						<a href="#">Начните с уже готовых шаблонов →</a>
+					</fieldset>
+				</form>
+			</div>
 		</section>
-		
+
 	</div>
 
 	<div>
