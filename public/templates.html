@@ -6,6 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Survey Project</title>
 
+	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="./bundle.js"></script>
 </head>
 
@@ -31,28 +32,98 @@
 	</header>
 
 	<div class="content">
-		<div class="template-operations">
-			<input class="template-operations__search" type="search" placeholder="Найти шаблон">
-			<button class="template-operations__new-template">Новый шаблон</button>
-		</div>
-		<div class="template-list">
-			<article class="template-preview">
-				<div class="template-preview__edit-buttons">
-					<button class="template-preview__button-edit">E</button>
-					<button class="template-preview__button-delete">D</button>
-				</div>
-				<h3 class="template-preview__header">Шаблон 1</h3>
-				<p class="template-preview__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tincidunt est nec ornare eleifend. Aenean a ante ante.
-					Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur egestas, diam rhoncus
-					convallis sollicitudin, felis nunc malesuada felis, in euismod mi felis eget ipsum. Fusce sagittis ex quis leo laoreet,
-					vitae tristique odio accumsan. Nullam at nisi a nunc egestas rutrum a vel lacus.</p>
-				<div class="template-preview__info">
-					<p>Вопросов: 12</p>
-					<p>Страниц: 3</p>
-				</div>
-				<button class="template-preview__button-create">Создать опрос</button>
-			</article>
-		</div>
+		<section class="templates">
+			<!--<h1 class="templates__header">Шаблоны опросов</h1>-->
+			<div class="operations-bar">
+				<i class="fa fa-search" aria-hidden="true"></i>
+				<input class="operations-bar__search" type="search" placeholder="Найти шаблон"></input>
+				<button class="operations-bar__new-template"><i class="fa fa-plus-circle" aria-hidden="true"></i> Новый шаблон</button>
+			</div>
+			<div class="list">
+				<article class="template-preview">
+					<div class="template-preview__icon"><i class="fa fa-camera-retro" aria-hidden="true"></i></div>
+					<div class="template-preview__edit-buttons">
+						<button class="template-preview__button-edit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+						<button class="template-preview__button-delete"><i class="fa fa-trash" aria-hidden="true"></i></button>
+					</div>
+					<h3 class="template-preview__header">Шаблон 1</h3>
+					<p class="template-preview__description">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное
+						насекомое. Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый, выпуклый, разделенный
+						дугообразными чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно сползти одеяло.</p>
+					<div class="template-preview__info">
+						<p>Вопросов: 12</p>
+						<p>Страниц: 3</p>
+					</div>
+					<button class="template-preview__button-create">Создать опрос</button>
+				</article>
+
+				<article class="template-preview">
+					<div class="template-preview__icon"><i class="fa fa-coffee" aria-hidden="true"></i></div>
+					<div class="template-preview__edit-buttons">
+						<button class="template-preview__button-edit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+						<button class="template-preview__button-delete"><i class="fa fa-trash" aria-hidden="true"></i></button>
+					</div>
+					<h3 class="template-preview__header">Шаблон 2</h3>
+					<p class="template-preview__description">Его многочисленные, убого тонкие по сравнению с остальным телом ножки беспомощно копошились у него перед глазами. «Что
+						со мной случилось?» – подумал он. Это не было сном. Его комната, настоящая, разве что слишком маленькая, но обычная
+						комната, мирно покоилась в своих четырех хорошо знакомых стенах.</p>
+					<div class="template-preview__info">
+						<p>Вопросов: 19</p>
+						<p>Страниц: 6</p>
+					</div>
+					<button class="template-preview__button-create">Создать опрос</button>
+				</article>
+
+				<article class="template-preview">
+					<div class="template-preview__icon"><i class="fa fa-music" aria-hidden="true"></i></div>
+					<div class="template-preview__edit-buttons">
+						<button class="template-preview__button-edit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+						<button class="template-preview__button-delete"><i class="fa fa-trash" aria-hidden="true"></i></button>
+					</div>
+					<h3 class="template-preview__header">Шаблон 3</h3>
+					<p class="template-preview__description">Над столом, где были разложены распакованные образцы сукон – Замза был коммивояжером, – висел портрет, который он недавно
+						вырезал из иллюстрированного журнала и вставил в красивую золоченую рамку.</p>
+					<div class="template-preview__info">
+						<p>Вопросов: 16</p>
+						<p>Страниц: 4</p>
+					</div>
+					<button class="template-preview__button-create">Создать опрос</button>
+				</article>
+
+				<article class="template-preview">
+					<div class="template-preview__icon"><i class="fa fa-film" aria-hidden="true"></i></div>
+					<div class="template-preview__edit-buttons">
+						<button class="template-preview__button-edit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+						<button class="template-preview__button-delete"><i class="fa fa-trash" aria-hidden="true"></i></button>
+					</div>
+					<h3 class="template-preview__header">Шаблон 4</h3>
+					<p class="template-preview__description">На портрете была изображена дама в меховой шляпе и боа, она сидела очень прямо и протягивала зрителю тяжелую меховую
+						муфту, в которой целиком исчезала ее рука. Затем взгляд Грегора устремился в окно, и пасмурная погода – слышно было,
+						как по жести подоконника стучат капли дождя – привела его и вовсе в грустное настроение.</p>
+					<div class="template-preview__info">
+						<p>Вопросов: 23</p>
+						<p>Страниц: 5</p>
+					</div>
+					<button class="template-preview__button-create">Создать опрос</button>
+				</article>
+
+				<article class="template-preview">
+					<div class="template-preview__icon"><i class="fa fa-suitcase" aria-hidden="true"></i></div>
+					<div class="template-preview__edit-buttons">
+						<button class="template-preview__button-edit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+						<button class="template-preview__button-delete"><i class="fa fa-trash" aria-hidden="true"></i></button>
+					</div>
+					<h3 class="template-preview__header">Шаблон 5</h3>
+					<p class="template-preview__description">«Хорошо бы еще немного поспать и забыть всю эту чепуху», – подумал он, но это было совершенно неосуществимо, он привык
+						спать на правом боку, а в теперешнем своем состоянии он никак не мог принять этого положения.</p>
+					<div class="template-preview__info">
+						<p>Вопросов: 10</p>
+						<p>Страниц: 2</p>
+					</div>
+					<button class="template-preview__button-create">Создать опрос</button>
+				</article>
+			</div>
+		</section>
 	</div>
 
 	<footer class="footer">
