@@ -21,7 +21,7 @@
 		</div>
 		<nav class="menu-container">
 			<ul class="menu menu_left">
-				<li><a class="menu__item" href="#">Мои опросы</a></li>
+				<li><a class="menu__item" href="/my-surveys.html">Мои опросы</a></li>
 				<li><a class="menu__item" href="/templates.html">Шаблоны опросов</a></li>
 				<li><a class="menu__item" href="/users.html">Пользователи</a></li>
 				<li><a class="menu__item" href="/about.html">О компании</a></li>
@@ -34,19 +34,19 @@
 
 	<div class="content">
 		<section class="users">
-			<div class="users__header">
-				<input class="search-bar users__search" type="search" placeholder="Найти пользователя"><i class="fa fa-search" aria-hidden="true"></i></input>
-			</div>
 			<table class="table">
 				<thead class="table__header">
 					<tr>
 						<th>Имя
-							<div class="triangle-down triangle-down_white"></div>
+							<div class="triangle-down"></div>
+							<div class="search-bar-container">
+								<input class="search-bar users__search" type="search" placeholder="Найти пользователя"><i class="fa fa-search" aria-hidden="true"></i></input>
+							</div>
 						</th>
 						<th>Роль</th>
 						<th>Зарегистрирован</th>
 						<th>Опросы</th>
-						<th>Действия</th>
+						<th></th>
 					</tr>
 				</thead>
 
@@ -120,6 +120,152 @@
                             </button>
 						</td>
 					</tr>
+
+					<!--||||||||||||||||||||||||||||||||||||||||||||||||-->
+
+					<tr>
+						<td class="user-name">admin</td>
+						<td class="user-role">Администратор</td>
+						<td class="user-signup-date">01.01.2017</td>
+						<td class="user-surveys">10</td>
+						<td class="user-operations">
+							<button class="user__button-edit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+							<button class="user__button-delete"><i class="fa fa-trash" aria-hidden="true"></i></button>
+							<button class="user__button-options">
+                                <div class="triangle-down"></div>
+                            </button>
+						</td>
+					</tr>
+
+					<tr>
+						<td class="user-name">alma.russell</td>
+						<td class="user-role">Пользователь</td>
+						<td class="user-signup-date">02.02.2017</td>
+						<td class="user-surveys">7</td>
+						<td class="user-operations">
+							<button class="user__button-edit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+							<button class="user__button-delete"><i class="fa fa-trash" aria-hidden="true"></i></button>
+							<button class="user__button-options">
+                                <div class="triangle-down"></div>
+                            </button>
+						</td>
+					</tr>
+
+					<tr>
+						<td class="user-name">tony.smith64</td>
+						<td class="user-role">Пользователь</td>
+						<td class="user-signup-date">03.03.2017</td>
+						<td class="user-surveys">4</td>
+						<td class="user-operations">
+							<button class="user__button-edit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+							<button class="user__button-delete"><i class="fa fa-trash" aria-hidden="true"></i></button>
+							<button class="user__button-options">
+                                <div class="triangle-down"></div>
+                            </button>
+						</td>
+					</tr>
+
+					<tr>
+						<td class="user-name">stacey.fernandez</td>
+						<td class="user-role">Пользователь</td>
+						<td class="user-signup-date">03.04.2017</td>
+						<td class="user-surveys">8</td>
+						<td class="user-operations">
+							<button class="user__button-edit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+							<button class="user__button-delete"><i class="fa fa-trash" aria-hidden="true"></i></button>
+							<button class="user__button-options">
+                                <div class="triangle-down"></div>
+                            </button>
+						</td>
+					</tr>
+
+					<tr>
+						<td class="user-name">ralph.graves32</td>
+						<td class="user-role">Пользователь</td>
+						<td class="user-signup-date">05.06.2017</td>
+						<td class="user-surveys">11</td>
+						<td class="user-operations">
+							<button class="user__button-edit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+							<button class="user__button-delete"><i class="fa fa-trash" aria-hidden="true"></i></button>
+							<button class="user__button-options">
+                                <div class="triangle-down"></div>
+                            </button>
+						</td>
+					</tr>
+
+					<!--||||||||||||||||||||||||||||||||||||||||||||||||-->
+
+					<tr>
+						<td class="user-name">admin</td>
+						<td class="user-role">Администратор</td>
+						<td class="user-signup-date">01.01.2017</td>
+						<td class="user-surveys">10</td>
+						<td class="user-operations">
+							<button class="user__button-edit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+							<button class="user__button-delete"><i class="fa fa-trash" aria-hidden="true"></i></button>
+							<button class="user__button-options">
+                                <div class="triangle-down"></div>
+                            </button>
+						</td>
+					</tr>
+
+					<tr>
+						<td class="user-name">alma.russell</td>
+						<td class="user-role">Пользователь</td>
+						<td class="user-signup-date">02.02.2017</td>
+						<td class="user-surveys">7</td>
+						<td class="user-operations">
+							<button class="user__button-edit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+							<button class="user__button-delete"><i class="fa fa-trash" aria-hidden="true"></i></button>
+							<button class="user__button-options">
+                                <div class="triangle-down"></div>
+                            </button>
+						</td>
+					</tr>
+
+					<tr>
+						<td class="user-name">tony.smith64</td>
+						<td class="user-role">Пользователь</td>
+						<td class="user-signup-date">03.03.2017</td>
+						<td class="user-surveys">4</td>
+						<td class="user-operations">
+							<button class="user__button-edit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+							<button class="user__button-delete"><i class="fa fa-trash" aria-hidden="true"></i></button>
+							<button class="user__button-options">
+                                <div class="triangle-down"></div>
+                            </button>
+						</td>
+					</tr>
+
+					<tr>
+						<td class="user-name">stacey.fernandez</td>
+						<td class="user-role">Пользователь</td>
+						<td class="user-signup-date">03.04.2017</td>
+						<td class="user-surveys">8</td>
+						<td class="user-operations">
+							<button class="user__button-edit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+							<button class="user__button-delete"><i class="fa fa-trash" aria-hidden="true"></i></button>
+							<button class="user__button-options">
+                                <div class="triangle-down"></div>
+                            </button>
+						</td>
+					</tr>
+
+					<tr>
+						<td class="user-name">ralph.graves32</td>
+						<td class="user-role">Пользователь</td>
+						<td class="user-signup-date">05.06.2017</td>
+						<td class="user-surveys">11</td>
+						<td class="user-operations">
+							<button class="user__button-edit"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+							<button class="user__button-delete"><i class="fa fa-trash" aria-hidden="true"></i></button>
+							<button class="user__button-options">
+                                <div class="triangle-down"></div>
+                            </button>
+						</td>
+					</tr>
+
+					<!--||||||||||||||||||||||||||||||||||||||||||||||||-->
 
 					<tr>
 						<td class="user-name">admin</td>
