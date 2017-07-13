@@ -17,6 +17,7 @@ $mainFont: 'Open Sans', sans-serif;
 @import 'about';
 @import 'templates';
 @import 'table';
+@import 'my-surveys';
 
 html {
     height: 100%;
@@ -179,7 +180,7 @@ body {
 	border-bottom: 7px solid transparent;
 }
 
-.operations-bar, .surveys-list__header {
+.operations-bar {
     margin: 70px 4% 5% 4%;
     padding-bottom: 30px;;
     display: flex;
@@ -227,16 +228,7 @@ body {
     }
 }
 
-.users {
-    margin: 30px 0 0 0;
-    padding-bottom: 23px;
-}
-
-.my-surveys {
-    margin: 4% 4% 0 4%;
-}
-
-.surveys-list__header {
+.operations-bar_survey-list {
     margin: 70px 0 0 0;
 
     .operations-bar__new-template_right {
@@ -244,181 +236,14 @@ body {
     }
 }
 
-.pagination {
-    color: $colorGrey;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
-
-    .pagination__details {
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-end;
-        margin: 0 20px;
-
-        .pagination__item-count, .pagination__page-count {
-            margin-left: 7px;
-            font-weight: 700;
-            font-size: 22px;
-            //color:  $colorRose;
-            line-height: 1.3;
-        }
-    }
-
-    .pagination__nav-buttons {
-        .pagination__button {
-            width: 50px;
-            background-color: transparent;
-            color: $colorLightGrey;
-            font-size: 30px;
-            text-align: center;
-            border: none;
-            margin: 0 5px;
-        }
-        .pagination__button:hover {
-            cursor: pointer;
-            color: $colorRed;
-        }
-    }
+.users {
+    margin: 30px 0 0 0;
+    padding-bottom: 23px;
 }
 
-.pagination:last-child {
-    justify-content: center;
-    padding-top: 0;
-    padding-bottom: 100px;
-}
 
-.surveys-list {
-    margin-top: 50px;
 
-    .survey-item {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        font-size: 18px;
-        color: $colorGrey;
-        background-color: white;
-        box-shadow: 0px 3px 25.52px 3.48px rgba(112, 112, 112, 0.1);
-        margin-bottom: 80px;
 
-        .survey-item__caption {
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-
-            .survey-item__image-container {
-                background-color: grey;
-                text-align: center;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                .survey-item__image {
-                    width: 100%;
-                }
-
-                .survey-item__icon {
-                    width: 80px;
-                    height: 80px;
-                    font-size: 32px;
-                    background-color: $colorRed;
-                    position: absolute;
-                    top: -40px;
-                    border-radius: 40px;
-
-                    i {
-                        position: relative;
-                        top: 16px;
-                    }
-                }
-            }
-
-            .survey-item__title-container {
-                width: 70%;
-                max-height: 70%;
-                text-align: center;
-                padding: 50px 25px;
-                background-color: transparentize(black, 0.35);
-                border-radius: 5px;
-                position: absolute;
-                overflow: hidden;
-
-                .survey-item__name {
-                    font-family: $headingFont;
-                    font-size: 30px;
-                    font-weight: 400;
-                    margin-bottom: 20px;
-                }
-
-                .survey-item__description {
-                    font-size: 15px;
-                    color: transparentize(white, 0.25);
-                    line-height: 1.5;
-                    letter-spacing: 0.4px;
-                    margin: 0 10px;
-                }
-            }
-        }
-
-        .survey-item__details {
-            flex-grow: 1;
-            margin-left: 20px;
-            padding: 0 50px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: stretch;
-
-            .survey-item__info {
-                display: flex;
-                flex-grow: 1;
-                justify-content: space-around;
-                align-items: center;
-                text-align: center;
-                border-bottom: 1px dashed $colorLightGrey;
-
-                .survey-item__info-name {
-                    font-size: 20px;
-                    margin-bottom: 10px;
-                    //color: $colorLightGrey;
-                }
-
-                .survey-item__info-value {
-                    font-size: 35px;
-                    font-weight: 700;
-                    color: $colorRed;
-                }
-            }
-
-            .survey-item__options {
-                flex-grow: 1;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                .survey-item__button {
-                    border: none;
-                    background-color: transparent;
-                    font-size: 35px;
-                    color: $colorLightGrey;
-                    margin: 0 10px;
-                }
-
-                .survey-item__button:hover {
-                    cursor: pointer;
-                    color: $colorGrey;
-                }
-            }
-        }
-    }
-
-    .survey-item:nth-child(even) {
-        flex-direction: row-reverse;
-    }
-}
 
 .footer {
     height: 50px;
