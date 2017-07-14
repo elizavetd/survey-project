@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Survey Project</title>
+
+	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="./bundle.js"></script>
+</head>
+
+<body>
+	<header class="header">
+		<div class="head">
+			<a class="head__logo" href="/index.html"><img src="./img/logo.png"></a>
+			<ul class="head__auth">
+				<li><a class="head__auth_signin" href="/signin.html">Вход</a></li>
+				<li><a class="head__auth_signup" href="/signup.html">Регистрация</a></li>
+			</ul>
+		</div>
+		<nav class="menu-container">
+			<ul class="menu menu_left">
+				<li><a class="menu__item" href="/my-surveys.html">Мои опросы</a></li>
+				<li><a class="menu__item" href="/templates.html">Шаблоны опросов</a></li>
+				<li><a class="menu__item" href="/users.html">Пользователи</a></li>
+				<li><a class="menu__item" href="/about.html">О компании</a></li>
+			</ul>
+			<!--<ul class="menu menu_right">
+				<li><a class="menu__item" href="#">+ Создать опрос</a></li>
+			</ul>-->
+		</nav>
+	</header>
+
+	<div class="content">
+		<div class="survey-editing">
+			<aside class="survey-setup survey-setup_left">
+				<a href="/start-survey.html"><button class="aside-button" title="Титульная страница опроса"><i class="fa fa-sign-in" aria-hidden="true"></i></button></a>
+				<a href="/new-survey.html"><button class="aside-button" title="Страница 1"><i class="fa fa-calendar-o" aria-hidden="true"></i></button></a>
+				<a href="/new-survey.html"><button class="aside-button" title="Добавить новую страницу"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i></button></a>
+				<a href="/finish-survey.html"><button class="aside-button" title="Последняя страница опроса"><i class="fa fa-sign-out" aria-hidden="true"></i></button></a>
+			</aside>
+
+			<section class="survey-body">
+				
+			</section>
+
+			<aside class="survey-setup survey-setup_right">
+				<div class="survey-setup__steps">
+					<button class="aside-button" title="Настройки опроса"><i class="fa fa-cog" aria-hidden="true"></i></button>
+					<button class="aside-button" title="Сбор результатов"><i class="fa fa-users" aria-hidden="true"></i></button>
+					<button class="aside-button" title="Результаты"><i class="fa fa-bar-chart" aria-hidden="true"></i></button>
+				</div>
+				<div class="survey-setup__options">
+					<button class="aside-button" title="Сохранить опрос"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>
+					<button class="aside-button" title="Сохранить опрос как шаблон"><i class="fa fa-bookmark-o" aria-hidden="true"></i></button>
+					<button class="aside-button" title="Удалить страницу"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+					<a href="my-surveys.html"><button class="aside-button" title="Отменить создание опроса"><i class="fa fa-undo" aria-hidden="true"></i></button></a>
+				</div>
+			</aside>
+		</div>
+	</div>
+
+	<footer class="footer">
+		<p class="footer__copyright-text">Copyright @ 2017 iTechArt</p>
+	</footer>
+</body>
+
+</html>
