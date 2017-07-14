@@ -41,23 +41,30 @@
 				<a href="/finish-survey.html"><button class="aside-button" title="Последняя страница опроса"><i class="fa fa-sign-out" aria-hidden="true"></i></button></a>
 			</aside>
 
-			<section class="survey-body">
-				<form class="survey-start-editor">
-					<button class="survey-body__add-logo"><i class="fa fa-picture-o" aria-hidden="true"></i><p>Добавить изображение</p></button>
-
-					<input class="survey-body__survey-name" type="text" value="Название опроса...">
-					<textarea class="survey-body__survey-description">Здравствуйте, потратьте, пожалуйста, несколько минут своего времени на заполнение следующей анкеты.</textarea>
-
-					<p><select class="survey-body__survey-category" name="survey-category">
-                        <option selected disabled>Выберите тип опроса</option>
-                        <option value="Услуги">Услуги</option>
-                        <option value="Управление кадрами">Управление кадрами</option>
-                        <option value="Мероприятия">Мероприятия</option>
-                        <option value="Маркентиконговое исследование">Маркентиконговое исследование</option>
-                        <option value="Здравоохранение">Здравоохранение</option>
-                        <option value="Образование">Образование</option>
-                    </select></p>
-				</form>
+			<section class="survey-answers-collection">
+				<h2>Сбор ответов респондентов</h2>
+                <article class="survey-answers-collection__option">
+                    <p><strong>Скопируйте и пошлите своим респондентам ссылку:</strong></p>
+                    <p class="survey-answers-collection__link">https://www.survey-project.com/survey/12345678</p>
+                    <p><strong>Поделиться опросом:</strong></p>
+                    <div class="socials">
+                        <button><i class="fa fa-facebook" aria-hidden="true"></i></button>
+                        <button><i class="fa fa-twitter" aria-hidden="true"></i></button>
+                        <button><i class="fa fa-google-plus" aria-hidden="true"></i></button>
+                        <button><i class="fa fa-linkedin" aria-hidden="true"></i></button>
+                        <button><i class="fa fa-vk" aria-hidden="true"></i></button>
+                    </div>
+                </article>
+                <article class="survey-answers-collection__option">
+                    <h3>E-mail приглашение</h3>
+                    <p>Пригласите участников опроса по электронной почте.</p>
+                    <button class="survey-answers-collection__button">Отправить приглашение</button>
+                </article>
+                <article class="survey-answers-collection__option">
+                    <h3>Печать анкеты</h3>
+                    <p>Скачайте анкету в формате PDF, подходящем для печати.</p>
+                    <button class="survey-answers-collection__button">Скачать</button>
+                </article>
 			</section>
 
 			<aside class="survey-setup survey-setup_right">

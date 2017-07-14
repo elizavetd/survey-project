@@ -41,23 +41,34 @@
 				<a href="/finish-survey.html"><button class="aside-button" title="Последняя страница опроса"><i class="fa fa-sign-out" aria-hidden="true"></i></button></a>
 			</aside>
 
-			<section class="survey-body">
-				<form class="survey-start-editor">
-					<button class="survey-body__add-logo"><i class="fa fa-picture-o" aria-hidden="true"></i><p>Добавить изображение</p></button>
-
-					<input class="survey-body__survey-name" type="text" value="Название опроса...">
-					<textarea class="survey-body__survey-description">Здравствуйте, потратьте, пожалуйста, несколько минут своего времени на заполнение следующей анкеты.</textarea>
-
-					<p><select class="survey-body__survey-category" name="survey-category">
-                        <option selected disabled>Выберите тип опроса</option>
-                        <option value="Услуги">Услуги</option>
-                        <option value="Управление кадрами">Управление кадрами</option>
-                        <option value="Мероприятия">Мероприятия</option>
-                        <option value="Маркентиконговое исследование">Маркентиконговое исследование</option>
-                        <option value="Здравоохранение">Здравоохранение</option>
-                        <option value="Образование">Образование</option>
-                    </select></p>
-				</form>
+			<section class="survey-settings">
+				<h2>Параметры опроса</h2>
+				<div class="survey-settings__settings-list">
+					<p>
+						<input type="checkbox">
+						<label for="c1">Анонимный опрос</label>
+					</p>
+					<p>
+						<input type="checkbox" checked>
+						<label for="c2">Номера вопросов</label>
+					</p>
+					<p>
+						<input type="checkbox" checked>
+						<label for="c3">Номера страниц</label>
+					</p>
+					<p>
+						<input type="checkbox">
+						<label for="c1">Случайный порядок вопросов</label>
+					</p>
+					<p>
+						<input type="checkbox" checked>
+						<label for="c2">Звездочки обязательных полей</label>
+					</p>
+					<p>
+						<input type="checkbox" checked>
+						<label for="c3">Индикатор выполнения</label>
+					</p>
+				</div>
 			</section>
 
 			<aside class="survey-setup survey-setup_right">
