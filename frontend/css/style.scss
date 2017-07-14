@@ -483,11 +483,9 @@ body {
         }
     }
 
-    .survey-start-editor {
-        //height: 65vh;
+    .survey-start-editor, .survey-finish-editor {
         display: flex;
         flex-direction: column;
-        //justify-content: center;
         align-items: center;
 
         .survey-body__add-logo {
@@ -549,6 +547,10 @@ body {
                 cursor: pointer;
             }
         }
+    }
+
+    .survey-finish-editor {
+        padding: 100px 0;
     }
 }
 
