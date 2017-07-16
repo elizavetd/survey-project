@@ -658,6 +658,43 @@ body {
     color: black;
 }
 
+.bar-chart {
+	$barChartBackground: #fff;
+	$barColorPrimary: #e86951;
+	$barColorSecondary: #168de6;
+	$barColorTertiary: #1dbdab;
+	$barChartHeight: 4rem;
+	$barChartCapWidth: 1rem;
+	$animationTime: 1.3s;
+	
+	background: $barChartBackground;
+	height: $barChartHeight;
+	margin-bottom: $barChartHeight;
+	
+	.bar-chart--inner {
+		background: #333;
+		height: 100%;
+		display: block;
+		margin-bottom: .3rem;
+		position: relative;
+		will-change: width;
+		&:after {
+			position: absolute;
+			top: 0; right: 0; content: " ";
+			width: $barChartCapWidth; height: 100%;
+			background: rgba(0,0,0,.1);
+		}
+	}
+	
+	// with animation
+	&[animated] .bar-chart--inner { transition: width $animationTime;}
+	
+	// colors
+	&.primary .bar-chart--inner { background: $barColorPrimary; }
+	&.secondary .bar-chart--inner { background: $barColorSecondary; }
+	&.tertiary .bar-chart--inner { background: $barColorTertiary; }
+}
+
 .footer {
     height: 50px;
     width: 100%;
