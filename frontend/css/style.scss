@@ -84,6 +84,23 @@ body {
     flex-wrap: nowrap;
     justify-content: center;
     border-bottom: 3px solid $colorRed;
+
+    //.menu__hamburger {
+        //display: none;
+       // list-style-type: none;
+    //}
+
+    input {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .menu__hamburger { 
+        display:none;
+        cursor: pointer;
+        user-select:none;
+    }
 }
 
 .menu {
@@ -112,9 +129,38 @@ body {
     flex-grow: 3;
 
     .menu__item:hover, .menu__item:active {
-        //background-color: darken($colorRed, 3%);
         border-bottom: 6px solid desaturate(darken($colorRed, 10%), 10%);
     }
+}
+
+@media all and (max-width: 1010px) {
+  .menu {
+    flex-direction: column;
+
+    li {
+        width: 100%;
+        text-align: center;
+        background-color: $colorRed;
+        &:hover, &:active {
+            background-color: darken($colorRed, 10%);
+        }
+        display: none;
+    }
+
+    .menu__item:hover, .menu__item:active {
+        border-bottom: none;
+    }
+
+    .menu__hamburger {
+        display: block;
+        color: white;
+        font-size: 35px;
+    }
+
+    input:checked ~ li {
+        display: block;
+    }    
+  }
 }
 
 .content {

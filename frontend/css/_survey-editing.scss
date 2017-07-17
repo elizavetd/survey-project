@@ -26,6 +26,7 @@
         }
     }
     .survey-body {
+        width: 100%;
         flex-grow: 1;
         text-align: center;
         color: $colorGrey;
@@ -210,10 +211,10 @@
         }
         .survey-body__survey-description {
             width: 50%;
-            height: 100px;
+            height: 200px;
             font-family: $mainFont;
             font-size: 18px;
-            overflow: hidden;
+            overflow: auto;
             padding: 10px;
         }
         .survey-body__survey-category {
