@@ -1,11 +1,11 @@
 .range-slider {
-    width: 60%;
+    width: 100%;
     margin: 20px 0 10px 0;
 }
 
 .range-slider__range {
     -webkit-appearance: none;
-    width: 70%;
+    width: 65%;
     height: 10px;
     border-radius: 5px;
     background: lighten($colorLightGrey, 15%);

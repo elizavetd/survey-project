@@ -133,36 +133,6 @@ body {
     }
 }
 
-@media all and (max-width: 1010px) {
-  .menu {
-    flex-direction: column;
-
-    li {
-        width: 100%;
-        text-align: center;
-        background-color: $colorRed;
-        &:hover, &:active {
-            background-color: darken($colorRed, 10%);
-        }
-        display: none;
-    }
-
-    .menu__item:hover, .menu__item:active {
-        border-bottom: none;
-    }
-
-    .menu__hamburger {
-        display: block;
-        color: white;
-        font-size: 35px;
-    }
-
-    input:checked ~ li {
-        display: block;
-    }    
-  }
-}
-
 .content {
    width: 100%;
 }
@@ -309,4 +279,34 @@ body {
     height: 300px;
     background-color: $mainColor;
     padding-bottom: 50px;
+}
+
+@media all and (max-width: 1010px) {
+  .menu {
+    flex-direction: column;
+
+    li {
+        width: 100%;
+        text-align: center;
+        background-color: $colorRed;
+        &:hover, &:active {
+            background-color: darken($colorRed, 10%);
+        }
+        display: none;
+    }
+
+    .menu__item:hover, .menu__item:active {
+        border-bottom: none;
+    }
+
+    .menu__hamburger {
+        display: block;
+        color: white;
+        font-size: 35px;
+    }
+
+    input:checked ~ li {
+        display: block;
+    }    
+  }
 }

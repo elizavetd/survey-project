@@ -140,10 +140,10 @@
         .survey-body__question_text-answer {
             .survey-body__question-view {
                 textarea {
-                    width: 60vh;
+                    width: 80%;
                     height: 100px;
                     padding: 10px;
-                    font-family: $mainColor;
+                    font-family: $mainFont;
                     font-size: 18px;
                     margin-bottom: 15px;
                 }
@@ -242,6 +242,8 @@
         color: $colorGrey;
         font-size: 18px;
         h2 {
+            text-align: center;
+            width: 100%;
             font-family: $headingFont;
             font-size: 35px;
             font-weight: 500;
@@ -264,6 +266,8 @@
         color: $colorGrey;
         font-size: 18px;
         h2 {
+            text-align: center;
+            width: 100%;
             font-family: $headingFont;
             font-size: 35px;
             font-weight: 500;
@@ -308,11 +312,14 @@
         font-size: 18px;
         margin: 0 150px;
         h2 {
+            width: 100%;
+            text-align: center;
             font-family: $headingFont;
             font-size: 35px;
             font-weight: 500;
         }
         .survey-results__info {
+            width: 100%;
             align-self: flex-start;
             font-size: 15px;
             font-weight: 600;
@@ -440,4 +447,12 @@
 .aside-button:hover {
     cursor: pointer;
     color: black;
+}
+
+@media all and (max-width: 1010px) {
+    .aside-button {
+        width: 100px;
+        height: 100px;
+        font-size: 50px;
+    }
 }
