@@ -85,11 +85,6 @@ body {
     justify-content: center;
     border-bottom: 3px solid $colorRed;
 
-    //.menu__hamburger {
-        //display: none;
-       // list-style-type: none;
-    //}
-
     input {
         position: absolute;
         top: -9999px;
@@ -307,6 +302,7 @@ body {
 
     input:checked ~ li {
         display: block;
+        font-size: 45px;
     }    
   }
 }
