@@ -1,0 +1,48 @@
+.bar-chart {
+	$barChartBackground: #fff;
+	$barColorPrimary: #e86951;
+	$barColorSecondary: #168de6;
+	$barColorTertiary: #1dbdab;
+	$barChartHeight: 2rem;
+	$barChartCapWidth: 1rem;
+	$animationTime: 1.3s;
+	
+	background: $barChartBackground;
+	height: $barChartHeight;
+    margin-bottom: $barChartHeight;
+    
+    &:last-child {
+        margin-bottom: 0;
+    }
+	
+	.bar-chart__inner {
+		background: #333;
+		height: 100%;
+		display: block;
+		margin-bottom: .3rem;
+		position: relative;
+		will-change: width;
+		&:after {
+			position: absolute;
+			top: 0; right: 0; content: " ";
+			width: $barChartCapWidth; height: 100%;
+			background: rgba(0,0,0,.1);
+        }
+
+        .bar-chart__text {
+            position: absolute;
+            font-size: 15px;
+            font-weight: 700;
+            top: 20%;
+            left: 102%;
+        }
+	}
+	
+	// with animation
+	//&[animated] .bar-chart__inner { transition: width $animationTime;}
+	
+	// colors
+	&.primary .bar-chart__inner { background: $barColorPrimary; }
+	&.secondary .bar-chart__inner { background: $barColorSecondary; }
+	&.tertiary .bar-chart__inner { background: $barColorTertiary; }
+}

@@ -43,16 +43,15 @@
 
 			<section class="survey-results">
 				<h2>Просмотр ответов:</h2>
-				<h3>Some Random Survey</h3>
 				<div class="survey-results__info">
 					<p>Вопросов: 12, страниц: 3</p>
 					<p>Всего ответов: 112</p>
 				</div>
 				<div class="survey-results__nav-buttons">
 					<button>Сводные данные по вопросам</button>
-					<button>Отдельные ответы</button>
+					<button class="survey-results__nav-buttons_current">Отдельные ответы</button>
 				</div>
-				<p><select class="survey-body__survey-category" name="survey-category">
+				<p class="survey-results__view-option"><select>
                     <option selected>Все вопросы</option>
                     <option value="Какие-то вопросы">Какие-то вопросы</option>
                     <option value="Другие вопросы">Другие вопросы</option>
@@ -75,31 +74,33 @@
 				</div>
 
 				<article class="survey-results__question-result survey-results__question-result_several-answers">
-					<h4>Вопрос с несколькими вариантами ответа</h4>
-					<p>Ответ 2</p>
-					<p>Ответ 3</p>
+					<h4 class="survey-results__question-title">Вопрос с несколькими вариантами ответа</h4>
+					<div class="survey-results__answer-percentage">
+						<p>Ответ 2</p>
+						<p>Ответ 3</p>
+					</div>
 				</article>
 
 				<article class="survey-results__question-result survey-results__question-result_one-answer">
-					<h4>Вопрос с одним вариантом ответа</h4>
-					<p>Ответ 1</p>
+					<h4 class="survey-results__question-title">Вопрос с одним вариантом ответа</h4>
+					<p class="survey-results__answer-percentage">Ответ 1</p>
 				</article>
 
 				<article class="survey-results__question-result survey-results__question-result_text-answer">
-					<h4>Вопрос с текстовым ответом</h4>
-					<p>Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное
+					<h4 class="survey-results__question-title">Вопрос с текстовым ответом</h4>
+					<p class="survey-results__answer-percentage">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное
 						насекомое. Лежа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый, выпуклый, разделенный
 						дугообразными чешуйками живот, на верхушке которого еле держалось готовое вот-вот окончательно сползти одеяло.</p>
 				</article>
 
 				<article class="survey-results__question-result survey-results__question-result_file">
-					<h4>Вопрос-файл</h4>
-					<a href="#">smth.pdf</a>
+					<h4 class="survey-results__question-title">Вопрос-файл</h4>
+					<a href="#" class="survey-results__answer-percentage">smth.pdf</a>
 				</article>
 
 				<article class="survey-results__question-result survey-results__question-result_rating">
-					<h4>Вопрос-рейтинг</h4>
-					<div class="rating-stars">
+					<h4 class="survey-results__question-title">Вопрос-рейтинг</h4>
+					<div class="survey-results__answer-percentage" class="rating-stars">
 						<i class="fa fa-star" aria-hidden="true"></i>
 						<i class="fa fa-star" aria-hidden="true"></i>
 						<i class="fa fa-star" aria-hidden="true"></i>
@@ -109,7 +110,7 @@
 				</article>
 
 				<article class="survey-results__question-result survey-results__question-result_scaler">
-					<h4>Вопрос-шкала</h4>
+					<h4 class="survey-results__question-title">Вопрос-шкала</h4>
 					<div class="range-slider">
 						<input class="range-slider__range" type="range" value="70" min="0" max="100">
 						<span class="range-slider__value">70</span>

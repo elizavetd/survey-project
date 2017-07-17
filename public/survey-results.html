@@ -42,17 +42,16 @@
 			</aside>
 
 			<section class="survey-results">
-				<h2>Просмотр ответов:</h2>
-				<h3>Some Random Survey</h3>
+				<h2>Просмотр ответов </h2>
 				<div class="survey-results__info">
 					<p>Вопросов: 12, страниц: 3</p>
 					<p>Всего ответов: 112</p>
 				</div>
 				<div class="survey-results__nav-buttons">
-					<button>Сводные данные по вопросам</button>
+					<button class="survey-results__nav-buttons_current">Сводные данные по вопросам</button>
 					<button>Отдельные ответы</button>
 				</div>
-				<p><select class="survey-body__survey-category" name="survey-category">
+				<p class="survey-results__view-option"><select>
                     <option selected>Все вопросы</option>
                     <option value="Какие-то вопросы">Какие-то вопросы</option>
                     <option value="Другие вопросы">Другие вопросы</option>
@@ -75,25 +74,23 @@
 				</div>
 
 				<article class="survey-results__question-result survey-results__question-result_several-answers">
-					<h4>Вопрос с несколькими вариантами ответа</h4>
-                    <div class="survey-results__question-info">
+					<h4 class="survey-results__question-title">Вопрос с одним вариантом ответа</h4>
+					<div class="survey-results__question-info">
 						<p>Ответили: 112</p>
 						<p>Пропустили: 0</p>
 					</div>
 					<div class="survey-results__graph">
 						<div class="bar-chart primary" data-total="45" animated>
-							<span class="bar-chart--inner" style="width:45%;"></span>
-							<span class="bar-chart--text">45% Ответ 1</span>
+							<span class="bar-chart__inner" style="width:45%;"><span class="bar-chart__text">45%</span></span>
+							
 						</div>
 
 						<div class="bar-chart secondary" data-total="32" animated>
-							<span class="bar-chart--inner" style="width:32%;"></span>
-							<span class="bar-chart--text">32% Ответ 2</span>
+							<span class="bar-chart__inner" style="width:32%;"><span class="bar-chart__text">32%</span></span>
 						</div>
 
 						<div class="bar-chart tertiary" data-total="23" animated>
-							<span class="bar-chart--inner" style="width:23%;"></span>
-							<span class="bar-chart--text">23% Ответ 3</span>
+							<span class="bar-chart__inner" style="width:23%;"><span class="bar-chart__text">23%</span></span>	
 						</div>
 					</div>
 					<div class="survey-results__answer-percentage">
@@ -104,25 +101,28 @@
 				</article>
 
 				<article class="survey-results__question-result survey-results__question-result_one-answer">
-					<h4>Вопрос с одним вариантом ответа</h4>
-                    <div class="survey-results__question-info">
+					<h4 class="survey-results__question-title">Вопрос с несколькими вариантами ответа</h4>
+					<div class="survey-results__question-info">
 						<p>Ответили: 100</p>
 						<p>Пропустили: 12</p>
 					</div>
 					<div class="survey-results__graph">
 						<div class="bar-chart primary" data-total="78" animated>
-							<span class="bar-chart--inner" style="width:78%;"></span>
-							<span class="bar-chart--text">78% Ответ 1</span>
+							<span class="bar-chart__inner" style="width:78%;">
+								<span class="bar-chart__text">78%</span>
+							</span>
 						</div>
 
 						<div class="bar-chart secondary" data-total="55" animated>
-							<span class="bar-chart--inner" style="width:55%;"></span>
-							<span class="bar-chart--text">55% Ответ 2</span>
+							<span class="bar-chart__inner" style="width:55%;">
+								<span class="bar-chart__text">55%</span>
+							</span>
 						</div>
 
 						<div class="bar-chart tertiary" data-total="92" animated>
-							<span class="bar-chart--inner" style="width:92%;"></span>
-							<span class="bar-chart--text">92% Ответ 3</span>
+							<span class="bar-chart__inner" style="width:92%;">
+								<span class="bar-chart__text">92%</span>
+							</span>
 						</div>
 					</div>
 					<div class="survey-results__answer-percentage">
@@ -133,8 +133,8 @@
 				</article>
 
 				<article class="survey-results__question-result survey-results__question-result_text-answer">
-					<h4>Вопрос с текстовым ответом</h4>
-                    <div class="survey-results__question-info">
+					<h4 class="survey-results__question-title">Вопрос с текстовым ответом</h4>
+					<div class="survey-results__question-info">
 						<p>Ответили: 112</p>
 						<p>Пропустили: 0</p>
 					</div>
@@ -142,7 +142,9 @@
 						<table class="table">
 							<thead class="table__header">
 								<tr>
-									<th>Респондент<div class="triangle-down"></div></th>
+									<th>Респондент
+										<div class="triangle-down"></div>
+									</th>
 									<th>Ответ</th>
 								</tr>
 							</thead>
@@ -151,23 +153,47 @@
 								<tr>
 									<td class="survey-results__user"><a href="/user-result.html">ralph.graves32</a></td>
 									<td class="survey-results__answer">Ответ</td>
-								</tr>							
-                                <tr>
+								</tr>
+								<tr>
 									<td class="survey-results__user"><a href="/user-result.html">stacey.fernandez</a></td>
 									<td class="survey-results__answer">Тру-ля-ля</td>
-								</tr>	
-                                <tr>
+								</tr>
+								<tr>
 									<td class="survey-results__user"><a href="/user-result.html">tony.smith64</a></td>
 									<td class="survey-results__answer">Тра-ля-ля</td>
-								</tr>	
+								</tr>
+								<tr>
+									<td class="survey-results__user"><a href="/user-result.html">ralph.graves32</a></td>
+									<td class="survey-results__answer">Ответ</td>
+								</tr>
+								<tr>
+									<td class="survey-results__user"><a href="/user-result.html">stacey.fernandez</a></td>
+									<td class="survey-results__answer">Тру-ля-ля</td>
+								</tr>
+								<tr>
+									<td class="survey-results__user"><a href="/user-result.html">tony.smith64</a></td>
+									<td class="survey-results__answer">Тра-ля-ля</td>
+								</tr>
+								<tr>
+									<td class="survey-results__user"><a href="/user-result.html">ralph.graves32</a></td>
+									<td class="survey-results__answer">Ответ</td>
+								</tr>
+								<tr>
+									<td class="survey-results__user"><a href="/user-result.html">stacey.fernandez</a></td>
+									<td class="survey-results__answer">Тру-ля-ля</td>
+								</tr>
+								<tr>
+									<td class="survey-results__user"><a href="/user-result.html">tony.smith64</a></td>
+									<td class="survey-results__answer">Тра-ля-ля</td>
+								</tr>
 							</tbody>
 						</table>
 					</div>
 				</article>
 
 				<article class="survey-results__question-result survey-results__question-result_file">
-                    <h4>Вопрос-файл</h4>
-                    <div class="survey-results__question-info">
+					<h4 class="survey-results__question-title">Вопрос-файл</h4>
+					<div class="survey-results__question-info">
 						<p>Ответили: 112</p>
 						<p>Пропустили: 0</p>
 					</div>
@@ -175,7 +201,9 @@
 						<table class="table">
 							<thead class="table__header">
 								<tr>
-									<th>Респондент<div class="triangle-down"></div></th>
+									<th>Респондент
+										<div class="triangle-down"></div>
+									</th>
 									<th>Ответ</th>
 								</tr>
 							</thead>
@@ -184,50 +212,55 @@
 								<tr>
 									<td class="survey-results__user"><a href="/user-result.html">ralph.graves32</a></td>
 									<td class="survey-results__answer"><a hraf="/">report.pdf</a></td>
-								</tr>							
-                                <tr>
+								</tr>
+								<tr>
 									<td class="survey-results__user"><a href="/user-result.html">stacey.fernandez</a></td>
 									<td class="survey-results__answer"><a hraf="/">image.png</a></td>
-								</tr>	
-                                <tr>
+								</tr>
+								<tr>
 									<td class="survey-results__user"><a href="/user-result.html">tony.smith64</a></td>
 									<td class="survey-results__answer"><a hraf="/">doc.docx</a></td>
-								</tr>	
+								</tr>
 							</tbody>
 						</table>
 					</div>
-                </article>
+				</article>
 
 				<article class="survey-results__question-result survey-results__question-result_rating">
-					<h4>Вопрос-рейтинг</h4>
-                    <div class="survey-results__question-info">
+					<h4 class="survey-results__question-title">Вопрос-рейтинг</h4>
+					<div class="survey-results__question-info">
 						<p>Ответили: 100</p>
 						<p>Пропустили: 12</p>
 					</div>
 					<div class="survey-results__graph">
 						<div class="bar-chart primary" data-total="15" animated>
-							<span class="bar-chart--inner" style="width:15%;"></span>
-							<span class="bar-chart--text">15% ☆</span>
+							<span class="bar-chart__inner" style="width:15%;">
+								<span class="bar-chart__text">15%</span>
+							</span>
 						</div>
 
 						<div class="bar-chart secondary" data-total="10" animated>
-							<span class="bar-chart--inner" style="width:10%;"></span>
-							<span class="bar-chart--text">10% ☆☆</span>
+							<span class="bar-chart__inner" style="width:10%;">
+								<span class="bar-chart__text">10%</span>
+							</span>	
 						</div>
 
 						<div class="bar-chart primary" data-total="25" animated>
-							<span class="bar-chart--inner" style="width:25%;"></span>
-							<span class="bar-chart--text">25% ☆☆☆</span>
+							<span class="bar-chart__inner" style="width:25%;">
+								<span class="bar-chart__text">25%</span>
+							</span>	
 						</div>
 
 						<div class="bar-chart tertiary" data-total="45" animated>
-							<span class="bar-chart--inner" style="width:45%;"></span>
-							<span class="bar-chart--text">45% ☆☆☆☆</span>
+							<span class="bar-chart__inner" style="width:45%;">
+								<span class="bar-chart__text">45%</span>
+							</span>	
 						</div>
 
 						<div class="bar-chart tertiary" data-total="5" animated>
-							<span class="bar-chart--inner" style="width:5%;"></span>
-							<span class="bar-chart--text">5% ☆☆☆☆☆</span>
+							<span class="bar-chart__inner" style="width:5%;">
+								<span class="bar-chart__text">5%</span>
+							</span>	
 						</div>
 					</div>
 					<div class="survey-results__answer-percentage">
@@ -240,8 +273,15 @@
 				</article>
 
 				<article class="survey-results__question-result survey-results__question-result_scaler">
-                    <h4>Вопрос-шкала</h4>
-                </article>
+					<h4 class="survey-results__question-title">Вопрос-шкала</h4>
+					<div class="survey-results__question-info">
+						<p>Ответили: 101</p>
+						<p>Пропустили: 11</p>
+					</div>
+					<div class="survey-results__answer-percentage">
+						<p>Средняя оценка: 76.3 (101 ответов)</p>
+					</div>
+				</article>
 
 			</section>
 
