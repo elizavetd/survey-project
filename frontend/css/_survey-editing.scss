@@ -449,10 +449,142 @@
     color: black;
 }
 
-@media all and (max-width: 1010px) {
+@media all and (max-width: 1010px) and (orientation: portrait) {
     .aside-button {
         width: 100px;
         height: 100px;
         font-size: 50px;
+    }
+    .survey-editing {
+        .survey-settings {
+            font-size: 36px;
+            h2 {
+                font-size: 70px;
+            }
+            .survey-settings__settings-list {
+                input {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+        .survey-answers-collection {
+            font-size: 36px;
+            h2 {
+                font-size: 5vmin;
+            }
+            .survey-answers-collection__option {
+                width: 60vw;
+                margin-bottom: 4vh;
+                border-radius: 0px;
+                background-color: transparent;
+                border-bottom: 3px dashed $colorLightGrey;
+                box-shadow: none;
+                h3 {
+                    margin: 2vh 0;
+                }
+                .survey-answers-collection__button {
+                    font-size: 2vmax;
+                    padding: 15px 30px;
+                    margin-top: 2vmax;
+                }
+            }
+            .survey-answers-collection__link {
+                font-size: 2vh;
+                margin: 2vh 15px;
+            }
+        }
+        .survey-results {
+            font-size: 1.8vmax;
+            h2 {
+                font-size: 3.5vmax;
+            }
+            .survey-results__info {
+                font-size: 1.8vmax;
+                font-weight: 400;
+            }
+            .survey-results__nav-buttons {
+                button {
+                    font-size: 2vmax;
+                    height: 7vmax;
+                }
+            }
+            .survey-results__view-option {
+                
+                select {
+                    width: 100%;
+                    height: 5vmax;
+                    font-size: 2vmax;
+                }
+            }
+            .survey-results__question-result {
+                .survey-results__question-title {
+                    font-size: 2.1vmax;
+                }
+                .survey-results__question-info {
+                    font-size: 2vmax;
+                    font-weight: 400;
+                }
+            }
+            .bar-chart .bar-chart__inner .bar-chart__text {
+                font-size: 1.3vmax;
+                top: 0;
+            }
+            
+            h4 {
+
+            }
+            .pagination {
+                .pagination__button {
+                    width: 6vmax;
+                    margin: 0.5vh;
+                }
+            }
+            .table {
+                thead {
+                    display: table-header-group;
+                }
+                th,td {
+                    display: table-cell;
+                    text-align: center;
+                    line-height: 2;
+                    &:before {
+                        content: "";
+                        display: none;
+                    }
+                    &:first-child {
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 1010px) and (orientation: landscape) {
+    .aside-button {
+        width: 70px;
+        height: 70px;
+        font-size: 35px;
+    }
+}
+
+@media all and (max-width: 1010px) {
+    .survey-editing {
+        padding-bottom: 35vmax;
+        .survey-setup {
+            margin-top: 7vh;
+            position: absolute;
+            height: 65vmax;
+        }
+    }
+    .socials {
+        margin: 2vmax 0;
+        button {
+            width: 5vmax;
+            height: 5vmax;
+            font-size: 2.5vmax;
+            border-radius: 2.5vmax;
+        }
     }
 }

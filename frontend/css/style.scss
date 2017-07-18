@@ -343,7 +343,7 @@ body {
     }
 
     .operations-bar {
-        width: 100%;
+        width: 90%;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
@@ -362,7 +362,7 @@ body {
             height: 5vmax;
             width: 10%;
             margin-bottom: 20px;
-            margin-right: 8%;
+            margin-right: 0%;
             background-color: transparent;
             color: $colorBlue;
             i {
@@ -376,6 +376,10 @@ body {
                 outline: none;
             }
         }
+    }
+
+    .users .operations-bar, .operations-bar_survey-list {
+        width: 100%;
     }
 
   .footer {
