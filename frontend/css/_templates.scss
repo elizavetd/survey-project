@@ -1,6 +1,5 @@
 .templates {
     color: $colorGrey;
-
     .templates__header {
         font-family: $headingFont;
         font-size: 50px;
@@ -18,7 +17,6 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-
     .template-preview {
         width: 380px;
         height: 550px;
@@ -30,7 +28,6 @@
         background-color: white;
         padding: 15px;
         margin: 0 0.5% 8% 0;
-
         .template-preview__icon {
             width: 80px;
             height: 80px;
@@ -47,13 +44,12 @@
                 top: 16px;
             }
         }
-
         .template-preview__edit-buttons {
             align-self: flex-end;
             position: absolute;
             bottom: 100%;
-            
-            * {
+            .template-preview__button-edit,
+            .template-preview__button-delete {
                 width: 30px;
                 height: 30px;
                 color: $colorLightGrey;
@@ -61,20 +57,18 @@
                 border: none;
                 background-color: transparent;
             }
-
-            *:hover {
+            .template-preview__button-edit:hover,
+            .template-preview__button-delete:hover {
                 cursor: pointer;
                 color: $colorGrey;
             }
         }
-
         .template-preview__header {
             margin: 60px 0 20px 0;
             font-family: $headingFont;
             font-size: 30px;
             font-weight: 600;
         }
-
         .template-preview__description {
             max-height: 280px;
             overflow-y: hidden;
@@ -84,7 +78,6 @@
             line-height: 1.2;
             letter-spacing: 1px;
         }
-
         .template-preview__info {
             width: 100%;
             display: flex;
@@ -92,12 +85,11 @@
             margin: 30px 0;
             position: absolute;
             bottom: 80px;
-            * {
+            p {
                 font-weight: 700;
                 padding: 0 40px;
             }
         }
-
         .template-preview__button-create {
             width: 180px;
             height: 50px;
@@ -115,16 +107,65 @@
             cursor: pointer;
             background-color: transparentize($colorGrey, 0.1);
         }
-        
     }
     .template-preview:hover {
         box-shadow: 0px 3px 25.52px 3.48px rgba(112, 112, 112, 0.39);
     }
 }
 
-/*@media all and (max-width: 940px) {
-    .list .template-preview {
-        width: 100%;
-        height: 50vh;
+@media all and (max-width: 980px) and (orientation: portrait) {
+    .list {
+        margin-top: 7vh;
+        .template-preview {
+            width: 100%;
+            height: 70vh;
+            padding: 2.5vh;
+            margin-bottom: 20%;
+            .template-preview__icon {
+                width: 160px;
+                height: 160px;
+                font-size: 64px;
+                top: -120px;
+                border-radius: 180px;
+                border: 40px solid $mainColor;
+                i {
+                    top: 32px;
+                }
+            }
+            .template-preview__edit-buttons {
+                align-self: center;
+                width: 90%;
+                bottom: 65vh;
+                display: flex;
+                justify-content: space-between;
+                .template-preview__button-edit,
+                .template-preview__button-delete {
+                    width: 120px;
+                    height: 120px;
+                    font-size: 80px;
+                }
+            }
+            .template-preview__header {
+                margin: 120px 0 40px 0;
+                font-size: 3.5vh;
+            }
+            .template-preview__description {
+                max-height: 40vh;
+                margin: 40px;
+                font-size: 2.3vh;
+                line-height: 1.2;
+            }
+            .template-preview__info {
+                bottom: 10vh;
+                font-size: 2.3vh;
+            }
+            .template-preview__button-create {
+                width: 50%;
+                height: 5.5vh;
+                font-size: 2vh;
+                position: absolute;
+                bottom: 3vh;
+            }
+        }
     }
-}*/
+}
