@@ -1,5 +1,5 @@
 .auth-form {
-    width: 90%;    
+    width: 90%;
     color: $colorGrey;
     display: flex;
     flex-direction: column;
@@ -23,11 +23,11 @@
     display: flex;
     div {
         width: 100%;
-        .auth-form__label, .auth-form__input{
+        .auth-form__label,
+        .auth-form__input {
             display: block;
         }
     }
-
     div:first-child {
         margin-right: 10%;
     }
@@ -97,7 +97,7 @@
     text-transform: uppercase;
     color: white;
     margin: 45px 0 50px 0;
-    align-self: center; 
+    align-self: center;
 }
 
 .auth-form__submit-button:hover {
@@ -106,4 +106,33 @@
 
 .auth-form__submit-button_signup {
     margin-top: 10px;
+}
+
+@media all and (max-width: 1010px) {
+    .auth-form {
+        .auth-form__heading {
+            font-size: 4vmax;
+        }
+        .auth-form__label {
+            font-size: 1.8vmax;
+            height: 5vmax;
+        }
+        .auth-form__input {
+            font-size: 2.5vmax;
+            height: 5vmax;
+        }
+        .auth-form__help-buttons {
+            height: 5vmax;
+            font-size: 1.8vmax;
+            .auth-form__link {
+                font-size: 1.8vmax;
+            }
+        }
+        .auth-form__submit-button {
+            height: 5vmax;
+            width: 50vmin;
+            border-radius: 25vmin;
+            font-size: 1.7vmax;
+        }
+    }
 }
