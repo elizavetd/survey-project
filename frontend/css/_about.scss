@@ -1,10 +1,6 @@
 .about-us {
-    img {
-        width: 100%;
-    }
+    background-color: $mainColor;
     .about-us__article {
-        display: flex;
-        justify-content: center;
         padding: 4%;
         .about-us__heading {
             color: $colorGrey;
@@ -13,6 +9,20 @@
             font-size: 45px;
             padding: 5px 0 5px 15px;
             margin-bottom: 30px;
+            text-align: center;
+        }
+        .about-us__article-background {
+            width: 100%;
+        }
+        .about-us__text {
+            margin: 20px 7%;
+        }
+        .about-us__text_red {
+            color: $colorRed;
+            font-weight: 600;
+            font-size: 20px;
+            text-align: center;
+            margin: 50px 15%;
         }
     }
     .about-us__article:first-of-type {
@@ -21,5 +31,163 @@
     .about-us__article_img-background {
         padding: 0;
         width: 100%;
+        position: relative;
+        background-image: url(/img/building.png);
+    }
+    .about-us__article_white {
+        background-color: white;
+    }
+}
+
+.infographic {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: white;
+    font-family: $mainFont;
+    .infographic__image-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        .logo_white {
+            margin-bottom: 5%;
+        }
+    }
+    .infographic__items-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        margin-top: 2%;
+    }
+    .infographic__item {
+        margin: 0 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .infographic__number {
+            font-size: 100px;
+            font-weight: 700;
+            line-height: 1;
+        }
+        .infographic__icon {
+            font-size: 100px;
+            color: $colorRed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .infographic__caption {
+            font-size: 30px;
+            color: $colorLightGrey;
+            text-align: center;
+        }
+        .infographic__caption_black {
+            color: black;
+        }
+        .infographic__small-text {
+            font-size: 15px;
+            color: lighten($colorGrey, 15%);
+            margin: 20px 25%;
+            font-weight: 600;
+            text-align: center;
+        }
+    }
+    .infographic__item_width50 {
+        width: 50%;
+        margin: 0 0 20px 0;
+    }
+    .inphographic__description {
+        width: 70%;
+        text-align: center;
+        color: $colorLightGrey;
+        line-height: 1.7;
+        letter-spacing: 0.8px;
+        margin-top: 7%;
+    }
+}
+
+.infographic_absolute {
+    position: absolute;
+    top: 25%;
+}
+
+.jobs-list {
+    color: $colorGrey;
+    margin-bottom: 50px;
+    .jobs-list__job {
+        display: flex;
+        justify-content: space-between;
+        color: $colorGrey;
+        margin: 10px 0;
+        padding: 10px;
+        border-bottom: 1px solid $colorLightGrey;
+        .jobs-list__job-name {
+            font-weight: 400;
+            font-size: 20px;
+        }
+        .fa {
+            color: $colorLightGrey;
+        }
+    }
+    .jobs-list__requirements {
+        display: none;
+        p {
+            margin: 20px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        ul {
+            margin: 20px;
+            li {
+                margin: 20px;
+                list-style: none;
+                &:before {
+                    content: ' ';
+                    display: inline-block;
+                    width: 6px;
+                    height: 6px;
+                    background: #eb1c23;
+                    position: relative;
+                    left: -15px;
+                    top: -2px;
+                    margin-right: -7px;
+                }
+            }
+        }
+    }
+}
+
+.gallery-grid__container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.gallery-grid {
+    float: left;
+}
+
+.gallery-grid__item {
+    position: relative;
+    overflow: hidden;
+    margin: 5px;
+    background: #333;
+    .gallery-grid__image {
+        position: relative;
+        display: block;
+        width: 100%;
+        opacity: 0.7;
+        -webkit-transition: opacity 0.3s;
+        transition: opacity 0.3s;
+    }
+    svg {
+        position: absolute;
+        top: -1px;
+        z-index: 10;
+        width: 100%;
+        height: 100%;
     }
 }
