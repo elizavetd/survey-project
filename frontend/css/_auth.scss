@@ -110,29 +110,45 @@
 
 @media all and (max-width: 1010px) {
     .auth-form {
+        min-height: 80vh;
+        padding-bottom: 10vmax;
+
         .auth-form__heading {
-            font-size: 4vmax;
+            font-size: 4.5vmax;
+            margin: 0 0 3vh 0;
+            padding-top: 5vmax;
+            border-width: 5px;
         }
         .auth-form__label {
-            font-size: 1.8vmax;
-            height: 5vmax;
+            font-size: 2vmax;
+            margin: 2vh 0;
         }
         .auth-form__input {
-            font-size: 2.5vmax;
+            font-size: 3vmax;
             height: 5vmax;
+            margin-bottom: 2vh;
+        }
+
+        .auth-form__group {
+            display: block;
         }
         .auth-form__help-buttons {
-            height: 5vmax;
-            font-size: 1.8vmax;
+            font-size: 2vmax;
+            margin: 3vh 0 5vh 0;
+            p {
+                width: 100%;
+            }
             .auth-form__link {
-                font-size: 1.8vmax;
+                font-size: 2.1vmax;
+                width: 100%;
+                text-align: right;
             }
         }
         .auth-form__submit-button {
-            height: 5vmax;
+            height: 6vmax;
             width: 50vmin;
-            border-radius: 25vmin;
-            font-size: 1.7vmax;
+            border-radius: 1.5vmin;
+            font-size: 1.8vmax;
         }
     }
 }

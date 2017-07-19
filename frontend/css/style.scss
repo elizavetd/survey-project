@@ -287,27 +287,30 @@ body {
 @media all and (max-width: 1010px) {
     .head {
         .head__logo {
-            padding-top: 1vmax;
+            padding-top: 2vmax;
             img {
-                height: 2.7vmax;
+                height: 3.7vmax;
             }
         }
         .head__auth { 
-            font-size: 2vmax;
+            font-size: 3.3vmax;
             .head__auth_signin {
-                border-right: 2px solid $colorLightGrey;
+                border-right: none;
+            }
+            .head__auth_signup {
+                display: none;
             }
         }
     }
 
     .menu-container {
-        height: 5vmax;
-        border-bottom: 6px solid $colorRed;
+        height: 7vmax;
+        border-bottom: 10px solid $colorRed;
     }
 
     .menu {
         flex-direction: column;
-        height: 5vmax;
+        height: 7vmax;
 
         li {
             width: 100%;
@@ -326,12 +329,14 @@ body {
         .menu__hamburger {
             display: block;
             color: white;
-            font-size: 3vmax;
+            font-size: 4vmax;
         }
 
         input:checked ~ li {
             display: block;
-            font-size: 2.7vmax;
+            font-size: 4vmax;
+            height: 10vmax;
+            padding: 2vh 0;
         }    
     }
 
@@ -383,14 +388,14 @@ body {
     }
 
     .content_centered {
-        margin: 10vh 0 0 0;
+        margin: 0 0 0 0;
         width: 100%;
         box-shadow: none;
     }
 
     .footer {
         height: 7vmax;
-        font-size: 2.5vmax;
+        font-size: 2.2vmax;
         letter-spacing: normal;    
     }
 }
