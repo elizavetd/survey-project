@@ -341,7 +341,7 @@ body {
     }
 
   .search-bar {
-        height: 5vmax;
+        height: 7vmax;
         font-size: 2.3vmax;
         border-radius: 3px;
         padding-left: 7vmax;
@@ -353,6 +353,7 @@ body {
         justify-content: space-between;
         align-items: center;
         margin-top: 7vmax;
+        padding-bottom: 2vmax;
 
         .fa-search {
             font-size: 3vmax;
@@ -361,17 +362,19 @@ body {
         }
         .operations-bar__search {
             width: 80%;
+            margin: 0;
         }
         .operations-bar__new-template {
             align-self: center;
-            height: 5vmax;
+            height: 7vmax;
             width: 10%;
-            margin-bottom: 20px;
-            margin-right: 0%;
+            margin: 0;
+            padding: 0;
             background-color: transparent;
             color: $colorBlue;
             i {
-                font-size: 5vmax;
+                font-size: 7vmax;
+                padding: 0;
             }
             p {
                 display: none;

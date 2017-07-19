@@ -93,7 +93,10 @@
     }
 }
 
-@media all and (max-width: 1100px) /*and (orientation: portrait)*/ {
+@media all and (max-width: 1100px)
+/*and (orientation: portrait)*/
+
+{
     .users .operations-bar {
         display: flex;
         justify-content: center;
@@ -104,22 +107,18 @@
             width: 90vw;
         }
     }
-
     .table {
-        width: 100%;
         margin: 0;
-        margin: 3vh 0 15vh 0;
-        font-size: 2vh;
+        margin: 1vmax 0 10vmax 0;
+        font-size: 2vmax;
         thead {
             display: none;
         }
-
         th:first-child {
             padding: 0;
         }
-        
-        td,th {
-            width: 95vmin;
+        td,
+        th {
             display: block;
             text-align: left;
             padding: 0 0 0 20px;
@@ -129,41 +128,44 @@
                 width: 50%;
                 display: inline-block;
             }
-
             &:first-child {
                 display: block;
-                width: 95vmin;
+                width: auto;
                 padding: 0 0 0 20px;
                 margin-top: 3vh;
             }
-
             &:last-child:before {
                 content: '';
                 width: 0;
             }
-
-            &:last-child {
-                text-align: right;
-                margin: 3vh 1vh;
-                button {
-                    font-size: 3vh;
-                }
+        }
+        td:last-child {
+            text-align: right;
+            margin: 3vmax 1vmax;
+            button {
+                font-size: 3vmax;
             }
         }
-
-        th:first-child {
-            text-align: right;
+        th {
+            text-align: center;
             &:before {
                 content: "";
+                display: none;
             }
         }
     }
-
-    .table__footer-buttons {
+    .table__footer {
+        font-size: 2.5vmax;
+    }
+    .table .table__footer-buttons {
+        text-align: center;
+        display: flex;
+        justify-content: space-around;
+        padding: 0;
         button {
-            margin: 0 30px;
+            margin: 3vmax 0;
             .fa {
-            font-size: 50px;
+                font-size: 5vmax;
             }
         }
     }
