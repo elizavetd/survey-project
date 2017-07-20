@@ -107,7 +107,7 @@ body {
     margin: 0 3.5%;
     position: relative;
     top: 50%;
-    z-index: 100;
+    z-index: 10;
     box-shadow: 0px 3px 25.52px 3.48px rgba(112, 112, 112, 0.2);
 
     .menu__item {
@@ -311,6 +311,7 @@ body {
     .menu {
         flex-direction: column;
         height: 7vmax;
+        z-index: 0;
 
         li {
             width: 100%;
