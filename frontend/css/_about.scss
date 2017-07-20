@@ -381,3 +381,128 @@
         }
     }
 }
+
+@media all and (max-width: 1010px) {
+    .about-us {
+        .about-us__article {
+            .about-us__heading {
+                font-size: 4vmax;
+            }
+            .about-us__text {
+                margin: 5vmax 0;
+            }
+        }
+    }
+    .infographic {
+        .infographic__item {
+            .infographic__number {
+                font-size: 7vmax;
+            }
+            .infographic__caption {
+                font-size: 2.5vmax;
+            }
+            .infographic__icon {
+                font-size: 10vmax;
+            }
+            .infographic__small-text {
+                font-size: 1.5vmax;
+                margin: 3vmax;
+            }
+        }
+        .inphographic__description {
+            font-size: 2vmax;
+            line-height: normal;
+        }
+    }
+    .gallery-grid {
+        float: left;
+        width: 40%;
+        margin: 10px;
+    }
+    .gallery-grid__item {
+        .gallery-grid__caption {
+            .gallery-grid__heading {
+                font-size: 1.8vmax;
+            }
+            .gallery-grid__description {
+                font-size: 1.5vmax;
+            }
+        }
+    }
+    .benefits {
+        margin-left: 0;
+        margin-right: 0;
+        font-size: 1vmax;
+        flex-direction: column;
+        padding: 3vmax;
+        justify-content: flex-start
+    }
+    .advantages {
+        .advantages__item {
+            .advantages__icon {
+                font-size: 7vmax;
+            }
+            .advantages__text {
+                font-size: 2vmax;
+            }
+        }
+    }
+    .jobs-list {
+        .jobs-list__job {
+            .jobs-list__job-name {
+                font-size: 3vmax;
+            }
+            .fa {
+                font-size: 3vmax;
+            }
+        }
+    }
+    .regular-list li {
+        font-size: 0.8vmax;
+    }
+    .student-content {
+        .about-us__text {
+            font-size: 2.2vmax;
+            text-align: center;
+        }
+    }
+    .contact {
+        .contact__container {
+            margin-bottom: 5vmax;
+            .contact__address {
+                .contact__city {
+                    font-size: 3vmax;
+                }
+                p {
+                    font-size: 2vmax;
+                    margin: 1vmax 0;
+                }
+            }
+            .contact__form {
+                input {
+                    height: 4vmax;
+                    font-size: 2vmax;
+                }
+                textarea {
+                    height: 12vmax;
+                    font-size: 2vmax;
+                }
+            }
+        }
+        .contact__button-set {
+            height: 10vmax;
+            .contact__button {
+                width: 30%;
+                .contact__country {
+                    width: 100%;
+                    font-size: 1.5vmax;
+                }
+                .contact__place {
+                    width: 100%;
+   
+                    font-size: 2.3vmax;
+                }
+            }
+        }
+    }
+}
