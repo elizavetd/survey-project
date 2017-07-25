@@ -1,13 +1,13 @@
 const render = require('./lib/render');
 const Koa = require('koa');
-const logger = require('koa-logger');
+//const logger = require('koa-logger');
 const serve = require('koa-static');
 const router = require('koa-router')();
 const path = require('path');
 
 const app = new Koa();
 
-app.use(logger());
+//app.use(logger());
 
 app.use(render);
 
