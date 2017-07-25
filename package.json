@@ -19,12 +19,17 @@
   "homepage": "https://github.com/elizavetd/survey-project#readme",
   "devDependencies": {
     "file-loader": "^0.11.2",
+    "koa-logger": "^3.0.1",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6",
     "webpack": "^3.0.0"
   },
   "dependencies": {
     "css-loader": "^0.28.4",
+    "koa": "^2.3.0",
+    "koa-router": "^7.2.1",
+    "koa-static": "^4.0.1",
+    "koa-views": "^6.0.2",
     "style-loader": "^0.18.2",
     "webpack-dev-server": "^2.5.0"
   }
