@@ -2,17 +2,20 @@
   "name": "survey-project",
   "version": "1.0.0",
   "description": "",
-  "main": "webpack.config.js",
+  "engines": {
+    "node": "8.2.1"
+  },
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/elizavetd/survey-project.git"
   },
   "author": "jelizavet.d@gmail.com",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/elizavetd/survey-project/issues"
   },
