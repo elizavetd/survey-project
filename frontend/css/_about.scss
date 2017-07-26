@@ -64,14 +64,6 @@
     align-items: center;
     color: white;
     font-family: $mainFont;
-    .infographic__image-container {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        .logo_white {
-            margin-bottom: 5%;
-        }
-    }
     .infographic__items-container {
         display: flex;
         flex-wrap: wrap;
