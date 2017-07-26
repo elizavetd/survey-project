@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Survey Project</title>
+	<link rel="shortcut icon" href="/img/favicon.png" type="image/png">
+
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/styles.min.css">
+	<script src="./bundle.js"></script>
+</head>
+
+<body>
+	<header class="header">
+		<div class="head">
+			<a class="head__logo" href="/"><img src="./img/logo.png"></a>
+			<ul class="head__auth">
+				<li><a class="head__auth_signin" href="/signin">Вход</a></li>
+				<li><a class="head__auth_signup" href="/signup">Регистрация</a></li>
+			</ul>
+		</div>
+		<nav class="menu-container" role="dropdown-menu">
+			<ul class="menu menu_left">
+				<input type="checkbox" id="hamburger-button">
+				<label class="menu__hamburger" for="hamburger-button" onclick><i class="fa fa-bars" aria-hidden="true"></i></label>
+				<li><a class="menu__item" href="/my-surveys">Мои опросы</a></li>
+				<li><a class="menu__item" href="/templates">Шаблоны опросов</a></li>
+				<li><a class="menu__item" href="/users">Пользователи</a></li>
+				<li><a class="menu__item" href="/about">О компании</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<div class="content">
+		<section class="welcome-section">
+			<img src="./img/1.png">
+			<div class="welcome-section__content">
+				<div class="welcome-section__text">
+					<h1 class="welcome-section__heading">Создать опрос просто!</h1>
+					<ul>
+						<li>
+							<h4 class="welcome-section__list-item">Добавляйте вопросы:</h4>
+							<p class="welcome-section__description">Удобный конструктор анкет с шаблонами. 6 типов вопросов и настройка логических правил.</p>
+						</li>
+						<li>
+							<h4 class="welcome-section__list-item">Получайте ответы:</h4>
+							<p class="welcome-section__description">Разошлите по электронной почте, укажите ссылку на веб-страницу или опубликуйте в социальных сетях.</p>
+						</li>
+						<li>
+							<h4 class="welcome-section__list-item">Анализируйте результат:</h4>
+							<p class="welcome-section__description">Просматривайте результаты опроса в удобном формате в виде графиков и диаграмм.</p>
+						</li>
+					</ul>
+				</div>
+				<form class="welcome-section__create-survey">
+					<fieldset>
+						<legend>Создание опроса</legend>
+						<input class="welcome-section__form-input" type="text" name="survey-name" placeholder="Введите название опроса">
+						<input class="welcome-section__form-button" type="submit" value="+ Добавить вопросы">
+						<p>или</p>
+						<a href="#">Начните с уже готовых шаблонов →</a>
+					</fieldset>
+				</form>
+			</div>
+		</section>
+
+	</div>
+
+	<div>
+		<div class="content-filler"></div>
+		<div class="content-filler" style="background-color: lavender"></div>
+		<div class="content-filler" style="background-color: lightcoral"></div>
+		<div class="content-filler" style="background-color: pink"></div>
+	</div>
+
+	<footer class="footer">
+		<p class="footer__copyright-text">Copyright @ 2017 iTechArt</p>
+	</footer>
+</body>
+
+</html>
