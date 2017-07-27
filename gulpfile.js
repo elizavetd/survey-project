@@ -77,7 +77,10 @@ gulp.task('webpack', function (callback) {
         test: /\.js$/,
         exclude: /(node_modules|lib)/,
         use: [{
-          loader: 'babel-loader'
+          loader: 'babel-loader',
+          options: {
+            presets: ['env']
+          }
         }]
       }]
     },
@@ -120,8 +123,6 @@ gulp.task('webpack', function (callback) {
     // task never errs in watch mode, it waits and recompiles
     if (!options.watch && err) {
       callback(err);
-    } else {
-      callback();
     }
 
   });
