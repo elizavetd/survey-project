@@ -11,6 +11,8 @@ const rename = require('gulp-rename');
 const notify = require('gulp-notify');
 const del = require('del');
 const webpack = require('webpack');
+const nodemon = require('gulp-nodemon');
+const notifier = require('node-notifier');
 
 const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
 
@@ -105,6 +107,10 @@ gulp.task('webpack', function (callback) {
     if (!err) { // no hard error
       // try to get a soft error from stats
       err = stats.toJson().errors[0];
+      notifier.notify({
+        title: 'Webpack notification',
+        message: 'Webpack task complete'
+      })
     }
 
     if (err) {
@@ -131,20 +137,25 @@ gulp.task('webpack', function (callback) {
 });
 
 gulp.task('clean', function () {
-  return del(['build/*.html', 'build/css', 'build/js']);
+  del(['build/**/*.*']);
+  return console.log('--------------------Cleaned before builing--------------------');
 });
 
 gulp.task('build-project', ['styles', 'html', 'images', 'webpack']);
 
-gulp.task('dev', ['build-project'], function () {
+gulp.task('watch', function () {
+  nodemon({
+    script: 'app.js'
+  });
   gulp.watch('src/styles/**/*.scss', ['styles']);
   gulp.watch('src/templates/**/*.*', ['html']);
   gulp.watch('src/images/**/*.{jpg,png}', ['images']);
-});
+})
+
+gulp.task('dev', ['clean', 'build-project', 'watch']);
 
 gulp.task('default', ['build-project'], function () {
-  return gulp.src('build')
-    .pipe(notify({
-      message: 'All tasks complete'
-    }));
+  return notify({
+    message: 'Project built'
+  });
 });
