@@ -2,4 +2,4 @@
 
 //import '../css/style.scss';
 
-//alert ('aaaaaaaand... ' + performance.now());
+alert (performance.now());
