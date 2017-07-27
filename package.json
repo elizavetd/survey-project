@@ -22,6 +22,9 @@
   },
   "homepage": "https://github.com/elizavetd/survey-project#readme",
   "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.6.0",
     "file-loader": "^0.11.2",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
@@ -33,6 +36,7 @@
     "gulp-notify": "^3.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-ruby-sass": "^2.1.1",
+    "gulplog": "^1.0.0",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6",
     "webpack": "^3.4.1"

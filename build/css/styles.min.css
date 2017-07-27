@@ -319,13 +319,12 @@
 }
 .about-us .about-us__article_students {
   padding: 0;
-  height: 80vmax;
   width: 100%;
   position: relative;
   background-image: url(/img/student-background.jpg);
 }
 .about-us .about-us__article_students .opacify {
-  height: 80vmax;
+  height: 70vmax;
   width: 100%;
   background-color: white;
   opacity: 0.9;
@@ -900,7 +899,7 @@
           align-items: center;
   background-color: white;
   padding: 15px;
-  margin: 0 0.5% 8% 0;
+  margin: 0 0.5% 11vh 0;
 }
 .list .template-preview .template-preview__icon {
   width: 80px;
