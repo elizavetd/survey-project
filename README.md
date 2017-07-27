@@ -1,7 +1,7 @@
-#Survey Project
+# Survey Project
 Live demo: https://survey-projct.herokuapp.com/my-surveys
 
-##Installation:
+## Installation:
 
 ```sh
 git clone https://github.com/elizavetd/survey-project.git
