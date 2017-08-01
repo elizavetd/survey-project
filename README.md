@@ -5,6 +5,7 @@ Live demo: https://survey-projct.herokuapp.com/my-surveys
 
 ```sh
 git clone https://github.com/elizavetd/survey-project.git
+
 cd survey-project
 
 npm install

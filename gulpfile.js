@@ -81,7 +81,7 @@ gulp.task('webpack', function (callback) {
         use: [{
           loader: 'babel-loader',
           options: {
-            presets: ['env']
+            presets: ['env', 'es2015', 'react']
           }
         }]
       }]
