@@ -99,8 +99,11 @@
 }
 
 .auth-form__fail {
+    color: $colorLightGrey;
     font-size: 24px;
     text-align: center;
+    position: relative;
+    top: 5%;
 }
 
 .auth-form__submit-button {

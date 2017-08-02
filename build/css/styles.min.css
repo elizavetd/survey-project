@@ -130,8 +130,11 @@
 }
 
 .auth-form__fail {
+  color: #BDBDBD;
   font-size: 24px;
   text-align: center;
+  position: relative;
+  top: 5%;
 }
 
 .auth-form__submit-button {

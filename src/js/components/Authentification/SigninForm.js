@@ -10,6 +10,7 @@ let SigninForm = props => {
     <div className="content content_flex">
     <section className="content content_flex content_centered">
         <form className="auth-form" onSubmit={ handleSubmit(submit) }>
+            {error && <strong className="auth-form__fail">{error}</strong>}
             <h2 className="auth-form__heading">Вход</h2>
             <Field 
                 name="login"
@@ -29,7 +30,6 @@ let SigninForm = props => {
  				<p>Еще нет аккаунта? <a className="auth-form__link" href="/signup">Зарегистрируйтесь</a></p>
  				<a className="auth-form__link" href="#">Забыли пароль?</a>
  			</div>
-            {error && <strong className="auth-form__fail">{error}</strong>}
  			<input className="auth-form__submit-button" type="submit" value="Войти" />
         </form>
     </section>
