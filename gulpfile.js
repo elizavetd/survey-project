@@ -81,7 +81,8 @@ gulp.task('webpack', function (callback) {
         use: [{
           loader: 'babel-loader',
           options: {
-            presets: ['env', 'es2015', 'react']
+            presets: ['env', 'es2015', 'react', 'stage-0'],
+            plugins: ["transform-decorators-legacy"]
           }
         }]
       }]

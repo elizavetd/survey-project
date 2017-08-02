@@ -13,20 +13,20 @@ app.use(render);
 
 app.use(serve(path.join(__dirname, '/build')));
 
-router.get('/', index)
-    .get('/about', about)
-    .get('/users', users)
-    .get('/my-surveys', mySurveys)
-    .get('/templates', templates)
-    .get('/signin', signin)
-    .get('/signup', signup)
-    .get('/new-survey', newSurvey)
-    .get('/start-survey', startSurvey)
-    .get('/finish-survey', finishSurvey)
-    .get('/survey-settings', surveySettings)
-    .get('/answers-collection', answersCollection)
-    .get('/survey-results', surveyResults)
-    .get('/user-result', userResult);
+router.get('/*', index);
+    // .get('/about', index)
+    // .get('/users', index)
+    // .get('/my-surveys', index)
+    // .get('/templates', index)
+    // .get('/signin', index)
+    // .get('/signup', index)
+    // .get('/new-survey', index)
+    // .get('/start-survey', index)
+    // .get('/finish-survey', index)
+    // .get('/survey-settings', index)
+    // .get('/answers-collection', index)
+    // .get('/survey-results', index)
+    // .get('/user-result', index);
 
 app.use(router.routes());
 

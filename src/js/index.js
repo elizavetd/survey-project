@@ -1,11 +1,13 @@
-//import '../css/style.scss';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+//import '../styles/style.scss';
 
-//alert (performance.now());
+import Layout from './components/Layout'
+import store from './store'
 
-import React from 'react';
-import ReactDOM from 'react-dom';
+const app = document.getElementById('app');
 
-ReactDOM.render(
-  <h1>Hello, world!</h1>,
-  document.getElementById('root')
-);
+ReactDOM.render( <Provider store={store}>
+  <Layout />
+</Provider>, app);
