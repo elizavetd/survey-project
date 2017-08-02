@@ -270,6 +270,7 @@
   position: relative;
   padding: 50px 30px;
   margin: 0 50px;
+  position: relative;
 }
 .welcome-section .welcome-section__create-survey fieldset legend {
   font-weight: 700;
@@ -311,6 +312,17 @@
   color: white;
   font-weight: 600;
   text-align: center;
+}
+
+.welcome-section__fail {
+  color: #F4CBC6;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  position: absolute;
+  top: 10%;
+  left: 0;
+  margin: 0 10%;
 }
 
 .about-us {

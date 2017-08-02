@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
 
 import Header from './Header'
 import Footer from './Footer'
+import HomePage from './HomePage/HomePage'
 import SigninForm from './Authentification/SigninForm'
 import SignupForm from './Authentification/SignupForm'
 
@@ -22,7 +23,7 @@ export default class Layout extends React.Component {
       <Router>
       <div>
         <Header />
-          <Route exact path="/" render={() => <h1>home</h1>} />
+          <Route exact path="/" component={ HomePage } />
           <Route path="/my-surveys" render={() => <h1>my-surveys</h1>} />
           <Route path="/templates" render={() => <h1>templates</h1>} />
           <Route path="/users" render={() => <h1>users</h1>} />

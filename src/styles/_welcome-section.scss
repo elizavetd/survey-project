@@ -59,6 +59,7 @@
             position: relative;
             padding: 50px 30px;
             margin: 0 50px;
+            position: relative;
 
             legend {
                 font-weight: 700;
@@ -103,4 +104,15 @@
             }
         }
     }
+}
+
+.welcome-section__fail {
+    color: $colorRose;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    position: absolute;
+    top: 10%;
+    left: 0;
+    margin: 0 10%;
 }
