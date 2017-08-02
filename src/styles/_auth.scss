@@ -33,6 +33,13 @@
     }
 }
 
+.auth-form__label-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
 .auth-form__label {
     color: $colorLightGrey;
     font-size: 16px;
@@ -42,7 +49,16 @@
     margin: 15px 0;
 }
 
+.auth-form__input-error {
+    width: 60%;
+    color: $colorRed;
+    font-weight: 600;
+    font-size: 15px;
+    text-align: right;
+}
+
 .auth-form__input {
+    width: 100%;
     height: 40px;
     margin-bottom: 10px;
     padding: 5px;
@@ -80,6 +96,11 @@
         text-decoration: underline;
         color: $colorBlue;
     }
+}
+
+.auth-form__fail {
+    font-size: 24px;
+    text-align: center;
 }
 
 .auth-form__submit-button {
@@ -123,6 +144,11 @@
             font-size: 2vmax;
             margin: 2vh 0;
         }
+
+        .auth-form__input-error {
+            font-size: 1.8vmax;
+        }
+
         .auth-form__input {
             font-size: 3vmax;
             height: 5vmax;
