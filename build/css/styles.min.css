@@ -453,6 +453,7 @@
 }
 .infographic .infographic__item .infographic__caption_black {
   color: black;
+  font-weight: 700;
 }
 .infographic .infographic__item .infographic__small-text {
   font-size: 15px;
@@ -498,6 +499,7 @@
 .jobs-list .jobs-list__job .jobs-list__job-name {
   font-weight: 400;
   font-size: 20px;
+  text-transform: uppercase;
 }
 .jobs-list .jobs-list__job .fa {
   color: #BDBDBD;
@@ -509,6 +511,9 @@
   margin: 20px;
   text-transform: uppercase;
   font-weight: 600;
+}
+.jobs-list .jobs-list__requirements_displayed {
+  display: block;
 }
 
 .regular-list {
@@ -720,6 +725,7 @@
 }
 .contact .contact__container {
   padding: 4%;
+  margin-bottom: 5%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

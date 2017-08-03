@@ -96,6 +96,7 @@
         }
         .infographic__caption_black {
             color: black;
+            font-weight: 700;
         }
         .infographic__small-text {
             font-size: 15px;
@@ -137,6 +138,7 @@
         .jobs-list__job-name {
             font-weight: 400;
             font-size: 20px;
+            text-transform: uppercase;
         }
         .fa {
             color: $colorLightGrey;
@@ -149,6 +151,9 @@
             text-transform: uppercase;
             font-weight: 600;
         }
+    }
+    .jobs-list__requirements_displayed {
+        display: block;
     }
 }
 
@@ -319,6 +324,7 @@
     }
     .contact__container {
         padding: 4%;
+        margin-bottom: 5%;
         display: flex;
         align-items: center;
         justify-content: space-around;
