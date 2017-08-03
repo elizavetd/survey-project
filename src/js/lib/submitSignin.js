@@ -7,13 +7,13 @@ function submit(values) {
     // simulate server latency
     if (!['admin@ad.min'].includes(values.login)) {
       throw new SubmissionError({
-        login: 'Пользователь не найден',
-        _error: 'Авторизация не удалась'
+      //  login: 'Неверный логин',
+        _error: 'Неверное имя пользователя или пароль. Авторизация не удалась'
       })
     } else if (values.password !== '123') {
       throw new SubmissionError({
-        password: 'Неверный пароль',
-        _error: 'Авторизация не удалась'
+       // password: 'Неверный пароль',
+        _error: 'Неверное имя пользователя или пароль. Авторизация не удалась'
       })
     } else {
       window.alert(`You submitted:\n\n${JSON.stringify(values, null, 2)}`)
