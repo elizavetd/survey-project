@@ -1,5 +1,4 @@
 import React from "react"
-import PropTypes from 'prop-types';
 
 const SurveyItem = ({ 
     imageSrc,
@@ -41,13 +40,5 @@ const SurveyItem = ({
 		</div>
 	</article>
 );
-
-// SurveyItem.propTypes = {
-//   hasSideInfo: PropTypes.bool.isRequired,
-//   itemCountCaption: PropTypes.string, 
-//   itemCount: PropTypes.number, 
-//   pageNumber: PropTypes.number,
-//   pageCount: PropTypes.number
-// }
 
 export default SurveyItem;
