@@ -7,6 +7,7 @@ import Footer from './Footer'
 import HomePage from './HomePage/HomePage'
 import MySurveysPage from './MySurveysPage/MySurveysPage'
 import TemplatesPage from './TemplatesPage/TemplatesPage'
+import UsersPage from './UsersPage/UsersPage'
 import SigninForm from './Authentification/SigninForm'
 import SignupForm from './Authentification/SignupForm'
 
@@ -28,7 +29,7 @@ export default class Layout extends React.Component {
           <Route exact path="/" component={ HomePage } />
           <Route path="/my-surveys" component={ MySurveysPage } />
           <Route path="/templates" component={ TemplatesPage } />
-          <Route path="/users" render={() => <h1>users</h1>} />
+          <Route path="/users" component={ UsersPage } />
           <Route path="/about" render={() => <h1>about</h1>} />
           <Route path="/signin" component={ SigninForm } />
           <Route path="/signup" component={ SignupForm } />

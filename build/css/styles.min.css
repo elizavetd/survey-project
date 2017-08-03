@@ -1146,7 +1146,7 @@
 .table .table__header th:first-child .search-bar-container .users__search {
   font-size: 18px;
   background-color: transparent;
-  border-radius: 0px;
+  border-radius: 25px;
 }
 .table .table__header th:first-child .search-bar-container .fa-search {
   position: absolute;

@@ -1,7 +1,6 @@
 import React from 'react'
 
 import SearchBar from '../SearchBar'
-import PaginationBar from '../PaginationBar'
 import TemplatePreview from './TemplatePreview'
 
 export default class TemplatesPage extends React.Component {
