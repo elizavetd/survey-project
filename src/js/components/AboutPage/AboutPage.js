@@ -1,13 +1,13 @@
 import React from 'react'
 
-import ImageHeading from './ImageHeding'
-import AboutUs from './AboutUs'
-import Education from './Education'
-import Benefits from './Benefits'
-import Advantages from './Advantages'
-import Jobs from './Jobs'
-import Students from './Students'
-import Contacts from './Contacts'
+import ImageHeading from './ImageHeading/ImageHeading'
+import AboutUs from './AboutUs/AboutUs'
+import Education from './Education/Education'
+import Benefits from './Benefits/Benefits'
+import Advantages from './Advantages/Advantages'
+import Jobs from './Jobs/Jobs'
+import Students from './Students/Students'
+import Contacts from './Contacts/Contacts'
 
 export default class AboutPage extends React.Component {
   render() {

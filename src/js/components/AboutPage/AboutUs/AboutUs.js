@@ -1,6 +1,6 @@
 import React from 'react'
 
-import InfographicItem from './InfographicItem'
+import InfographicItem from '../InfographicItem'
 
 export default class AboutUs extends React.Component {
   render() {

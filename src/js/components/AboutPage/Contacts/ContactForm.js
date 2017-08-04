@@ -1,11 +1,11 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
 
-import submit from '../../lib/submitContact'
+import submit from '../../../lib/submitContact'
 
 let ContactForm = props => {
-  const { error, handleSubmit } = props
-  return (
+    const { error, handleSubmit } = props
+    return (
 		<form className="contact__form"  onSubmit={ handleSubmit(submit) }>
             {error && <h6 className="contact__submit-fail">{error}</h6>}
             <Field 
@@ -27,8 +27,7 @@ let ContactForm = props => {
             />
 			<input className="contact__form-button" type="submit" value="Отправить" />
 		</form>
-
-  )
+    )
 }
 
 ContactForm = reduxForm({
