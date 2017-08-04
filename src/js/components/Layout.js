@@ -1,9 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { BrowserRouter as Router, 
-         Route, 
-         NavLink, 
-         browserHistory } from 'react-router-dom'
+import { BrowserRouter as Router, Route, NavLink } from 'react-router'
+import { createBrowserHistory } from 'history'
+import { ConnectedRouter, push } from 'react-router-redux'
+
+import { history } from '../store'
 
 import Header from './Header'
 import Footer from './Footer'
@@ -14,6 +15,7 @@ import UsersPage from './UsersPage/UsersPage'
 import AboutPage from './AboutPage/AboutPage'
 import SigninForm from './Authentification/SigninForm'
 import SignupForm from './Authentification/SignupForm'
+import SurveyDesigner from './SurveyDesigner/SurveyDesigner'
 
 @connect((store) => {
   return {
@@ -27,10 +29,9 @@ export default class Layout extends React.Component {
     const { username } = this.props;
 
     return (
-      <Router history={history}>
+      <ConnectedRouter history={history}>
         <div>
           <Header />
-
           <Route exact path="/" component={ HomePage } />
           <Route path="/my-surveys" component={ MySurveysPage } />
           <Route path="/templates" component={ TemplatesPage } />
@@ -38,10 +39,11 @@ export default class Layout extends React.Component {
           <Route path="/about" component={ AboutPage } />
           <Route path="/signin" component={ SigninForm } />
           <Route path="/signup" component={ SignupForm } />
+          <Route path="/new-survey" component={ SurveyDesigner } />
           
           <Footer />
         </div>
-      </Router>
+      </ConnectedRouter>
     );
   }
 }
