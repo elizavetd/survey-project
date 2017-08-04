@@ -717,11 +717,13 @@
 .contact .contact__button-set .contact__button .contact__country {
   width: 150px;
   font-size: 12px;
+  text-transform: uppercase;
 }
 .contact .contact__button-set .contact__button .contact__place {
   width: 150px;
   font-weight: 700;
   font-size: 20px;
+  text-transform: uppercase;
 }
 .contact .contact__container {
   padding: 4%;
@@ -772,6 +774,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: relative;
 }
 .contact .contact__container .contact__form input {
   margin-bottom: 20px;
@@ -796,6 +799,13 @@
   color: white;
   font-weight: 600;
   margin-bottom: 0;
+}
+.contact .contact__container .contact__form .contact__submit-fail {
+  height: 40px;
+  color: #EB1C23;
+  text-align: center;
+  position: absolute;
+  top: -50px;
 }
 
 @media all and (max-width: 1010px) {
