@@ -1,6 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
+import { BrowserRouter as Router, 
+         Route, 
+         NavLink, 
+         browserHistory } from 'react-router-dom'
 
 import Header from './Header'
 import Footer from './Footer'
@@ -24,7 +27,7 @@ export default class Layout extends React.Component {
     const { username } = this.props;
 
     return (
-      <Router>
+      <Router history={history}>
         <div>
           <Header />
 
