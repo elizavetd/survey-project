@@ -19,7 +19,7 @@ const SurveyItem = ({
 				<p className="survey-item__description">{description}</p>
 			</div>
 		</div>
-
+	
 		<div className="survey-item__details">
 			<div className="survey-item__info">
 				<div>

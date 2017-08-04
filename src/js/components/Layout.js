@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { BrowserRouter as Router, Route, NavLink } from 'react-router'
+import { Route, NavLink } from 'react-router'
 import { createBrowserHistory } from 'history'
 import { ConnectedRouter, push } from 'react-router-redux'
 

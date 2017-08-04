@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 const Head = () => (
     <div className="head">
-		<a className="head__logo" href="/"><img src="./img/logo.png" /></a>
+		<NavLink className="head__logo" exact to="/"><img src="./img/logo.png" /></NavLink>
 		<ul className="head__auth">
 			<li><NavLink className="head__auth_signin" to="/signin">Вход</NavLink></li>
 			<li><NavLink className="head__auth_signup" to="/signup">Регистрация</NavLink></li>
@@ -29,9 +29,9 @@ export default class Header extends React.Component {
   render() {
     return (
       <header className="header">
-		<Head />
+		    <Head />
         <Navigation />
-	</header>
+	    </header>
     );
   };
 };

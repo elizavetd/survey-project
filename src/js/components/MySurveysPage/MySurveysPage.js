@@ -4,7 +4,7 @@ import SearchBar from '../SearchBar'
 import PaginationBar from '../PaginationBar'
 import SurveyItem from './SurveyItem'
 
-export default class MySurveysPage extends React.Component {
+class MySurveysPage extends React.Component {
   render() {
       let itemCountCaption = "Всего опросов:";
       let itemCount = 37;
@@ -76,3 +76,5 @@ export default class MySurveysPage extends React.Component {
     );
   }
 }
+
+export default MySurveysPage;
