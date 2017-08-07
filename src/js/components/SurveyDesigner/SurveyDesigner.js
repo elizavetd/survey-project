@@ -1,30 +1,28 @@
 import React from 'react'
+import { Route } from 'react-router-dom'
 
 import Options from './Options'
-import NewQuestion from './NewQuestion'
-import OneAnswerQuestion from './QuestionTypes/OneAnswerQuestion'
-import MultipleAnswersQuestion from './QuestionTypes/MultipleAnswersQuestion'
-import TextQuestion from './QuestionTypes/TextQuestion'
-import FileQuestion from './QuestionTypes/FileQuestion'
-import RatingQuestion from './QuestionTypes/RatingQuestion'
-import ScaleQuestion from './QuestionTypes/ScaleQuestion'
+
+import SurveyPageEditor from './Pages/SurveyPageEditor'
+import StartPage from './Pages/StartPage'
+import FinishPage from './Pages/FinishPage'
+import SettingsPage from './Pages/SettingsPage'
+import CollectPage from './Pages/CollectPage'
+import ResultsPage from './Pages/ResultsPage'
+import UserResultsPage from './Pages/UserResultsPage'
 
 const SurveysDesigner = ({ match }) => (
     <div className="content">
 		<div className="survey-editing">
             <Options position='left' url={match.url} />
 
-			<section className="survey-body">
-				<NewQuestion isChoosingMode = {false} />
-				<NewQuestion isChoosingMode = {true} />
-				
-				<OneAnswerQuestion isFirst = {true} />
-				<MultipleAnswersQuestion isFirst = {false} />
-				<TextQuestion isFirst = {false} />
-				<FileQuestion isFirst = {false} />
-				<RatingQuestion isFirst = {false} />
-				<ScaleQuestion isFirst = {false} />
-			</section>
+			<Route path={`${match.url}/start-page`} component={ StartPage } />
+			<Route path={`${match.url}/finish-page`} component={ FinishPage } />
+			<Route path={`${match.url}/settings`} component={ SettingsPage } />
+			<Route path={`${match.url}/collect-answers`} component={ CollectPage } />
+			<Route exact path={`${match.url}/results`} component={ ResultsPage } />
+			<Route path={`${match.url}/results/*`} component={ UserResultsPage } />
+    		<Route exact path={match.url} component={ SurveyPageEditor } /> 
 
             <Options position='right' url={match.url} />
 		</div>

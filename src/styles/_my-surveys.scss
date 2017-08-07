@@ -44,6 +44,10 @@
     padding-bottom: 100px;
 }
 
+.pagination_no-padding:last-child {
+    padding-bottom: 0;
+}
+
 .surveys-list {
     margin-top: 50px;
     .survey-item {

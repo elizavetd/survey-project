@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 
 const PaginationBar = ({ 
     hasSideInfo,
+    hasPadding,
     itemCountCaption, 
     itemCount, 
     pageNumber,
     pageCount
 }) => (
-    <div className="pagination">
+    <div className={ hasPadding && "pagination" || "pagination pagination_no-padding" }>
         {hasSideInfo &&
 		    <div className="pagination__details">
 			    <h4>{itemCountCaption}</h4>
@@ -36,6 +37,10 @@ PaginationBar.propTypes = {
   itemCount: PropTypes.number, 
   pageNumber: PropTypes.number,
   pageCount: PropTypes.number
+}
+
+PaginationBar.defaultProps = {
+    hasPadding: true
 }
 
 export default PaginationBar;

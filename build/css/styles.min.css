@@ -1353,6 +1353,10 @@
   padding-bottom: 100px;
 }
 
+.pagination_no-padding:last-child {
+  padding-bottom: 0;
+}
+
 .surveys-list {
   margin-top: 50px;
 }
@@ -2134,6 +2138,7 @@
   font-size: 20px;
   border: none;
   border-radius: 25px;
+  margin: 0 5px;
 }
 
 .aside-button {
@@ -2488,8 +2493,8 @@
 
 .bar-chart {
   background: #fff;
-  height: 2rem;
-  margin-bottom: 2rem;
+  height: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 .bar-chart:last-child {
   margin-bottom: 0;
@@ -2501,6 +2506,7 @@
   margin-bottom: .3rem;
   position: relative;
   will-change: width;
+  border: 2px solid rgba(0, 0, 0, 0.1);
 }
 .bar-chart .bar-chart__inner:after {
   position: absolute;
@@ -2515,17 +2521,42 @@
   position: absolute;
   font-size: 15px;
   font-weight: 700;
-  top: 20%;
-  left: 102%;
+  right: -62px;
 }
-.bar-chart.primary .bar-chart__inner {
+.bar-chart.first .bar-chart__inner {
   background: #e86951;
 }
-.bar-chart.secondary .bar-chart__inner {
+.bar-chart.second .bar-chart__inner {
   background: #168de6;
 }
-.bar-chart.tertiary .bar-chart__inner {
+.bar-chart.third .bar-chart__inner {
   background: #1dbdab;
+}
+.bar-chart.fourth .bar-chart__inner {
+  background: #8F3985;
+}
+.bar-chart.fifth .bar-chart__inner {
+  background: #98CE00;
+}
+.bar-chart.sixth .bar-chart__inner {
+  background: #EE6C4D;
+}
+.bar-chart.seventh .bar-chart__inner {
+  background: #FFFF82;
+}
+.bar-chart.eighth .bar-chart__inner {
+  background: #FF4D80;
+}
+.bar-chart.ninth .bar-chart__inner {
+  background: #5BC0EB;
+}
+.bar-chart.tenth .bar-chart__inner {
+  background: #4357AD;
+}
+
+.bar-chart__container {
+  width: 90%;
+  margin-bottom: 1.5rem;
 }
 
 html {

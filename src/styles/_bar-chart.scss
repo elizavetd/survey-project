@@ -1,11 +1,20 @@
 .bar-chart {
 	$barChartBackground: #fff;
-	$barColorPrimary: #e86951;
-	$barColorSecondary: #168de6;
-	$barColorTertiary: #1dbdab;
-	$barChartHeight: 2rem;
+
+	$barColorFirst: #e86951;
+	$barColorSecond: #168de6;
+	$barColorThird: #1dbdab;
+	$barColorFourth: #8F3985;
+	$barColorFifth: #98CE00;
+	$barColorSixth: #EE6C4D;
+	$barColorSeventh: #FFFF82;
+	$barColorEighth: #FF4D80;
+	$barColorNinth: #5BC0EB;
+	$barColorTenth: #4357AD;
+
+	$barChartHeight: 1.5rem;
 	$barChartCapWidth: 1rem;
-	$animationTime: 1.3s;
+	//$animationTime: 1.3s;
 	
 	background: $barChartBackground;
 	height: $barChartHeight;
@@ -13,7 +22,7 @@
     
     &:last-child {
         margin-bottom: 0;
-    }
+	}
 	
 	.bar-chart__inner {
 		background: #333;
@@ -22,6 +31,7 @@
 		margin-bottom: .3rem;
 		position: relative;
 		will-change: width;
+		border: 2px solid rgba(0,0,0,.1);
 		&:after {
 			position: absolute;
 			top: 0; right: 0; content: " ";
@@ -32,9 +42,9 @@
         .bar-chart__text {
             position: absolute;
             font-size: 15px;
-            font-weight: 700;
-            top: 20%;
-            left: 102%;
+			font-weight: 700;
+			right: -62px;
+		   // top: 20%;
         }
 	}
 	
@@ -42,7 +52,19 @@
 	//&[animated] .bar-chart__inner { transition: width $animationTime;}
 	
 	// colors
-	&.primary .bar-chart__inner { background: $barColorPrimary; }
-	&.secondary .bar-chart__inner { background: $barColorSecondary; }
-	&.tertiary .bar-chart__inner { background: $barColorTertiary; }
+	&.first .bar-chart__inner { background: $barColorFirst; }
+	&.second .bar-chart__inner { background: $barColorSecond; }
+	&.third .bar-chart__inner { background: $barColorThird; }
+	&.fourth .bar-chart__inner { background: $barColorFourth; }
+	&.fifth .bar-chart__inner { background: $barColorFifth; }
+	&.sixth .bar-chart__inner { background: $barColorSixth; }
+	&.seventh .bar-chart__inner { background: $barColorSeventh; }
+	&.eighth .bar-chart__inner { background: $barColorEighth; }
+	&.ninth .bar-chart__inner { background: $barColorNinth; }
+	&.tenth .bar-chart__inner { background: $barColorTenth; }
+}
+
+.bar-chart__container {
+	width: 90%;
+	margin-bottom: 1.5rem;
 }

@@ -7,8 +7,6 @@ const path = require('path');
 
 const app = new Koa();
 
-
-
 app.use(render);
 
 app.use(serve(path.join(__dirname, '/build')));

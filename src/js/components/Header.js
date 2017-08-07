@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 const Head = () => (
     <div className="head">
-		<NavLink className="head__logo" exact to="/"><img src="./img/logo.png" /></NavLink>
+		<NavLink className="head__logo" exact to="/"><img src="/img/logo.png" /></NavLink>
 		<ul className="head__auth">
 			<li><NavLink className="head__auth_signin" to="/signin">Вход</NavLink></li>
 			<li><NavLink className="head__auth_signup" to="/signup">Регистрация</NavLink></li>
