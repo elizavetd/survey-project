@@ -1,5 +1,6 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
+import { NavLink } from 'react-router-dom'
 
 import submit from '../../lib/submitSignup'
 import RenderField from './RenderField'
@@ -43,7 +44,7 @@ let SignupForm = props => {
                 />
             </div>
  			<div className="auth-form__help-buttons">
- 				<p>Есть аккаунт? <a className="auth-form__link" href="/signin">Вход</a></p>
+ 				<p>Есть аккаунт? <NavLink className="auth-form__link" to="/signin">Вход</NavLink></p>
  			</div>
  			<input className="auth-form__submit-button auth-form__submit-button_signup" type="submit" value="Создать аккаунт" />
         </form>

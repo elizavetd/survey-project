@@ -2576,6 +2576,13 @@ body {
   position: relative;
 }
 
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+  outline: none;
+}
+
 .header {
   background-color: white;
   font-size: 20px;
