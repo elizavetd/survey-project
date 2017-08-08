@@ -2050,7 +2050,7 @@
   cursor: pointer;
   opacity: 1;
 }
-.survey-editing .survey-results .survey-results__nav-buttons .survey-results__nav-buttons_current {
+.survey-editing .survey-results .survey-results__nav-buttons_current button {
   background-color: #7485c5;
 }
 .survey-editing .survey-results .survey-results__view-option {
@@ -2124,7 +2124,11 @@
 }
 .survey-editing .survey-results .table td,
 .survey-editing .survey-results .table th {
-  width: 50%;
+  width: 47.5%;
+}
+.survey-editing .survey-results .table td:first-child,
+.survey-editing .survey-results .table th:first-child {
+  width: 5%;
 }
 
 .socials {

@@ -15,7 +15,6 @@ const OneAnswerResult = ({
 			<p>Пропустили: {skipped}</p>
 		</div>
         <BarChart results = {results} answered={answered}/>
-		{console.log(results)}
 		<div className="survey-results__answer-percentage">
             {results.map((result, i) => 
                 <p key={result.option.charCodeAt(0) / Math.random()}>
