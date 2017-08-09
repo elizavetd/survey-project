@@ -7,8 +7,8 @@ const TemplatePreview = ({
     questionsCount,
     pageCount
 }) => (
-    <article className="template-preview">
-		<div className="template-preview__icon"><i className={iconType} aria-hidden="true"></i></div>
+    <article className="template-preview" onMouseLeave={flipBack}>
+		<div id="flipping-icon" className="template-preview__icon"><i className={iconType} aria-hidden="true"></i></div>
 		<div className="template-preview__edit-buttons">
 			<button className="template-preview__button-edit"><i className="fa fa-pencil" aria-hidden="true"></i></button>
 			<button className="template-preview__button-delete"><i className="fa fa-trash" aria-hidden="true"></i></button>

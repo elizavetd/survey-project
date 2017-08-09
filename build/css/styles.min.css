@@ -1003,6 +1003,8 @@
   background-color: white;
   padding: 15px;
   margin: 0 0.5% 11vh 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 .list .template-preview .template-preview__icon {
   width: 80px;
@@ -1015,6 +1017,12 @@
   top: -60px;
   border-radius: 90px;
   border: 20px solid #F7F7F7;
+  -webkit-transition: -webkit-transform 0.4s ease;
+  transition: -webkit-transform 0.4s ease;
+  transition: transform 0.4s ease;
+  transition: transform 0.4s ease, -webkit-transform 0.4s ease;
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
 }
 .list .template-preview .template-preview__icon i {
   position: relative;
@@ -1089,8 +1097,41 @@
   background-color: rgba(83, 85, 88, 0.9);
 }
 .list .template-preview:hover {
-  -webkit-box-shadow: 0px 3px 25.52px 3.48px rgba(112, 112, 112, 0.39);
-          box-shadow: 0px 3px 25.52px 3.48px rgba(112, 112, 112, 0.39);
+  background-color: #303334;
+}
+.list .template-preview:hover .template-preview__icon {
+  background-color: #303334;
+  border: none;
+  top: -40px;
+  -webkit-transform: rotateY(360deg);
+          transform: rotateY(360deg);
+}
+.list .template-preview:hover .template-preview__edit-buttons .template-preview__button-edit,
+.list .template-preview:hover .template-preview__edit-buttons .template-preview__button-delete {
+  color: #ffa453;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.list .template-preview:hover .template-preview__edit-buttons .template-preview__button-edit:hover,
+.list .template-preview:hover .template-preview__edit-buttons .template-preview__button-delete:hover {
+  color: #535558;
+}
+.list .template-preview:hover .template-preview__header {
+  color: #e47d71;
+}
+.list .template-preview:hover .template-preview__description {
+  color: #F7F7F7;
+}
+.list .template-preview:hover .template-preview__info {
+  color: #BDBDBD;
+}
+.list .template-preview:hover .template-preview__button-create {
+  background-color: #db5646;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.list .template-preview:hover .template-preview__button-create:hover {
+  background-color: #c83827;
 }
 
 @media all and (max-width: 980px) and (orientation: portrait) {
