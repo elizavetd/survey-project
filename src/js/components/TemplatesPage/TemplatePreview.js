@@ -1,4 +1,4 @@
-import React from "react"
+﻿import React from "react"
 
 const TemplatePreview = ({ 
     iconType,
@@ -7,7 +7,7 @@ const TemplatePreview = ({
     questionsCount,
     pageCount
 }) => (
-    <article className="template-preview" onMouseLeave={flipBack}>
+    <article className="template-preview">
 		<div id="flipping-icon" className="template-preview__icon"><i className={iconType} aria-hidden="true"></i></div>
 		<div className="template-preview__edit-buttons">
 			<button className="template-preview__button-edit"><i className="fa fa-pencil" aria-hidden="true"></i></button>

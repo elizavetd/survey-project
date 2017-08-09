@@ -1,8 +1,6 @@
-import React from 'react'
+﻿import React from 'react'
 import ReactDOM from 'react-dom'
 import { Field, reduxForm } from 'redux-form'
-
-import {store} from '../../store'
 
 import submit from '../../lib/submitForgotPassword'
 import RenderField from './RenderField'
