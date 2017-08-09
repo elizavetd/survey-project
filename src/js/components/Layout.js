@@ -15,6 +15,7 @@ import UsersPage from './UsersPage/UsersPage'
 import AboutPage from './AboutPage/AboutPage'
 import SigninForm from './Authentification/SigninForm'
 import SignupForm from './Authentification/SignupForm'
+import ForgotPassword from './Authentification/ForgotPassword'
 import SurveyDesigner from './SurveyDesigner/SurveyDesigner'
 
 @connect((store) => {
@@ -32,6 +33,7 @@ export default class Layout extends React.Component {
       <ConnectedRouter history={history}>
         <div>
           <Header />
+          
           <Route exact path="/" component={ HomePage } />
           <Route path="/my-surveys" component={ MySurveysPage } />
           <Route path="/templates" component={ TemplatesPage } />
@@ -39,6 +41,7 @@ export default class Layout extends React.Component {
           <Route path="/about" component={ AboutPage } />
           <Route path="/signin" component={ SigninForm } />
           <Route path="/signup" component={ SignupForm } />
+          <Route path="/forgot-password" component={ ForgotPassword } />
           <Route path="/new-survey" component={ SurveyDesigner } />
           
           <Footer />

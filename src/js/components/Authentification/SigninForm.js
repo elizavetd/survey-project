@@ -29,7 +29,7 @@ let SigninForm = props => {
             />
  			<div className="auth-form__help-buttons">
  				<p>Еще нет аккаунта? <NavLink className="auth-form__link" to="/signup">Зарегистрируйтесь</NavLink></p>
- 				<a className="auth-form__link" href="#">Забыли пароль?</a>
+ 				<NavLink className="auth-form__link" to="/forgot-password">Забыли пароль?</NavLink>
  			</div>
  			<input className="auth-form__submit-button" type="submit" value="Войти" />
         </form>
