@@ -8,6 +8,7 @@ $colorLightGrey: #BDBDBD;
 $colorDarkGrey: #303334;
 $colorBlue: #7485c5;
 $colorRose: #F4CBC6;
+$colorGreen: #0D997D;
 
 $headingFont: 'Oswald', sans-serif;
 $mainFont: 'Open Sans', sans-serif;
@@ -34,6 +35,12 @@ body {
     font-family: $mainFont;
     font-size: 18px;
     position: relative;
+}
+
+button,
+a,
+input[type=submit] {
+    transition: 0.3s;
 }
 
 input:focus,
@@ -124,6 +131,7 @@ button:focus {
         padding: 13px 60px 7px 60px;
         flex-grow: 1;
         line-height: 2;
+        border-color: desaturate(darken($colorRed, 10%), 10%);
     }
 }
 

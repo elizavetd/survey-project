@@ -59,6 +59,7 @@
         background-color: white;
         box-shadow: 0px 3px 25.52px 3.48px rgba(112, 112, 112, 0.1);
         margin-bottom: 80px;
+        transition: 0.3s;
         .survey-item__caption {
             color: white;
             display: flex;
@@ -158,6 +159,37 @@
     }
     .survey-item:nth-child(even) {
         flex-direction: row-reverse;
+    }
+    .survey-item:hover {
+        box-shadow: 0px 3px 25.52px 3.48px rgba(112, 112, 112, 0.3);
+        .survey-item__details {
+            .survey-item__options {
+                .survey-item__button_collect {
+                    color: transparentize($colorGreen, 0.5);
+                    &:hover {
+                        color: $colorGreen;
+                    }
+                }
+                .survey-item__button_results {
+                    color: transparentize(orange, 0.5);
+                    &:hover {
+                        color: orange;
+                    }
+                }
+                .survey-item__button_edit {
+                    color: transparentize($colorBlue, 0.5);
+                    &:hover {
+                        color: $colorBlue;
+                    }
+                }
+                .survey-item__button_delete {
+                    color: lighten($colorRed, 30%);
+                    &:hover {
+                        color: $colorRed;
+                    }
+                }
+            }
+        }
     }
 }
 

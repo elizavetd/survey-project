@@ -28,9 +28,9 @@ export const Details = ({ answersCount, lastChangeDate }) => (
 
 export const Options = () => (
 	<div className="survey-item__options">
-		<button className="survey-item__button" title="Сбор ответов"><i className="fa fa-users" aria-hidden="true"></i></button>
-		<button className="survey-item__button" title="Результаты опроса"><i className="fa fa-bar-chart" aria-hidden="true"></i></button>
-		<button className="survey-item__button" title="Редактировать опрос"><i className="fa fa-pencil" aria-hidden="true"></i></button>
-		<button className="survey-item__button" title="Удалить опрос"><i className="fa fa-trash" aria-hidden="true"></i></button>
+		<button className="survey-item__button survey-item__button_collect" title="Сбор ответов"><i className="fa fa-users" aria-hidden="true"></i></button>
+		<button className="survey-item__button survey-item__button_results" title="Результаты опроса"><i className="fa fa-bar-chart" aria-hidden="true"></i></button>
+		<button className="survey-item__button survey-item__button_edit" title="Редактировать опрос"><i className="fa fa-pencil" aria-hidden="true"></i></button>
+		<button className="survey-item__button survey-item__button_delete" title="Удалить опрос"><i className="fa fa-trash" aria-hidden="true"></i></button>
 	</div>
 )

@@ -1457,6 +1457,8 @@
   -webkit-box-shadow: 0px 3px 25.52px 3.48px rgba(112, 112, 112, 0.1);
           box-shadow: 0px 3px 25.52px 3.48px rgba(112, 112, 112, 0.1);
   margin-bottom: 80px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 .surveys-list .survey-item .survey-item__caption {
   color: white;
@@ -1597,6 +1599,34 @@
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
+}
+.surveys-list .survey-item:hover {
+  -webkit-box-shadow: 0px 3px 25.52px 3.48px rgba(112, 112, 112, 0.3);
+          box-shadow: 0px 3px 25.52px 3.48px rgba(112, 112, 112, 0.3);
+}
+.surveys-list .survey-item:hover .survey-item__details .survey-item__options .survey-item__button_collect {
+  color: rgba(13, 153, 125, 0.5);
+}
+.surveys-list .survey-item:hover .survey-item__details .survey-item__options .survey-item__button_collect:hover {
+  color: #0D997D;
+}
+.surveys-list .survey-item:hover .survey-item__details .survey-item__options .survey-item__button_results {
+  color: rgba(255, 165, 0, 0.5);
+}
+.surveys-list .survey-item:hover .survey-item__details .survey-item__options .survey-item__button_results:hover {
+  color: orange;
+}
+.surveys-list .survey-item:hover .survey-item__details .survey-item__options .survey-item__button_edit {
+  color: rgba(116, 133, 197, 0.5);
+}
+.surveys-list .survey-item:hover .survey-item__details .survey-item__options .survey-item__button_edit:hover {
+  color: #7485c5;
+}
+.surveys-list .survey-item:hover .survey-item__details .survey-item__options .survey-item__button_delete {
+  color: #f7a9ab;
+}
+.surveys-list .survey-item:hover .survey-item__details .survey-item__options .survey-item__button_delete:hover {
+  color: #EB1C23;
 }
 
 @media all and (max-width: 980px) {
@@ -2658,6 +2688,13 @@ body {
   position: relative;
 }
 
+button,
+a,
+input[type=submit] {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
 input:focus,
 textarea:focus,
 select:focus,
@@ -2768,6 +2805,7 @@ button:focus {
       -ms-flex-positive: 1;
           flex-grow: 1;
   line-height: 2;
+  border-color: #b81c21;
 }
 
 .menu_left {
