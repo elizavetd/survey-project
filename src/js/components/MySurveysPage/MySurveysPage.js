@@ -1,17 +1,33 @@
 import React from 'react'
+import { connect } from 'react-redux'
+//import { getSurveys } from '../../reducers/userReducer'
+import { sagaMiddleware } from '../../store'
+import mySaga from '../../sagas/mySaga'
 
 import SearchBar from '../SearchBar'
 import PaginationBar from '../PaginationBar'
 import SurveyItem from './SurveyItem'
 
+@connect((store) => {
+    return {
+        surveys: store.surveys.userSurveys
+    };
+})
+
 class MySurveysPage extends React.Component {
-  render() {
-      let itemCountCaption = "Всего опросов:";
-      let itemCount = 37;
-      let itemsPerPage = 5;
-      let pageCount = Math.ceil(itemCount / itemsPerPage);
-      let pageNumber = 1;
-      let hasSideInfo = true;
+    componentWillMount() {
+        
+        sagaMiddleware.run(mySaga);
+    }
+    render() {
+        const { surveys } = this.props;
+
+        let itemCountCaption = "Всего опросов:";
+        let itemCount = 37;
+        let itemsPerPage = 5;
+        let pageCount = Math.ceil(itemCount / itemsPerPage);
+        let pageNumber = 1;
+        let hasSideInfo = true;
 
     return (
         <div className="content">
@@ -21,6 +37,7 @@ class MySurveysPage extends React.Component {
                 link="/new-survey"
                 caption="Новый опрос"
             />
+             {console.log(surveys)} 
             <PaginationBar 
                 hasSideInfo = {hasSideInfo}
                 itemCountCaption={itemCountCaption}
@@ -29,7 +46,18 @@ class MySurveysPage extends React.Component {
                 pageCount = {pageCount}
             />
 			<div className="surveys-list">
-                <SurveyItem 
+                {surveys && surveys.map(survey =>
+                    <SurveyItem 
+                        key = {survey.id}
+                        imageSrc={survey.imageSrc}
+                        iconType={survey.iconType}
+                        title={survey.title}
+                        description={survey.description}
+                        answersCount={survey.answersCount}
+                        lastChangeDate={survey.lastChangeDate}
+                    />
+                )}
+                {/* <SurveyItem 
                     imageSrc="./img/javascript.jpg"
                     iconType="fa fa-commenting"
                     title="Javascript lecture feedback"
@@ -68,7 +96,7 @@ class MySurveysPage extends React.Component {
                     description="Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim."
                     answersCount={34}
                     lastChangeDate="22.05.2017"
-                />
+                /> */}
 			</div>
 			<PaginationBar hasSideInfo = {!hasSideInfo} />
 		</section>

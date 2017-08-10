@@ -5,9 +5,10 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 function submit(values) {
   return sleep(1000).then(() => {
     // simulate server latency
-    if (['admin@ad.min'].includes(values.login)) {
+    if (['admin@ad.min'].includes(values.email) ||
+        ['admin'].includes(values.username)) {
       throw new SubmissionError({
-        login: 'Пользователь с такой электронной почтой уже существует',
+        username: 'Пользователь с таким именем или электронной почтой уже существует',
         _error: 'Регистрация не удалась'
       })
     } else if (values.password !== values.passwordSubmit) {

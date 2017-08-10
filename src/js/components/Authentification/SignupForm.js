@@ -14,14 +14,14 @@ let SignupForm = props => {
             {error && <strong className="auth-form__fail">{error}</strong>}
             <h2 className="auth-form__heading">Регистрация</h2>
             <Field 
-                name="name"
+                name="username"
                 type="text"
                 component={RenderField}
                 label="Выберите имя пользователя:"
-                placeholder="John Doe"
+                placeholder="johnny111"
             />
             <Field 
-                name="login"
+                name="email"
                 type="email"
                 component={RenderField}
                 label="Введите свой адрес электронной почты:"

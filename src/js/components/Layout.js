@@ -20,7 +20,7 @@ import SurveyDesigner from './SurveyDesigner/SurveyDesigner'
 
 @connect((store) => {
   return {
-    username: store.myReducer.user.username
+    username: store.user.username
   };
 })
 
@@ -33,7 +33,7 @@ export default class Layout extends React.Component {
       <ConnectedRouter history={history}>
         <div>
           <Header />
-          
+          {/* {console.log(username)} */}
           <Route exact path="/" component={ HomePage } />
           <Route path="/my-surveys" component={ MySurveysPage } />
           <Route path="/templates" component={ TemplatesPage } />
