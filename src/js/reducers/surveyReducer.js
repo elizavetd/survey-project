@@ -1,4 +1,6 @@
 import { RECEIVE_SURVEYS } from '../actions/userSurveysActions'
+import { sagaMiddleware } from '../store'
+import userSurveysSaga from '../sagas/userSurveysSaga'
 
 export default function surveyReducer(state = {}, action) {
     switch (action.type) {
@@ -18,10 +20,9 @@ export default function surveyReducer(state = {}, action) {
     };
 };
 
-//export function getSurveys(state) {
-   // console.log(state)
-    //return state;
-//}
+export function getSurveys() {
+   sagaMiddleware.run(userSurveysSaga);
+}
 
 // export function getProduct(state, id) {
 //     return state.surveys[id];

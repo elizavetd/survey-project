@@ -7,9 +7,9 @@ export function getTemplates() {
   }
 }
 
-export function receiveTemplates(surveys) {
+export function receiveTemplates(templates) {
   return {
     type: RECEIVE_TEMPLATES,
-    surveys: surveys
+    templates: templates
   }
 }

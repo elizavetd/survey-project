@@ -5,7 +5,6 @@ import createHistory from 'history/createBrowserHistory'
 import { routerMiddleware } from 'react-router-redux'
 
 import reducer from './reducers/reducer'
-import mySaga from './sagas/mySaga'
 
 export const sagaMiddleware = createSagaMiddleware();
 

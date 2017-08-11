@@ -1,18 +1,17 @@
 import { RECEIVE_TEMPLATES } from '../actions/templateActions'
+import { sagaMiddleware } from '../store'
+import templateSaga from '../sagas/templateSaga'
 
 export default function templateReducer(state = {}, action) {
     switch (action.type) {
     case RECEIVE_TEMPLATES:
-        state = action.templates
-        return state
+        state = action.templates;
+        return state;
     default:
-        // const { templateId } = action
-        // if (templateId) {
-        //     return {
-        //         ...state,
-        //         [templateId]: templates(state[templateId], action)
-        //     }
-        // }
         return state;
     };
 };
+
+export function getTemplates() {
+   sagaMiddleware.run(templateSaga);
+}

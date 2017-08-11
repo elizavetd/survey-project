@@ -1,8 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-//import { getSurveys } from '../../reducers/userReducer'
-import { sagaMiddleware } from '../../store'
-import mySaga from '../../sagas/mySaga'
+import { getSurveys } from '../../reducers/surveyReducer'
 
 import SearchBar from '../SearchBar'
 import PaginationBar from '../PaginationBar'
@@ -13,11 +11,9 @@ import SurveyItem from './SurveyItem'
         surveys: store.surveys.userSurveys
     };
 })
-
 class MySurveysPage extends React.Component {
     componentWillMount() {
-        
-        sagaMiddleware.run(mySaga);
+        getSurveys();
     }
     render() {
         const { surveys } = this.props;

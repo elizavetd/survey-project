@@ -11,10 +11,6 @@ export default function userReducer(state = initialState, action) {
     return state;
 };
 
-//export function getSurveys(state) {
-   // console.log(state)
-    //return state;
-//}
 
 // export function getProduct(state, id) {
 //     return state.surveys[id];
