@@ -1,25 +1,34 @@
-import { RECEIVE_CURRENT_USER } from '../actions/userActions'
+import { RECEIVE_CURRENT_USER, RECEIVE_USER_LIST } from '../actions/userActions'
+import { store, sagaMiddleware } from '../store'
+import { userList } from '../sagas/userSaga'
 
 const initialState = {
-    id: 1,
-    username: 'admin',
-    email: 'admin@ad.min',
-    password: '123',
-    role: 'administrator',
-    signupDate: '01.01/2017'
+    role: 'guest'
 }
 
 export default function userReducer(state = {}, action) {
     switch (action.type) {
     case RECEIVE_CURRENT_USER:
-        state = action.user;
+        state.currentUser = action.user;
+        return state;
+    case RECEIVE_USER_LIST:
+      //  console.log(action)
+       // state.userList = action.userList;
+        // let obj = {};
+        // for (let i = 0; i < action.userList.length; i++) {
+        //     obj[action.userList[i].id] = action.userList[i];
+        // }
+        // state.userList = obj;
+        state = Object.assign(state, action.userList)
         return state;
     default:
         return state;
     };
 };
 
-
-// export function getProduct(state, id) {
-//     return state.surveys[id];
-// }
+export function getUserList(state) {
+    //console.log(state)
+    sagaMiddleware.run(userList);
+    const action = type => store.dispatch({type})
+    return store.getState().user
+}

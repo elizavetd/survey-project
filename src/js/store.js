@@ -7,6 +7,7 @@ import { routerMiddleware } from 'react-router-redux'
 import reducer from './reducers/reducer'
 
 import userSaga from './sagas/userSaga'
+import {userList} from './sagas/userSaga'
 
 export const sagaMiddleware = createSagaMiddleware();
 
@@ -21,4 +22,5 @@ export const store = createStore(
     middleware
 );
 
-sagaMiddleware.run(userSaga);
+//sagaMiddleware.run(userSaga);
+//sagaMiddleware.run(userList);

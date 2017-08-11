@@ -19,7 +19,7 @@ export const api = {
   
   getUserList() {
     return new Promise( resolve => {
-      setTimeout(() => resolve(_users), TIMEOUT)
+      setTimeout(() => resolve({userList: _users}), TIMEOUT)
     })
   },
 
