@@ -13,5 +13,5 @@ export default function templateReducer(state = {}, action) {
 };
 
 export function getTemplates() {
-   sagaMiddleware.run(templateSaga);
+    sagaMiddleware.run(templateSaga);
 }

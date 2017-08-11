@@ -32,57 +32,57 @@ async function index(ctx) {
     await ctx.render('index');
 }
 
-async function about(ctx) {
-    await ctx.render('about');
-}
+// async function about(ctx) {
+//     await ctx.render('about');
+// }
 
-async function users(ctx) {
-    await ctx.render('users');
-}
+// async function users(ctx) {
+//     await ctx.render('users');
+// }
 
-async function mySurveys(ctx) {
-    await ctx.render('my-surveys');
-}
+// async function mySurveys(ctx) {
+//     await ctx.render('my-surveys');
+// }
 
-async function templates(ctx) {
-    await ctx.render('templates');
-}
+// async function templates(ctx) {
+//     await ctx.render('templates');
+// }
 
-async function signin(ctx) {
-    await ctx.render('signin');
-}
+// async function signin(ctx) {
+//     await ctx.render('signin');
+// }
 
-async function signup(ctx) {
-    await ctx.render('signup');
-}
+// async function signup(ctx) {
+//     await ctx.render('signup');
+// }
 
-async function newSurvey(ctx) {
-    await ctx.render('new-survey');
-}
+// async function newSurvey(ctx) {
+//     await ctx.render('new-survey');
+// }
 
-async function startSurvey(ctx) {
-    await ctx.render('start-survey');
-}
+// async function startSurvey(ctx) {
+//     await ctx.render('start-survey');
+// }
 
-async function finishSurvey(ctx) {
-    await ctx.render('finish-survey');
-}
+// async function finishSurvey(ctx) {
+//     await ctx.render('finish-survey');
+// }
 
-async function surveySettings(ctx) {
-    await ctx.render('survey-settings');
-}
+// async function surveySettings(ctx) {
+//     await ctx.render('survey-settings');
+// }
 
-async function answersCollection(ctx) {
-    await ctx.render('answers-collection');
-}
+// async function answersCollection(ctx) {
+//     await ctx.render('answers-collection');
+// }
 
-async function surveyResults(ctx) {
-    await ctx.render('survey-results');
-}
+// async function surveyResults(ctx) {
+//     await ctx.render('survey-results');
+// }
 
-async function userResult(ctx) {
-    await ctx.render('user-result');
-}
+// async function userResult(ctx) {
+//     await ctx.render('user-result');
+// }
 
 const port = process.env.PORT || 3000;
 

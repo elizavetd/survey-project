@@ -6,6 +6,8 @@ import { routerMiddleware } from 'react-router-redux'
 
 import reducer from './reducers/reducer'
 
+import userSaga from './sagas/userSaga'
+
 export const sagaMiddleware = createSagaMiddleware();
 
 export const history = createHistory();
@@ -18,3 +20,5 @@ export const store = createStore(
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
     middleware
 );
+
+sagaMiddleware.run(userSaga);

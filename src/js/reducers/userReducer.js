@@ -1,3 +1,5 @@
+import { RECEIVE_CURRENT_USER } from '../actions/userActions'
+
 const initialState = {
     id: 1,
     username: 'admin',
@@ -7,8 +9,14 @@ const initialState = {
     signupDate: '01.01/2017'
 }
 
-export default function userReducer(state = initialState, action) {
-    return state;
+export default function userReducer(state = {}, action) {
+    switch (action.type) {
+    case RECEIVE_CURRENT_USER:
+        state = action.user;
+        return state;
+    default:
+        return state;
+    };
 };
 
 

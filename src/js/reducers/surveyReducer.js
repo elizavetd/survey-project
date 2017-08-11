@@ -7,7 +7,6 @@ export default function surveyReducer(state = {}, action) {
     case RECEIVE_SURVEYS:
         state = action.surveys
         return state
-        //return Object.assign(state, action.surveys);
     default:
         // const { surveyId } = action
         // if (surveyId) {
@@ -21,7 +20,7 @@ export default function surveyReducer(state = {}, action) {
 };
 
 export function getSurveys() {
-   sagaMiddleware.run(userSurveysSaga);
+    sagaMiddleware.run(userSurveysSaga);
 }
 
 // export function getProduct(state, id) {
