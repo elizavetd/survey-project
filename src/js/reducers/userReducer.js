@@ -9,26 +9,14 @@ const initialState = {
 export default function userReducer(state = {}, action) {
     switch (action.type) {
     case RECEIVE_CURRENT_USER:
-        state.currentUser = action.user;
-        return state;
+        return Object.assign({}, state, action.currentUser);
     case RECEIVE_USER_LIST:
-      //  console.log(action)
-       // state.userList = action.userList;
-        // let obj = {};
-        // for (let i = 0; i < action.userList.length; i++) {
-        //     obj[action.userList[i].id] = action.userList[i];
-        // }
-        // state.userList = obj;
-        state = Object.assign(state, action.userList)
-        return state;
+        return Object.assign({}, state, action.userList);
     default:
         return state;
     };
 };
 
-export function getUserList(state) {
-    //console.log(state)
+export function getUserList() {
     sagaMiddleware.run(userList);
-    const action = type => store.dispatch({type})
-    return store.getState().user
 }

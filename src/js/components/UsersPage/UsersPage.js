@@ -9,14 +9,13 @@ import TableFooter from './TableFooter'
 
 @connect((store) => {
     return {
-        users: getUserList()
+        users: store.user.userList
     };
 })
 export default class UsersPage extends React.Component {
-    //componentWillMount() {
-       // store.dispatch({type: "RECEIVE_USER_LIST", userList: getUserList()});
-        //this.forceUpdate();
-   // }
+    componentWillMount() {
+        getUserList();
+    }
     render() {
         const { users } = this.props;
         return (
@@ -26,7 +25,7 @@ export default class UsersPage extends React.Component {
                     <table className="table">
                         <TableHeader />
                         <tbody>
-                            {/* {users && users.map(user =>
+                            {users && users.map(user =>
                                 <TableRow
                                     key = {user.id}
                                     username = {user.username}
@@ -34,38 +33,7 @@ export default class UsersPage extends React.Component {
                                     signupDate = {user.signupDate}
                                     surveysCount = {user.surveysCount}
                                 />
-                            )} */}
-
-                            {/* <TableRow
-                                username = "admin@ad.min"
-                                role = "Администратор"
-                                signupDate = "01.01.2017"
-                                surveysCount = {10}
-                            />
-                            <TableRow
-                                username = "alma.russell@example.com"
-                                role = "Пользователь"
-                                signupDate = "02.02.2017"
-                                surveysCount = {7}
-                            />
-                            <TableRow
-                                username = "tony.smith64@example.com"
-                                role = "Пользователь"
-                                signupDate = "03.03.2017"
-                                surveysCount = {4}
-                            />
-                            <TableRow
-                                username = "stacey.fernandez@example.com"
-                                role = "Пользователь"
-                                signupDate = "03.04.2017"
-                                surveysCount = {8}
-                            />
-                            <TableRow
-                                username = "ralph.graves32@example.com"
-                                role = "Пользователь"
-                                signupDate = "05.06.2017"
-                                surveysCount = {11}
-                            /> */}
+                            )}
                         </tbody>
                         <TableFooter userCount={112} />
                     </table>
