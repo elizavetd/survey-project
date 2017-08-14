@@ -5,8 +5,7 @@ import userSurveysSaga from '../sagas/userSurveysSaga'
 export default function surveyReducer(state = {}, action) {
     switch (action.type) {
     case RECEIVE_SURVEYS:
-        state = action.surveys
-        return state
+        return Object.assign({}, state, action.surveys);
     default:
         // const { surveyId } = action
         // if (surveyId) {

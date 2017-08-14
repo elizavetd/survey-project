@@ -5,8 +5,7 @@ import templateSaga from '../sagas/templateSaga'
 export default function templateReducer(state = {}, action) {
     switch (action.type) {
     case RECEIVE_TEMPLATES:
-        state = action.templates;
-        return state;
+        return Object.assign({}, state, action.templates);
     default:
         return state;
     };
