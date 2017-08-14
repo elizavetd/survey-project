@@ -13,17 +13,34 @@ import TableFooter from './TableFooter'
     };
 })
 export default class UsersPage extends React.Component {
+    constructor() {
+        super();
+        this.state = {}
+        this.filter = this.filter.bind(this);
+    }
+
+    filter(e) {
+        this.setState({filter: e.target.value});
+    }
+    
     componentWillMount() {
         getUserList();
     }
+
     render() {
-        const { users } = this.props;
+        let { users } = this.props;
+
+        if(this.state.filter) {
+            users = users.filter(
+                user => user.username.toLowerCase()
+                            .includes(this.state.filter.toLowerCase()));
+        }
+
         return (
             <div className="content">
-                {console.log(users)} 
                 <section className="users">
                     <table className="table">
-                        <TableHeader />
+                        <TableHeader onChange={this.filter} />
                         <tbody>
                             {users && users.map(user =>
                                 <TableRow

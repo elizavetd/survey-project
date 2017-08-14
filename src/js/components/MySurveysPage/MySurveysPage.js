@@ -12,11 +12,28 @@ import SurveyItem from './SurveyItem'
     };
 })
 class MySurveysPage extends React.Component {
+    constructor() {
+        super();
+        this.state = {}
+        this.filter = this.filter.bind(this);
+    }
+    
     componentWillMount() {
         getSurveys();
     }
+
+    filter(e) {
+        this.setState({filter: e.target.value});
+    }
+
     render() {
-        const { surveys } = this.props;
+        let { surveys } = this.props;
+
+        if(this.state.filter) {
+            surveys = surveys.filter(
+                survey => survey.title.toLowerCase()
+                            .includes(this.state.filter.toLowerCase()));
+        }
 
         let itemCountCaption = "Всего опросов:";
         let itemCount = 37;
@@ -29,6 +46,7 @@ class MySurveysPage extends React.Component {
         <div className="content">
 		<section className="my-surveys">
             <SearchBar 
+                onChange = {this.filter}
                 placeholder="Найти опрос" 
                 link="/new-survey"
                 caption="Новый опрос"
@@ -36,63 +54,23 @@ class MySurveysPage extends React.Component {
              {console.log(surveys)} 
             <PaginationBar 
                 hasSideInfo = {hasSideInfo}
-                itemCountCaption={itemCountCaption}
+                itemCountCaption = {itemCountCaption}
                 itemCount = {itemCount}
-                pageNumber={pageNumber}
+                pageNumber = {pageNumber}
                 pageCount = {pageCount}
             />
 			<div className="surveys-list">
                 {surveys && surveys.map(survey =>
                     <SurveyItem 
                         key = {survey.id}
-                        imageSrc={survey.imageSrc}
-                        iconType={survey.iconType}
-                        title={survey.title}
-                        description={survey.description}
-                        answersCount={survey.answersCount}
-                        lastChangeDate={survey.lastChangeDate}
+                        imageSrc = {survey.imageSrc}
+                        iconType = {survey.iconType}
+                        title = {survey.title}
+                        description = {survey.description}
+                        answersCount = {survey.answersCount}
+                        lastChangeDate = {survey.lastChangeDate}
                     />
                 )}
-                {/* <SurveyItem 
-                    imageSrc="./img/javascript.jpg"
-                    iconType="fa fa-commenting"
-                    title="Javascript lecture feedback"
-                    description="Здравствуйте, потратьте, пожалуйста, несколько минут своего времени на заполнение следующего опроса."
-                    answersCount={13}
-                    lastChangeDate="01.01.2017"
-                />
-                <SurveyItem 
-                    imageSrc="./img/survey1.jpg"
-                    iconType="fa fa-camera-retro"
-                    title="Опрос 1"
-                    description="Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim."
-                    answersCount={3}
-                    lastChangeDate="15.04.2017"
-                />
-                <SurveyItem 
-                    imageSrc="./img/survey2.jpg"
-                    iconType="fa fa-camera-retro"
-                    title="Опрос 2"
-                    description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."
-                    answersCount={20}
-                    lastChangeDate="02.02.2017"
-                />
-                <SurveyItem 
-                    imageSrc="./img/survey3.jpg"
-                    iconType="fa fa-university"
-                    title="Опрос 3"
-                    description="Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
-                    answersCount={132}
-                    lastChangeDate="02.06.2017"
-                />
-                <SurveyItem 
-                    imageSrc="./img/survey4.jpg"
-                    iconType="fa fa-university"
-                    title="Опрос 4"
-                    description="Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim."
-                    answersCount={34}
-                    lastChangeDate="22.05.2017"
-                /> */}
 			</div>
 			<PaginationBar hasSideInfo = {!hasSideInfo} />
 		</section>

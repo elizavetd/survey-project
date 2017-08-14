@@ -11,17 +11,35 @@ import TemplatePreview from './TemplatePreview'
     };
 })
 export default class TemplatesPage extends React.Component {
+    constructor() {
+        super();
+        this.state = {}
+        this.filter = this.filter.bind(this);
+    }
+
+    filter(e) {
+        this.setState({filter: e.target.value});
+    }
+
     componentWillMount() {
         getTemplates();
     }
+
     render() {
-        const { templates } = this.props;
+        let { templates } = this.props;
+
+        if(this.state.filter) {
+            templates = templates.filter(
+                template => template.title.toLowerCase()
+                            .includes(this.state.filter.toLowerCase()));
+        }
 
         return (
             <div className="content">
                 <section className="templates">
                     <div className="my-surveys">
                     <SearchBar 
+                        onChange = {this.filter}
                         placeholder="Найти шаблон" 
                         link="/new-survey"
                         caption="Новый шаблон"
