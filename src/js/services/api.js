@@ -2,6 +2,7 @@ import _users from './users'
 import _surveys from './surveys'
 import _templates from './templates'
 import _jobs from './jobs'
+import _questions from './surveyQuestions'
 
 const TIMEOUT = 100;
 
@@ -34,6 +35,18 @@ export const api = {
     return new Promise( resolve => {
       setTimeout(() => resolve(_templates), TIMEOUT)
     })
+  },
+
+  getQuestionList() {
+    return new Promise( resolve => {
+      setTimeout(() => resolve(_questions[0].questionList), TIMEOUT)
+    })
+  },
+
+  addQuestion(question) {
+    return new Promise( resolve => setTimeout(() => {
+      resolve(Object.assign(_questions[0].questionList, question ))
+    }, TIMEOUT));
   },
 
   getJobs() {

@@ -128,12 +128,17 @@
                 }
             }
             .survey-body__add-button_above-question {
-                background-color: $mainColor;
+                background-color: transparent;
                 position: absolute;
+                width: 99%;
                 top: -32px;
-                right: 45%;
-                border: 10px solid $mainColor;
+                left: 0;
+                right: 0;
+                border: 10px solid transparent;
                 border-radius: 25px;
+                .fa {
+                    background-color: $mainColor;
+                }
             }
         }
         .survey-body__question:hover {

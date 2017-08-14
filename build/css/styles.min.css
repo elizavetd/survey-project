@@ -1919,12 +1919,17 @@
   margin-bottom: 20px;
 }
 .survey-editing .survey-body .survey-body__question .survey-body__add-button_above-question {
-  background-color: #F7F7F7;
+  background-color: transparent;
   position: absolute;
+  width: 99%;
   top: -32px;
-  right: 45%;
-  border: 10px solid #F7F7F7;
+  left: 0;
+  right: 0;
+  border: 10px solid transparent;
   border-radius: 25px;
+}
+.survey-editing .survey-body .survey-body__question .survey-body__add-button_above-question .fa {
+  background-color: #F7F7F7;
 }
 .survey-editing .survey-body .survey-body__question:hover {
   cursor: move;
