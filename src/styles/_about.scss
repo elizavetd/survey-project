@@ -319,7 +319,7 @@
             justify-content: center;
             font-family: $mainFont;
             &:hover {
-                background-color: $colorRed;
+                cursor: pointer;
             }
             .contact__country {
                 width: 150px;

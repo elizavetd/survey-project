@@ -763,7 +763,7 @@
   font-family: "Open Sans", sans-serif;
 }
 .contact .contact__button-set .contact__button:hover {
-  background-color: #EB1C23;
+  cursor: pointer;
 }
 .contact .contact__button-set .contact__button .contact__country {
   width: 150px;
