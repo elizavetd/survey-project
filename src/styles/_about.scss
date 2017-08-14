@@ -144,6 +144,16 @@
             color: $colorLightGrey;
         }
     }
+    .jobs-list__button {
+        border: none;
+        background-color: transparent;
+        &:hover {
+            cursor: pointer;
+            .fa {
+                color: $colorRose;
+            }
+        }
+    }
     .jobs-list__requirements {
         display: none;
         p {

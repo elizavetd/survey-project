@@ -1,6 +1,7 @@
 import _users from './users'
 import _surveys from './surveys'
 import _templates from './templates'
+import _jobs from './jobs'
 
 const TIMEOUT = 100;
 
@@ -32,6 +33,12 @@ export const api = {
   getTemplates() {
     return new Promise( resolve => {
       setTimeout(() => resolve(_templates), TIMEOUT)
+    })
+  },
+
+  getJobs() {
+    return new Promise( resolve => {
+      setTimeout(() => resolve(_jobs), TIMEOUT)
     })
   }
 }

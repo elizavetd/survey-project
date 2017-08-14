@@ -6,7 +6,7 @@ const initialState = {
     role: 'guest'
 }
 
-export default function userReducer(state = {}, action) {
+export default function userReducer(state = initialState, action) {
     switch (action.type) {
     case RECEIVE_CURRENT_USER:
         return Object.assign({}, state, action.currentUser);

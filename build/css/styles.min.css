@@ -545,6 +545,16 @@
 .jobs-list .jobs-list__job .fa {
   color: #BDBDBD;
 }
+.jobs-list .jobs-list__button {
+  border: none;
+  background-color: transparent;
+}
+.jobs-list .jobs-list__button:hover {
+  cursor: pointer;
+}
+.jobs-list .jobs-list__button:hover .fa {
+  color: #F4CBC6;
+}
 .jobs-list .jobs-list__requirements {
   display: none;
 }
