@@ -115,6 +115,7 @@
             display: flex;
             flex-direction: row-reverse;
             justify-content: space-between;
+            flex-wrap: wrap;
             padding: 50px;
             margin: 0 150px;
             border-bottom: 1px dashed $colorLightGrey;
@@ -159,6 +160,49 @@
         .survey-body__question:hover {
             cursor: move;
         }
+        .survey-body__question_list {
+            display: none;
+            justify-content: center;
+            width: 100%;
+            flex-grow: 1;
+            margin-bottom: 50px;
+            position: relative;
+            .survey-body__question-type {
+                width: 128px;
+                height: 128px;
+                font-family: $mainFont;
+                color: $colorGrey;
+                background-color: transparent;
+                border: none;
+                line-height: 1.2;
+                padding: 5px;
+                margin: 0 2.5px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                //animation: enlarge 0.4s;
+                .fa {
+                    font-size: 64px;
+                }
+                p {
+                    margin-top: 20px;
+                    font-weight: 600;
+                    font-size: 16px;
+                }
+            }
+            .survey-body__question-type:hover {
+                cursor: pointer;
+                background-color: transparentize($colorLightGrey, 0.9);
+                border-radius: 5%;
+            }
+        }
+        .survey-body__question_list-visible {
+            display: flex;
+            animation: slide-down 0.3s;
+            transition: 0.4s;
+        }
+
         .survey-body__question_one-answer,
         .survey-body__question_several-answers {
             .survey-body__question-view {

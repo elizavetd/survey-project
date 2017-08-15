@@ -1934,6 +1934,8 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding: 50px;
   margin: 0 150px;
   border-bottom: 1px dashed #BDBDBD;
@@ -1985,6 +1987,64 @@
 }
 .survey-editing .survey-body .survey-body__question:hover {
   cursor: move;
+}
+.survey-editing .survey-body .survey-body__question_list {
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin-bottom: 50px;
+  position: relative;
+}
+.survey-editing .survey-body .survey-body__question_list .survey-body__question-type {
+  width: 128px;
+  height: 128px;
+  font-family: "Open Sans", sans-serif;
+  color: #535558;
+  background-color: transparent;
+  border: none;
+  line-height: 1.2;
+  padding: 5px;
+  margin: 0 2.5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.survey-editing .survey-body .survey-body__question_list .survey-body__question-type .fa {
+  font-size: 64px;
+}
+.survey-editing .survey-body .survey-body__question_list .survey-body__question-type p {
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 16px;
+}
+.survey-editing .survey-body .survey-body__question_list .survey-body__question-type:hover {
+  cursor: pointer;
+  background-color: rgba(189, 189, 189, 0.1);
+  border-radius: 5%;
+}
+.survey-editing .survey-body .survey-body__question_list-visible {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-animation: slide-down 0.3s;
+          animation: slide-down 0.3s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 .survey-editing .survey-body .survey-body__question_one-answer .survey-body__question-view p,
 .survey-editing .survey-body .survey-body__question_several-answers .survey-body__question-view p {

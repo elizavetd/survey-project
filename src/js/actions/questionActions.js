@@ -25,10 +25,11 @@ export function addQuestion(question) {
   }
 }
 
-export function insertQuestion(id) {
+export function insertQuestion(id, question) {
   return {
     type: INSERT_QUESTION,
-    id: id
+    id: id,
+    question: question
   }
 }
 

@@ -1,12 +1,11 @@
 import React from 'react'
+import generateId from '../../../lib/generateUniqueID'
 import { connect } from 'react-redux'
 import { store } from '../../../store'
 import { addQuestion, insertQuestion, deleteQuestion } from '../../../actions/questionActions'
 
 import NewQuestion from '../QuestionTypes/NewQuestion'
 import Question from '../Question'
-
-let nextQuestionId = 0;
 
 @connect((store) => {
     return {
@@ -16,6 +15,7 @@ let nextQuestionId = 0;
 export default class SurveyPageEditor extends React.Component {
 	constructor() {
 		super();
+
 		this.state = {
 			isChoosingMode: false
 		}
@@ -32,15 +32,19 @@ export default class SurveyPageEditor extends React.Component {
 
 	addQuestion(e) {
 		const question = {
-			id: nextQuestionId++,
+			id: generateId(),
 			type: e.currentTarget.dataset.type
 		};
 		return store.dispatch(addQuestion(question));
 	}
 
-	insertQuestion(id) {
-		console.log(question);
-		//alert('insert');
+	insertQuestion(e) {
+		const id = e.currentTarget.parentNode.dataset.id;
+		const question = {
+			id: generateId(),
+			type: e.currentTarget.dataset.type
+		};
+		return store.dispatch(insertQuestion(id, question))
 	}
 
 	deleteQuestion(id) {
@@ -55,20 +59,21 @@ export default class SurveyPageEditor extends React.Component {
 
 		return (
 			<section className="survey-body">
-				<NewQuestion 
+				{ (questions.length < 1) && <NewQuestion 
 					onClick = {this.choiceClick}
 					questionClick = {this.addQuestion}
 					isChoosingMode = {this.state.isChoosingMode} 
-				/>
+				/>}
 				
 				{questions.map(question =>
 					<Question
 						key = {question.id}
+						id = {question.id}
 						type = {question.type}
 						question = {question.question}
 						options = {question.options}
 						isFirst = {!(questions.findIndex((elem) => (elem.id === question.id))) && true || false}
-						insertClick = {() => this.insertQuestion(question.id)}
+						insertClick = {this.insertQuestion}
 						deleteClick = {() => this.deleteQuestion(question.id)}
 					/>
 				)}

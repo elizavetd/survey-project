@@ -15,13 +15,17 @@ export default function userReducer(state = initialState, action) {
         const newList = state['questionList'].concat([action.payload]);
         return Object.assign({}, state, {pageID: 1, questionList: newList});
     }
-    case INSERT_QUESTION:
-        // const index = state['questionList'].findIndex(
-        //     element => (element.id === action.id)
-        // )
-        // const newList = state['questionList'].concat([action.payload]);
-            return state;
-
+    case INSERT_QUESTION: {
+        const index = state['questionList'].findIndex(
+            element => (element.id === action.id)
+        )
+        const newList = [
+            ...state['questionList'].slice(0, index),
+            ...[action.question],
+            ...state['questionList'].slice(index)
+        ];
+        return Object.assign({}, state, {pageID: 1, questionList: newList});
+    }
     case DELETE_QUESTION: {
         const index = state['questionList'].findIndex(
              element => (element.id === action.id)

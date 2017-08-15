@@ -9,12 +9,13 @@ import ScaleQuestion from './QuestionTypes/ScaleQuestion'
 
 export default class Question extends React.Component {			
   	render() {
-        const { type, question, options, isFirst, insertClick, deleteClick } = this.props;
+        const { type, id, question, options, isFirst, insertClick, deleteClick } = this.props;
 
 		return (
 			<div>
 				{ (type === 'oneAnswer') && 
                     <OneAnswerQuestion 
+                        id = {id}
                         question = {question}
                         options = {options}
                         isFirst = {isFirst} 
@@ -24,6 +25,7 @@ export default class Question extends React.Component {
                 }
 				{ (type === 'severalAnswers') && 
                     <MultipleAnswersQuestion 
+                        id = {id}
                         question = {question}
                         options = {options}
                         isFirst = {isFirst} 
@@ -33,6 +35,7 @@ export default class Question extends React.Component {
                 }
 				{ (type === 'text') && 
                     <TextQuestion 
+                        id = {id}
                         question = {question}
                         isFirst = {isFirst} 
                         insertClick = {insertClick}
@@ -41,6 +44,7 @@ export default class Question extends React.Component {
                 }
 				{ (type === 'file') && 
                     <FileQuestion 
+                        id = {id}
                         question = {question}
                         isFirst = {isFirst} 
                         insertClick = {insertClick}
@@ -49,6 +53,7 @@ export default class Question extends React.Component {
                 }
 				{ (type === 'rating') && 
                     <RatingQuestion 
+                        id = {id}
                         question = {question}
                         isFirst = {isFirst} 
                         insertClick = {insertClick}
@@ -57,6 +62,7 @@ export default class Question extends React.Component {
                 }
 				{ (type === 'scale') && 
                     <ScaleQuestion 
+                        id = {id}
                         question = {question}
                         isFirst = {isFirst} 
                         insertClick = {insertClick}
