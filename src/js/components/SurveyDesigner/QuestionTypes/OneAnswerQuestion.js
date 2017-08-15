@@ -2,13 +2,21 @@ import React from 'react'
 
 import EditButtons from '../EditButtons'
 
-const OneAnswerQuestion = ({ isFirst }) => (
+const OneAnswerQuestion = ({ 
+	isFirst,
+	question,
+	options,
+	insertClick,
+	deleteClick
+}) => (
     <article className={(isFirst) 
         && "survey-body__question survey-body__question_one-answer survey-body__question_first"
         || "survey-body__question survey-body__question_one-answer"
      }>
-		<button className="survey-body__add-button survey-body__add-button_above-question"><i className="fa fa-plus-circle" aria-hidden="true"></i></button>
-		<EditButtons />
+		<button onClick={insertClick} className="survey-body__add-button survey-body__add-button_above-question"><i className="fa fa-plus-circle" aria-hidden="true"></i></button>
+		<EditButtons 
+	 		deleteClick = {deleteClick}
+		/>
 		<div className="survey-body__question-view">
 			<h4>Напишите свой вопрос здесь...</h4>
 			<p>

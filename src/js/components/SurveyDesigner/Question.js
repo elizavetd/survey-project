@@ -9,16 +9,60 @@ import ScaleQuestion from './QuestionTypes/ScaleQuestion'
 
 export default class Question extends React.Component {			
   	render() {
-		const { type } = this.props;
+        const { type, question, options, isFirst, insertClick, deleteClick } = this.props;
 
 		return (
 			<div>
-				{ (type === 'oneAnswer') && <OneAnswerQuestion isFirst = {true} /> }
-				{ (type === 'severalAnswers') && <MultipleAnswersQuestion isFirst = {false} />}
-				{ (type === 'text') && <TextQuestion isFirst = {false} />}
-				{ (type === 'file') && <FileQuestion isFirst = {false} />}
-				{ (type === 'rating') && <RatingQuestion isFirst = {false} />}
-				{ (type === 'scale') && <ScaleQuestion isFirst = {false} />    }
+				{ (type === 'oneAnswer') && 
+                    <OneAnswerQuestion 
+                        question = {question}
+                        options = {options}
+                        isFirst = {isFirst} 
+                        insertClick = {insertClick}
+                        deleteClick = {deleteClick}
+                    /> 
+                }
+				{ (type === 'severalAnswers') && 
+                    <MultipleAnswersQuestion 
+                        question = {question}
+                        options = {options}
+                        isFirst = {isFirst} 
+                        insertClick = {insertClick}
+                        deleteClick = {deleteClick}
+                    />
+                }
+				{ (type === 'text') && 
+                    <TextQuestion 
+                        question = {question}
+                        isFirst = {isFirst} 
+                        insertClick = {insertClick}
+                        deleteClick = {deleteClick}
+                    />
+                }
+				{ (type === 'file') && 
+                    <FileQuestion 
+                        question = {question}
+                        isFirst = {isFirst} 
+                        insertClick = {insertClick}
+                        deleteClick = {deleteClick}
+                    />
+                }
+				{ (type === 'rating') && 
+                    <RatingQuestion 
+                        question = {question}
+                        isFirst = {isFirst} 
+                        insertClick = {insertClick}
+                        deleteClick = {deleteClick} 
+                    />
+                }
+				{ (type === 'scale') && 
+                    <ScaleQuestion 
+                        question = {question}
+                        isFirst = {isFirst} 
+                        insertClick = {insertClick}
+                        deleteClick = {deleteClick}
+                    />
+                }
 			</div>
 		);
  	}

@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { store } from '../../../store'
-import { addQuestion } from '../../../actions/questionActions'
+import { addQuestion, insertQuestion, deleteQuestion } from '../../../actions/questionActions'
 
 import NewQuestion from '../QuestionTypes/NewQuestion'
 import Question from '../Question'
@@ -13,7 +13,7 @@ let nextQuestionId = 0;
         questions: store.currentSurvey.questionList
     };
 })
-export default class StartPage extends React.Component {
+export default class SurveyPageEditor extends React.Component {
 	constructor() {
 		super();
 		this.state = {
@@ -22,6 +22,8 @@ export default class StartPage extends React.Component {
 
 		this.choiceClick = this.choiceClick.bind(this);
 		this.addQuestion = this.addQuestion.bind(this);
+		this.insertQuestion = this.insertQuestion.bind(this);
+		this.deleteQuestion = this.deleteQuestion.bind(this);
 	}
 
 	choiceClick() {
@@ -35,9 +37,21 @@ export default class StartPage extends React.Component {
 		};
 		return store.dispatch(addQuestion(question));
 	}
+
+	insertQuestion(id) {
+		console.log(question);
+		//alert('insert');
+	}
+
+	deleteQuestion(id) {
+		store.dispatch(deleteQuestion(id));
+	}
 			
   	render() {
 		const { questions } = this.props;
+		if (questions.length > 1) {
+			this.state.isChoosingMode = true;
+		}
 
 		return (
 			<section className="survey-body">
@@ -53,6 +67,9 @@ export default class StartPage extends React.Component {
 						type = {question.type}
 						question = {question.question}
 						options = {question.options}
+						isFirst = {!(questions.findIndex((elem) => (elem.id === question.id))) && true || false}
+						insertClick = {() => this.insertQuestion(question.id)}
+						deleteClick = {() => this.deleteQuestion(question.id)}
 					/>
 				)}
 			</section>
