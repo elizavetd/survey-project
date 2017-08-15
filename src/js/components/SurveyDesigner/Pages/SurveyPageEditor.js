@@ -1,64 +1,63 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { store } from '../../../store'
+import { addQuestion } from '../../../actions/questionActions'
 
 import NewQuestion from '../QuestionTypes/NewQuestion'
-import OneAnswerQuestion from '../QuestionTypes/OneAnswerQuestion'
-import MultipleAnswersQuestion from '../QuestionTypes/MultipleAnswersQuestion'
-import TextQuestion from '../QuestionTypes/TextQuestion'
-import FileQuestion from '../QuestionTypes/FileQuestion'
-import RatingQuestion from '../QuestionTypes/RatingQuestion'
-import ScaleQuestion from '../QuestionTypes/ScaleQuestion'
+import Question from '../Question'
 
+let nextQuestionId = 0;
+
+@connect((store) => {
+    return {
+        questions: store.currentSurvey.questionList
+    };
+})
 export default class StartPage extends React.Component {
-		constructor() {
-    		super();
-				this.state = {
-						isChoosingMode: false
-				}
-
-				this.choiceClick = this.choiceClick.bind(this);
-				this.addQuestion = this.addQuestion.bind(this);
+	constructor() {
+		super();
+		this.state = {
+			isChoosingMode: false
 		}
 
-		choiceClick() {
-				this.setState({ isChoosingMode: true })
-		}
+		this.choiceClick = this.choiceClick.bind(this);
+		this.addQuestion = this.addQuestion.bind(this);
+	}
 
-		addQuestion(e) {
-				switch(e.currentTarget.dataset.type) {
-            case 'one answer':
-                
-            case 'several answers':
-                
-            case 'text':
-								
-						case 'file':
+	choiceClick() {
+		this.setState({ isChoosingMode: true })
+	}
 
-						case 'rating':
-
-						case 'scale':
-				}
-		}
+	addQuestion(e) {
+		const question = {
+			id: nextQuestionId++,
+			type: e.currentTarget.dataset.type
+		};
+		return store.dispatch(addQuestion(question));
+	}
 			
   	render() {
-    		return (
-    			<section className="survey-body">
-							<NewQuestion 
-									onClick = {this.choiceClick}
-									questionClick = {this.addQuestion}
-									isChoosingMode = {this.state.isChoosingMode} 
-							/>
-					
-						{/* <NewQuestion isChoosingMode = {true} /> */}
-							
-						{/* <OneAnswerQuestion isFirst = {true} />
-						<MultipleAnswersQuestion isFirst = {false} />
-						<TextQuestion isFirst = {false} />
-						<FileQuestion isFirst = {false} />
-						<RatingQuestion isFirst = {false} />
-						<ScaleQuestion isFirst = {false} />    */}
-					</section>
-				);
- 		}
+		const { questions } = this.props;
+
+		return (
+			<section className="survey-body">
+				<NewQuestion 
+					onClick = {this.choiceClick}
+					questionClick = {this.addQuestion}
+					isChoosingMode = {this.state.isChoosingMode} 
+				/>
+				
+				{questions.map(question =>
+					<Question
+						key = {question.id}
+						type = {question.type}
+						question = {question.question}
+						options = {question.options}
+					/>
+				)}
+			</section>
+		);
+ 	}
 }
 
 

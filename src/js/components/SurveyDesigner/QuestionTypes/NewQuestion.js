@@ -8,10 +8,10 @@ const NewQuestion = ({ onClick, questionClick, isChoosingMode }) => (
         </div>}
 
         {(isChoosingMode) && <div className="survey-body__new-question survey-body__new-question_list">
-            <button onClick={questionClick} data-type="one answer" className="survey-body__question-type">
+            <button onClick={questionClick} data-type="oneAnswer" className="survey-body__question-type">
                 <img src="../img/one-answer.png" /><p>Одиночный выбор</p>
             </button>
-            <button onClick={questionClick} data-type="several answers" className="survey-body__question-type">
+            <button onClick={questionClick} data-type="severalAnswers" className="survey-body__question-type">
                 <img src="../img/many-answers.png" /><p>Множественный выбор</p>
             </button>
             <button onClick={questionClick} data-type="text" className="survey-body__question-type">
