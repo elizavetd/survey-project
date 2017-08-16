@@ -47,8 +47,32 @@ export default class SurveyPageEditor extends React.Component {
 		return store.dispatch(insertQuestion(id, question))
 	}
 
-	deleteQuestion(id) {
-		store.dispatch(deleteQuestion(id));
+	deleteQuestion(e) {
+		const id = e.currentTarget.parentNode.dataset.id;
+
+		let animation = setInterval(frame, 5);
+
+		let elem = e.currentTarget.parentNode.parentNode; 
+		let h = elem.offsetHeight - 100;
+		let p = 50;
+
+		elem.style.paddingTop = p + 'px';
+		elem.style.paddingBottom = p + 'px';
+		elem.style.opacity = 1;
+
+		function frame() {
+			if (h <= 0) {
+				store.dispatch(deleteQuestion(id));
+				clearInterval(animation);
+			} else {
+				elem.style.height = h + 'px';
+				elem.style.opacity -= 0.2;
+				elem.style.paddingTop = p + 'px';
+				elem.style.paddingBottom = p + 'px';
+				h -= 5;  
+				p -= 2;
+			}
+		}
 	}
 			
   	render() {
@@ -74,7 +98,7 @@ export default class SurveyPageEditor extends React.Component {
 						options = {question.options}
 						isFirst = {!(questions.findIndex((elem) => (elem.id === question.id))) && true || false}
 						insertClick = {this.insertQuestion}
-						deleteClick = {() => this.deleteQuestion(question.id)}
+						deleteClick = {this.deleteQuestion}
 					/>
 				)}
 			</section>

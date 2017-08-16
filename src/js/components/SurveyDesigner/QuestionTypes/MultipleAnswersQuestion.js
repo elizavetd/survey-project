@@ -69,6 +69,7 @@ class MultipleAnswersQuestion extends React.Component {
 				</div>
 				
 				<EditButtons 
+					id={id}
 					deleteClick = {deleteClick}
 				/>
 				<div className="survey-body__question-view">
