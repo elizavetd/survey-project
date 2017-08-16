@@ -5,6 +5,9 @@ export const ADD_QUESTION = 'ADD_QUESTION'
 export const INSERT_QUESTION = 'INSERT_QUESTION'
 export const DELETE_QUESTION = 'DELETE_QUESTION'
 
+export const EDIT_QUESTION = 'EDIT_QUESTION'
+//export const SUBMIT_EDITING = 'SUBMIT_EDITING'
+
 export function getSurveyQuestions() {
   return {
     type: GET_SURVEY_QUESTIONS
@@ -21,7 +24,7 @@ export function receiveSurveyQuestions(questions) {
 export function addQuestion(question) {
   return {
     type: ADD_QUESTION,
-    payload: question
+    question: question
   }
 }
 
@@ -39,3 +42,19 @@ export function deleteQuestion(id) {
     id: id
   }
 }
+
+export function editQuestion(version) {
+  return {
+    type: EDIT_QUESTION,
+    id: version.id,
+    title: version.title,
+    options: version.options
+  }
+}
+
+// export function submitEditing(id) {
+//   return {
+//     type: SUBMIT_EDITING,
+//     id: id
+//   }
+// }

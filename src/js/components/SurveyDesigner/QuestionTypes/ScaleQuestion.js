@@ -97,12 +97,14 @@ class ScaleQuestion extends React.Component {
 				>
 					<QuestionModal
 						type = 'scale'
+						id = {id}
+						question = {question}
 						closeClick = {this.handleCloseModal}
 					/>
 				</ReactModal>
 
 				<div className="survey-body__question-view">
-					<h4>Напишите свой вопрос здесь...</h4>
+					<h4>{question}</h4>
 					<div className="range-slider">
 						<input className="range-slider__range" type="range" defaultValue="50" min="0" max="100" />
 						<span className="range-slider__value">50</span>

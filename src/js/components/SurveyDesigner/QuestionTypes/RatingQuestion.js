@@ -97,12 +97,14 @@ class RatingQuestion extends React.Component {
 				>
 					<QuestionModal
 						type = 'rating'
+						id = {id}
+						question = {question}
 						closeClick = {this.handleCloseModal}
 					/>
 				</ReactModal>
 
 				<div className="survey-body__question-view">
-					<h4>Напишите свой вопрос здесь...</h4>
+					<h4>{question}</h4>
 					<div className="rating-stars">
 						<i className="fa fa-star" aria-hidden="true"></i>
 						<i className="fa fa-star-o" aria-hidden="true"></i>

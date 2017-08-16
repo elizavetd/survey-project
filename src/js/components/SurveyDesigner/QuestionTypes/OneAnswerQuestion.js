@@ -1,5 +1,6 @@
 import React from 'react'
-import ReactModal from 'react-modal';
+import ReactModal from 'react-modal'
+
 
 import EditButtons from '../EditButtons'
 import QuestionModal from '../Modals/QuestionModal'
@@ -96,25 +97,22 @@ class OneAnswerQuestion extends React.Component {
 					overlayClassName="overlay"
 				>
 					<QuestionModal
+						id = {id}
 						type = 'oneAnswer'
+						question = {question}
+						options = {options}
 						closeClick = {this.handleCloseModal}
 					/>
 				</ReactModal>
 
 				<div className="survey-body__question-view">
-					<h4>Напишите свой вопрос здесь...</h4>
-					<p>
-						<input type="radio" id="c1" name="cb" />
-						<label htmlFor="c1">Вариант 1</label>
-					</p>
-					<p>
-						<input type="radio" id="c2" name="cb" />
-						<label htmlFor="c2">Вариант 2</label>
-					</p>
-					<p>
-						<input type="radio" id="c3" name="cb" />
-						<label htmlFor="c3">Вариант 3</label>
-					</p>
+					<h4>{question}</h4>
+					{options.map(option =>
+						<p key = {Math.random()}>
+							<input type="radio"/>
+							<label>{option}</label>
+						</p>
+					)}
 				</div>
 			</article>
 		);

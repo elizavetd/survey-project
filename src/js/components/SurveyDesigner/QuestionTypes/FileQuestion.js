@@ -96,12 +96,14 @@ class FileQuestion extends React.Component {
 				>
 					<QuestionModal
 						type = 'file'
+						id = {id}
+						question = {question}
 						closeClick = {this.handleCloseModal}
 					/>
 				</ReactModal>
 
 				<div className="survey-body__question-view">
-					<h4>Напишите свой вопрос здесь...</h4>
+					<h4>{question}</h4>
 					<button>Файл</button>
 					<label>C:/project/pictures/img.jpg</label>
 				</div>

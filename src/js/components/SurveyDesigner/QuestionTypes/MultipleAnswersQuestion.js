@@ -96,24 +96,21 @@ class MultipleAnswersQuestion extends React.Component {
 				>
 					<QuestionModal
 						type = 'severalAnswers'
+						id = {id}
+						question = {question}
+						options = {options}
 						closeClick = {this.handleCloseModal}
 					/>
 				</ReactModal>
 
 				<div className="survey-body__question-view">
-					<h4>Напишите свой вопрос здесь...</h4>
-					<p>
-						<input type="checkbox"/>
-						<label htmlFor="">Вариант 1</label>
-					</p>
-					<p>
-						<input type="checkbox" />
-						<label htmlFor="">Вариант 2</label>
-					</p>
-					<p>
-						<input type="checkbox" />
-						<label htmlFor="">Вариант 3</label>
-					</p>
+					<h4>{question}</h4>
+					{options.map(option =>
+						<p key = {Math.random()}>
+							<input type="checkbox"/>
+							<label>{option}</label>
+						</p>
+					)}
 				</div>
 			</article>
 		);
