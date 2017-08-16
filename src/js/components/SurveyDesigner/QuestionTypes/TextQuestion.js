@@ -1,6 +1,8 @@
 import React from 'react'
+import ReactModal from 'react-modal';
 
 import EditButtons from '../EditButtons'
+import QuestionModal from '../Modals/QuestionModal'
 
 class TextQuestion extends React.Component {
 	constructor() {
@@ -12,6 +14,9 @@ class TextQuestion extends React.Component {
 		}
 		this.choosingClick = this.choosingClick.bind(this);
 		this.hideChoice = this.hideChoice.bind(this);
+		
+		this.handleOpenModal = this.handleOpenModal.bind(this);
+		this.handleCloseModal = this.handleCloseModal.bind(this);
 	}
 
 	choosingClick(e) {
@@ -37,6 +42,15 @@ class TextQuestion extends React.Component {
 			choosingClass: 'survey-body__question_list'
 		});
 	}
+
+	handleOpenModal () {
+		this.setState({ showModal: true });
+	}
+	  
+	handleCloseModal () {
+		this.setState({ showModal: false });
+	}
+
 
 	render() {
 		const { isFirst, id, question, options, insertClick, deleteClick} = this.props;
@@ -71,7 +85,22 @@ class TextQuestion extends React.Component {
 				<EditButtons 
 					id={id}
 					deleteClick = {deleteClick}
+					editClick = {this.handleOpenModal}
 				/>
+				
+				<ReactModal 
+					isOpen={this.state.showModal}
+					contentLabel="textModal"
+					onRequestClose={this.handleCloseModal}
+					className="question-modal"
+					overlayClassName="overlay"
+				>
+					<QuestionModal
+						type = 'text'
+						closeClick = {this.handleCloseModal}
+					/>
+				</ReactModal>
+
 				<div className="survey-body__question-view">
 					<h4>Напишите свой вопрос здесь...</h4>
 					<textarea placeholder="Введите ответ..."></textarea>

@@ -2400,6 +2400,103 @@
   color: black;
 }
 
+.question-modal {
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #535558;
+  border-radius: 10px;
+  position: absolute;
+  top: 20%;
+  left: 12%;
+  right: 12%;
+  bottom: 15%;
+  margin: 0 auto;
+  outline: none;
+}
+.question-modal input {
+  font-size: 15px;
+  font-family: "Open Sans", sans-serif;
+}
+.question-modal button {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  color: #BDBDBD;
+}
+.question-modal button:hover {
+  cursor: pointer;
+  color: #EB1C23;
+}
+.question-modal .question-modal__title {
+  height: 40px;
+  width: 50vmax;
+  padding: 10px;
+  font-size: 18px;
+}
+.question-modal .question-modal__option {
+  margin: 10px;
+  height: 30px;
+  width: 50vmax;
+  padding: 5px;
+}
+.question-modal .question-modal__button-add,
+.question-modal .question-modal__submit,
+.question-modal .question-modal__close {
+  margin-top: 20px;
+  border: none;
+  opacity: 0.9;
+}
+.question-modal .question-modal__button-add:hover,
+.question-modal .question-modal__submit:hover,
+.question-modal .question-modal__close:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+.question-modal .question-modal__button-add {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  color: #7485c5;
+  font-weight: 700;
+  font-size: 35px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+.question-modal .question-modal__submit {
+  width: 20vmax;
+  height: 50px;
+  background-color: #EB1C23;
+  color: white;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+.question-modal .question-modal__close {
+  width: 20vmax;
+  height: 50px;
+  background-color: #535558;
+  color: white;
+  border-radius: 5px;
+}
+
+.overlay {
+  background-color: rgba(83, 85, 88, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+}
+
 @media all and (max-width: 1010px) and (orientation: portrait) {
   .survey-editing .survey-settings {
     font-size: 36px;
