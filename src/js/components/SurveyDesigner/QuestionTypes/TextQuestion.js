@@ -53,7 +53,8 @@ class TextQuestion extends React.Component {
 
 
 	render() {
-		const { isFirst, id, question, options, insertClick, deleteClick} = this.props;
+		const { isFirst, id, question, 
+			insertClick, deleteClick, notifySaving} = this.props;
 	
 		return (
 			<article className={(isFirst) 
@@ -100,12 +101,13 @@ class TextQuestion extends React.Component {
 						id = {id}
 						question = {question}
 						closeClick = {this.handleCloseModal}
+						notifySaving = {notifySaving}
 					/>
 				</ReactModal>
 
 				<div className="survey-body__question-view">
 					<h4>{question}</h4>
-					<textarea placeholder="Введите ответ..."></textarea>
+					<textarea placeholder="Введите ответ..." disabled></textarea>
 				</div>
 			</article>
 		);

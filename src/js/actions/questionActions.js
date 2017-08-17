@@ -47,8 +47,7 @@ export function editQuestion(version) {
   return {
     type: EDIT_QUESTION,
     id: version.id,
-    title: version.title,
-    options: version.options
+    question: version.question
   }
 }
 

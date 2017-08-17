@@ -2,7 +2,7 @@ import React from 'react'
 import generateId from '../../../lib/generateUniqueID'
 import { connect } from 'react-redux'
 import { store } from '../../../store'
-import { addQuestion, insertQuestion, deleteQuestion } from '../../../actions/questionActions'
+import { addQuestion, insertQuestion, deleteQuestion, editQuestion } from '../../../actions/questionActions'
 
 import NewQuestion from '../QuestionTypes/NewQuestion'
 import Question from '../Question'
@@ -24,6 +24,7 @@ export default class SurveyPageEditor extends React.Component {
 		this.addQuestion = this.addQuestion.bind(this);
 		this.insertQuestion = this.insertQuestion.bind(this);
 		this.deleteQuestion = this.deleteQuestion.bind(this);
+		this.notifySaving = this.notifySaving.bind(this);
 	}
 
 	choiceClick() {
@@ -74,6 +75,10 @@ export default class SurveyPageEditor extends React.Component {
 			}
 		}
 	}
+
+	notifySaving(id) {
+		this.setState({ questionChanged: id })
+	}
 			
   	render() {
 		const { questions } = this.props;
@@ -95,10 +100,12 @@ export default class SurveyPageEditor extends React.Component {
 						id = {question.id}
 						type = {question.type}
 						question = {question.question}
-						options = {question.options}
+						
 						isFirst = {!(questions.findIndex((elem) => (elem.id === question.id))) && true || false}
 						insertClick = {this.insertQuestion}
 						deleteClick = {this.deleteQuestion}
+						notifySaving = {this.notifySaving}
+						{...question}
 					/>
 				)}
 			</section>

@@ -53,7 +53,8 @@ class ScaleQuestion extends React.Component {
 
 
 	render() {
-		const { isFirst, id, question, options, insertClick, deleteClick} = this.props;
+		const { isFirst, id, question, 
+			insertClick, deleteClick, notifySaving} = this.props;
 	
 		return (
 			<article className={(isFirst) 
@@ -100,13 +101,14 @@ class ScaleQuestion extends React.Component {
 						id = {id}
 						question = {question}
 						closeClick = {this.handleCloseModal}
+						notifySaving = {notifySaving}
 					/>
 				</ReactModal>
 
 				<div className="survey-body__question-view">
 					<h4>{question}</h4>
 					<div className="range-slider">
-						<input className="range-slider__range" type="range" defaultValue="50" min="0" max="100" />
+						<input className="range-slider__range" type="range" disabled defaultValue="50" min="0" max="100" />
 						<span className="range-slider__value">50</span>
 					</div>
 				</div>

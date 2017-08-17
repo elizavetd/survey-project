@@ -5,6 +5,8 @@ import { ADD_QUESTION,
 import { store, sagaMiddleware } from '../store'
 //import questionSaga from '../sagas/questionSaga'
 
+import generateId from '../lib/generateUniqueID'
+
 const initialState = {
     pageID: 1,
     questionList: []
@@ -17,7 +19,20 @@ export default function userReducer(state = initialState, action) {
         switch (action.question.type) {
             case 'oneAnswer':
             case 'severalAnswers':
-                options = ['Вариант 1', 'Вариант 2', 'Вариант 3'];
+                options = [
+                    {
+                        id: generateId(),
+                        value: 'Вариант 1'
+                    },
+                    {
+                        id: generateId(),
+                        value: 'Вариант 2'
+                    },
+                    {
+                        id: generateId(),
+                        value: 'Вариант 3'
+                    },
+                ];
                 break;
             default:
                 break;
@@ -37,7 +52,20 @@ export default function userReducer(state = initialState, action) {
         switch (action.question.type) {
             case 'oneAnswer':
             case 'severalAnswers':
-                options = ['Вариант 1', 'Вариант 2', 'Вариант 3'];
+                options = [
+                    {
+                        id: generateId(),
+                        value: 'Вариант 1'
+                    },
+                    {
+                        id: generateId(),
+                        value: 'Вариант 2'
+                    },
+                    {
+                        id: generateId(),
+                        value: 'Вариант 3'
+                    },
+                ];;
                 break;
             default:
                 break;
@@ -76,8 +104,7 @@ export default function userReducer(state = initialState, action) {
         const editedQuestion = {
             id: index,
             type: state['questionList'][index].type,
-            question: action.title,
-            options: action.options
+            question: action.question
         }
         const newList = [
             ...state['questionList'].slice(0, index),

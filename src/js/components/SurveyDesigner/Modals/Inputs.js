@@ -2,13 +2,13 @@ import React from 'react'
 
 export class InputRadio extends React.Component {			
   	render() {
-        const { placeholder } = this.props;
+        const { id, placeholder, deleteOption, changeOption } = this.props;
 
 		return (
-			<p>
+			<p className="question-modal__option-container">
                 <input type="radio" disabled/>
-                <input className="question-modal__option" type="text" placeholder={placeholder}/>
-                <button><i className="fa fa-trash-o" aria-hidden="true"></i></button>
+                <input onChange={changeOption} data-option={id} className="question-modal__option" type="text" placeholder={placeholder}/>
+                <button onClick={deleteOption} data-option={id}><i className="fa fa-trash-o" aria-hidden="true"></i></button>
             </p>
 		);
  	}
@@ -16,13 +16,13 @@ export class InputRadio extends React.Component {
 
 export class InputCheckbox extends React.Component {			
     render() {
-        const { placeholder } = this.props;
+        const { id, placeholder, deleteOption, changeOption } = this.props;
 
         return (
-            <p>
+            <p className="question-modal__option-container">
                 <input type="checkbox" disabled/>
-                <input className="question-modal__option" type="text" placeholder={placeholder}/>
-                <button><i className="fa fa-trash-o" aria-hidden="true"></i></button>
+                <input onChange={changeOption} data-option={id} className="question-modal__option" type="text" placeholder={placeholder}/>
+                <button onClick={deleteOption} data-option={id}><i className="fa fa-trash-o" aria-hidden="true"></i></button>
             </p>
         );
     }

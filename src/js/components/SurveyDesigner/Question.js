@@ -9,7 +9,9 @@ import ScaleQuestion from './QuestionTypes/ScaleQuestion'
 
 export default class Question extends React.Component {			
   	render() {
-        const { type, id, question, options, isFirst, insertClick, deleteClick } = this.props;
+        const { 
+            type, id, question, options, isFirst, 
+            insertClick, deleteClick, notifySaving } = this.props;
 
 		return (
 			<div>
@@ -21,6 +23,7 @@ export default class Question extends React.Component {
                         isFirst = {isFirst} 
                         insertClick = {insertClick}
                         deleteClick = {deleteClick}
+                        notifySaving = {notifySaving}
                     /> 
                 }
 				{ (type === 'severalAnswers') && 
@@ -31,6 +34,7 @@ export default class Question extends React.Component {
                         isFirst = {isFirst} 
                         insertClick = {insertClick}
                         deleteClick = {deleteClick}
+                        notifySaving = {notifySaving}
                     />
                 }
 				{ (type === 'text') && 
@@ -40,6 +44,7 @@ export default class Question extends React.Component {
                         isFirst = {isFirst} 
                         insertClick = {insertClick}
                         deleteClick = {deleteClick}
+                        notifySaving = {notifySaving}
                     />
                 }
 				{ (type === 'file') && 
@@ -49,6 +54,7 @@ export default class Question extends React.Component {
                         isFirst = {isFirst} 
                         insertClick = {insertClick}
                         deleteClick = {deleteClick}
+                        notifySaving = {notifySaving}
                     />
                 }
 				{ (type === 'rating') && 
@@ -58,6 +64,7 @@ export default class Question extends React.Component {
                         isFirst = {isFirst} 
                         insertClick = {insertClick}
                         deleteClick = {deleteClick} 
+                        notifySaving = {notifySaving}
                     />
                 }
 				{ (type === 'scale') && 
@@ -67,6 +74,7 @@ export default class Question extends React.Component {
                         isFirst = {isFirst} 
                         insertClick = {insertClick}
                         deleteClick = {deleteClick}
+                        notifySaving = {notifySaving}
                     />
                 }
 			</div>

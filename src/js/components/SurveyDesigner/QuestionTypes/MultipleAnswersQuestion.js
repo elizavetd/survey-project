@@ -52,7 +52,8 @@ class MultipleAnswersQuestion extends React.Component {
 	}
 
 	render() {
-		const { isFirst, id, question, options, insertClick, deleteClick} = this.props;
+		const { isFirst, id, question,
+			insertClick, deleteClick, notifySaving, ...options} = this.props;
 	
 		return (
 			<article className={(isFirst) 
@@ -100,15 +101,16 @@ class MultipleAnswersQuestion extends React.Component {
 						question = {question}
 						options = {options}
 						closeClick = {this.handleCloseModal}
+						notifySaving = {notifySaving}
 					/>
 				</ReactModal>
 
 				<div className="survey-body__question-view">
 					<h4>{question}</h4>
-					{options.map(option =>
+					{options.options.map(option =>
 						<p key = {Math.random()}>
 							<input type="checkbox"/>
-							<label>{option}</label>
+							<label>{option.value}</label>
 						</p>
 					)}
 				</div>
