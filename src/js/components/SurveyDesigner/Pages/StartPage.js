@@ -25,14 +25,13 @@ export default class StartPage extends React.Component {
 		super();
 
 		this.state = {
-		currentTitle: false,
-		currentDescription: false,
-		currentType: false,
+			currentTitle: false,
+			currentDescription: false,
+			currentType: false,
 		};
 
 		this.changeTitle = this.changeTitle.bind(this);
 		this.changeDescription = this.changeDescription.bind(this);
-		//this.changeType = this.changeType.bind(this);
 
 		this.saveTitle = this.saveTitle.bind(this);
 		this.saveDescription = this.saveDescription.bind(this);

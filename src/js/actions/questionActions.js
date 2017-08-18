@@ -10,6 +10,9 @@ export const EDIT_TITLE = 'EDIT_TITLE'
 export const EDIT_DESCRIPTION = 'EDIT_DESCRIPTION'
 export const SET_TYPE = 'SET_TYPE'
 
+export const EDIT_MESSAGE = 'EDIT_MESSAGE'
+export const EDIT_DETAIL = 'EDIT_DETAIL'
+
 export function getSurveyQuestions() {
 	return {
 		type: GET_SURVEY_QUESTIONS	
@@ -71,5 +74,19 @@ export function setType (surveyType) {
 	return {
 		type: SET_TYPE,
 		surveyType: surveyType
+	}
+}
+
+export function editMessage (message) {
+	return {
+		type: EDIT_MESSAGE,
+		message: message
+	}
+}
+
+export function editDetail (detail) {
+	return {
+		type: EDIT_DETAIL,
+		detail: detail
 	}
 }

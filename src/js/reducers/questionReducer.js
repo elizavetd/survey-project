@@ -4,7 +4,9 @@ import { ADD_QUESTION,
 		 EDIT_QUESTION,
 		 EDIT_TITLE,
 		 EDIT_DESCRIPTION,
-		 SET_TYPE } from '../actions/questionActions'
+		 SET_TYPE,
+		 EDIT_MESSAGE,
+		 EDIT_DETAIL } from '../actions/questionActions'
 import { store, sagaMiddleware } from '../store'
 //import questionSaga from '../sagas/questionSaga'
 
@@ -16,8 +18,8 @@ const initialState = {
 	description: 'Здравствуйте, потратьте, пожалуйста, несколько минут своего времени на заполнение следующей анкеты.',
 	type: '-- выберите тип опроса --',
 	img: '',
-	finishMessage: '',
-	finishDetail: '',
+	finishMessage: 'Благодарим за прохождение опроса!',
+	finishDetail: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.',
 	lastChange: new Date(),
 	questionList: []
 }
@@ -125,6 +127,14 @@ export default function userReducer(state = initialState, action) {
 
 	case SET_TYPE: {
 		return Object.assign({}, state, {type: action.surveyType});
+	}
+
+	case EDIT_MESSAGE: {
+		return Object.assign({}, state, {finishMessage: action.message});
+	}
+
+	case EDIT_DETAIL: {
+		return Object.assign({}, state, {finishDetail: action.detail});
 	}
 
 	default:

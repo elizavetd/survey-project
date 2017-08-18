@@ -1,14 +1,88 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { store } from '../../../store'
+import { editMessage, editDetail } from '../../../actions/questionActions'
 
-export default class FinishPage extends React.Component {
-	render() {
-		return (
-				<section className="survey-body">
-					<form className="survey-finish-editor">
-						<textarea className="survey-body__survey-name">Благодарим за прохождение опроса!</textarea>
-						<textarea className="survey-body__survey-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</textarea>
-					</form>
-				</section>
-		);
+const mapStateToProps = (store) => {
+	return {
+		message: store.currentSurvey.finishMessage,
+		detail: store.currentSurvey.finishDetail
+	};
+};
+
+const mapDispatchToProps = (dispatch) => {
+	return {
+		editMessage: message => dispatch(editMessage(message)),
+		editDetail: detail => dispatch(editDetail(detail))
 	}
-}
+};
+
+@connect(mapStateToProps, mapDispatchToProps)
+export default class FinishPage extends React.Component {
+	constructor() {
+		super();
+
+		this.state = {
+			currentMessage: false,
+			currentDetail: false
+		};
+
+		this.changeMessage = this.changeMessage.bind(this);
+		this.changeDetail = this.changeDetail.bind(this);
+
+		this.saveMessage = this.saveMessage.bind(this);
+		this.saveDetail = this.saveDetail.bind(this);
+	}
+
+	changeMessage(e) {
+		this.setState({
+			currentMessage: e.target.value
+		});
+	}
+
+	changeDetail(e) {
+		this.setState({
+			currentDetail: e.target.value
+		});
+	}
+
+	saveMessage() {
+		if (this.state.currentMessage !== this.props.title)
+			this.props.editMessage(this.state.currentMessage);
+	}
+
+	saveDetail() {
+		if (this.state.currentDetail !== this.props.description)
+			this.props.editDetail(this.state.currentDetail);
+	}
+
+	render() {
+		const { message, detail } = this.props;
+
+		if (!this.state.currentMessage)
+			this.state.currentMessage = message;
+
+		if (!this.state.currentDetail)
+			this.state.currentDetail = detail;
+
+		console.log(this.state);
+		return (
+			<section className="survey-body">
+				<form className="survey-finish-editor">
+					<textarea 
+						onChange={this.changeMessage}
+						onBlur={this.saveMessage}
+						className="survey-body__survey-name"
+						defaultValue={message}
+					/>
+					<textarea 
+						onChange={this.changeDetail}
+						onBlur={this.saveDetail}
+						className="survey-body__survey-description"
+						defaultValue={detail}
+					/>
+				</form>
+			</section>
+		);
+	};
+};
