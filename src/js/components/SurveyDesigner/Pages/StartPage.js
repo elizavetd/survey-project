@@ -64,11 +64,11 @@ export default class StartPage extends React.Component {
 	}
 
 	saveType(e) {
-	  this.setState({
-		  currentType: e.target.value
-	  });
-	  if (e.target.value !== this.props.type)
-		  this.props.setType(e.target.value);
+		this.setState({
+			currentType: e.target.value
+		});
+		if (e.target.value !== this.props.type)
+			this.props.setType(e.target.value);
 	}
 
 	submitChanges(e) {
@@ -76,7 +76,6 @@ export default class StartPage extends React.Component {
 
 		this.saveTitle();
 		this.saveDescription();
-		this.saveType();
 	}
 
 	render() {
