@@ -14,7 +14,7 @@ export function* watchGetQuestionList() {
 
 export default function* root() {
 	yield all([
-		fork(getQuestionList),
+		//fork(getQuestionList),
 		fork(watchGetQuestionList)
 	])
 }

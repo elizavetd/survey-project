@@ -6,9 +6,9 @@ import { Provider } from 'react-redux'
 import { store, sagaMiddleware } from './store'
 import Layout from './components/Layout'
 
-import userSaga from './sagas/userSaga'
+import rootSaga from './sagas/rootSaga'
 
-sagaMiddleware.run(userSaga)
+sagaMiddleware.run(rootSaga)
 
 const app = document.getElementById('app');
 

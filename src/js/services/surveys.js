@@ -5,9 +5,34 @@ const surveys = {
 			title: 'Javascript lecture feedback',
 			description: 'Здравствуйте, потратьте, пожалуйста, несколько минут своего времени на заполнение следующего опроса.',
 			imageSrc: './img/javascript.jpg',
+			type: 'Образование',
 			iconType: 'fa fa-commenting',
+			finishMessage: 'Благодарим за прохождение опроса!',
+			finishDetail: 'Посещайте наши лекции!',
 			answersCount: 13,
-			lastChangeDate: '01.01.2017'
+			lastChangeDate: '01.01.2017',
+			questionList: [
+				{   
+					id: 1,
+					type: 'oneAnswer',
+					question: 'Понравилась ли Вам лекция?',
+					options: [
+						'Да',
+						'Нет',
+						'Не знаю'
+					]
+				},
+				{
+					id: 2,
+					type: 'text',
+					question: 'Есть ли у Вас пожелания по улучшению проведения лекции?'
+				},
+				{
+					id: 3,
+					type: 'Оцените подачу материала по пятибалльной шкале:',
+					question: 'Напишите свой вопрос здесь...'
+				}
+			]
 		},
 		{
 			id: 2,

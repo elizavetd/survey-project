@@ -14,7 +14,7 @@ export function* watchGetTemplates() {
 
 export default function* root() {
 	yield all([
-		fork(getTemplates),
+		//fork(getTemplates),
 		fork(watchGetTemplates)
 	])
 }

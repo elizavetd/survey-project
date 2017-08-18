@@ -14,7 +14,7 @@ export function* watchGetJobs() {
 
 export default function* root() {
 	yield all([
-		fork(getJobs),
+		//fork(getJobs),
 		fork(watchGetJobs)
 	])
 }

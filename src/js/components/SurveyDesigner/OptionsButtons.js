@@ -18,9 +18,9 @@ export const StepButtons = ({ type, url }) => (
 	</div>
 );
 
-export const OptionButtons = ({ type }) => (
+export const OptionButtons = ({ type, saveSurvey }) => (
 	<div className={type}>
-		<button className="aside-button" title="Сохранить опрос"><i className="fa fa-floppy-o" aria-hidden="true"></i></button>
+		<button onClick={saveSurvey} className="aside-button" title="Сохранить опрос"><i className="fa fa-floppy-o" aria-hidden="true"></i></button>
 		<button className="aside-button" title="Сохранить опрос как шаблон"><i className="fa fa-bookmark-o" aria-hidden="true"></i></button>
 		<button className="aside-button" title="Удалить страницу"><i className="fa fa-trash-o" aria-hidden="true"></i></button>
 		<NavLink to="/my-surveys"><button className="aside-button" title="Отменить создание опроса"><i className="fa fa-undo" aria-hidden="true"></i></button></NavLink>

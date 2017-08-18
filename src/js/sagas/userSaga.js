@@ -14,23 +14,20 @@ export function* getUserList() {
 }
 
 export function* watchGetCurrentUser() {
+	console.log('user saga get curr user')
 	yield takeLatest(userActions.GET_CURRENT_USER, getCurrentUser)
 }
 
 export function* watchGetUserList() {	
+	console.log('user saga get user list')
 	yield takeEvery(userActions.GET_USER_LIST, getUserList)
 }
 
 export default function* root() {
+	
 	yield all([
-		fork(getCurrentUser),
-		fork(watchGetCurrentUser)
-	])
-}
-
-export function* userList() {
-	yield all([
-		fork(getUserList),
-		fork(watchGetUserList)
+		//fork(getCurrentUser),
+		fork(watchGetCurrentUser),
+		fork(watchGetUserList),
 	])
 }

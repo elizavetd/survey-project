@@ -1,4 +1,11 @@
-import { take, put, call, fork, select, takeEvery, all } from 'redux-saga/effects'
+import { take, put, call, fork, select, takeLatest, takeEvery, all } from 'redux-saga/effects'
+
+import userSaga from './userSaga'
+import userSurveySaga from './userSaga'
+import templateSaga from './templateSaga'
+import questionSaga from './questionSaga'
+import jobSaga from './jobSaga'
+
 import * as surveyActions from '../actions/userSurveysActions'	
 import { api } from '../services/api'
 
@@ -16,9 +23,12 @@ export function* watchGetSurveys() {
 }
 
 export default function* root() {
-	console.log('survey saga')
-	yield all([
-		fork(getUserSurveys),
-		fork(watchGetSurveys)
-	])
-}
+	console.log('root saga');
+	yield [
+		//fork(userSaga),
+		fork(watchGetSurveys),
+		fork(templateSaga),
+		fork(questionSaga),
+		fork(jobSaga)
+	]
+};

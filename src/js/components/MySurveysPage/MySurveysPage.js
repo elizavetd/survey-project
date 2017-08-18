@@ -1,16 +1,25 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { getSurveys } from '../../reducers/surveyReducer'
+import { store } from '../../store'
+import { getUserSurveys } from '../../actions/userSurveysActions'
 
 import SearchBar from '../SearchBar'
 import PaginationBar from '../PaginationBar'
 import SurveyItem from './SurveyItem'
 
-@connect((store) => {
+const mapDispatchToProps = (dispatch) => {
+	return {
+		getUserSurveys: () => store.dispatch(getUserSurveys())
+	}
+};
+
+const mapStateToProps = (store) => {
 	return {
 		surveys: store.surveys.userSurveys
 	};
-})
+};
+
+@connect(mapStateToProps, mapDispatchToProps)
 class MySurveysPage extends React.Component {
 	constructor() {
 		super();
@@ -19,7 +28,7 @@ class MySurveysPage extends React.Component {
 	}
 	
 	componentWillMount() {
-		getSurveys();
+		this.props.getUserSurveys()
 	}
 
 	filter(e) {
@@ -28,6 +37,8 @@ class MySurveysPage extends React.Component {
 
 	render() {
 		let { surveys } = this.props;
+
+		//this.props.getUserSurveys()
 
 		if(this.state.filter) {
 			surveys = surveys.filter(

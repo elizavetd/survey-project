@@ -13,6 +13,8 @@ export const SET_TYPE = 'SET_TYPE'
 export const EDIT_MESSAGE = 'EDIT_MESSAGE'
 export const EDIT_DETAIL = 'EDIT_DETAIL'
 
+export const RESET_SURVEY = 'RESET_SURVEY'
+
 export function getSurveyQuestions() {
 	return {
 		type: GET_SURVEY_QUESTIONS	
@@ -88,5 +90,11 @@ export function editDetail (detail) {
 	return {
 		type: EDIT_DETAIL,
 		detail: detail
+	}
+}
+
+export function resetSurvey() {
+	return {
+		type: RESET_SURVEY
 	}
 }

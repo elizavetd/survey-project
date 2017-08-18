@@ -6,21 +6,24 @@ import { ADD_QUESTION,
 		 EDIT_DESCRIPTION,
 		 SET_TYPE,
 		 EDIT_MESSAGE,
-		 EDIT_DETAIL } from '../actions/questionActions'
+		 EDIT_DETAIL,
+		 RESET_SURVEY } from '../actions/questionActions'
 import { store, sagaMiddleware } from '../store'
-//import questionSaga from '../sagas/questionSaga'
+import { generateSurveyID } from '../lib/generateUniqueID'
 
 import generateId from '../lib/generateUniqueID'
 
 const initialState = {
-	pageID: 1,
+	id: generateSurveyID(),
+	//pageID: 1,
 	title: 'Название опроса...',
 	description: 'Здравствуйте, потратьте, пожалуйста, несколько минут своего времени на заполнение следующей анкеты.',
 	type: '-- выберите тип опроса --',
-	img: '',
+	iconType: 'fa fa-question',
+	imageSrc: '',
 	finishMessage: 'Благодарим за прохождение опроса!',
 	finishDetail: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.',
-	lastChange: new Date(),
+	lastChangeDate: new Date(),
 	questionList: []
 }
 
@@ -36,7 +39,7 @@ const initialOptions = [
 	{
 		id: generateId(),
 		value: 'Вариант 3'
-	},
+	}
 ];
 
 export default function userReducer(state = initialState, action) {
@@ -135,6 +138,10 @@ export default function userReducer(state = initialState, action) {
 
 	case EDIT_DETAIL: {
 		return Object.assign({}, state, {finishDetail: action.detail});
+	}
+	
+	case RESET_SURVEY: {
+		return initialState;
 	}
 
 	default:
