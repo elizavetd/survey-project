@@ -1,9 +1,9 @@
 import React from 'react'
 
 export default class SettingsPage extends React.Component {
-  render() {
-    return (
-        <section className="survey-settings">
+	render() {
+		return (
+			<section className="survey-settings">
 				<h2>Параметры опроса</h2>
 				<div className="survey-settings__settings-list">
 					<p>
@@ -32,6 +32,6 @@ export default class SettingsPage extends React.Component {
 					</p>
 				</div>
 			</section>
-    );
-  }
+		);
+	}
 }

@@ -3,12 +3,12 @@ import React from "react"
 import UserOperations from './UserOperations'
 
 const TableRow = ({ 
-    username,
-    role,
-    signupDate,
-    surveysCount
+	username,
+	role,
+	signupDate,
+	surveysCount
 }) => (
-    <tr>
+	<tr>
 		<td data-th="Имя" className="user-name">{username}</td>
 		<td data-th="Роль" className="user-role">{role}</td>
 		<td data-th="Зарегистрирован" className="user-signup-date">{signupDate}</td>

@@ -12,8 +12,8 @@ import ScaleUserResult from '../UserResults/ScaleUserResult'
 
 export default class ResultsPage extends React.Component {
   render() {
-    return (
-        <section className="survey-results">
+	return (
+		<section className="survey-results">
 			<h2>Просмотр ответов {this.props.match.params[0]}</h2>
 			<div className="survey-results__info">
 				<p>Вопросов: 12, страниц: 3</p>
@@ -47,6 +47,6 @@ export default class ResultsPage extends React.Component {
 			
 			<PaginationBar hasSideInfo = {false} hasPadding = {false} />
 		</section>
-    );
+	);
   }
 }

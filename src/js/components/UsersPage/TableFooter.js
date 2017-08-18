@@ -3,7 +3,7 @@ import React from "react"
 import TablePagination from './TablePagination'
 
 const TableFooter = ({ userCount }) => (
-    <tfoot>
+	<tfoot>
 		<tr className="table__footer">
 			<th colSpan="4">Всего пользователей: {userCount}</th>
 			<TablePagination />

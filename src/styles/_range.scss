@@ -1,38 +1,38 @@
 .range-slider {
-    width: 100%;
-    margin: 20px 0 10px 0;
+	width: 100%;
+	margin: 20px 0 10px 0;
 }
 
 .range-slider__range {
-    -webkit-appearance: none;
-    width: 65%;
-    height: 10px;
-    border-radius: 5px;
-    background: lighten($colorLightGrey, 15%);
-    outline: none;
-    margin-right: 5px;
+	-webkit-appearance: none;
+	width: 65%;
+	height: 10px;
+	border-radius: 5px;
+	background: lighten($colorLightGrey, 15%);
+	outline: none;
+	margin-right: 5px;
 }
 
 .range-slider__value {
-    display: inline-block;
-    position: relative;
-    width: 60px;
-    color: white;
-    line-height: 20px;
-    text-align: center;
-    border-radius: 3px;
-    background: $colorRed;
-    padding: 5px 10px;
-    margin-left: 8px;
-    &:after {
-        position: absolute;
-        top: 8px;
-        left: -7px;
-        width: 0;
-        height: 0;
-        border-top: 7px solid transparent;
-        border-right: 7px solid $colorRed;
-        border-bottom: 7px solid transparent;
-        content: '';
-    }
+	display: inline-block;
+	position: relative;
+	width: 60px;
+	color: white;
+	line-height: 20px;
+	text-align: center;
+	border-radius: 3px;
+	background: $colorRed;
+	padding: 5px 10px;
+	margin-left: 8px;
+	&:after {
+		position: absolute;
+		top: 8px;
+		left: -7px;
+		width: 0;
+		height: 0;
+		border-top: 7px solid transparent;
+		border-right: 7px solid $colorRed;
+		border-bottom: 7px solid transparent;
+		content: '';
+	}
 }

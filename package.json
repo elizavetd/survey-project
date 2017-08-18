@@ -1,75 +1,75 @@
 {
-  "name": "survey-project",
-  "version": "1.0.0",
-  "description": "An app for creating and passing surveys",
-  "engines": {
-    "node": "8.2.1",
-    "npm": "5.2.0"
-  },
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/elizavetd/survey-project.git"
-  },
-  "author": "jelizavet.d@gmail.com",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/elizavetd/survey-project/issues"
-  },
-  "homepage": "https://github.com/elizavetd/survey-project#readme",
-  "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-core": "^6.25.0",
-    "babel-loader": "^7.1.1",
-    "babel-plugin-transform-decorators-legacy": "^1.3.4",
-    "babel-preset-env": "^1.6.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "file-loader": "^0.11.2",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^4.0.0",
-    "gulp-cache": "^0.4.6",
-    "gulp-concat": "^2.6.1",
-    "gulp-connect": "^5.0.0",
-    "gulp-cssnano": "^2.1.2",
-    "gulp-if": "^2.0.2",
-    "gulp-imagemin": "^3.3.0",
-    "gulp-nodemon": "^2.2.1",
-    "gulp-notify": "^3.0.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-ruby-sass": "^2.1.1",
-    "gulplog": "^1.0.0",
-    "node-notifier": "^5.1.2",
-    "node-sass": "^4.5.3",
-    "sass-loader": "^6.0.6",
-    "webpack": "^3.4.1"
-  },
-  "dependencies": {
-    "babel-polyfill": "^6.23.0",
-    "css-loader": "^0.28.4",
-    "del": "^3.0.0",
-    "history": "^4.6.3",
-    "koa": "^2.3.0",
-    "koa-router": "^7.2.1",
-    "koa-static": "^4.0.1",
-    "koa-views": "^6.0.2",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-modal": "^2.2.4",
-    "react-redux": "^5.0.5",
-    "react-router": "^4.1.2",
-    "react-router-dom": "^4.1.2",
-    "react-router-redux": "^5.0.0-alpha.6",
-    "redux": "^3.7.2",
-    "redux-form": "^7.0.3",
-    "redux-logger": "^3.0.6",
-    "redux-saga": "^0.15.6",
-    "style-loader": "^0.18.2",
-    "webpack-dev-server": "^2.5.0"
-  }
+	"name": "survey-project",
+	"version": "1.0.0",
+	"description": "An app for creating and passing surveys",
+	"engines": {
+		"node": "8.2.1",
+		"npm": "5.2.0"
+	},
+	"main": "app.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node app.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/elizavetd/survey-project.git"
+	},
+	"author": "jelizavet.d@gmail.com",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/elizavetd/survey-project/issues"
+	},
+	"homepage": "https://github.com/elizavetd/survey-project#readme",
+	"devDependencies": {
+		"babel-cli": "^6.24.1",
+		"babel-core": "^6.25.0",
+		"babel-loader": "^7.1.1",
+		"babel-plugin-transform-decorators-legacy": "^1.3.4",
+		"babel-preset-env": "^1.6.0",
+		"babel-preset-es2015": "^6.24.1",
+		"babel-preset-react": "^6.24.1",
+		"babel-preset-stage-0": "^6.24.1",
+		"file-loader": "^0.11.2",
+		"gulp": "^3.9.1",
+		"gulp-autoprefixer": "^4.0.0",
+		"gulp-cache": "^0.4.6",
+		"gulp-concat": "^2.6.1",
+		"gulp-connect": "^5.0.0",
+		"gulp-cssnano": "^2.1.2",
+		"gulp-if": "^2.0.2",
+		"gulp-imagemin": "^3.3.0",
+		"gulp-nodemon": "^2.2.1",
+		"gulp-notify": "^3.0.0",
+		"gulp-rename": "^1.2.2",
+		"gulp-ruby-sass": "^2.1.1",
+		"gulplog": "^1.0.0",
+		"node-notifier": "^5.1.2",
+		"node-sass": "^4.5.3",
+		"sass-loader": "^6.0.6",
+		"webpack": "^3.4.1"
+	},
+	"dependencies": {
+		"babel-polyfill": "^6.23.0",
+		"css-loader": "^0.28.4",
+		"del": "^3.0.0",
+		"history": "^4.6.3",
+		"koa": "^2.3.0",
+		"koa-router": "^7.2.1",
+		"koa-static": "^4.0.1",
+		"koa-views": "^6.0.2",
+		"react": "^15.6.1",
+		"react-dom": "^15.6.1",
+		"react-modal": "^2.2.4",
+		"react-redux": "^5.0.5",
+		"react-router": "^4.1.2",
+		"react-router-dom": "^4.1.2",
+		"react-router-redux": "^5.0.0-alpha.6",
+		"redux": "^3.7.2",
+		"redux-form": "^7.0.3",
+		"redux-logger": "^3.0.6",
+		"redux-saga": "^0.15.6",
+		"style-loader": "^0.18.2",
+		"webpack-dev-server": "^2.5.0"
+	}
 }

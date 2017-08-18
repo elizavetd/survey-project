@@ -17,9 +17,9 @@ const routeMiddleware = routerMiddleware(history);
 const middleware = applyMiddleware(logger, sagaMiddleware, routeMiddleware);
 
 export const store = createStore(
-    reducer, 
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-    middleware
+	reducer, 
+	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+	middleware
 );
 
 //sagaMiddleware.run(userSaga);

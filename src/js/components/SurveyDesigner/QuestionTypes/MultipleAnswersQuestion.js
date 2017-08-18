@@ -58,7 +58,7 @@ class MultipleAnswersQuestion extends React.Component {
 		return (
 			<article className={(isFirst) 
 				&& "survey-body__question survey-body__question_several-answers survey-body__question_first"
-        		|| "survey-body__question survey-body__question_several-answers"
+				|| "survey-body__question survey-body__question_several-answers"
 			}>
 				<button onClick={this.choosingClick} className="survey-body__add-button survey-body__add-button_above-question"><i className={this.state.buttonClass} aria-hidden="true"></i></button>
 				<div className={this.state.choosingClass} data-id={id}>

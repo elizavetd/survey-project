@@ -1,208 +1,208 @@
 .templates {
-    color: $colorGrey;
-    .templates__header {
-        font-family: $headingFont;
-        font-size: 50px;
-        font-weight: 400;
-        text-align: center;
-        background-color: white;
-        margin: 50px 4% 0 4%;
-        padding-bottom: 50px;
-    }
+	color: $colorGrey;
+	.templates__header {
+		font-family: $headingFont;
+		font-size: 50px;
+		font-weight: 400;
+		text-align: center;
+		background-color: white;
+		margin: 50px 4% 0 4%;
+		padding-bottom: 50px;
+	}
 }
 
 .list {
-    margin: 4% 3% 0 3%;
-    padding-bottom: 200px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    .template-preview {
-        width: 380px;
-        height: 550px;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        background-color: white;
-        padding: 15px;
-        margin: 0 0.5% 11vh 0;
-        transition: 0.3s; 
-        .template-preview__icon {
-            width: 80px;
-            height: 80px;
-            background-color: $colorRed;
-            font-size: 32px;
-            color: white;
-            text-align: center;
-            position: absolute;
-            top: -60px;
-            border-radius: 90px;
-            border: 20px solid $mainColor;
-            transition: transform 0.4s ease;
-            
-            transform: rotateY(0deg);
-            i {
-                position: relative;
-                top: 16px;
-            }
-        }
-        .template-preview__edit-buttons {
-            align-self: flex-end;
-            position: absolute;
-            bottom: 100%;
-            .template-preview__button-edit,
-            .template-preview__button-delete {
-                width: 30px;
-                height: 30px;
-                color: $colorLightGrey;
-                font-size: 20px;
-                border: none;
-                background-color: transparent;
-            }
-            .template-preview__button-edit:hover,
-            .template-preview__button-delete:hover {
-                cursor: pointer;
-                color: $colorGrey;
-            }
-        }
-        .template-preview__header {
-            margin: 60px 0 20px 0;
-            font-family: $headingFont;
-            font-size: 30px;
-            font-weight: 600;
-        }
-        .template-preview__description {
-            max-height: 280px;
-            overflow-y: hidden;
-            margin: 0 20px;
-            font-size: 17px;
-            color: darken($colorLightGrey, 20%);
-            line-height: 1.2;
-            letter-spacing: 1px;
-        }
-        .template-preview__info {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            margin: 30px 0;
-            position: absolute;
-            bottom: 80px;
-            p {
-                font-weight: 700;
-                padding: 0 40px;
-            }
-        }
-        .template-preview__button-create {
-            width: 180px;
-            height: 50px;
-            font-family: $mainFont;
-            font-size: 18px;
-            color: white;
-            font-weight: 600;
-            border: none;
-            border-radius: 3px;
-            background-color: $colorGrey;
-            position: absolute;
-            bottom: 30px;
-        }
-        .template-preview__button-create:hover {
-            cursor: pointer;
-            background-color: transparentize($colorGrey, 0.1);
-        }
-    }
-    .template-preview:hover {
-        background-color: $colorDarkGrey;
-        .template-preview__icon {
-            background-color: $colorDarkGrey;
-            border:none;
-            top: -40px;
-            transform: rotateY(360deg);
-        }
-        .template-preview__edit-buttons {
-            .template-preview__button-edit,
-            .template-preview__button-delete {
-                color: darken(peachpuff, 20%);
-                transition: 0.3s;
-            }
-            .template-preview__button-edit:hover,
-            .template-preview__button-delete:hover {
-                color: $colorGrey;
-            }
-        }
-        .template-preview__header {
-            color: darken($colorRose, 20%);
-        }
-        .template-preview__description { 
-            color: $mainColor;
-        }
-        .template-preview__info {
-            color: $colorLightGrey;
-        }
-        .template-preview__button-create {
-            background-color: darken($colorRose, 30%);
-            transition: 0.3s; 
-        }
-        .template-preview__button-create:hover {
-            background-color: darken($colorRose, 40%);
-        }
-    }
+	margin: 4% 3% 0 3%;
+	padding-bottom: 200px;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	.template-preview {
+		width: 380px;
+		height: 550px;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		background-color: white;
+		padding: 15px;
+		margin: 0 0.5% 11vh 0;
+		transition: 0.3s; 
+		.template-preview__icon {
+			width: 80px;
+			height: 80px;
+			background-color: $colorRed;
+			font-size: 32px;
+			color: white;
+			text-align: center;
+			position: absolute;
+			top: -60px;
+			border-radius: 90px;
+			border: 20px solid $mainColor;
+			transition: transform 0.4s ease;
+			
+			transform: rotateY(0deg);
+			i {
+				position: relative;
+				top: 16px;
+			}
+		}
+		.template-preview__edit-buttons {
+			align-self: flex-end;
+			position: absolute;
+			bottom: 100%;
+			.template-preview__button-edit,
+			.template-preview__button-delete {
+				width: 30px;
+				height: 30px;
+				color: $colorLightGrey;
+				font-size: 20px;
+				border: none;
+				background-color: transparent;
+			}
+			.template-preview__button-edit:hover,
+			.template-preview__button-delete:hover {
+				cursor: pointer;
+				color: $colorGrey;
+			}
+		}
+		.template-preview__header {
+			margin: 60px 0 20px 0;
+			font-family: $headingFont;
+			font-size: 30px;
+			font-weight: 600;
+		}
+		.template-preview__description {
+			max-height: 280px;
+			overflow-y: hidden;
+			margin: 0 20px;
+			font-size: 17px;
+			color: darken($colorLightGrey, 20%);
+			line-height: 1.2;
+			letter-spacing: 1px;
+		}
+		.template-preview__info {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			margin: 30px 0;
+			position: absolute;
+			bottom: 80px;
+			p {
+				font-weight: 700;
+				padding: 0 40px;
+			}
+		}
+		.template-preview__button-create {
+			width: 180px;
+			height: 50px;
+			font-family: $mainFont;
+			font-size: 18px;
+			color: white;
+			font-weight: 600;
+			border: none;
+			border-radius: 3px;
+			background-color: $colorGrey;
+			position: absolute;
+			bottom: 30px;
+		}
+		.template-preview__button-create:hover {
+			cursor: pointer;
+			background-color: transparentize($colorGrey, 0.1);
+		}
+	}
+	.template-preview:hover {
+		background-color: $colorDarkGrey;
+		.template-preview__icon {
+			background-color: $colorDarkGrey;
+			border:none;
+			top: -40px;
+			transform: rotateY(360deg);
+		}
+		.template-preview__edit-buttons {
+			.template-preview__button-edit,
+			.template-preview__button-delete {
+				color: darken(peachpuff, 20%);
+				transition: 0.3s;
+			}
+			.template-preview__button-edit:hover,
+			.template-preview__button-delete:hover {
+				color: $colorGrey;
+			}
+		}
+		.template-preview__header {
+			color: darken($colorRose, 20%);
+		}
+		.template-preview__description { 
+			color: $mainColor;
+		}
+		.template-preview__info {
+			color: $colorLightGrey;
+		}
+		.template-preview__button-create {
+			background-color: darken($colorRose, 30%);
+			transition: 0.3s; 
+		}
+		.template-preview__button-create:hover {
+			background-color: darken($colorRose, 40%);
+		}
+	}
 }
 
 @media all and (max-width: 980px) and (orientation: portrait) {
-    .list {
-        margin-top: 7vh;
-        .template-preview {
-            width: 100%;
-            height: 70vh;
-            padding: 2.5vh;
-            margin-bottom: 20%;
-            .template-preview__icon {
-                width: 160px;
-                height: 160px;
-                font-size: 64px;
-                top: -120px;
-                border-radius: 180px;
-                border: 40px solid $mainColor;
-                i {
-                    top: 32px;
-                }
-            }
-            .template-preview__edit-buttons {
-                align-self: center;
-                width: 90%;
-                bottom: 65vh;
-                display: flex;
-                justify-content: space-between;
-                .template-preview__button-edit,
-                .template-preview__button-delete {
-                    width: 120px;
-                    height: 120px;
-                    font-size: 80px;
-                }
-            }
-            .template-preview__header {
-                margin: 120px 0 40px 0;
-                font-size: 3.5vh;
-            }
-            .template-preview__description {
-                max-height: 40vh;
-                margin: 40px;
-                font-size: 2.3vh;
-                line-height: 1.2;
-            }
-            .template-preview__info {
-                bottom: 10vh;
-                font-size: 2.3vh;
-            }
-            .template-preview__button-create {
-                width: 50%;
-                height: 5.5vh;
-                font-size: 2vh;
-                position: absolute;
-                bottom: 3vh;
-            }
-        }
-    }
+	.list {
+		margin-top: 7vh;
+		.template-preview {
+			width: 100%;
+			height: 70vh;
+			padding: 2.5vh;
+			margin-bottom: 20%;
+			.template-preview__icon {
+				width: 160px;
+				height: 160px;
+				font-size: 64px;
+				top: -120px;
+				border-radius: 180px;
+				border: 40px solid $mainColor;
+				i {
+					top: 32px;
+				}
+			}
+			.template-preview__edit-buttons {
+				align-self: center;
+				width: 90%;
+				bottom: 65vh;
+				display: flex;
+				justify-content: space-between;
+				.template-preview__button-edit,
+				.template-preview__button-delete {
+					width: 120px;
+					height: 120px;
+					font-size: 80px;
+				}
+			}
+			.template-preview__header {
+				margin: 120px 0 40px 0;
+				font-size: 3.5vh;
+			}
+			.template-preview__description {
+				max-height: 40vh;
+				margin: 40px;
+				font-size: 2.3vh;
+				line-height: 1.2;
+			}
+			.template-preview__info {
+				bottom: 10vh;
+				font-size: 2.3vh;
+			}
+			.template-preview__button-create {
+				width: 50%;
+				height: 5.5vh;
+				font-size: 2vh;
+				position: absolute;
+				bottom: 3vh;
+			}
+		}
+	}
 }

@@ -5,27 +5,27 @@ export const GET_USER_LIST = 'GET_USER_LIST'
 export const RECEIVE_USER_LIST = 'RECEIVE_USER_LIST'
 
 export function getCurrentUser() {
-  return {
-    type: GET_CURRENT_USER
-  }
+	return {
+		type: GET_CURRENT_USER
+	}
 }
 
 export function receiveCurrentUser(user) {
-  return {
-    type: RECEIVE_CURRENT_USER,
-    user: user
-  }
+	return {
+		type: RECEIVE_CURRENT_USER,
+		user: user
+	}
 }
 
 export function getUserList() {
-  return {
-    type: GET_USER_LIST
-  }
+	return {
+		type: GET_USER_LIST
+	}
 }
 
 export function receiveUserList(userList) {
-  return {
-    type: RECEIVE_USER_LIST,
-    userList: userList
-  }
+	return {
+		type: RECEIVE_USER_LIST,
+		userList: userList
+	}
 }

@@ -5,12 +5,12 @@ import { StepButtons } from './OptionsButtons'
 import { OptionButtons } from './OptionsButtons'
 
 const Options = ({ position, url }) => (
-    <aside>
-        { (position === 'left') && 
+	<aside>
+		{ (position === 'left') && 
 			<PageNavButtons type="survey-setup survey-setup_left" url={url} /> 
 		}
-        { (position === 'right') && 
-            <div className="survey-setup survey-setup_right">
+		{ (position === 'right') && 
+			<div className="survey-setup survey-setup_right">
 				<StepButtons type="survey-setup__steps" url={url} />
 				<OptionButtons type="survey-setup__options" />
 				<input className="survey-setup__open-fullscreen" type="checkbox" id="more-settings-button" />
@@ -22,8 +22,8 @@ const Options = ({ position, url }) => (
 					<OptionButtons  />
 				</div>
 			</div>
-            }
-    </aside>
+			}
+	</aside>
 );
 
 export default Options;

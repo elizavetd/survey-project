@@ -9,13 +9,13 @@ import jobReducer from './jobReducer'
 import questionReducer from './questionReducer'
 
 const reducer = combineReducers({
-    user: userReducer,
-    surveys: surveyReducer,
-    template: templateReducer,
-    currentSurvey: questionReducer,
-    jobList: jobReducer,
-    routing: routerReducer,
-    form: formReducer
+	user: userReducer,
+	surveys: surveyReducer,
+	template: templateReducer,
+	currentSurvey: questionReducer,
+	jobList: jobReducer,
+	routing: routerReducer,
+	form: formReducer
 })
 
 export default reducer;

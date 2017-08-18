@@ -1,526 +1,526 @@
 .about-us {
-    background-color: $mainColor;
-    color: $colorGrey;
-    .about-us__article {
-        padding: 4%;
-        .about-us__heading {
-            color: $colorGrey;
-            font-family: $headingFont;
-            font-weight: 300;
-            font-size: 45px;
-            padding: 5px 0 5px 15px;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        .about-us__article-background {
-            width: 100%;
-        }
-        .about-us__text {
-            margin: 20px 7%;
-        }
-        .about-us__text_large {
-            font-weight: 600;
-            font-size: 20px;
-            text-align: center;
-            margin: 50px 15%;
-        }
-    }
-    .about-us__article:first-of-type {
-        padding-top: 0;
-    }
-    .about-us__article_img-background {
-        padding: 0;
-        height: 100vh;
-        width: 100%;
-        position: relative;
-        background-image: url(/img/building.jpg);
-    }
-    .about-us__article_students {
-        padding: 0;
-       // height: 80vmax;
-        width: 100%;
-        position: relative;
-        background-image: url(/img/student-background.jpg);
-        .opacify {
-            height: 70vmax;
-            width: 100%;
-            background-color: white;
-            opacity: 0.9;
-        }
-    }
-    .about-us__article_white {
-        background-color: white;
-    }
-    .about-us__article_full-width {
-        width: 100%;
-        padding: 4% 0;
-    }
+	background-color: $mainColor;
+	color: $colorGrey;
+	.about-us__article {
+		padding: 4%;
+		.about-us__heading {
+			color: $colorGrey;
+			font-family: $headingFont;
+			font-weight: 300;
+			font-size: 45px;
+			padding: 5px 0 5px 15px;
+			margin-bottom: 30px;
+			text-align: center;
+		}
+		.about-us__article-background {
+			width: 100%;
+		}
+		.about-us__text {
+			margin: 20px 7%;
+		}
+		.about-us__text_large {
+			font-weight: 600;
+			font-size: 20px;
+			text-align: center;
+			margin: 50px 15%;
+		}
+	}
+	.about-us__article:first-of-type {
+		padding-top: 0;
+	}
+	.about-us__article_img-background {
+		padding: 0;
+		height: 100vh;
+		width: 100%;
+		position: relative;
+		background-image: url(/img/building.jpg);
+	}
+	.about-us__article_students {
+		padding: 0;
+	   // height: 80vmax;
+		width: 100%;
+		position: relative;
+		background-image: url(/img/student-background.jpg);
+		.opacify {
+			height: 70vmax;
+			width: 100%;
+			background-color: white;
+			opacity: 0.9;
+		}
+	}
+	.about-us__article_white {
+		background-color: white;
+	}
+	.about-us__article_full-width {
+		width: 100%;
+		padding: 4% 0;
+	}
 }
 
 .infographic {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    color: white;
-    font-family: $mainFont;
-    .infographic__items-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: flex-start;
-        margin-top: 2%;
-    }
-    .infographic__item {
-        margin: 0 50px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        .infographic__number {
-            font-size: 100px;
-            font-weight: 700;
-            line-height: 1;
-        }
-        .infographic__icon {
-            font-size: 100px;
-            color: $colorRed;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 20px 0;
-        }
-        .infographic__caption {
-            font-size: 30px;
-            color: $colorLightGrey;
-            text-align: center;
-        }
-        .infographic__caption_black {
-            color: black;
-            font-weight: 700;
-        }
-        .infographic__small-text {
-            font-size: 15px;
-            color: lighten($colorGrey, 15%);
-            margin: 20px 25%;
-            font-weight: 600;
-            text-align: center;
-        }
-    }
-    .infographic__item_width50 {
-        width: 50%;
-        margin: 0 0 20px 0;
-    }
-    .inphographic__description {
-        width: 70%;
-        text-align: center;
-        color: $colorLightGrey;
-        line-height: 1.7;
-        letter-spacing: 0.8px;
-        margin-top: 7%;
-    }
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	color: white;
+	font-family: $mainFont;
+	.infographic__items-container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: flex-start;
+		margin-top: 2%;
+	}
+	.infographic__item {
+		margin: 0 50px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		.infographic__number {
+			font-size: 100px;
+			font-weight: 700;
+			line-height: 1;
+		}
+		.infographic__icon {
+			font-size: 100px;
+			color: $colorRed;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 20px 0;
+		}
+		.infographic__caption {
+			font-size: 30px;
+			color: $colorLightGrey;
+			text-align: center;
+		}
+		.infographic__caption_black {
+			color: black;
+			font-weight: 700;
+		}
+		.infographic__small-text {
+			font-size: 15px;
+			color: lighten($colorGrey, 15%);
+			margin: 20px 25%;
+			font-weight: 600;
+			text-align: center;
+		}
+	}
+	.infographic__item_width50 {
+		width: 50%;
+		margin: 0 0 20px 0;
+	}
+	.inphographic__description {
+		width: 70%;
+		text-align: center;
+		color: $colorLightGrey;
+		line-height: 1.7;
+		letter-spacing: 0.8px;
+		margin-top: 7%;
+	}
 }
 
 .infographic_absolute {
-    position: absolute;
-    top: 25%;
+	position: absolute;
+	top: 25%;
 }
 
 .jobs-list {
-    color: $colorGrey;
-    margin-bottom: 50px;
-    .jobs-list__job {
-        display: flex;
-        justify-content: space-between;
-        color: $colorGrey;
-        margin: 10px 0;
-        padding: 10px;
-        border-bottom: 1px solid $colorLightGrey;
-        .jobs-list__job-name {
-            font-weight: 400;
-            font-size: 20px;
-            text-transform: uppercase;
-        }
-        .fa {
-            color: $colorLightGrey;
-        }
-    }
-    .jobs-list__button {
-        border: none;
-        background-color: transparent;
-        &:hover {
-            cursor: pointer;
-            .fa {
-                color: $colorRose;
-            }
-        }
-    }
-    .jobs-list__requirements {
-        display: none;
-        p {
-            margin: 20px;
-            text-transform: uppercase;
-            font-weight: 600;
-        }
-    }
-    .jobs-list__requirements_displayed {
-        display: block;
-    }
+	color: $colorGrey;
+	margin-bottom: 50px;
+	.jobs-list__job {
+		display: flex;
+		justify-content: space-between;
+		color: $colorGrey;
+		margin: 10px 0;
+		padding: 10px;
+		border-bottom: 1px solid $colorLightGrey;
+		.jobs-list__job-name {
+			font-weight: 400;
+			font-size: 20px;
+			text-transform: uppercase;
+		}
+		.fa {
+			color: $colorLightGrey;
+		}
+	}
+	.jobs-list__button {
+		border: none;
+		background-color: transparent;
+		&:hover {
+			cursor: pointer;
+			.fa {
+				color: $colorRose;
+			}
+		}
+	}
+	.jobs-list__requirements {
+		display: none;
+		p {
+			margin: 20px;
+			text-transform: uppercase;
+			font-weight: 600;
+		}
+	}
+	.jobs-list__requirements_displayed {
+		display: block;
+	}
 }
 
 .regular-list {
-    margin: 20px;
-    li {
-        margin: 20px;
-        list-style: none;
-        &:before {
-            content: ' ';
-            display: inline-block;
-            width: 6px;
-            height: 6px;
-            background: #eb1c23;
-            position: relative;
-            left: -15px;
-            top: -2px;
-            margin-right: -7px;
-        }
-    }
+	margin: 20px;
+	li {
+		margin: 20px;
+		list-style: none;
+		&:before {
+			content: ' ';
+			display: inline-block;
+			width: 6px;
+			height: 6px;
+			background: #eb1c23;
+			position: relative;
+			left: -15px;
+			top: -2px;
+			margin-right: -7px;
+		}
+	}
 }
 
 .gallery-grid__container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 5% 0 10% 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin: 5% 0 10% 0;
 }
 
 .gallery-grid {
-    float: left;
-    width: 20%;
-    margin: 10px;
+	float: left;
+	width: 20%;
+	margin: 10px;
 }
 
 .gallery-grid__item {
-    position: relative;
-    overflow: hidden;
-    margin: 5px;
-    background: #333;
-    .gallery-grid__image {
-        position: relative;
-        display: block;
-        width: 100%;
-        opacity: 0.8; //-webkit-transition: opacity 0.3s;
-        //transition: opacity 0.3s;
-    }
-    svg {
-        position: absolute;
-        top: -1px;
-        z-index: 10;
-        width: 100%;
-        height: 100%;
-        fill: white;
-    }
-    .gallery-grid__caption {
-        position: absolute;
-        top: 0;
-        z-index: 11;
-        padding: 10px;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        .gallery-grid__heading {
-            min-height: 75px;
-            font-family: $headingFont;
-            text-transform: uppercase;
-            font-weight: 300;
-            color: $colorRed;
-            font-size: 25px;
-            letter-spacing: 1px;
-            margin: 7%;
-        }
-        .gallery-grid__description {
-            font-size: 15px;
-            color: $colorLightGrey;
-            margin: 7%;
-        }
-    }
+	position: relative;
+	overflow: hidden;
+	margin: 5px;
+	background: #333;
+	.gallery-grid__image {
+		position: relative;
+		display: block;
+		width: 100%;
+		opacity: 0.8; //-webkit-transition: opacity 0.3s;
+		//transition: opacity 0.3s;
+	}
+	svg {
+		position: absolute;
+		top: -1px;
+		z-index: 10;
+		width: 100%;
+		height: 100%;
+		fill: white;
+	}
+	.gallery-grid__caption {
+		position: absolute;
+		top: 0;
+		z-index: 11;
+		padding: 10px;
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		.gallery-grid__heading {
+			min-height: 75px;
+			font-family: $headingFont;
+			text-transform: uppercase;
+			font-weight: 300;
+			color: $colorRed;
+			font-size: 25px;
+			letter-spacing: 1px;
+			margin: 7%;
+		}
+		.gallery-grid__description {
+			font-size: 15px;
+			color: $colorLightGrey;
+			margin: 7%;
+		}
+	}
 }
 
 .benefits {
-    display: flex;
-    justify-content: space-between;
-    margin: 5% 8% 10% 8%;
-    padding: 2%;
-    border: 2px dashed $colorRed;
-    border-radius: 5vmax;
-    li {
-        margin: 40px 0;
-    }
+	display: flex;
+	justify-content: space-between;
+	margin: 5% 8% 10% 8%;
+	padding: 2%;
+	border: 2px dashed $colorRed;
+	border-radius: 5vmax;
+	li {
+		margin: 40px 0;
+	}
 }
 
 .advantages {
-    margin: 5% 10%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    .advantages__item {
-        padding: 5%;
-        background-color: white;
-        display: flex;
-        margin-bottom: 2%;
-        .advantages__icon {
-            width: 100px;
-            font-size: 65px;
-            text-align: center;
-            margin-right: 50px;
-        }
-        .advantages__text {
-            font-size: 20px;
-            font-weight: 600;
-            text-align: center;
-            color: darken($colorLightGrey, 15%);
-            display: flex;
-            align-items: center;
-        }
-    }
+	margin: 5% 10%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	.advantages__item {
+		padding: 5%;
+		background-color: white;
+		display: flex;
+		margin-bottom: 2%;
+		.advantages__icon {
+			width: 100px;
+			font-size: 65px;
+			text-align: center;
+			margin-right: 50px;
+		}
+		.advantages__text {
+			font-size: 20px;
+			font-weight: 600;
+			text-align: center;
+			color: darken($colorLightGrey, 15%);
+			display: flex;
+			align-items: center;
+		}
+	}
 }
 
 .student-content {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    div {
-        padding: 5%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    img {
-        margin: 2% 0;
-    }
+	position: absolute;
+	width: 100%;
+	top: 0;
+	div {
+		padding: 5%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	img {
+		margin: 2% 0;
+	}
 }
 
 .contact {
-    padding: 1% 0 1% 0;
-    .contact__button-set {
-        background-color: transparentize(black, 0.25);
-        height: 70px;
-        display: flex;
-        justify-content: center;
-        .contact__button {
-            width: 250px;
-            border: none;
-            background-color: transparent;
-            color: white;
-            text-align: left;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            font-family: $mainFont;
-            &:hover {
-                cursor: pointer;
-            }
-            .contact__country {
-                width: 150px;
-                font-size: 12px;
-                text-transform: uppercase;
-            }
-            .contact__place {
-                width: 150px;
-                font-weight: 700;
-                font-size: 20px;
-                text-transform: uppercase;
-            }
-        }
-    }
-    .contact__container {
-        padding: 4%;
-        margin-bottom: 5%;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        .contact__address {
-            background-color: white;
-            padding: 30px;
-            width: 400px;
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-            color: $colorGrey;
-            padding-bottom: 50px;
-            .contact__city {
-                font-size: 30px;
-                line-height: 3;
-                font-weight: 600;
-            }
-            p {
-                margin: 5px 0;
-            }
-        }
-        .contact__form {
-            width: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            position: relative;
-            input {
-                margin-bottom: 20px;
-                height: 40px;
-                font-size: 13px;
-                font-family: $mainFont;
-                padding: 0 10px;
-                border: none;
-                background-color: white;
-            }
-            textarea {
-                margin-bottom: 20px;
-                height: 90px;
-                font-size: 13px;
-                font-family: $mainFont;
-                padding: 0 10px;
-                border: none;
-                background-color: white;
-            }
-            .contact__form-button {
-                background-color: $colorRed;
-                color: white;
-                font-weight: 600;
-                margin-bottom: 0;
-            }
-            .contact__submit-fail {
-                height: 40px;
-                color: $colorRed;
-                text-align: center;
-                position: absolute;
-                top: -50px;
-            }
-        }
-    }
+	padding: 1% 0 1% 0;
+	.contact__button-set {
+		background-color: transparentize(black, 0.25);
+		height: 70px;
+		display: flex;
+		justify-content: center;
+		.contact__button {
+			width: 250px;
+			border: none;
+			background-color: transparent;
+			color: white;
+			text-align: left;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			font-family: $mainFont;
+			&:hover {
+				cursor: pointer;
+			}
+			.contact__country {
+				width: 150px;
+				font-size: 12px;
+				text-transform: uppercase;
+			}
+			.contact__place {
+				width: 150px;
+				font-weight: 700;
+				font-size: 20px;
+				text-transform: uppercase;
+			}
+		}
+	}
+	.contact__container {
+		padding: 4%;
+		margin-bottom: 5%;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		.contact__address {
+			background-color: white;
+			padding: 30px;
+			width: 400px;
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+			color: $colorGrey;
+			padding-bottom: 50px;
+			.contact__city {
+				font-size: 30px;
+				line-height: 3;
+				font-weight: 600;
+			}
+			p {
+				margin: 5px 0;
+			}
+		}
+		.contact__form {
+			width: 400px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			position: relative;
+			input {
+				margin-bottom: 20px;
+				height: 40px;
+				font-size: 13px;
+				font-family: $mainFont;
+				padding: 0 10px;
+				border: none;
+				background-color: white;
+			}
+			textarea {
+				margin-bottom: 20px;
+				height: 90px;
+				font-size: 13px;
+				font-family: $mainFont;
+				padding: 0 10px;
+				border: none;
+				background-color: white;
+			}
+			.contact__form-button {
+				background-color: $colorRed;
+				color: white;
+				font-weight: 600;
+				margin-bottom: 0;
+			}
+			.contact__submit-fail {
+				height: 40px;
+				color: $colorRed;
+				text-align: center;
+				position: absolute;
+				top: -50px;
+			}
+		}
+	}
 }
 
 @media all and (max-width: 1010px) {
-    .about-us {
-        .about-us__article {
-            .about-us__heading {
-                font-size: 4vmax;
-            }
-            .about-us__text {
-                margin: 5vmax 0;
-            }
-        }
-    }
-    .infographic {
-        .infographic__item {
-            .infographic__number {
-                font-size: 7vmax;
-            }
-            .infographic__caption {
-                font-size: 2.5vmax;
-            }
-            .infographic__icon {
-                font-size: 10vmax;
-            }
-            .infographic__small-text {
-                font-size: 1.5vmax;
-                margin: 3vmax;
-            }
-        }
-        .inphographic__description {
-            font-size: 2vmax;
-            line-height: normal;
-        }
-    }
-    .gallery-grid {
-        float: left;
-        width: 40%;
-        margin: 10px;
-    }
-    .gallery-grid__item {
-        .gallery-grid__caption {
-            .gallery-grid__heading {
-                font-size: 1.8vmax;
-            }
-            .gallery-grid__description {
-                font-size: 1.5vmax;
-            }
-        }
-    }
-    .benefits {
-        margin-left: 0;
-        margin-right: 0;
-        font-size: 1vmax;
-        flex-direction: column;
-        padding: 3vmax;
-        justify-content: flex-start
-    }
-    .advantages {
-        .advantages__item {
-            .advantages__icon {
-                font-size: 7vmax;
-            }
-            .advantages__text {
-                font-size: 2vmax;
-            }
-        }
-    }
-    .jobs-list {
-        .jobs-list__job {
-            .jobs-list__job-name {
-                font-size: 3vmax;
-            }
-            .fa {
-                font-size: 3vmax;
-            }
-        }
-    }
-    .regular-list li {
-        font-size: 0.8vmax;
-    }
-    .student-content {
-        .about-us__text {
-            font-size: 2.2vmax;
-            text-align: center;
-        }
-    }
-    .contact {
-        .contact__container {
-            margin-bottom: 5vmax;
-            .contact__address {
-                .contact__city {
-                    font-size: 3vmax;
-                }
-                p {
-                    font-size: 2vmax;
-                    margin: 1vmax 0;
-                }
-            }
-            .contact__form {
-                input {
-                    height: 4vmax;
-                    font-size: 2vmax;
-                }
-                textarea {
-                    height: 12vmax;
-                    font-size: 2vmax;
-                }
-            }
-        }
-        .contact__button-set {
-            height: 10vmax;
-            .contact__button {
-                width: 30%;
-                .contact__country {
-                    width: 100%;
-                    font-size: 1.5vmax;
-                }
-                .contact__place {
-                    width: 100%;
+	.about-us {
+		.about-us__article {
+			.about-us__heading {
+				font-size: 4vmax;
+			}
+			.about-us__text {
+				margin: 5vmax 0;
+			}
+		}
+	}
+	.infographic {
+		.infographic__item {
+			.infographic__number {
+				font-size: 7vmax;
+			}
+			.infographic__caption {
+				font-size: 2.5vmax;
+			}
+			.infographic__icon {
+				font-size: 10vmax;
+			}
+			.infographic__small-text {
+				font-size: 1.5vmax;
+				margin: 3vmax;
+			}
+		}
+		.inphographic__description {
+			font-size: 2vmax;
+			line-height: normal;
+		}
+	}
+	.gallery-grid {
+		float: left;
+		width: 40%;
+		margin: 10px;
+	}
+	.gallery-grid__item {
+		.gallery-grid__caption {
+			.gallery-grid__heading {
+				font-size: 1.8vmax;
+			}
+			.gallery-grid__description {
+				font-size: 1.5vmax;
+			}
+		}
+	}
+	.benefits {
+		margin-left: 0;
+		margin-right: 0;
+		font-size: 1vmax;
+		flex-direction: column;
+		padding: 3vmax;
+		justify-content: flex-start
+	}
+	.advantages {
+		.advantages__item {
+			.advantages__icon {
+				font-size: 7vmax;
+			}
+			.advantages__text {
+				font-size: 2vmax;
+			}
+		}
+	}
+	.jobs-list {
+		.jobs-list__job {
+			.jobs-list__job-name {
+				font-size: 3vmax;
+			}
+			.fa {
+				font-size: 3vmax;
+			}
+		}
+	}
+	.regular-list li {
+		font-size: 0.8vmax;
+	}
+	.student-content {
+		.about-us__text {
+			font-size: 2.2vmax;
+			text-align: center;
+		}
+	}
+	.contact {
+		.contact__container {
+			margin-bottom: 5vmax;
+			.contact__address {
+				.contact__city {
+					font-size: 3vmax;
+				}
+				p {
+					font-size: 2vmax;
+					margin: 1vmax 0;
+				}
+			}
+			.contact__form {
+				input {
+					height: 4vmax;
+					font-size: 2vmax;
+				}
+				textarea {
+					height: 12vmax;
+					font-size: 2vmax;
+				}
+			}
+		}
+		.contact__button-set {
+			height: 10vmax;
+			.contact__button {
+				width: 30%;
+				.contact__country {
+					width: 100%;
+					font-size: 1.5vmax;
+				}
+				.contact__place {
+					width: 100%;
    
-                    font-size: 2.3vmax;
-                }
-            }
-        }
-    }
+					font-size: 2.3vmax;
+				}
+			}
+		}
+	}
 }

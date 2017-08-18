@@ -10,20 +10,20 @@ import Students from './Students/Students'
 import Contacts from './Contacts/Contacts'
 
 export default class AboutPage extends React.Component {
-  render() {
-    return (
-        <div className="content content_white">
-			<section className="about-us">
-            	<ImageHeading />
-            	<AboutUs />
-            	<Education />
-            	<Benefits />
-            	<Advantages />
-				<Jobs />
-				<Students />
-				<Contacts />
-			</section>
-		</div>
-    );
-  }
+	render() {
+		return (
+			<div className="content content_white">
+				<section className="about-us">
+					<ImageHeading />
+					<AboutUs />
+					<Education />
+					<Benefits />
+					<Advantages />
+					<Jobs />
+					<Students />
+					<Contacts />
+				</section>
+			</div>
+		);
+	}
 }

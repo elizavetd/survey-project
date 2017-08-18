@@ -1,13 +1,13 @@
 ﻿import React from "react"
 
 const TemplatePreview = ({ 
-    iconType,
-    title,
-    description,
-    questionsCount,
-    pageCount
+	iconType,
+	title,
+	description,
+	questionsCount,
+	pageCount
 }) => (
-    <article className="template-preview">
+	<article className="template-preview">
 		<div id="flipping-icon" className="template-preview__icon"><i className={iconType} aria-hidden="true"></i></div>
 		<div className="template-preview__edit-buttons">
 			<button className="template-preview__button-edit"><i className="fa fa-pencil" aria-hidden="true"></i></button>

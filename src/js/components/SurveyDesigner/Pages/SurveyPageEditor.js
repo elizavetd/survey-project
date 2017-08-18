@@ -8,9 +8,9 @@ import NewQuestion from '../QuestionTypes/NewQuestion'
 import Question from '../Question'
 
 @connect((store) => {
-    return {
-        questions: store.currentSurvey.questionList
-    };
+	return {
+		questions: store.currentSurvey.questionList
+	};
 })
 export default class SurveyPageEditor extends React.Component {
 	constructor() {

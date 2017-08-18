@@ -19,34 +19,33 @@ import ForgotPassword from './Authentification/ForgotPassword'
 import SurveyDesigner from './SurveyDesigner/SurveyDesigner'
 
 @connect((store) => {
-  return {
-    username: store.user.username
-  };
+	return {
+		username: store.user.username
+	};
 })
 
 export default class Layout extends React.Component {
+	render() {
+		const { username } = this.props;
 
-  render() {
-    const { username } = this.props;
-
-    return (
-      <ConnectedRouter history={history}>
-        <div>
-          <Header />
-          {/* {console.log(username)} */}
-          <Route exact path="/" component={ HomePage } />
-          <Route path="/my-surveys" component={ MySurveysPage } />
-          <Route path="/templates" component={ TemplatesPage } />
-          <Route path="/users" component={ UsersPage } />
-          <Route path="/about" component={ AboutPage } />
-          <Route path="/signin" component={ SigninForm } />
-          <Route path="/signup" component={ SignupForm } />
-          <Route path="/forgot-password" component={ ForgotPassword } />
-          <Route path="/new-survey" component={ SurveyDesigner } />
-          
-          <Footer />
-        </div>
-      </ConnectedRouter>
-    );
-  }
+		return (
+			<ConnectedRouter history={history}>
+				<div>
+					<Header />
+					{/* {console.log(username)} */}
+					<Route exact path="/" component={ HomePage } />
+					<Route path="/my-surveys" component={ MySurveysPage } />
+					<Route path="/templates" component={ TemplatesPage } />
+					<Route path="/users" component={ UsersPage } />
+					<Route path="/about" component={ AboutPage } />
+					<Route path="/signin" component={ SigninForm } />
+					<Route path="/signup" component={ SignupForm } />
+					<Route path="/forgot-password" component={ ForgotPassword } />
+					<Route path="/new-survey" component={ SurveyDesigner } />
+					
+					<Footer />
+				</div>
+			</ConnectedRouter>
+		);
+	}
 }

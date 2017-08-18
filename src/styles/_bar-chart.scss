@@ -18,10 +18,10 @@
 	
 	background: $barChartBackground;
 	height: $barChartHeight;
-    margin-bottom: $barChartHeight;
-    
-    &:last-child {
-        margin-bottom: 0;
+	margin-bottom: $barChartHeight;
+	
+	&:last-child {
+		margin-bottom: 0;
 	}
 	
 	.bar-chart__inner {
@@ -37,15 +37,15 @@
 			top: 0; right: 0; content: " ";
 			width: $barChartCapWidth; height: 100%;
 			background: rgba(0,0,0,.1);
-        }
+		}
 
-        .bar-chart__text {
-            position: absolute;
-            font-size: 15px;
+		.bar-chart__text {
+			position: absolute;
+			font-size: 15px;
 			font-weight: 700;
 			right: -62px;
 		   // top: 20%;
-        }
+		}
 	}
 	
 	// with animation

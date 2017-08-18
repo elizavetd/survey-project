@@ -12,9 +12,9 @@ import ResultsPage from './Pages/ResultsPage'
 import UserResultsPage from './Pages/UserResultsPage'
 
 const SurveysDesigner = ({ match }) => (
-    <div className="content">
+	<div className="content">
 		<div className="survey-editing">
-            <Options position='left' url={match.url} />
+			<Options position='left' url={match.url} />
 
 			<Route path={`${match.url}/start-page`} component={ StartPage } />
 			<Route path={`${match.url}/finish-page`} component={ FinishPage } />
@@ -22,9 +22,9 @@ const SurveysDesigner = ({ match }) => (
 			<Route path={`${match.url}/collect-answers`} component={ CollectPage } />
 			<Route exact path={`${match.url}/results`} component={ ResultsPage } />
 			<Route path={`${match.url}/results/*`} component={ UserResultsPage } />
-    		<Route exact path={match.url} component={ SurveyPageEditor } /> 
+			<Route exact path={match.url} component={ SurveyPageEditor } /> 
 
-            <Options position='right' url={match.url} />
+			<Options position='right' url={match.url} />
 		</div>
 	</div>
 )
