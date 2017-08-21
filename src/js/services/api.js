@@ -1,40 +1,51 @@
-import _users from './users'
-import _surveys from './surveys'
-import _templates from './templates'
-import _jobs from './jobs'
+import { store } from '../store'
+
+import _users from './users.json'
+import _surveys from './surveys.json'
+import _templates from './templates.json'
+import _jobs from './jobs.json'
 import _questions from './surveyQuestions'
 
 const TIMEOUT = 100;
 
+const myStorage = localStorage;
+
+//myStorage.setItem('jobList', JSON.stringify(_jobs));
+//myStorage.setItem('userList', JSON.stringify(_users));
+//myStorage.setItem('templates', JSON.stringify(_templates));
+//myStorage.setItem('surveys', JSON.stringify(_surveys));
+
+console.log(localStorage);
+
 export const api = {
 	getCurrentUser() {
 		return new Promise( resolve => {
-			setTimeout(() => {
-				for (let i = 0; i < _users.length; i++) {
-					if (_users[i].username === 'admin') {
-						resolve(_users[i]);
-					}
-				}
-			}, TIMEOUT)
+			const user = JSON.parse(myStorage
+				.getItem('userList')).users
+				.filter(user => user.username === "admin");
+			resolve(user);
 		})
 	},
 	
 	getUserList() {
 		return new Promise( resolve => {
-			setTimeout(() => resolve({userList: _users}), TIMEOUT)
+			resolve({userList: JSON.parse(myStorage.getItem('userList')).users})
 		})
 	},
 
 	getUserSurveys() {
 		return new Promise( resolve => {
-			setTimeout(() => resolve(_surveys), TIMEOUT)
+			const surveys = JSON.parse(myStorage
+				.getItem('surveys')).surveyList
+				.filter(survey => survey.creator === '1');
+			resolve({surveyList: surveys});
 		})
 	},
 
 	getTemplates() {
 		return new Promise( resolve => {
-			setTimeout(() => resolve(_templates), TIMEOUT)
-		})
+			resolve(JSON.parse(myStorage.getItem('templates')));
+		});
 	},
 
 	getQuestionList() {
@@ -51,7 +62,7 @@ export const api = {
 
 	getJobs() {
 		return new Promise( resolve => {
-			setTimeout(() => resolve(_jobs), TIMEOUT)
-		})
+			resolve(JSON.parse(myStorage.getItem('jobList')).jobs);
+		});
 	}
-}
+};

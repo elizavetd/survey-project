@@ -1,0 +1,279 @@
+{
+	"surveyList": [
+		{   
+			"id": "o1",
+			"creator": "1",
+			"title": "Javascript lecture feedback",
+			"description": "Здравствуйте, потратьте, пожалуйста, несколько минут своего времени на заполнение следующего опроса.",
+			"imageSrc": "./img/javascript.jpg",
+			"type": "Образование",
+			"iconType": "fa fa-commenting",
+			"finishMessage": "Благодарим за прохождение опроса!",
+			"finishDetail": "Посещайте наши лекции!",
+			"answersCount": 13,
+			"lastChangeDate": "01.01.2017",
+			"questionList": [
+				{   
+					"id": "1_1",
+					"type": "oneAnswer",
+					"question": "Понравилась ли Вам лекция?",
+					"options": [
+						"Да",
+						"Нет",
+						"Не знаю"
+					]
+				},
+				{
+					"id": "1_2",
+					"type": "text",
+					"question": "Есть ли у Вас пожелания по улучшению проведения лекции?"
+				},
+				{
+					"id": "1_3",
+					"type": "Оцените подачу материала по пятибалльной шкале:",
+					"question": "Напишите свой вопрос здесь..."
+				}
+			]
+		},
+		{
+			"id": "o2",
+			"creator": "1",
+			"title": "Планирование мероприятия",
+			"description": "Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.",
+			"imageSrc": "./img/survey1.jpg",
+			"type": "Мероприятия",
+			"iconType": "fa fa-camera-retro",
+			"finishMessage": "Благодарим за прохождение опроса!",
+			"finishDetail": "Ждем Вас на нашем мероприятии!",
+			"answersCount": 3,
+			"lastChangeDate": "15.04.2017",
+			"questionList": [
+				{   
+					"id": "2_1",
+					"type": "text",
+					"question": "Каким образом Вы узнали о мероприятии?"
+				},
+				{
+					"id": "2_2",
+					"type": "rating",
+					"question": "Оцените, насколько сильно вы хотите посетить наше мероприятие:"
+				},
+				{
+					"id": "2_3",
+					"type": "oneAnswer",
+					"question": "Было сложно зарегистрироваться на это мероприятие?",
+					"options": [
+						"Очень просто",
+						"Просто",
+						"Нормально",
+						"Сложно",
+						"Очень сложно"
+					]
+				}
+			]
+		},
+		{
+			"id": "o3",
+			"creator": "1",
+			"title": "Опрос 2",
+			"description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.",
+			"imageSrc": "./img/survey2.jpg",
+			"type": "Услуги",
+			"iconType": "fa fa-question",
+			"finishMessage": "Благодарим за прохождение опроса!",
+			"finishDetail": "",
+			"answersCount": 20,
+			"lastChangeDate": "02.02.2017",
+			"questionList": [
+				{   
+					"id": "3_1",
+					"type": "oneAnswer",
+					"question": "Вопрос?",
+					"options": [
+						"Да",
+						"Нет",
+						"Не знаю"
+					]
+				}
+			]
+		},
+		{
+			"id": "o4",
+			"creator": "1",
+			"title": "Оценка работы университета",
+			"description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+			"imageSrc": "./img/survey3.jpg",
+			"type": "Образование",
+			"iconType": "fa fa-university",
+			"finishMessage": "Благодарим за прохождение опроса!",
+			"finishDetail": "",
+			"answersCount": 132,
+			"lastChangeDate": "02.06.2017",
+			"questionList": [
+				{
+					"id": "4_1",
+					"type": "oneAnswer",
+					"question": "Насколько качественно преподавание Ваших главных (профилирующих) предметов?",
+					"options": [
+						"Очень качественно",
+						"Качественно",
+						"Скорее качественно",
+						"Скорее некачественно",
+						"Некачественно",
+						"Скорее некачественно"
+					]	
+				},
+				{
+					"id": "4_2",
+					"type": "scale",
+					"question": "Оцените, насколько хорошо оборудованы учебные помещения ВУЗа:"
+				},
+				{
+					"id": "4_3",
+					"type": "oneAnswer",
+					"question": "Насколько трудно получить учебные материалы?",
+					"options": [
+						"Очень просто",
+						"Просто",
+						"Нормально",
+						"Трудно",
+						"Очень трудно"
+					]	
+				},
+				{
+					"id": "4_4",
+					"type": "rating",
+					"question": "Насколько Вы в общем довольны обучением в этом ВУЗе?"
+				},
+				{
+					"id": "4_5",
+					"type": "text",
+					"question": "Напишите Ваши предложения по улучшению работы ВУЗа:"
+				}
+			]
+		},
+		{
+			"id": "o5",
+			"creator": "1",
+			"title": "Исследование популярности спортивных секций",
+			"description": "Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.",
+			"imageSrc": "./img/survey4.jpg",
+			"type": "Образование",
+			"iconType": "fa fa-university",
+			"finishMessage": "Благодарим за прохождение опроса!",
+			"finishDetail": "",
+			"answersCount": 34,
+			"lastChangeDate": "22.05.2017",
+			"questionList": [
+				{
+					"id": "5_1",
+					"type": "oneAnswer",
+					"question": "Как часто Вы занимаетесь спортом?",
+					"options": [
+						"Каждый день",
+						"Несколько раз в неделю",
+						"Один раз в неделю",
+						"Несколько раз в месяц",
+						"Менее часто"
+					]	
+				},
+				{
+					"id": "5_2",
+					"type": "oneAnswer",
+					"question": "Вы считаете, что занятия физической культурой необходимы в университете?",
+					"options": [
+						"Да",
+						"Нет"
+					]	
+				},
+				{
+					"id": "5_3",
+					"type": "severalAnswers",
+					"question": "Какую секцию Вы посещаете в университете?",
+					"options": [
+						"Бег",
+						"Волейбол",
+						"Тяжелая атлетика",
+						"Бассейн",
+						"Аэробика",
+						"Борьба",
+						"СпецМедГруппа"
+					]	
+				},
+				{
+					"id": "5_4",
+					"type": "oneAnswer",
+					"question": "Вам нравится ходить на занятия?",
+					"options": [
+						"Да",
+						"Нет"
+					]	
+				},
+				{
+					"id": "5_5",
+					"type": "text",
+					"question": "Если у Вас есть ограничения по состоянию здоровья, напишите их, пожалуйста:"
+				},
+				{
+					"id": "5_6",
+					"type": "text",
+					"question": "Напишите Ваши предложения по улучшению качества проведения занятий по физической культуре в университете:"
+				}
+			]
+		},
+		{
+			"id": "o6",
+			"creator": "2",
+			"title": "Исследование",
+			"description": "Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.",
+			"imageSrc": "./img/survey4.jpg",
+			"type": "Маркетинговое исследование",
+			"iconType": "fa fa-question",
+			"finishMessage": "Благодарим за прохождение опроса!",
+			"finishDetail": "",
+			"answersCount": 4,
+			"lastChangeDate": "22.07.2017",
+			"questionList": [
+				{
+					"id": "6_1",
+					"type": "oneAnswer",
+					"question": "Как дела?",
+					"options": [
+						"Отлично!",
+						"Хорошо",
+						"Нормально",
+						"Ну, такое",
+						"Плохо"
+					]	
+				}
+			]
+		},
+		{
+			"id": "o7",
+			"creator": "2",
+			"title": "Оценка продукта",
+			"description": "Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.",
+			"imageSrc": "./img/survey2.jpg",
+			"type": "Услуги",
+			"iconType": "fa fa-question",
+			"finishMessage": "Благодарим за прохождение опроса!",
+			"finishDetail": "",
+			"answersCount": 37,
+			"lastChangeDate": "23.05.2017",
+			"questionList": [
+				{
+					"id": "7_1",
+					"type": "oneAnswer",
+					"question": "Вам нравится наш продукт?",
+					"options": [
+						"Очень нравится",
+						"Нравится",
+						"Равнодушен к нему",
+						"Не нравится",
+						"Очень не нравится"
+					]	
+				}
+			]
+		}
+	]
+}

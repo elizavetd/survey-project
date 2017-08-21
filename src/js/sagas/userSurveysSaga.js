@@ -12,7 +12,6 @@ export function* watchGetSurveys() {
 }
 
 export default function* root() {
-	console.log('survey saga')
 	yield all([
 		//fork(getUserSurveys),
 		fork(watchGetSurveys)

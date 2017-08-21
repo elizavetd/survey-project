@@ -15,7 +15,7 @@ const mapDispatchToProps = (dispatch) => {
 
 const mapStateToProps = (store) => {
 	return {
-		surveys: store.surveys.userSurveys
+		surveys: store.surveys.surveyList
 	};
 };
 

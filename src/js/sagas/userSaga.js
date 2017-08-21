@@ -23,7 +23,7 @@ export function* watchGetUserList() {
 
 export default function* root() {
 	yield all([
-		//fork(getCurrentUser),
+		fork(getCurrentUser),
 		fork(watchGetCurrentUser),
 		fork(watchGetUserList),
 	])

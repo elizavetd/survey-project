@@ -1063,6 +1063,7 @@
   font-family: "Oswald", sans-serif;
   font-size: 30px;
   font-weight: 600;
+  text-align: center;
 }
 .list .template-preview .template-preview__description {
   max-height: 280px;

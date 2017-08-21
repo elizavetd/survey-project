@@ -7,7 +7,6 @@ import questionSaga from './questionSaga'
 import jobSaga from './jobSaga'
 
 export default function* root() {
-	console.log('root saga');
 	yield [
 		fork(userSaga),
 		fork(userSurveysSaga),

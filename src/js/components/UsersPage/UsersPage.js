@@ -56,7 +56,7 @@ export default class UsersPage extends React.Component {
 									username = {user.username}
 									role = {user.role}
 									signupDate = {user.signupDate}
-									surveysCount = {user.surveysCount}
+									surveysCount = {user.surveys}
 								/>
 							)}
 						</tbody>
