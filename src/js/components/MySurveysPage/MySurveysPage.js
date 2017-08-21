@@ -10,7 +10,7 @@ import SurveyItem from './SurveyItem'
 const mapDispatchToProps = (dispatch) => {
 	return {
 		getUserSurveys: () => store.dispatch(getUserSurveys())
-	}
+	};
 };
 
 const mapStateToProps = (store) => {
@@ -38,8 +38,6 @@ class MySurveysPage extends React.Component {
 	render() {
 		let { surveys } = this.props;
 
-		//this.props.getUserSurveys()
-
 		if(this.state.filter) {
 			surveys = surveys.filter(
 				survey => survey.title.toLowerCase()
@@ -62,7 +60,7 @@ class MySurveysPage extends React.Component {
 				link="/new-survey"
 				caption="Новый опрос"
 			/>
-			 {console.log(surveys)} 
+		
 			<PaginationBar 
 				hasSideInfo = {hasSideInfo}
 				itemCountCaption = {itemCountCaption}

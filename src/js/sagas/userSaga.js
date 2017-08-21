@@ -1,4 +1,4 @@
-import { take, put, call, fork, select, takeLatest, takeEvery, all } from 'redux-saga/effects'
+import { take, put, call, fork, takeEvery, all } from 'redux-saga/effects'
 import * as userActions from '../actions/userActions'
 
 import { api } from '../services/api'
@@ -14,17 +14,14 @@ export function* getUserList() {
 }
 
 export function* watchGetCurrentUser() {
-	console.log('user saga get curr user')
-	yield takeLatest(userActions.GET_CURRENT_USER, getCurrentUser)
+	yield takeEvery(userActions.GET_CURRENT_USER, getCurrentUser)
 }
 
 export function* watchGetUserList() {	
-	console.log('user saga get user list')
 	yield takeEvery(userActions.GET_USER_LIST, getUserList)
 }
 
 export default function* root() {
-	
 	yield all([
 		//fork(getCurrentUser),
 		fork(watchGetCurrentUser),

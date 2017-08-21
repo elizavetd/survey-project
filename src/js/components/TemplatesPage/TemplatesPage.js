@@ -1,15 +1,24 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { getTemplates } from '../../reducers/templateReducer'
+import { store } from '../../store'
+import { getTemplates } from '../../actions/templateActions'
 
 import SearchBar from '../SearchBar'
 import TemplatePreview from './TemplatePreview'
 
-@connect((store) => {
+const mapDispatchToProps = (dispatch) => {
+	return {
+		getTemplates: () => store.dispatch(getTemplates())
+	};
+};
+
+const mapStateToProps = (store) => {
 	return {
 		templates: store.template.templates
 	};
-})
+};
+
+@connect(mapStateToProps, mapDispatchToProps)
 export default class TemplatesPage extends React.Component {
 	constructor() {
 		super();
@@ -17,12 +26,12 @@ export default class TemplatesPage extends React.Component {
 		this.filter = this.filter.bind(this);
 	}
 
-	filter(e) {
-		this.setState({filter: e.target.value});
+	componentWillMount() {
+		this.props.getTemplates();
 	}
 
-	componentWillMount() {
-		getTemplates();
+	filter(e) {
+		this.setState({filter: e.target.value});
 	}
 
 	render() {

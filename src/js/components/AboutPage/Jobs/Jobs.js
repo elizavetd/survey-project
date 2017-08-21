@@ -1,18 +1,28 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { getJobList } from '../../../reducers/jobReducer'
+import { store } from '../../../store'
+import { getJobs } from '../../../actions/jobActions'
 
 import JobItem from './JobItem'
 
-@connect((store) => {
+const mapDispatchToProps = (dispatch) => {
+	return {
+		getJobList: () => store.dispatch(getJobs())
+	};
+};
+
+const mapStateToProps = (store) => {
 	return {
 		jobs: store.jobList
 	};
-})
+};
+
+@connect(mapStateToProps, mapDispatchToProps)
 export default class Jobs extends React.Component {
 	componentWillMount() {
-		getJobList();
+		this.props.getJobList();
 	}
+
 	render() {
 		const { jobs } = this.props;
 

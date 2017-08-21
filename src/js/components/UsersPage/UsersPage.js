@@ -1,17 +1,25 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { store } from '../../store'
-import { getUserList } from '../../reducers/userReducer'
+import { getUserList } from '../../actions/userActions'
 
 import TableHeader from './TableHeader'
 import TableRow from './TableRow'
 import TableFooter from './TableFooter'
 
-@connect((store) => {
+const mapStateToProps = (store) => {
 	return {
 		users: store.user.userList
 	};
-})
+};
+
+const mapDispatchToProps = (dispatch) => {
+	return {
+		getUserList: () => store.dispatch(getUserList())
+	};
+};
+
+@connect(mapStateToProps, mapDispatchToProps)
 export default class UsersPage extends React.Component {
 	constructor() {
 		super();
@@ -24,7 +32,7 @@ export default class UsersPage extends React.Component {
 	}
 	
 	componentWillMount() {
-		getUserList();
+		this.props.getUserList();
 	}
 
 	render() {

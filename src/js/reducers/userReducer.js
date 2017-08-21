@@ -1,6 +1,6 @@
 import { RECEIVE_CURRENT_USER, RECEIVE_USER_LIST } from '../actions/userActions'
 import { store, sagaMiddleware } from '../store'
-import { userList } from '../sagas/userSaga'
+//import { userList } from '../sagas/userSaga'
 
 const initialState = {
 	role: 'guest'
@@ -17,6 +17,6 @@ export default function userReducer(state = initialState, action) {
 	};
 };
 
-export function getUserList() {
-	sagaMiddleware.run(userList);
-}
+// export function getUserList() {
+// 	sagaMiddleware.run(userList);
+// }

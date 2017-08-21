@@ -8,17 +8,13 @@ export function* getUserSurveys() {
 }
 
 export function* watchGetSurveys() {
-	/*
-		takeEvery will fork a new `checkout` task on each GET_ALL_PRODUCTS actions
-		i.e. concurrent GET_ALL_PRODUCTS actions are allowed
-	*/
 	yield takeEvery(surveyActions.GET_USER_SURVEYS, getUserSurveys)
 }
 
 export default function* root() {
 	console.log('survey saga')
 	yield all([
-		fork(getUserSurveys),
+		//fork(getUserSurveys),
 		fork(watchGetSurveys)
 	])
 }
