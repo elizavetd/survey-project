@@ -5,7 +5,7 @@ import jobSaga from '../sagas/jobSaga'
 export default function userReducer(state = [], action) {
 	switch (action.type) {
 	case RECEIVE_JOBS:
-		return state.concat(action.payload);
+		return action.payload;
 	default:
 		return state;
 	};

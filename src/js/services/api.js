@@ -10,10 +10,12 @@ const TIMEOUT = 100;
 
 const myStorage = localStorage;
 
-myStorage.setItem('jobList', JSON.stringify(_jobs));
-myStorage.setItem('userList', JSON.stringify(_users));
-myStorage.setItem('templates', JSON.stringify(_templates));
-myStorage.setItem('surveys', JSON.stringify(_surveys));
+if(myStorage.length === 0) {
+	myStorage.setItem('jobList', JSON.stringify(_jobs));
+	myStorage.setItem('userList', JSON.stringify(_users));
+	myStorage.setItem('templates', JSON.stringify(_templates));
+	myStorage.setItem('surveys', JSON.stringify(_surveys));
+}
 
 console.log(localStorage);
 
@@ -22,8 +24,8 @@ export const api = {
 		return new Promise( resolve => {
 			const user = JSON.parse(myStorage
 				.getItem('userList')).users
-				.filter(user => user.username === "admin");
-			resolve(user);
+				.filter(user => user.username === "user");
+			resolve(user[0]);
 		})
 	},
 	
@@ -37,7 +39,7 @@ export const api = {
 		return new Promise( resolve => {
 			const surveys = JSON.parse(myStorage
 				.getItem('surveys')).surveyList
-				.filter(survey => survey.creator === '1');
+				.filter(survey => survey.creator === store.getState().user.currentUser.id);
 			resolve({surveyList: surveys});
 		})
 	},

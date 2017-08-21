@@ -78,7 +78,8 @@ button:focus {
 		font-size: 20px;
 		
 		.head__auth_signin, 
-		.head__auth_signup {
+		.head__auth_signup, 
+		.head__auth_hello {
 			text-decoration: none;
 			color: lighten($colorGrey, 20%);
 			padding: 0 20px;
@@ -87,8 +88,13 @@ button:focus {
 		.head__auth_signup:hover{
 			color: $colorLightGrey;
 		}
-		.head__auth_signin {
+		.head__auth_signin,
+		.head__auth_hello {
 			border-right: 1px solid $colorLightGrey;
+		}
+		.head__auth_hello {
+			width: 25vw;
+			text-align: right;
 		}
 	}
 }

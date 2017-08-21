@@ -15,7 +15,8 @@ const mapDispatchToProps = (dispatch) => {
 
 const mapStateToProps = (store) => {
 	return {
-		surveys: store.surveys.surveyList
+		surveys: store.surveys.surveyList,
+		user: store.user.currentUser
 	};
 };
 
@@ -23,12 +24,15 @@ const mapStateToProps = (store) => {
 class MySurveysPage extends React.Component {
 	constructor() {
 		super();
-		this.state = {}
+		this.state = {
+			//userReceived: false
+		}
 		this.filter = this.filter.bind(this);
 	}
 	
 	componentWillMount() {
 		this.props.getUserSurveys()
+		//this.forceUpdate()
 	}
 
 	filter(e) {
@@ -36,7 +40,7 @@ class MySurveysPage extends React.Component {
 	}
 
 	render() {
-		let { surveys } = this.props;
+		let { surveys, user } = this.props;
 
 		if(this.state.filter) {
 			surveys = surveys.filter(

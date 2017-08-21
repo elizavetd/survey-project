@@ -2992,7 +2992,8 @@ button:focus {
   font-size: 20px;
 }
 .head .head__auth .head__auth_signin,
-.head .head__auth .head__auth_signup {
+.head .head__auth .head__auth_signup,
+.head .head__auth .head__auth_hello {
   text-decoration: none;
   color: #85888c;
   padding: 0 20px;
@@ -3001,8 +3002,13 @@ button:focus {
 .head .head__auth .head__auth_signup:hover {
   color: #BDBDBD;
 }
-.head .head__auth .head__auth_signin {
+.head .head__auth .head__auth_signin,
+.head .head__auth .head__auth_hello {
   border-right: 1px solid #BDBDBD;
+}
+.head .head__auth .head__auth_hello {
+  width: 25vw;
+  text-align: right;
 }
 
 .menu-container {
