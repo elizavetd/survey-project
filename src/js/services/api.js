@@ -10,10 +10,10 @@ const TIMEOUT = 100;
 
 const myStorage = localStorage;
 
-//myStorage.setItem('jobList', JSON.stringify(_jobs));
-//myStorage.setItem('userList', JSON.stringify(_users));
-//myStorage.setItem('templates', JSON.stringify(_templates));
-//myStorage.setItem('surveys', JSON.stringify(_surveys));
+myStorage.setItem('jobList', JSON.stringify(_jobs));
+myStorage.setItem('userList', JSON.stringify(_users));
+myStorage.setItem('templates', JSON.stringify(_templates));
+myStorage.setItem('surveys', JSON.stringify(_surveys));
 
 console.log(localStorage);
 
