@@ -45,7 +45,7 @@ export default class Layout extends React.Component {
 							: (<TemplatesPage />)
 					)}/>
 					<Route path="/users" render={() => (
-						(role !== 'admin') 
+						(role !== 'administrator') 
 							? (<Redirect to="/signin"/>) 
 							: (<UsersPage />)
 					)}/>

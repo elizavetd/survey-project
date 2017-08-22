@@ -8,7 +8,6 @@ function submit(values) {
 		result => sleep(100),
 		error => {
 				throw new SubmissionError({
-					//password: 'Пароль не совпадает',
 					_error: error.message
 			})
 		}
