@@ -1,4 +1,5 @@
 import { store } from '../store'
+import generateUniqueID from '../lib/generateUniqueID'
 
 import _users from './users.json'
 import _surveys from './surveys.json'
@@ -17,7 +18,7 @@ if(myStorage.length !== 4) {
 	myStorage.setItem('surveys', JSON.stringify(_surveys));
 }
 
-//myStorage.setItem('currentUser', JSON.stringify({"role": "guest"}))
+myStorage.setItem('currentUser', JSON.stringify({"role": "guest"}))
 
 console.log(localStorage);
 
@@ -42,6 +43,40 @@ export const api = {
 			}
 			else
 				reject(new Error("Неверное имя пользователя или пароль. Авторизация не удалась."))
+		})
+	},
+
+	addNewUser(user) {
+		return new Promise( (resolve, reject) => {
+			if (user.password !== user.passwordSubmit) {
+				reject(new Error("Пароль не совпадает. Регистрация не удалась."))
+			} else {
+				let userList = JSON.parse(
+					myStorage.getItem('userList')).users;
+
+				const searchedUser = userList.filter(searchedUser => 
+					(searchedUser.email === user.email || 
+					searchedUser.username === user.username));
+				
+				if (searchedUser.length === 0) {
+					const newUser = {
+						id: generateUniqueID(),
+						username: user.username,
+						email: user.username,
+						password: user.password,
+						role: 'user',
+						signupDate: new Date(),
+						surveys: 0
+					}
+
+					myStorage.setItem('userList', JSON.stringify(userList.concat([newUser])));
+
+					myStorage.setItem('currentUser', JSON.stringify(newUser));
+					resolve(newUser);
+				}
+				else
+					reject(new Error("Пользователь с таким именем или электронной почтой уже существует. Регистрация не удалась."))
+			}	
 		})
 	},
 	
