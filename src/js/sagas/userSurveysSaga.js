@@ -2,8 +2,8 @@ import { take, put, call, fork, select, takeEvery, all } from 'redux-saga/effect
 import * as surveyActions from '../actions/userSurveysActions'	
 import { api } from '../services/api'
 
-export function* getUserSurveys() {
-	const surveys = yield call(api.getUserSurveys)
+export function* getUserSurveys(action) {
+	const surveys = yield call(api.getUserSurveys, action.id)
 	yield put(surveyActions.receiveSurveys(surveys))
 }
 

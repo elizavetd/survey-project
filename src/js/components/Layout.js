@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Route, NavLink } from 'react-router'
+import { Route, NavLink, Redirect } from 'react-router'
 import { createBrowserHistory } from 'history'
 import { ConnectedRouter, push } from 'react-router-redux'
 
@@ -20,13 +20,13 @@ import SurveyDesigner from './SurveyDesigner/SurveyDesigner'
 
 @connect((store) => {
 	return {
-		username: store.user.username
+		role: store.user.currentUser.role
 	};
 })
 
 export default class Layout extends React.Component {
 	render() {
-		const { username } = this.props;
+		const { role } = this.props;
 
 		return (
 			<ConnectedRouter history={history}>
@@ -34,14 +34,38 @@ export default class Layout extends React.Component {
 					<Header />
 					
 					<Route exact path="/" component={ HomePage } />
-					<Route path="/my-surveys" component={ MySurveysPage } />
-					<Route path="/templates" component={ TemplatesPage } />
-					<Route path="/users" component={ UsersPage } />
+					<Route path="/my-surveys" render={() => (
+						(role === 'guest') 
+							? (<Redirect to="/signin"/>) 
+							: (<MySurveysPage />)
+					)}/>
+					<Route path="/templates" render={() => (
+						(role === 'guest') 
+							? (<Redirect to="/signin"/>) 
+							: (<TemplatesPage />)
+					)}/>
+					<Route path="/users" render={() => (
+						(role !== 'admin') 
+							? (<Redirect to="/signin"/>) 
+							: (<UsersPage />)
+					)}/>
 					<Route path="/about" component={ AboutPage } />
-					<Route path="/signin" component={ SigninForm } />
-					<Route path="/signup" component={ SignupForm } />
+					<Route path="/signin" render={() => (
+						(role !== 'guest') 
+							? (<Redirect to="/my-surveys"/>) 
+							: (<SigninForm />)
+					)}/>
+					<Route path="/signup" render={() => (
+						(role !== 'guest') 
+							? (<Redirect to="/my-surveys"/>) 
+							: (<SignupForm />)
+					)}/>
 					<Route path="/forgot-password" component={ ForgotPassword } />
-					<Route path="/new-survey" component={ SurveyDesigner } />
+					<Route path="/new-survey" render={() => (
+						(role !== 'guest') 
+							? (<Redirect to="/signup"/>) 
+							: (<SurveyDesigner />)
+					)}/>
 					
 					<Footer />
 				</div>

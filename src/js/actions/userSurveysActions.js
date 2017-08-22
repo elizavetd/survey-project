@@ -3,7 +3,8 @@ export const RECEIVE_SURVEYS = 'RECEIVE_SURVEYS'
 
 export function getUserSurveys(id) {
 	return {
-		type: GET_USER_SURVEYS
+		type: GET_USER_SURVEYS,
+		id: id
 	}
 }
 

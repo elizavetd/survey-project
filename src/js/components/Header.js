@@ -2,6 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { store } from '../store'
+import { logout } from '../actions/userActions'
 
 const mapStateToProps = (store) => {
 	return {
@@ -9,7 +10,13 @@ const mapStateToProps = (store) => {
 	};
 };
 
-const Head = ({ role, username }) => (
+const mapDispatchToProps = (dispatch) => {
+	return {
+		logout: () => store.dispatch(logout())
+	};
+};
+
+const Head = ({ role, username, handleLogout }) => (
 	<div className="head">
 		<NavLink className="head__logo" exact to="/"><img src="/img/logo.png" /></NavLink>
 		<ul className="head__auth">
@@ -24,7 +31,7 @@ const Head = ({ role, username }) => (
 				<li className="head__auth_hello">Здравствуйте, {username}</li>
 			}
 			{!(role === 'guest') && 
-				<li className="head__auth_signup">Выйти</li>
+				<li><button onClick={handleLogout} className="head__auth_logout">Выйти</button></li>
 			}
 		</ul>
 	</div>
@@ -49,18 +56,26 @@ const Navigation = ({ role }) => (
 	</nav>
 );
 
-@connect(mapStateToProps)
+@connect(mapStateToProps, mapDispatchToProps)
 export default class Header extends React.Component {
+	constructor() {
+		super();
+		this.handleLogout = this.handleLogout.bind(this);
+	}
+
+	handleLogout() {
+		this.props.logout();
+	}
+
 	render() {
 		let { user } = this.props;
-
-		console.log(user)
 
 		return (
 			<header className="header">
 				<Head 
 					role = {user.role}
 					username = {user.username}
+					handleLogout = {this.handleLogout}
 				/>
 				<Navigation role = {user.role} />
 			</header>

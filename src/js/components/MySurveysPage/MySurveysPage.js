@@ -9,7 +9,7 @@ import SurveyItem from './SurveyItem'
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		getUserSurveys: () => store.dispatch(getUserSurveys())
+		getUserSurveys: (id) => store.dispatch(getUserSurveys(id))
 	};
 };
 
@@ -25,14 +25,13 @@ class MySurveysPage extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			//userReceived: false
+			currentId: undefined
 		}
 		this.filter = this.filter.bind(this);
 	}
 	
 	componentWillMount() {
-		this.props.getUserSurveys()
-		//this.forceUpdate()
+		this.props.getUserSurveys(this.props.user.id)
 	}
 
 	filter(e) {

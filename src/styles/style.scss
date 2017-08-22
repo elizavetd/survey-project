@@ -96,6 +96,21 @@ button:focus {
 			width: 25vw;
 			text-align: right;
 		}
+		.head__auth_logout{
+			background-color: transparent;
+			border: none;
+			flex-grow: 1;
+			display: flex;
+			font-family: $headingFont;
+			font-size: 20px;
+			text-decoration: none;
+			color: lighten($colorGrey, 20%);
+			padding: 0 20px;
+			&:hover {
+				cursor: pointer;
+				color: $colorLightGrey;
+			}
+		}
 	}
 }
 

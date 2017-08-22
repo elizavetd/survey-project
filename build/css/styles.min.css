@@ -3010,6 +3010,25 @@ button:focus {
   width: 25vw;
   text-align: right;
 }
+.head .head__auth .head__auth_logout {
+  background-color: transparent;
+  border: none;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  text-decoration: none;
+  color: #85888c;
+  padding: 0 20px;
+}
+.head .head__auth .head__auth_logout:hover {
+  cursor: pointer;
+  color: #BDBDBD;
+}
 
 .menu-container {
   height: 56px;
