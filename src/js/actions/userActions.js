@@ -4,15 +4,15 @@ export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER'
 export const GET_USER_LIST = 'GET_USER_LIST'
 export const RECEIVE_USER_LIST = 'RECEIVE_USER_LIST'
 
-export const REQUEST_LOGIN = 'REQUEST_LOGIN'
-export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
-export const LOGIN_FAILURE = 'LOGIN_FAILURE'
-
-export const REQUEST_SIGNUP = 'REQUEST_SIGNUP'
-export const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS'
-export const SIGNUP_FAILURE = 'SIGNUP_FAILURE'
-
 export const LOGOUT = 'LOGOUT'
+
+export const REQUEST_USER_REMOVAL = 'REQUEST_USER_REMOVAL'
+export const REMOVE_USER_SUCCESS = 'REMOVE_USER_SUCCESS'
+export const REMOVE_USER_FAILURE = 'REMOVE_USER_FAILURE'
+
+export const REQUEST_USER_MODIFICATION = 'REQUEST_USER_MODIFICATION'
+export const MODIFY_USER_SUCCESS = 'MODIFY_USER_SUCCESS'
+export const MODIFY_USER_FAILURE = 'MODIFY_USER_FAILURE'
 
 export function getCurrentUser() {
 	return {
@@ -40,12 +40,65 @@ export function receiveUserList(userList) {
 	}
 }
 
-export function requestLogin(user) {
+export function logout() {
 	return {
-		type: REQUEST_LOGIN,
-		user: user
+		type: LOGOUT
 	}
 }
+
+export function requestUserRemoval(id) {
+	return {
+		type: REQUEST_USER_REMOVAL,
+		id: id
+	}
+}
+
+export function removeUserSuccess() {
+	return {
+		type: REMOVE_USER_SUCCESS
+	}
+}
+
+export function removeUserFailure() {
+	return {
+		type: REMOVE_USER_FAILURE
+	}
+}
+
+export function requestUserModification(id, newInfo) {
+	return {
+		type: REQUEST_USER_MODIFICATION,
+		id: id,
+		newInfo: newInfo
+	}
+}
+
+export function modifyUserSuccess() {
+	return {
+		type: MODIFY_USER_SUCCESS
+	}
+}
+
+export function modifyUserFailure() {
+	return {
+		type: MODIFY_USER_FAILURE
+	}
+}
+
+// export const REQUEST_LOGIN = 'REQUEST_LOGIN'
+// export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
+// export const LOGIN_FAILURE = 'LOGIN_FAILURE'
+
+// export const REQUEST_SIGNUP = 'REQUEST_SIGNUP'
+// export const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS'
+// export const SIGNUP_FAILURE = 'SIGNUP_FAILURE'
+
+// export function requestLogin(user) {
+// 	return {
+// 		type: REQUEST_LOGIN,
+// 		user: user
+// 	}
+// }
 
 // export function loginSuccess() {
 // 	return {
@@ -53,34 +106,28 @@ export function requestLogin(user) {
 // 	}
 // }
 
-export function loginFailure(error) {
-	return {
-		type: LOGIN_FAILURE,
-		error: error
-	}
-}
+// export function loginFailure(error) {
+// 	return {
+// 		type: LOGIN_FAILURE,
+// 		error: error
+// 	}
+// }
 
-export function requestSignup(user) {
-	return {
-		type: REQUEST_SIGNUP,
-		user: user
-	}
-}
+// export function requestSignup(user) {
+// 	return {
+// 		type: REQUEST_SIGNUP,
+// 		user: user
+// 	}
+// }
 
-export function signupSuccess() {
-	return {
-		type: SIGNUP_SUCCESS
-	}
-}
+// export function signupSuccess() {
+// 	return {
+// 		type: SIGNUP_SUCCESS
+// 	}
+// }
 
-export function signupFailure() {
-	return {
-		type: SIGNUP_FAILURE
-	}
-}
-
-export function logout() {
-	return {
-		type: LOGOUT
-	}
-}
+// export function signupFailure() {
+// 	return {
+// 		type: SIGNUP_FAILURE
+// 	}
+// }

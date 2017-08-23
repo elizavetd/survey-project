@@ -69,5 +69,5 @@ export default class TemplatesPage extends React.Component {
 				</section>
 			</div>
 		);
-	}
-}
+	};
+};

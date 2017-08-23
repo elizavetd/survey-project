@@ -2,19 +2,18 @@ import React from "react"
 
 import UserOperations from './UserOperations'
 
-const TableRow = ({ 
-	username,
-	role,
-	signupDate,
-	surveysCount
-}) => (
-	<tr>
-		<td data-th="Имя" className="user-name">{username}</td>
-		<td data-th="Роль" className="user-role">{role}</td>
-		<td data-th="Зарегистрирован" className="user-signup-date">{signupDate}</td>
-		<td data-th="Опросы" className="user-surveys">{surveysCount}</td>
-		<UserOperations />
-	</tr>
-);
+export default class TableRow extends React.Component {
+	render() {
+		const { username, id, role, signupDate,	surveysCount } = this.props;
 
-export default TableRow;
+		return (
+			<tr>
+				<td data-th="Имя" className="user-name">{username}</td>
+				<td data-th="Роль" className="user-role">{role}</td>
+				<td data-th="Зарегистрирован" className="user-signup-date">{signupDate}</td>
+				<td data-th="Опросы" className="user-surveys">{surveysCount}</td>
+				<UserOperations id={id} />
+			</tr>
+		);
+	};
+};

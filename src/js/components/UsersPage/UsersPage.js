@@ -53,6 +53,7 @@ export default class UsersPage extends React.Component {
 							{users && users.map(user =>
 								<TableRow
 									key = {user.id}
+									id = {user.id}
 									username = {user.username}
 									role = {user.role}
 									signupDate = {user.signupDate}

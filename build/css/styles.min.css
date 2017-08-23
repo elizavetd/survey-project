@@ -1267,6 +1267,12 @@
 .table .user-operations button:hover {
   color: #85888c;
 }
+.table .user__button-delete:disabled {
+  color: #dedede;
+}
+.table .user__button-delete:disabled:hover {
+  color: #dedede;
+}
 .table tr {
   height: 50px;
   text-align: center;

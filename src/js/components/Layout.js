@@ -35,9 +35,9 @@ export default class Layout extends React.Component {
 					
 					<Route exact path="/" component={ HomePage } />
 					<Route path="/my-surveys" render={() => (
-						(role === 'guest') 
-							? (<Redirect to="/signin"/>) 
-							: (<MySurveysPage />)
+						(role !== 'guest') 
+							? (<MySurveysPage />)
+							: (<Redirect to="/signin"/>) 
 					)}/>
 					<Route path="/templates" render={() => (
 						(role === 'guest') 

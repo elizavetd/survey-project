@@ -11,7 +11,7 @@ export const sagaMiddleware = createSagaMiddleware();
 export const history = createHistory();
 const routeMiddleware = routerMiddleware(history);
 
-const middleware = applyMiddleware(logger, sagaMiddleware, routeMiddleware);
+const middleware = applyMiddleware(sagaMiddleware, logger, routeMiddleware);
 
 export const store = createStore(
 	reducer, 

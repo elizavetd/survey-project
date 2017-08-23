@@ -54,6 +54,12 @@
 			color: lighten($colorGrey, 20%);
 		}
 	}
+	.user__button-delete:disabled {
+		color: darken($mainColor, 10%);
+		&:hover {
+			color: darken($mainColor, 10%);
+		}
+	}
 	tr {
 		height: 50px;
 		text-align: center;
