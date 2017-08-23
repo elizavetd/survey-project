@@ -58,6 +58,8 @@ export const api = {
 				const searchedUser = userList.filter(searchedUser => 
 					(searchedUser.email === user.email || 
 					searchedUser.username === user.username));
+
+				const d = new Date();
 				
 				if (searchedUser.length === 0) {
 					const newUser = {
@@ -66,7 +68,7 @@ export const api = {
 						email: user.email,
 						password: user.password,
 						role: 'user',
-						signupDate: new Date().toDateString(),
+						signupDate: `${d.getDate()}.${d.getMonth()}.${d.getFullYear()}`,
 						surveys: 0
 					}
 
