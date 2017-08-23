@@ -64,13 +64,13 @@ class MySurveysPage extends React.Component {
 				caption="Новый опрос"
 			/>
 		
-			<PaginationBar 
+			{(!surveys) && <PaginationBar 
 				hasSideInfo = {hasSideInfo}
 				itemCountCaption = {itemCountCaption}
 				itemCount = {itemCount}
 				pageNumber = {pageNumber}
 				pageCount = {pageCount}
-			/>
+			/>}
 			<div className="surveys-list">
 				{surveys && surveys.map(survey =>
 					<SurveyItem 
@@ -83,8 +83,11 @@ class MySurveysPage extends React.Component {
 						lastChangeDate = {survey.lastChangeDate}
 					/>
 				)}
+				{(surveys && surveys.length === 0) && 
+					<p className="surveys-list__no-surveys">Вы еще не создали ни одного опроса.</p>
+				}
 			</div>
-			<PaginationBar hasSideInfo = {!hasSideInfo} />
+			{(!surveys) && <PaginationBar hasSideInfo = {!hasSideInfo} />}
 		</section>
 	</div>
 	);

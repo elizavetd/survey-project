@@ -1453,6 +1453,12 @@
 .surveys-list {
   margin-top: 50px;
 }
+.surveys-list .surveys-list__no-surveys {
+  color: #BDBDBD;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 600;
+}
 .surveys-list .survey-item {
   width: 100%;
   display: -webkit-box;

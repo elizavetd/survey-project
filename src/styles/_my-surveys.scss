@@ -50,6 +50,12 @@
 
 .surveys-list {
 	margin-top: 50px;
+	.surveys-list__no-surveys {
+		color: $colorLightGrey;
+		font-size: 20px;
+		text-align: center;
+		font-weight: 600;
+	}
 	.survey-item {
 		width: 100%;
 		display: flex;
