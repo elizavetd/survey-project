@@ -53,11 +53,22 @@
 		button:hover {
 			color: lighten($colorGrey, 20%);
 		}
+		.button-edit, .button-cancel {
+			color: $colorLightGrey;
+			font-size: 20px;
+		}
+		.button-edit:hover {
+			color: $colorGreen;
+		}
+		.button-cancel:hover {
+			color: $colorRed;
+		}
 	}
 	.user__button-delete:disabled {
 		color: darken($mainColor, 10%);
 		&:hover {
 			color: darken($mainColor, 10%);
+			cursor: default;
 		}
 	}
 	tr {
@@ -81,6 +92,38 @@
 	.table__footer {
 		height: 80px;
 		text-align: left;
+	}
+}
+
+.username-editing, .role-editing {
+	background-color: transparent;
+	padding: 5px;
+	font-family: $mainFont;
+	color: $colorGrey;
+	font-size: 18px;
+	border: 1px dashed $colorLightGrey;
+	width: 60%;
+}
+
+.username-editing {
+	position: relative;
+	right: 6px;
+}
+
+.user-role {
+	width: 20%;
+}
+
+.role-editing {
+	border: none;
+	text-align-last: center;
+	position: relative;
+	left: 7px;
+	&:hover {
+		cursor: pointer;
+	}
+	option {
+		text-align: center;
 	}
 }
 

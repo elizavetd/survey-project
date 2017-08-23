@@ -1267,11 +1267,22 @@
 .table .user-operations button:hover {
   color: #85888c;
 }
+.table .user-operations .button-edit, .table .user-operations .button-cancel {
+  color: #BDBDBD;
+  font-size: 20px;
+}
+.table .user-operations .button-edit:hover {
+  color: #0D997D;
+}
+.table .user-operations .button-cancel:hover {
+  color: #EB1C23;
+}
 .table .user__button-delete:disabled {
   color: #dedede;
 }
 .table .user__button-delete:disabled:hover {
   color: #dedede;
+  cursor: default;
 }
 .table tr {
   height: 50px;
@@ -1294,6 +1305,38 @@
 .table .table__footer {
   height: 80px;
   text-align: left;
+}
+
+.username-editing, .role-editing {
+  background-color: transparent;
+  padding: 5px;
+  font-family: "Open Sans", sans-serif;
+  color: #535558;
+  font-size: 18px;
+  border: 1px dashed #BDBDBD;
+  width: 60%;
+}
+
+.username-editing {
+  position: relative;
+  right: 6px;
+}
+
+.user-role {
+  width: 20%;
+}
+
+.role-editing {
+  border: none;
+  text-align-last: center;
+  position: relative;
+  left: 7px;
+}
+.role-editing:hover {
+  cursor: pointer;
+}
+.role-editing option {
+  text-align: center;
 }
 
 .users .operations-bar {

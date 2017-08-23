@@ -123,11 +123,11 @@ export const api = {
 				const index = userList.findIndex(element => (element.id === id));
 
 				if (newInfo.username && searchedUser.username !== newInfo.username) {
-					searchedUser.username = newInfo.username;
+					searchedUser[0].username = newInfo.username;
 				};
 
 				if (newInfo.role && searchedUser.role !== newInfo.role) {
-					searchedUser.role = newInfo.role;
+					searchedUser[0].role = newInfo.role;
 				};
 
 				const newList = [
@@ -135,6 +135,9 @@ export const api = {
 					...searchedUser,
 					...userList.slice(index + 1)
 				];
+
+				console.log(searchedUser);
+				console.log(newList)
 
 				myStorage.setItem('userList', JSON.stringify({"users": newList}));
 				resolve(true);

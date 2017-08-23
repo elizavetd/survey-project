@@ -25,26 +25,25 @@ export default class UserOperations extends React.Component {
 		super();
 		
 		this.handleRemoval = this.handleRemoval.bind(this);
-		this.handleModification = this.handleModification.bind(this);
+		//this.handleModification = this.handleModification.bind(this);
 	}
 
 	handleRemoval() {
 		this.props.requestUserRemoval(this.props.id);
 	}
 
-	handleModification() {
-		alert('Modify')
-	}
+	// handleModification() {
+	// 	alert('Modify')
+	// }
 
 	render() {
-		const { id, currentUser } = this.props;
-		console.log(currentUser)
+		const { id, startModification, currentUser } = this.props;
 
 		return (
 			<td data-th="" className="user-operations">
 				<button 
 					className="user__button-edit"
-					onClick = {this.handleModification}
+					onClick = {startModification}
 				>
 					<i className="fa fa-pencil" aria-hidden="true"></i>
 				</button>

@@ -28,7 +28,7 @@ export function* modifyUser(action) {
 	const isModified = yield call(api.modifyUser, action.id, action.newInfo);
 	if (isModified) {
 		yield put(userActions.modifyUserSuccess());
-		yield call(getUserList());
+		yield getUserList();
 	} else {
 		yield put(userActions.modifyUserFailure())
 	}
