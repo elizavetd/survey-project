@@ -65,8 +65,6 @@ export default class TableRow extends React.Component {
 
 		this.setState({
 			isBeingModified: false,
-			username: false,
-			role: false
 		});
 	}
 
