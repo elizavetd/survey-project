@@ -11,7 +11,6 @@ export function* removeSurvey(action) {
 	const isRemoved = yield call(api.removeSurvey, action.id);
 	if (isRemoved) {
 		yield put(surveyActions.removeSurveySuccess());
-		//yield put(surveyActions.getUserSurveys(action.userId));
 		yield getUserSurveys(surveyActions.getUserSurveys(action.userId));
 	} else {
 		yield put(surveyActions.removeSurveyFailure());

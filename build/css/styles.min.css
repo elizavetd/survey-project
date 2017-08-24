@@ -993,6 +993,13 @@
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
+.list .template-list__no-temlates {
+  color: #BDBDBD;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 600;
+  width: 100%;
+}
 .list .template-preview {
   width: 380px;
   height: 550px;
@@ -1065,6 +1072,19 @@
   font-weight: 600;
   text-align: center;
 }
+.list .template-preview .template-preview__creator {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  font-size: 13px;
+  color: #BDBDBD;
+  font-weight: 700;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+.list .template-preview .template-preview__creator strong {
+  color: #EB1C23;
+  margin: 0 5px;
+}
 .list .template-preview .template-preview__description {
   max-height: 280px;
   overflow-y: hidden;
@@ -1125,7 +1145,16 @@
 }
 .list .template-preview:hover .template-preview__edit-buttons .template-preview__button-edit:hover,
 .list .template-preview:hover .template-preview__edit-buttons .template-preview__button-delete:hover {
-  color: #535558;
+  color: #EB1C23;
+}
+.list .template-preview:hover .template-preview__edit-buttons .template-preview__button-edit:disabled,
+.list .template-preview:hover .template-preview__edit-buttons .template-preview__button-delete:disabled {
+  color: #BDBDBD;
+}
+.list .template-preview:hover .template-preview__edit-buttons .template-preview__button-edit:disabled:hover,
+.list .template-preview:hover .template-preview__edit-buttons .template-preview__button-delete:disabled:hover {
+  cursor: default;
+  color: #BDBDBD;
 }
 .list .template-preview:hover .template-preview__header {
   color: #e47d71;

@@ -29,6 +29,21 @@ export const api = {
 		});
 	},
 
+	getUserById(id) {
+		return new Promise( (resolve, reject) => {
+			const searchedUser = JSON.parse(
+				myStorage.getItem('userList')).users
+				.filter(user => (user.id === id));
+			
+			if (searchedUser.length === 1) {
+				resolve(searchedUser[0]);
+			}
+			else {
+				reject(new Error("Нет пользователя с данным id"))
+			};
+		});
+	},
+
 	setCurrentUser(user) {
 		return new Promise( (resolve, reject) => {
 			const searchedUser = JSON.parse(
@@ -122,11 +137,21 @@ export const api = {
 			if (newInfo.username && newInfo.role && searchedUser.length === 1) {
 				const index = userList.findIndex(element => (element.id === id));
 
-				if (newInfo.username && searchedUser.username !== newInfo.username) {
+				if (newInfo.username && searchedUser[0].username !== newInfo.username) {
+					let newTemplatesList = JSON.parse(
+						myStorage.getItem('templates')).templates
+						.map(template => {
+							if (template.creator === searchedUser[0].username) {
+								template.creator = newInfo.username;
+							}
+							return template;
+						});
+
+					myStorage.setItem('templates', JSON.stringify({"templates": newTemplatesList}));
 					searchedUser[0].username = newInfo.username;
 				};
 
-				if (newInfo.role && searchedUser.role !== newInfo.role) {
+				if (newInfo.role && searchedUser[0].role !== newInfo.role) {
 					searchedUser[0].role = newInfo.role;
 				};
 
@@ -135,9 +160,6 @@ export const api = {
 					...searchedUser,
 					...userList.slice(index + 1)
 				];
-
-				console.log(searchedUser);
-				console.log(newList)
 
 				myStorage.setItem('userList', JSON.stringify({"users": newList}));
 				resolve(true);
@@ -168,9 +190,7 @@ export const api = {
 			const surveyList = JSON.parse(
 				myStorage.getItem('surveys')).surveyList;
 
-			const surveyToDelete = surveyList.filter(surveyToDelete => 
-				(surveyToDelete.id === id)
-			);
+			const surveyToDelete = surveyList.filter(survey => (survey === id));
 			
 			if (surveyToDelete.length === 1) {
 				const index = surveyList.findIndex(element => (element.id === id));
@@ -191,6 +211,31 @@ export const api = {
 	getTemplates() {
 		return new Promise( resolve => {
 			resolve(JSON.parse(myStorage.getItem('templates')));
+		});
+	},
+
+	removeTemplate(id) {
+		return new Promise( (resolve, reject) => {
+			const templateList = JSON.parse(
+				myStorage.getItem('templates')).templates;
+
+			const templateToDelete = templateList.filter(template => 
+				(template.id === id)
+			);
+			
+			if (templateToDelete.length === 1) {
+				const index = templateList.findIndex(element => (element.id === id));
+
+				const newList = [
+					...templateList.slice(0, index),
+					...templateList.slice(index + 1)
+				];
+
+				myStorage.setItem('templates', JSON.stringify({"templates": newList}));
+				resolve(true);
+			} else {
+				reject(new Error("Нет шаблона с таким id ¯\_(ツ)_/¯"));
+			};
 		});
 	},
 

@@ -2,13 +2,10 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { store } from '../../store'
 
-import { requestUserModification, requestUserRemoval } from '../../actions/userActions'
+import { requestUserRemoval } from '../../actions/userActions'
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		requestUserModification: (id, newInfo) => 
-			store.dispatch(requestUserModification(id, newInfo)
-		),
 		requestUserRemoval: (id) => store.dispatch(requestUserRemoval(id))
 	};
 };
@@ -25,16 +22,11 @@ export default class UserOperations extends React.Component {
 		super();
 		
 		this.handleRemoval = this.handleRemoval.bind(this);
-		//this.handleModification = this.handleModification.bind(this);
 	}
 
 	handleRemoval() {
 		this.props.requestUserRemoval(this.props.id);
 	}
-
-	// handleModification() {
-	// 	alert('Modify')
-	// }
 
 	render() {
 		const { id, startModification, currentUser } = this.props;

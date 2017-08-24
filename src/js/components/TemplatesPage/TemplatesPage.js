@@ -58,13 +58,19 @@ export default class TemplatesPage extends React.Component {
 						{templates && templates.map(template =>
 							<TemplatePreview
 								key = {template.id}
+								id = {template.id}
 								iconType = {template.iconType}
 								title = {template.title}
 								description = {template.description}
 								questionsCount = {template.questionsCount}
 								pageCount = {template.pageCount}
+								creator = {template.creator}
 							/>
 						)}
+
+						{templates && templates.length === 0 &&
+							<p className="template-list__no-temlates">Здесь нет еще ни одного шаблона. Создайте первый!</p>
+						}
 					</div>
 				</section>
 			</div>
