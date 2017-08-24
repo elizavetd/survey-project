@@ -1,11 +1,16 @@
 ﻿import React from "react"
 import { connect } from 'react-redux'
-import { store } from '../../store'
+import { store, history } from '../../store'
 import { requestTemplateRemoval } from '../../actions/templateActions'
+import { createSurveyFromTemplate } from '../../actions/questionActions'
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		requestTemplateRemoval: (id) => store.dispatch(requestTemplateRemoval(id))
+		requestTemplateRemoval: (id) => 
+			store.dispatch(requestTemplateRemoval(id)),
+
+		createSurveyFromTemplate: (template) => 
+			store.dispatch(createSurveyFromTemplate(template))
 	};
 };
 
@@ -21,22 +26,46 @@ export default class TemplatePreview extends React.Component {
 		super();
 		this.state = {}
 
-		this.handleRemoval = this.handleRemoval.bind(this)
+		this.handleRemoval = this.handleRemoval.bind(this);
+		this.createNewSurvey = this.createNewSurvey.bind(this);
 	}
 
 	handleRemoval() {
 		this.props.requestTemplateRemoval(this.props.id);
 	}
 
+	createNewSurvey() {
+		let newSurvey = {
+			creator: this.props.currentUser.id,
+			title: this.props.title,
+			description: this.props.description,
+			imageSrc: this.props.imageSrc,
+			type: this.props.type,
+			iconType: this.props.iconType,
+			finishMessage: this.props.finishMessage,
+			finishDetail: this.props.finishDetail,
+			answersCount: 0,
+			questionList: this.props.questionList
+		};
+
+		this.props.createSurveyFromTemplate(newSurvey);
+		history.push('/new-survey');
+	}
+
 	render() {
 		const { id,
-			iconType,
-			title,
-			description,
-			questionsCount,
-			pageCount,
-			creator,
-			currentUser } = this.props;
+				iconType,
+				type,
+				title,
+				description,
+				questionsCount,
+				pageCount,
+				imageSrc,
+				creator,
+				finishMessage,
+				finishDetail,
+				questionList,
+				currentUser } = this.props;
 
 		return (
 			<article className="template-preview">
@@ -63,11 +92,18 @@ export default class TemplatePreview extends React.Component {
 				<h3 className="template-preview__header">{title}</h3>
 				<p className="template-preview__creator">Добавил: <strong>{creator}</strong></p>
 				<p className="template-preview__description">{description}</p>
+
 				<div className="template-preview__info">
 					<p>Вопросов: {questionsCount}</p>
 					<p>Страниц: {pageCount}</p>
 				</div>
-				<button className="template-preview__button-create">Создать опрос</button>
+
+				<button 
+					onClick = {this.createNewSurvey}
+					className="template-preview__button-create"
+				>
+					Создать опрос
+				</button>
 			</article>
 		);
 	};

@@ -101,7 +101,8 @@ export default class StartPage extends React.Component {
 						onBlur={this.saveTitle}
 						className="survey-body__survey-name"
 						type="text"
-						placeholder={title} />
+						value={title} 
+					/>
 					<textarea
 						onChange={this.changeDescription}
 						onBlur={this.saveDescription}

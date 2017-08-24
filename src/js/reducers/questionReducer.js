@@ -7,13 +7,12 @@ import { ADD_QUESTION,
 		 SET_TYPE,
 		 EDIT_MESSAGE,
 		 EDIT_DETAIL,
-		 RESET_SURVEY } from '../actions/questionActions'
+		 RESET_SURVEY,
+		 CREATE_SURVEY_FROM_TEMPLATE } from '../actions/questionActions'
 import { store, sagaMiddleware } from '../store'
 import { generateSurveyID } from '../lib/generateUniqueID'
 
 import generateId from '../lib/generateUniqueID'
-
-//const initialState = 
 
 function generateInitialState() {
 	return {
@@ -48,108 +47,116 @@ const initialOptions = [
 
 export default function userReducer(state = generateInitialState(), action) {
 	switch (action.type) {
-	case ADD_QUESTION: {
-		let options = [];
-		switch (action.question.type) {
-			case 'oneAnswer':
-			case 'severalAnswers':
-				options = initialOptions;
-				break;
-			default:
-				break;
-		};
-		
-		const newQuestion = Object.assign(
-			{}, 
-			action.question, 
-			{ question: 'Напишите свой вопрос здесь...', options: options }
-		);
-		
-		const newList = state['questionList'].concat([newQuestion]);
-		return Object.assign({}, state, {questionList: newList});
-	}
-
-	case INSERT_QUESTION: {
-		let options = [];
-		switch (action.question.type) {
-			case 'oneAnswer':
-			case 'severalAnswers':
-				options = initialOptions;
-				break;
-			default:
-				break;
-		};
-		
-		const newQuestion = Object.assign(
-			{}, 
-			action.question, 
-			{ question: 'Напишите свой вопрос здесь...', options: options }
-		);
-
-		const index = state['questionList'].findIndex(
-			element => (element.id === action.id)
-		)
-		const newList = [
-			...state['questionList'].slice(0, index),
-			...[newQuestion],
-			...state['questionList'].slice(index)
-		];
-		return Object.assign({}, state, {questionList: newList});
-	}
-
-	case DELETE_QUESTION: {
-		const index = state['questionList'].findIndex(
-			 element => (element.id === action.id)
-		);
-		const newList = [
-			...state['questionList'].slice(0, index),
-			...state['questionList'].slice(index + 1)
-		];
-		return Object.assign({}, state, {questionList: newList});
-	}
-
-	case EDIT_QUESTION: {
-		const index = state['questionList'].findIndex(
-			element => (element.id === action.id)
-		);
-		const editedQuestion = {
-			id: index,
-			type: state['questionList'][index].type,
-			question: action.question
+		case CREATE_SURVEY_FROM_TEMPLATE: {
+			return Object.assign(
+				{}, 
+				action.template, 
+				{ id: generateSurveyID() }
+			);
 		}
-		const newList = [
-			...state['questionList'].slice(0, index),
-			...[editedQuestion],
-			...state['questionList'].slice(index + 1)
-		];
-	}
 
-	case EDIT_TITLE: {
-		return Object.assign({}, state, {title: action.title});
-	}
+		case ADD_QUESTION: {
+			let options = [];
+			switch (action.question.type) {
+				case 'oneAnswer':
+				case 'severalAnswers':
+					options = initialOptions;
+					break;
+				default:
+					break;
+			};
+			
+			const newQuestion = Object.assign(
+				{}, 
+				action.question, 
+				{ question: 'Напишите свой вопрос здесь...', options: options }
+			);
+			
+			const newList = state['questionList'].concat([newQuestion]);
+			return Object.assign({}, state, {questionList: newList});
+		}
 
-	case EDIT_DESCRIPTION: {
-		return Object.assign({}, state, {description: action.description});
-	}
+		case INSERT_QUESTION: {
+			let options = [];
+			switch (action.question.type) {
+				case 'oneAnswer':
+				case 'severalAnswers':
+					options = initialOptions;
+					break;
+				default:
+					break;
+			};
+			
+			const newQuestion = Object.assign(
+				{}, 
+				action.question, 
+				{ question: 'Напишите свой вопрос здесь...', options: options }
+			);
 
-	case SET_TYPE: {
-		return Object.assign({}, state, {type: action.surveyType});
-	}
+			const index = state['questionList'].findIndex(
+				element => (element.id === action.id)
+			)
+			const newList = [
+				...state['questionList'].slice(0, index),
+				...[newQuestion],
+				...state['questionList'].slice(index)
+			];
+			return Object.assign({}, state, {questionList: newList});
+		}
 
-	case EDIT_MESSAGE: {
-		return Object.assign({}, state, {finishMessage: action.message});
-	}
+		case DELETE_QUESTION: {
+			const index = state['questionList'].findIndex(
+				element => (element.id === action.id)
+			);
+			const newList = [
+				...state['questionList'].slice(0, index),
+				...state['questionList'].slice(index + 1)
+			];
+			return Object.assign({}, state, {questionList: newList});
+		}
 
-	case EDIT_DETAIL: {
-		return Object.assign({}, state, {finishDetail: action.detail});
-	}
-	
-	case RESET_SURVEY: {
-		return generateInitialState();
-	}
+		case EDIT_QUESTION: {
+			const index = state['questionList'].findIndex(
+				element => (element.id === action.id)
+			);
+			const editedQuestion = {
+				id: index,
+				type: state['questionList'][index].type,
+				question: action.question
+			}
+			const newList = [
+				...state['questionList'].slice(0, index),
+				...[editedQuestion],
+				...state['questionList'].slice(index + 1)
+			];
+		}
 
-	default:
-		return state;
-	};
+		case EDIT_TITLE: {
+			return Object.assign({}, state, {title: action.title});
+		}
+
+		case EDIT_DESCRIPTION: {
+			return Object.assign({}, state, {description: action.description});
+		}
+
+		case SET_TYPE: {
+			return Object.assign({}, state, {type: action.surveyType});
+		}
+
+		case EDIT_MESSAGE: {
+			return Object.assign({}, state, {finishMessage: action.message});
+		}
+
+		case EDIT_DETAIL: {
+			return Object.assign({}, state, {finishDetail: action.detail});
+		}
+		
+		case RESET_SURVEY: {
+			return generateInitialState();
+		}
+
+		default:
+			return state;
+		};
 };
 

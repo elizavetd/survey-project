@@ -60,11 +60,16 @@ export default class TemplatesPage extends React.Component {
 								key = {template.id}
 								id = {template.id}
 								iconType = {template.iconType}
+								type = {template.type}
+								imageSrc = {template.imageSrc}
 								title = {template.title}
 								description = {template.description}
 								questionsCount = {template.questionsCount}
 								pageCount = {template.pageCount}
 								creator = {template.creator}
+								finishMessage = {template.finishMessage}
+								finishDetail = {template.finishDetail}
+								questionList = {template.questionList}
 							/>
 						)}
 
