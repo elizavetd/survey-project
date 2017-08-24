@@ -18,7 +18,7 @@ if(myStorage.length < 4) {
 	myStorage.setItem('surveys', JSON.stringify(_surveys));
 }
 
-myStorage.setItem('currentUser', JSON.stringify({"role": "guest"}));
+//myStorage.setItem('currentUser', JSON.stringify({"role": "guest"}));
 
 console.log(localStorage);
 
@@ -190,7 +190,7 @@ export const api = {
 			const surveyList = JSON.parse(
 				myStorage.getItem('surveys')).surveyList;
 
-			const surveyToDelete = surveyList.filter(survey => (survey === id));
+			const surveyToDelete = surveyList.filter(survey => (survey.id === id));
 			
 			if (surveyToDelete.length === 1) {
 				const index = surveyList.findIndex(element => (element.id === id));
@@ -204,6 +204,21 @@ export const api = {
 				resolve(true);
 			} else {
 				reject(new Error("Нет опроса с таким id ¯\_(ツ)_/¯"));
+			};
+		});
+	},
+
+	saveNewSurvey(survey) {
+		return new Promise( (resolve, reject) => {
+			try {
+				const surveyList = JSON.parse(myStorage.getItem('surveys')).surveyList;
+
+				const newList = surveyList.concat([survey]);
+	
+				myStorage.setItem('surveys', JSON.stringify({"surveyList": newList}));
+				resolve(true);
+			} catch (err) {
+				reject(new Error(err.message))
 			};
 		});
 	},

@@ -69,7 +69,7 @@ export default class TemplatesPage extends React.Component {
 						)}
 
 						{templates && templates.length === 0 &&
-							<p className="template-list__no-temlates">Здесь нет еще ни одного шаблона. Создайте первый!</p>
+							<p className="template-list__no-temlates">Шаблонов нет</p>
 						}
 					</div>
 				</section>

@@ -13,18 +13,23 @@ import { generateSurveyID } from '../lib/generateUniqueID'
 
 import generateId from '../lib/generateUniqueID'
 
-const initialState = {
-	id: generateSurveyID(),
-	//pageID: 1,
-	title: 'Название опроса...',
-	description: 'Здравствуйте, потратьте, пожалуйста, несколько минут своего времени на заполнение следующей анкеты.',
-	type: '-- выберите тип опроса --',
-	iconType: 'fa fa-question',
-	imageSrc: './img/default_survey_img.jpg',
-	finishMessage: 'Благодарим за прохождение опроса!',
-	finishDetail: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.',
-	lastChangeDate: new Date(),
-	questionList: []
+//const initialState = 
+
+function generateInitialState() {
+	return {
+		id: generateSurveyID(),
+		//pageID: 1,
+		title: 'Название опроса...',
+		description: 'Здравствуйте, потратьте, пожалуйста, несколько минут своего времени на заполнение следующей анкеты.',
+		type: '-- выберите тип опроса --',
+		iconType: 'fa fa-question',
+		imageSrc: './img/default_survey_img.jpg',
+		finishMessage: 'Благодарим за прохождение опроса!',
+		finishDetail: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.',
+		answersCount: 0,
+		lastChangeDate: '',
+		questionList: []
+	};
 }
 
 const initialOptions = [
@@ -42,7 +47,7 @@ const initialOptions = [
 	}
 ];
 
-export default function userReducer(state = initialState, action) {
+export default function userReducer(state = generateInitialState(), action) {
 	switch (action.type) {
 	case ADD_QUESTION: {
 		let options = [];
@@ -141,7 +146,7 @@ export default function userReducer(state = initialState, action) {
 	}
 	
 	case RESET_SURVEY: {
-		return initialState;
+		return generateInitialState();
 	}
 
 	default:

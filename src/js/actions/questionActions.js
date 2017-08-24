@@ -15,6 +15,10 @@ export const EDIT_DETAIL = 'EDIT_DETAIL'
 
 export const RESET_SURVEY = 'RESET_SURVEY'
 
+export const REQUEST_SURVEY_SAVING = 'REQUEST_SURVEY_SAVING'
+export const SURVEY_SAVING_SUCCESS = 'SURVEY_SAVING_SUCCESS'
+export const SURVEY_SAVING_FAILURE = 'SURVEY_SAVING_FAILURE'
+
 export function getSurveyQuestions() {
 	return {
 		type: GET_SURVEY_QUESTIONS	
@@ -96,5 +100,24 @@ export function editDetail (detail) {
 export function resetSurvey() {
 	return {
 		type: RESET_SURVEY
+	}
+}
+
+export function requestSurveySaving(survey) {
+	return {
+		type: REQUEST_SURVEY_SAVING,
+		survey: survey
+	}
+}
+
+export function surveySavingSuccess() {
+	return {
+		type: SURVEY_SAVING_SUCCESS
+	}
+}
+
+export function surveySavingFailure() {
+	return {
+		type: SURVEY_SAVING_FAILURE
 	}
 }

@@ -89,7 +89,7 @@ class MySurveysPage extends React.Component {
 						)}
 
 						{(surveys && surveys.length === 0) && 
-							<p className="surveys-list__no-surveys">Вы еще не создали ни одного опроса.</p>
+							<p className="surveys-list__no-surveys">Опросов нет.</p>
 						}
 					</div>
 

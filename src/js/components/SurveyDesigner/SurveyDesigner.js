@@ -1,8 +1,8 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
-import { connect } from 'react-redux'
-//import { store } from '../../../store'
-import { resetSurvey } from '../../actions/questionActions'
+// import { connect } from 'react-redux'
+// import { store } from '../../store'
+// import { resetSurvey } from '../../actions/questionActions'
 
 import Options from './Options'
 
@@ -21,30 +21,32 @@ import UserResultsPage from './Pages/UserResultsPage'
 // 	};
 // };
 
-const mapDispatchToProps = (dispatch) => {
-	return {
-		resetSurvey: () => dispatch(editMessage())
-	}
-};
+// const mapDispatchToProps = (dispatch) => {
+// 	return {
+// 		resetSurvey: () => dispatch(editMessage())
+// 	}
+// };
 
-@connect(mapDispatchToProps)
+//@connect(mapDispatchToProps)
 export default class SurveysDesigner extends React.Component{
 	constructor() {
 		super();
 
 		this.state = {
-			save: false
+			//save: false
 		}
 
-		this.saveSurvey = this.saveSurvey.bind(this);
+		//this.saveSurvey = this.saveSurvey.bind(this);
 	}
 
-	saveSurvey() {
-		console.log('aaaaaaaaa')
-	}
+	// saveSurvey() {
+	// 	alert('save')
+	// }
 
 	render() {
 		const { match } = this.props;
+
+		//console.log(this.props)
 
 		return (
 			<div className="content">
@@ -62,7 +64,8 @@ export default class SurveysDesigner extends React.Component{
 					<Options 
 						position='right' 
 						url={match.url} 
-						saveSurvey={this.saveSurvey} />
+						//saveSurvey={this.saveSurvey} 
+					/>
 				</div>
 			</div>
 		);

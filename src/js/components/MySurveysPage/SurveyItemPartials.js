@@ -25,9 +25,7 @@ export class Options extends React.Component {
 	}
 
 	handleRemoval() {
-		alert('delete' + this.props.id + ',' + this.props.currentUserId)
-
-		this.props.requestSurveyRemoval(this.props.id, this.props.currentUserId)
+		this.props.requestSurveyRemoval(this.props.id, this.props.currentUserId);
 	}
 
 	render() {

@@ -37,7 +37,7 @@ export default class StartPage extends React.Component {
 		this.saveDescription = this.saveDescription.bind(this);
 		this.saveType = this.saveType.bind(this);
 
-		//this.submitChanges = this.submitChanges.bind(this);
+		this.submitChanges = this.submitChanges.bind(this);
 	}
 
 	changeTitle(e) {
@@ -70,12 +70,12 @@ export default class StartPage extends React.Component {
 			this.props.setType(e.target.value);
 	}
 
-	// submitChanges(e) {
-	// 	e.preventDefault();
+	submitChanges(e) {
+		e.preventDefault();
 
-	// 	//this.saveTitle();
-	// 	//this.saveDescription();
-	// }
+		this.saveTitle();
+		this.saveDescription();
+	}
 
 	render() {
 		const { title, description, type } = this.props;
@@ -93,7 +93,7 @@ export default class StartPage extends React.Component {
 
 		return (
 			<section className="survey-body">
-				<form className="survey-start-editor">
+				<form className="survey-start-editor" onSubmit={this.submitChanges}>
 					<button className="survey-body__add-logo"><i className="fa fa-picture-o" aria-hidden="true"></i><p>Добавить изображение</p></button>
 
 					<input 

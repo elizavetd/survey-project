@@ -61,11 +61,8 @@ export default class Layout extends React.Component {
 							: (<SignupForm />)
 					)}/>
 					<Route path="/forgot-password" component={ ForgotPassword } />
-					<Route path="/new-survey" render={() => (
-						(role !== 'guest') 
-							? (<Redirect to="/signup"/>) 
-							: (<SurveyDesigner />)
-					)}/>
+					<Route path="/new-survey" component={SurveyDesigner} />
+					{(role === 'guest') && <Redirect from='/new-survey' to='/signup'/>}
 					
 					<Footer />
 				</div>
