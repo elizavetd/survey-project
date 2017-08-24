@@ -1,4 +1,54 @@
 import React from "react"
+import { connect } from 'react-redux'
+import { store } from '../../store'
+import { requestSurveyRemoval } from '../../actions/userSurveysActions'
+
+const mapDispatchToProps = (dispatch) => {
+	return {
+		requestSurveyRemoval: (id, userId) => 
+			store.dispatch(requestSurveyRemoval(id, userId))
+	};
+};
+
+const mapStateToProps = (store) => {
+	return {
+		currentUserId: store.user.currentUser.id
+	};
+};
+
+@connect(mapStateToProps, mapDispatchToProps)
+export class Options extends React.Component {
+	constructor() {
+		super();
+
+		this.handleRemoval = this.handleRemoval.bind(this);
+	}
+
+	handleRemoval() {
+		alert('delete' + this.props.id + ',' + this.props.currentUserId)
+
+		this.props.requestSurveyRemoval(this.props.id, this.props.currentUserId)
+	}
+
+	render() {
+		const { id, currentUserId } = this.props;
+
+		return (
+			<div className="survey-item__options">
+				<button className="survey-item__button survey-item__button_collect" title="Сбор ответов"><i className="fa fa-users" aria-hidden="true"></i></button>
+				<button className="survey-item__button survey-item__button_results" title="Результаты опроса"><i className="fa fa-bar-chart" aria-hidden="true"></i></button>
+				<button className="survey-item__button survey-item__button_edit" title="Редактировать опрос"><i className="fa fa-pencil" aria-hidden="true"></i></button>
+				<button 
+					onClick = {this.handleRemoval}
+					className="survey-item__button survey-item__button_delete" 
+					title="Удалить опрос"
+				>
+					<i className="fa fa-trash" aria-hidden="true"></i>
+				</button>
+			</div>
+		);
+	};
+};
 
 export const Caption = ({ imageSrc, iconType, title, description }) => (
 	<div className="survey-item__caption">
@@ -11,7 +61,7 @@ export const Caption = ({ imageSrc, iconType, title, description }) => (
 			<p className="survey-item__description">{description}</p>
 		</div>
 	</div>
-)
+);
 
 export const Details = ({ answersCount, lastChangeDate }) => (
 	<div className="survey-item__info">
@@ -24,13 +74,4 @@ export const Details = ({ answersCount, lastChangeDate }) => (
 			<p className="survey-item__info-value">{lastChangeDate}</p>
 		</div>
 	</div>
-)
-
-export const Options = () => (
-	<div className="survey-item__options">
-		<button className="survey-item__button survey-item__button_collect" title="Сбор ответов"><i className="fa fa-users" aria-hidden="true"></i></button>
-		<button className="survey-item__button survey-item__button_results" title="Результаты опроса"><i className="fa fa-bar-chart" aria-hidden="true"></i></button>
-		<button className="survey-item__button survey-item__button_edit" title="Редактировать опрос"><i className="fa fa-pencil" aria-hidden="true"></i></button>
-		<button className="survey-item__button survey-item__button_delete" title="Удалить опрос"><i className="fa fa-trash" aria-hidden="true"></i></button>
-	</div>
-)
+);

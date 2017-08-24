@@ -48,50 +48,56 @@ class MySurveysPage extends React.Component {
 		}
 
 		let itemCountCaption = "Всего опросов:";
-		let itemCount = 37;
+		let itemCount = 0;
+		if (surveys) 
+			itemCount = surveys.length;
 		let itemsPerPage = 5;
 		let pageCount = Math.ceil(itemCount / itemsPerPage);
 		let pageNumber = 1;
 		let hasSideInfo = true;
 
-	return (
-		<div className="content">
-		<section className="my-surveys">
-			<SearchBar 
-				onChange = {this.filter}
-				placeholder="Найти опрос" 
-				link="/new-survey"
-				caption="Новый опрос"
-			/>
-		
-			{(!surveys) && <PaginationBar 
-				hasSideInfo = {hasSideInfo}
-				itemCountCaption = {itemCountCaption}
-				itemCount = {itemCount}
-				pageNumber = {pageNumber}
-				pageCount = {pageCount}
-			/>}
-			<div className="surveys-list">
-				{surveys && surveys.map(survey =>
-					<SurveyItem 
-						key = {survey.id}
-						imageSrc = {survey.imageSrc}
-						iconType = {survey.iconType}
-						title = {survey.title}
-						description = {survey.description}
-						answersCount = {survey.answersCount}
-						lastChangeDate = {survey.lastChangeDate}
+		return (
+			<div className="content">
+				<section className="my-surveys">
+					<SearchBar 
+						onChange = {this.filter}
+						placeholder="Найти опрос" 
+						link="/new-survey"
+						caption="Новый опрос"
 					/>
-				)}
-				{(surveys && surveys.length === 0) && 
-					<p className="surveys-list__no-surveys">Вы еще не создали ни одного опроса.</p>
-				}
+			
+					{(surveys && surveys.length > 0) && <PaginationBar 
+						hasSideInfo = {hasSideInfo}
+						itemCountCaption = {itemCountCaption}
+						itemCount = {itemCount}
+						pageNumber = {pageNumber}
+						pageCount = {pageCount}
+					/>}
+
+					<div className="surveys-list">
+						{surveys && surveys.map(survey =>
+							<SurveyItem 
+								key = {survey.id}
+								id = {survey.id}
+								imageSrc = {survey.imageSrc}
+								iconType = {survey.iconType}
+								title = {survey.title}
+								description = {survey.description}
+								answersCount = {survey.answersCount}
+								lastChangeDate = {survey.lastChangeDate}
+							/>
+						)}
+
+						{(surveys && surveys.length === 0) && 
+							<p className="surveys-list__no-surveys">Вы еще не создали ни одного опроса.</p>
+						}
+					</div>
+
+					{(surveys && surveys.length > 0) && <PaginationBar hasSideInfo = {!hasSideInfo} />}
+				</section>
 			</div>
-			{(!surveys) && <PaginationBar hasSideInfo = {!hasSideInfo} />}
-		</section>
-	</div>
-	);
-  }
-}
+		);
+	};
+};
 
 export default MySurveysPage;

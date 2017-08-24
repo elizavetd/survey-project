@@ -18,7 +18,7 @@ if(myStorage.length < 4) {
 	myStorage.setItem('surveys', JSON.stringify(_surveys));
 }
 
-//myStorage.setItem('currentUser', JSON.stringify({"role": "guest"}));
+myStorage.setItem('currentUser', JSON.stringify({"role": "guest"}));
 
 console.log(localStorage);
 
@@ -160,6 +160,31 @@ export const api = {
 				.filter(survey => survey.creator === id);
 				
 			resolve({surveyList: surveys});
+		});
+	},
+
+	removeSurvey(id) {
+		return new Promise( (resolve, reject) => {
+			const surveyList = JSON.parse(
+				myStorage.getItem('surveys')).surveyList;
+
+			const surveyToDelete = surveyList.filter(surveyToDelete => 
+				(surveyToDelete.id === id)
+			);
+			
+			if (surveyToDelete.length === 1) {
+				const index = surveyList.findIndex(element => (element.id === id));
+
+				const newList = [
+					...surveyList.slice(0, index),
+					...surveyList.slice(index + 1)
+				];
+
+				myStorage.setItem('surveys', JSON.stringify({"surveyList": newList}));
+				resolve(true);
+			} else {
+				reject(new Error("Нет опроса с таким id ¯\_(ツ)_/¯"));
+			};
 		});
 	},
 

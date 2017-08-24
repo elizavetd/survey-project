@@ -3,6 +3,7 @@ import React from "react"
 import {Caption, Details, Options } from './SurveyItemPartials'
 
 const SurveyItem = ({ 
+	id,
 	imageSrc,
 	iconType,
 	title,
@@ -23,7 +24,7 @@ const SurveyItem = ({
 				answersCount = {answersCount} 
 				lastChangeDate = {lastChangeDate}
 			/>
-			<Options />
+			<Options id = {id}/>
 		</div>
 	</article>
 );

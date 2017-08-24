@@ -61,7 +61,7 @@ export default class UsersPage extends React.Component {
 								/>
 							)}
 						</tbody>
-						<TableFooter userCount={112} />
+						<TableFooter userCount={users && users.length} />
 					</table>
 				</section>
 			</div>
