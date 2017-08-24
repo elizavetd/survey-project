@@ -212,8 +212,26 @@ export const api = {
 		return new Promise( (resolve, reject) => {
 			try {
 				const surveyList = JSON.parse(myStorage.getItem('surveys')).surveyList;
+				
+				const searchedSurvey = surveyList.filter(element => 
+					element.id === survey.id
+				)
 
-				const newList = surveyList.concat([survey]);
+				let newList;
+
+				if (searchedSurvey.length === 0) {
+					newList = surveyList.concat([survey]);
+				} else if (searchedSurvey.length === 1) {
+					const index = surveyList.findIndex(element => 
+						(element.id === survey.id)
+					);
+					newList = [
+						...surveyList.slice(0, index),
+						...[survey],
+						...surveyList.slice(index + 1)
+					];
+				}
+				
 	
 				myStorage.setItem('surveys', JSON.stringify({"surveyList": newList}));
 				resolve(true);
@@ -234,8 +252,25 @@ export const api = {
 			try {
 				const templateList = JSON.parse(myStorage.getItem('templates')).templates;
 
-				const newList = templateList.concat([template]);
-	
+				const searchedTemplate = templateList.filter(element => 
+					element.id === template.id
+				)
+
+				let newList;
+
+				if (searchedTemplate.length === 0) {
+					newList = templateList.concat([template]);
+				} else if (searchedTemplate.length === 1) {
+					const index = templateList.findIndex(element => 
+						(element.id === template.id)
+					);
+					newList = [
+						...templateList.slice(0, index),
+						...[template],
+						...templateList.slice(index + 1)
+					];
+				}
+				
 				myStorage.setItem('templates', JSON.stringify({"templates": newList}));
 				resolve(true);
 			} catch (err) {

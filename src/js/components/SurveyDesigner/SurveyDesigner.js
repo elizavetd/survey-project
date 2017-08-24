@@ -1,8 +1,8 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
-// import { connect } from 'react-redux'
-// import { store } from '../../store'
-// import { resetSurvey } from '../../actions/questionActions'
+import { connect } from 'react-redux'
+import { store } from '../../store'
+import { resetSurvey, requestSurveySaving } from '../../actions/questionActions'
 
 import Options from './Options'
 
@@ -15,38 +15,49 @@ import ResultsPage from './Pages/ResultsPage'
 import UserResultsPage from './Pages/UserResultsPage'
 
 
-// const mapStateToProps = (store) => {
-// 	return {
-// 		message: store.currentSurvey.finishMessage
-// 	};
-// };
+const mapStateToProps = (store) => {
+	return {
+		currentSurvey: store.currentSurvey,
+		currentUser: store.user.currentUser
+	};
+};
 
-// const mapDispatchToProps = (dispatch) => {
-// 	return {
-// 		resetSurvey: () => dispatch(editMessage())
-// 	}
-// };
+const mapDispatchToProps = (dispatch) => {
+	return {
+		resetSurvey: () => store.dispatch(resetSurvey()),
+		requestSurveySaving: (survey) => store.dispatch(requestSurveySaving(survey))
+	}
+};
 
-//@connect(mapDispatchToProps)
+@connect(mapStateToProps, mapDispatchToProps)
 export default class SurveysDesigner extends React.Component{
 	constructor() {
 		super();
-
-		this.state = {
-			//save: false
-		}
-
-		//this.saveSurvey = this.saveSurvey.bind(this);
+		
 	}
 
-	// saveSurvey() {
-	// 	alert('save')
-	// }
+
+	componentWillUnmount() {
+		let saveChanges = confirm('Сохранить сделанные Вами изменения как новый опрос?')
+		
+		if(saveChanges) {
+			const d = new Date();
+			const surveyToSave = Object.assign(
+				this.props.currentSurvey, 
+				{
+					creator: this.props.currentUser.id,
+					answersCount: 0,
+					lastChangeDate: `${d.getDate()}.${d.getMonth()}.${d.getFullYear()}`
+				}
+			);
+			this.props.requestSurveySaving(surveyToSave);
+		};
+
+		this.props.resetSurvey();
+	}
 
 	render() {
-		const { match } = this.props;
-
-		//console.log(this.props)
+		const { match, currentUser, currentSurvey } = this.props;
 
 		return (
 			<div className="content">
@@ -64,7 +75,7 @@ export default class SurveysDesigner extends React.Component{
 					<Options 
 						position='right' 
 						url={match.url} 
-						//saveSurvey={this.saveSurvey} 
+						//surveySaved={this.state.surveySaved}
 					/>
 				</div>
 			</div>

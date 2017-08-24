@@ -4,7 +4,7 @@ import { PageNavButtons } from './OptionsButtons'
 import { StepButtons } from './OptionsButtons'
 import { OptionButtons } from './OptionsButtons'
 
-const Options = ({ position, url, /*saveSurvey*/ }) => (
+const Options = ({ position, url, /*surveySaved*/ }) => (
 	<aside>
 		{ (position === 'left') && 
 			<PageNavButtons type="survey-setup survey-setup_left" url={url} /> 
@@ -20,7 +20,7 @@ const Options = ({ position, url, /*saveSurvey*/ }) => (
 					<PageNavButtons url={url} />
 					<StepButtons url={url} />
 					<OptionButtons 
-						//saveSurvey={saveSurvey} 
+						//surveySaved = {surveySaved}
 					/>
 				</div>
 			</div>

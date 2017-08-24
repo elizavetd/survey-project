@@ -43,8 +43,6 @@ export class OptionButtons extends React.Component {
 		);
 
 		this.props.requestSurveySaving(surveyToSave);
-		this.props.resetSurvey();
-		history.push('/my-surveys')
 	}
 
 	saveTemplate() {
@@ -58,8 +56,6 @@ export class OptionButtons extends React.Component {
 		);
 
 		this.props.requestTemplateSaving(templateToSave);
-		this.props.resetSurvey();
-		history.push('/templates')
 	}
 
 	render() {
