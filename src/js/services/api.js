@@ -229,6 +229,21 @@ export const api = {
 		});
 	},
 
+	saveNewTemplate(template) {
+		return new Promise( (resolve, reject) => {
+			try {
+				const templateList = JSON.parse(myStorage.getItem('templates')).templates;
+
+				const newList = templateList.concat([template]);
+	
+				myStorage.setItem('templates', JSON.stringify({"templates": newList}));
+				resolve(true);
+			} catch (err) {
+				reject(new Error(err.message))
+			};
+		});
+	},
+
 	removeTemplate(id) {
 		return new Promise( (resolve, reject) => {
 			const templateList = JSON.parse(

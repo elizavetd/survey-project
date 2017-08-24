@@ -2,12 +2,15 @@ import React from "react"
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { store, history } from '../../store'
-import { resetSurvey, requestSurveySaving } from '../../actions/questionActions'
+import { resetSurvey, 
+		 requestSurveySaving,
+		 requestTemplateSaving } from '../../actions/questionActions'
 
 const mapDispatchToProps = (dispatch) => {
 	return {
 		resetSurvey: () => store.dispatch(resetSurvey()),
-		requestSurveySaving: (survey) => store.dispatch(requestSurveySaving(survey))
+		requestSurveySaving: (survey) => store.dispatch(requestSurveySaving(survey)),
+		requestTemplateSaving: (template) => store.dispatch(requestTemplateSaving(template))
 	};
 };
 
@@ -23,9 +26,8 @@ export class OptionButtons extends React.Component {
 	constructor() {
 		super();
 
-		this.state = {};
-
 		this.saveSurvey = this.saveSurvey.bind(this);
+		this.saveTemplate = this.saveTemplate.bind(this);
 	}
 
 	saveSurvey() {
@@ -35,6 +37,7 @@ export class OptionButtons extends React.Component {
 			this.props.currentSurvey, 
 			{
 				creator: this.props.currentUser.id,
+				answersCount: 0,
 				lastChangeDate: `${d.getDate()}.${d.getMonth()}.${d.getFullYear()}`
 			}
 		);
@@ -42,6 +45,21 @@ export class OptionButtons extends React.Component {
 		this.props.requestSurveySaving(surveyToSave);
 		this.props.resetSurvey();
 		history.push('/my-surveys')
+	}
+
+	saveTemplate() {
+		const templateToSave = Object.assign(
+			this.props.currentSurvey, 
+			{
+				creator: this.props.currentUser.username,
+				questionsCount: this.props.currentSurvey.questionList.length,
+				pageCount: 1
+			}
+		);
+
+		this.props.requestTemplateSaving(templateToSave);
+		this.props.resetSurvey();
+		history.push('/templates')
 	}
 
 	render() {
@@ -58,7 +76,14 @@ export class OptionButtons extends React.Component {
 					<i className="fa fa-floppy-o" aria-hidden="true"></i>
 				</button>
 
-				<button className="aside-button" title="Сохранить опрос как шаблон"><i className="fa fa-bookmark-o" aria-hidden="true"></i></button>
+				<button 
+					onClick={this.saveTemplate}
+					className="aside-button" 
+					title="Сохранить опрос как шаблон"
+				>
+					<i className="fa fa-bookmark-o" aria-hidden="true"></i>
+				</button>
+
 				<button className="aside-button" title="Удалить страницу"><i className="fa fa-trash-o" aria-hidden="true"></i></button>
 				<NavLink to="/my-surveys"><button className="aside-button" title="Отменить создание опроса"><i className="fa fa-undo" aria-hidden="true"></i></button></NavLink>
 			</div>

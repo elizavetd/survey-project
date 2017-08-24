@@ -19,6 +19,10 @@ export const REQUEST_SURVEY_SAVING = 'REQUEST_SURVEY_SAVING'
 export const SURVEY_SAVING_SUCCESS = 'SURVEY_SAVING_SUCCESS'
 export const SURVEY_SAVING_FAILURE = 'SURVEY_SAVING_FAILURE'
 
+export const REQUEST_TEMPLATE_SAVING = 'REQUEST_TEMPLATE_SAVING'
+export const TEMPLATE_SAVING_SUCCESS = 'TEMPLATE_SAVING_SUCCESS'
+export const TEMPLATE_SAVING_FAILURE = 'TEMPLATE_SAVING_FAILURE'
+
 export function getSurveyQuestions() {
 	return {
 		type: GET_SURVEY_QUESTIONS	
@@ -119,5 +123,24 @@ export function surveySavingSuccess() {
 export function surveySavingFailure() {
 	return {
 		type: SURVEY_SAVING_FAILURE
+	}
+}
+
+export function requestTemplateSaving(template) {
+	return {
+		type: REQUEST_TEMPLATE_SAVING,
+		template: template
+	}
+}
+
+export function templateSavingSuccess() {
+	return {
+		type: TEMPLATE_SAVING_SUCCESS
+	}
+}
+
+export function templateSavingFailure() {
+	return {
+		type: TEMPLATE_SAVING_FAILURE
 	}
 }
