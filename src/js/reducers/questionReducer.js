@@ -8,7 +8,8 @@ import { ADD_QUESTION,
 		 EDIT_MESSAGE,
 		 EDIT_DETAIL,
 		 RESET_SURVEY,
-		 CREATE_SURVEY_FROM_TEMPLATE } from '../actions/questionActions'
+		 CREATE_SURVEY_FROM_TEMPLATE,
+		 LOAD_EXISTING_SURVEY } from '../actions/questionActions'
 import { store, sagaMiddleware } from '../store'
 import { generateSurveyID } from '../lib/generateUniqueID'
 
@@ -52,6 +53,13 @@ export default function userReducer(state = generateInitialState(), action) {
 				{}, 
 				action.template, 
 				{ id: generateSurveyID() }
+			);
+		}
+
+		case LOAD_EXISTING_SURVEY : {
+			return Object.assign(
+				{}, 
+				action.survey
 			);
 		}
 

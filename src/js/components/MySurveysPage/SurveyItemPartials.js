@@ -1,18 +1,22 @@
 import React from "react"
+import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { store } from '../../store'
 import { requestSurveyRemoval } from '../../actions/userSurveysActions'
+import { loadExistingSurvey } from '../../actions/questionActions'
 
 const mapDispatchToProps = (dispatch) => {
 	return {
 		requestSurveyRemoval: (id, userId) => 
-			store.dispatch(requestSurveyRemoval(id, userId))
+			store.dispatch(requestSurveyRemoval(id, userId)),
+		loadExistingSurvey: (survey) => store.dispatch(loadExistingSurvey(survey))
 	};
 };
 
 const mapStateToProps = (store) => {
 	return {
-		currentUserId: store.user.currentUser.id
+		currentUserId: store.user.currentUser.id,
+		surveyList: store.surveys.surveyList
 	};
 };
 
@@ -21,7 +25,17 @@ export class Options extends React.Component {
 	constructor() {
 		super();
 
+		this.loadSurvey = this.loadSurvey.bind(this);
 		this.handleRemoval = this.handleRemoval.bind(this);
+	}
+
+	loadSurvey() {
+		const thisSurvey = this.props.surveyList.filter(element => 
+			element.id === this.props.id
+		)[0];
+
+		this.props.loadExistingSurvey(thisSurvey)
+		//alert('survey load')
 	}
 
 	handleRemoval() {
@@ -29,13 +43,33 @@ export class Options extends React.Component {
 	}
 
 	render() {
-		const { id, currentUserId } = this.props;
+		const { id, currentUserId, surveyList } = this.props;
 
 		return (
 			<div className="survey-item__options">
-				<button className="survey-item__button survey-item__button_collect" title="Сбор ответов"><i className="fa fa-users" aria-hidden="true"></i></button>
-				<button className="survey-item__button survey-item__button_results" title="Результаты опроса"><i className="fa fa-bar-chart" aria-hidden="true"></i></button>
-				<button className="survey-item__button survey-item__button_edit" title="Редактировать опрос"><i className="fa fa-pencil" aria-hidden="true"></i></button>
+				<NavLink to={`survey_${id}/collect-answers`}><button 
+					onClick={this.loadSurvey}
+					className="survey-item__button survey-item__button_collect" 
+					title="Сбор ответов"
+				>
+					<i className="fa fa-users" aria-hidden="true"></i>
+				</button></NavLink>
+				
+				<NavLink exact to={`survey_${id}/results`}><button 
+					onClick={this.loadSurvey}
+					className="survey-item__button survey-item__button_results" 
+					title="Результаты опроса"
+				>
+					<i className="fa fa-bar-chart" aria-hidden="true"></i>
+				</button></NavLink>
+				
+				{/* <button 
+					className="survey-item__button survey-item__button_edit" 
+					title="Редактировать опрос"
+				>
+					<i className="fa fa-pencil" aria-hidden="true"></i>
+				</button> */}
+				
 				<button 
 					onClick = {this.handleRemoval}
 					className="survey-item__button survey-item__button_delete" 

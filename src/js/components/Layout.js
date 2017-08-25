@@ -18,6 +18,14 @@ import SignupForm from './Authentification/SignupForm'
 import ForgotPassword from './Authentification/ForgotPassword'
 import SurveyDesigner from './SurveyDesigner/SurveyDesigner'
 
+import SurveyPageEditor from './SurveyDesigner/Pages/SurveyPageEditor'
+import StartPage from './SurveyDesigner/Pages/StartPage'
+import FinishPage from './SurveyDesigner/Pages/FinishPage'
+import SettingsPage from './SurveyDesigner/Pages/SettingsPage'
+import CollectPage from './SurveyDesigner/Pages/CollectPage'
+import ResultsPage from './SurveyDesigner/Pages/ResultsPage'
+import UserResultsPage from './SurveyDesigner/Pages/UserResultsPage'
+
 @connect((store) => {
 	return {
 		role: store.user.currentUser.role
@@ -26,7 +34,7 @@ import SurveyDesigner from './SurveyDesigner/SurveyDesigner'
 
 export default class Layout extends React.Component {
 	render() {
-		const { role } = this.props;
+		const { role, match } = this.props;
 
 		return (
 			<ConnectedRouter history={history}>
@@ -64,9 +72,24 @@ export default class Layout extends React.Component {
 					<Route path="/new-survey" component={SurveyDesigner} />
 					{(role === 'guest') && <Redirect from='/new-survey' to='/signin'/>}
 					
+					<Route path={`/survey_:id`} render={() => (
+							<div className="content">
+								<div className="survey-editing">
+									<Route path={`/survey_:id/collect-answers`} component={ CollectPage } />
+									<Route exact path={`/survey_:id/results`} component={ ResultsPage } />
+									<Route path={`/survey_:id/results/:user`} component={ UserResultsPage } />
+									<Route exact path={`/survey_:id`} component={ Survey } /> 
+								</div>
+							</div>
+						)}
+					/>
 					<Footer />
 				</div>
 			</ConnectedRouter>
 		);
 	}
 }
+
+const Survey = () => (
+	<h1>Здесь будет прохождение опроса</h1>
+);

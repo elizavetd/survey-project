@@ -7,7 +7,7 @@ export function* saveSurvey(action) {
 	const isSaved = yield call(api.saveNewSurvey, action.survey);
 	if (isSaved) {
 		yield put(questionActions.surveySavingSuccess());
-		yield alert('Survey saved');
+		yield alert('Опрос сохранён');
 	} else {
 		yield put(questionActions.surveySavingFailure());
 	};
@@ -17,7 +17,7 @@ export function* saveTemplate(action) {
 	const isSaved = yield call(api.saveNewTemplate, action.template);
 	if (isSaved) {
 		yield put(questionActions.templateSavingSuccess());
-		yield alert('Template saved');
+		yield alert('Шаблон сохранён');
 	} else {
 		yield put(questionActions.templateSavingFailure());
 	};
