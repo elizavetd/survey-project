@@ -51,8 +51,7 @@ export default function userReducer(state = generateInitialState(), action) {
 		case CREATE_SURVEY_FROM_TEMPLATE: {
 			return Object.assign(
 				{}, 
-				action.template, 
-				{ id: generateSurveyID() }
+				action.template
 			);
 		}
 

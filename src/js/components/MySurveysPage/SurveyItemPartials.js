@@ -34,8 +34,7 @@ export class Options extends React.Component {
 			element.id === this.props.id
 		)[0];
 
-		this.props.loadExistingSurvey(thisSurvey)
-		//alert('survey load')
+		this.props.loadExistingSurvey(thisSurvey);
 	}
 
 	handleRemoval() {

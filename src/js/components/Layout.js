@@ -25,6 +25,7 @@ import SettingsPage from './SurveyDesigner/Pages/SettingsPage'
 import CollectPage from './SurveyDesigner/Pages/CollectPage'
 import ResultsPage from './SurveyDesigner/Pages/ResultsPage'
 import UserResultsPage from './SurveyDesigner/Pages/UserResultsPage'
+import Options from './SurveyDesigner/Options'
 
 @connect((store) => {
 	return {
@@ -83,6 +84,17 @@ export default class Layout extends React.Component {
 							</div>
 						)}
 					/>
+
+					<Route path={`/template_:id`} render={() => (
+							<div className="content">
+								<div className="survey-editing">
+									<Route path={`/template_:id/edit`} component={ SurveyPageEditor } />		
+									<Options position='template'/>
+								</div>
+							</div>
+						)}
+					/>
+
 					<Footer />
 				</div>
 			</ConnectedRouter>

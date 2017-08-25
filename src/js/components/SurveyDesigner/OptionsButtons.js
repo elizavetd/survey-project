@@ -59,18 +59,18 @@ export class OptionButtons extends React.Component {
 	}
 
 	render() {
-		const { type, currentSurvey, currentUser } = this.props;
+		const { type, currentSurvey, currentUser, template } = this.props;
 
 		return (
 			<div className={type}>
 			
-				<button 
+				{!template && <button 
 					onClick={this.saveSurvey} 
 					className="aside-button" 
 					title="Сохранить опрос"
 				>
 					<i className="fa fa-floppy-o" aria-hidden="true"></i>
-				</button>
+				</button>}
 
 				<button 
 					onClick={this.saveTemplate}
@@ -80,8 +80,9 @@ export class OptionButtons extends React.Component {
 					<i className="fa fa-bookmark-o" aria-hidden="true"></i>
 				</button>
 
-				<button className="aside-button" title="Удалить страницу"><i className="fa fa-trash-o" aria-hidden="true"></i></button>
-				<NavLink to="/my-surveys"><button className="aside-button" title="Отменить создание опроса"><i className="fa fa-undo" aria-hidden="true"></i></button></NavLink>
+				{!template && <button className="aside-button" title="Удалить страницу"><i className="fa fa-trash-o" aria-hidden="true"></i></button>}
+				{!template && <NavLink to="/my-surveys"><button className="aside-button" title="Вернуться на страницу опросов"><i className="fa fa-undo" aria-hidden="true"></i></button></NavLink>}
+				{template && <NavLink to="/templates"><button className="aside-button" title="Вернуться на страницу шаблонов"><i className="fa fa-undo" aria-hidden="true"></i></button></NavLink>}
 			</div>
 		);
 	};

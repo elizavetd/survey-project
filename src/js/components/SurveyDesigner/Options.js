@@ -4,7 +4,7 @@ import { PageNavButtons } from './OptionsButtons'
 import { StepButtons } from './OptionsButtons'
 import { OptionButtons } from './OptionsButtons'
 
-const Options = ({ position, url, /*surveySaved*/ }) => (
+const Options = ({ position, url }) => (
 	<aside>
 		{ (position === 'left') && 
 			<PageNavButtons type="survey-setup survey-setup_left" url={url} /> 
@@ -19,12 +19,21 @@ const Options = ({ position, url, /*surveySaved*/ }) => (
 					<label htmlFor="more-settings-button" ><i className="fa fa-times" aria-hidden="true"></i></label>
 					<PageNavButtons url={url} />
 					<StepButtons url={url} />
-					<OptionButtons 
-						//surveySaved = {surveySaved}
-					/>
+					<OptionButtons />
 				</div>
 			</div>
-			}
+		}
+		{ (position === 'template') === true &&
+			<div className="survey-setup survey-setup_right">
+				<OptionButtons type="survey-setup__options" template={position}/>
+				<input className="survey-setup__open-fullscreen" type="checkbox" id="more-settings-button" />
+				<label className="survey-setup__cog" htmlFor="more-settings-button" ><i className="fa fa-cog" aria-hidden="true"></i></label>
+				<div className="survey-setup__fullscreen">
+					<label htmlFor="more-settings-button" ><i className="fa fa-times" aria-hidden="true"></i></label>
+					<OptionButtons template={position}/>
+				</div>
+			</div>
+		}
 	</aside>
 );
 
