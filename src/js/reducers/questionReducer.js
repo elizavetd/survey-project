@@ -129,6 +129,7 @@ export default function userReducer(state = generateInitialState(), action) {
 				...[editedQuestion],
 				...state['questionList'].slice(index + 1)
 			];
+			return Object.assign({}, state, {questionList: newList});
 		}
 
 		case EDIT_TITLE: {
