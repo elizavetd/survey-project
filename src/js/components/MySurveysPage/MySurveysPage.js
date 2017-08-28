@@ -26,6 +26,7 @@ class MySurveysPage extends React.Component {
 		super();
 		this.state = {
 			page: 1,
+			surveyList: undefined
 		}
 
 		this.filter = this.filter.bind(this);
@@ -38,6 +39,14 @@ class MySurveysPage extends React.Component {
 	
 	componentWillMount() {
 		this.props.getUserSurveys(this.props.user.id)
+	}
+
+	componentWillReceiveProps(nextProps) {
+		if(nextProps.surveys) {
+			this.setState({
+				surveyList: nextProps.surveys
+			})
+		}
 	}
 
 	filter(e) {
@@ -71,10 +80,13 @@ class MySurveysPage extends React.Component {
 	render() {
 		let { surveys, user } = this.props;
 
-		if(this.state.filter) {
-			surveys = surveys.filter(
+		if (this.state.filter) {
+			this.state.page = 1;
+			this.state.surveyList = surveys.filter(
 				survey => survey.title.toLowerCase()
 							.includes(this.state.filter.toLowerCase()));
+		} else {
+			this.state.surveyList = surveys;
 		}
 
 		let itemCountCaption = "Всего опросов:";
@@ -86,8 +98,12 @@ class MySurveysPage extends React.Component {
 		let surveysOnPage;
 
 		if (surveys) {
-			itemCount = surveys.length;
-			surveysOnPage = this.props.surveys.filter((elem, index) =>
+			if (this.state.surveyList === undefined) {
+				this.state.surveyList = surveys;
+			}
+
+			itemCount = this.state.surveyList.length;
+			surveysOnPage = this.state.surveyList.filter((elem, index) =>
 				(index >= ((this.state.page - 1) * 5)) && 
 				(index < ((this.state.page - 1) * 5 + itemsPerPage))
 			);
