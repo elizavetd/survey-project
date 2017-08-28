@@ -46,7 +46,7 @@ export class Options extends React.Component {
 
 		return (
 			<div className="survey-item__options">
-				<NavLink to={`survey_${id}/collect-answers`}><button 
+				<NavLink to={`/survey_${id}/collect-answers`}><button 
 					onClick={this.loadSurvey}
 					className="survey-item__button survey-item__button_collect" 
 					title="Сбор ответов"
@@ -54,7 +54,7 @@ export class Options extends React.Component {
 					<i className="fa fa-users" aria-hidden="true"></i>
 				</button></NavLink>
 				
-				<NavLink exact to={`survey_${id}/results`}><button 
+				<NavLink exact to={`/survey_${id}/results`}><button 
 					onClick={this.loadSurvey}
 					className="survey-item__button survey-item__button_results" 
 					title="Результаты опроса"

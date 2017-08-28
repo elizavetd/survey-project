@@ -38,20 +38,20 @@ export default class SurveysDesigner extends React.Component{
 
 
 	componentWillUnmount() {
-		let saveChanges = confirm('Сохранить сделанные Вами изменения как новый опрос?')
+		// let saveChanges = confirm('Сохранить сделанные Вами изменения как новый опрос?')
 		
-		if(saveChanges) {
-			const d = new Date();
-			const surveyToSave = Object.assign(
-				this.props.currentSurvey, 
-				{
-					creator: this.props.currentUser.id,
-					answersCount: 0,
-					lastChangeDate: `${d.getDate()}.${d.getMonth()}.${d.getFullYear()}`
-				}
-			);
-			this.props.requestSurveySaving(surveyToSave);
-		};
+		// if(saveChanges) {
+		// 	const d = new Date();
+		// 	const surveyToSave = Object.assign(
+		// 		this.props.currentSurvey, 
+		// 		{
+		// 			creator: this.props.currentUser.id,
+		// 			answersCount: 0,
+		// 			lastChangeDate: `${d.getDate()}.${d.getMonth()}.${d.getFullYear()}`
+		// 		}
+		// 	);
+		// 	this.props.requestSurveySaving(surveyToSave);
+		// };
 
 		this.props.resetSurvey();
 	}

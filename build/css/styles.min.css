@@ -2320,6 +2320,7 @@
 .survey-editing .survey-answers-collection .survey-answers-collection__link {
   color: #7485c5;
   font-size: 23px;
+  text-decoration: none;
   margin: 15px;
 }
 .survey-editing .survey-results {

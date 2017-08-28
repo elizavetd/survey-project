@@ -4,7 +4,8 @@ import { Route, NavLink, Redirect } from 'react-router'
 import { createBrowserHistory } from 'history'
 import { ConnectedRouter, push } from 'react-router-redux'
 
-import { history } from '../store'
+import { store, history } from '../store'
+import { resetSurvey } from '../actions/questionActions'
 
 import Header from './Header'
 import Footer from './Footer'
@@ -73,17 +74,7 @@ export default class Layout extends React.Component {
 					<Route path="/new-survey" component={SurveyDesigner} />
 					{(role === 'guest') && <Redirect from='/new-survey' to='/signin'/>}
 					
-					<Route path={`/survey_:id`} render={() => (
-							<div className="content">
-								<div className="survey-editing">
-									<Route path={`/survey_:id/collect-answers`} component={ CollectPage } />
-									<Route exact path={`/survey_:id/results`} component={ ResultsPage } />
-									<Route path={`/survey_:id/results/:user`} component={ UserResultsPage } />
-									<Route exact path={`/survey_:id`} component={ Survey } /> 
-								</div>
-							</div>
-						)}
-					/>
+					<Route path={`/survey_:id`} component={ SurveyView }/>
 
 					<Route path={`/template_:id`} render={() => (
 							<div className="content">
@@ -105,3 +96,29 @@ export default class Layout extends React.Component {
 const Survey = () => (
 	<h1>Здесь будет прохождение опроса</h1>
 );
+
+const mapDispatchToProps = (dispatch) => {
+	return {
+		resetSurvey: () => store.dispatch(resetSurvey())
+	}
+};
+
+@connect(mapDispatchToProps)
+class SurveyView extends React.Component {
+	componentWillUnmount() {
+		this.props.resetSurvey();
+	}
+
+	render() {
+		return (
+			<div className="content">
+				<div className="survey-editing">
+					<Route path={`/survey_:id/collect-answers`} component={ CollectPage } />
+					<Route exact path={`/survey_:id/results`} component={ ResultsPage } />
+					<Route path={`/survey_:id/results/:user`} component={ UserResultsPage } />
+					<Route exact path={`/survey_:id`} component={ Survey } /> 
+				</div>
+			</div>
+		);
+	};
+};
