@@ -86,12 +86,27 @@
 		padding: 0 80px;
 	}
 	td:first-child {
-		width: 30%;
+		width: 25%;
 		text-align: left;
 	}
 	.table__footer {
 		height: 80px;
 		text-align: left;
+		th:last-child {
+			text-align: center;
+		}
+		.table__footer-buttons {
+			text-align: center;
+			position: relative;
+			right: 5%;
+			button:disabled {
+				color: $colorLightGrey;
+				&:hover {
+					cursor: default;
+					color: $colorLightGrey;
+				}
+			}
+		}
 	}
 }
 
@@ -202,9 +217,12 @@
 				display: none;
 			}
 		}
-	}
-	.table__footer {
-		font-size: 2.5vmax;
+		.table__footer {
+			font-size: 2.5vmax;
+			.table__footer-buttons {
+				right: 0;
+			}
+		}
 	}
 	.table .table__footer-buttons {
 		text-align: center;

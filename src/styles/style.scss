@@ -331,6 +331,9 @@ button:focus {
 		}
 		.head__auth { 
 			font-size: 3.3vmax;
+			.head__auth_hello {
+				font-size: 20px;
+			}
 			.head__auth_signin {
 				border-right: none;
 			}

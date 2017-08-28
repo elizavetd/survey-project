@@ -23,16 +23,48 @@ const mapDispatchToProps = (dispatch) => {
 export default class UsersPage extends React.Component {
 	constructor() {
 		super();
-		this.state = {}
+		this.state = {
+			page: 1
+		}
+
 		this.filter = this.filter.bind(this);
+
+		this.showFirstPage = this.showFirstPage.bind(this);
+		this.showPreviousPage = this.showPreviousPage.bind(this);
+		this.showNextPage = this.showNextPage.bind(this);
+		this.showLastPage = this.showLastPage.bind(this);
+	}
+
+	componentWillMount() {
+		this.props.getUserList();
 	}
 
 	filter(e) {
 		this.setState({filter: e.target.value});
 	}
-	
-	componentWillMount() {
-		this.props.getUserList();
+
+	showFirstPage() {
+		this.setState({
+			page: 1
+		})
+	}
+
+	showPreviousPage() {
+		this.setState({
+			page: --this.state.page
+		})
+	}
+
+	showNextPage() {
+		this.setState({
+			page: ++this.state.page
+		})
+	}
+
+	showLastPage() {
+		this.setState({
+			page: Math.ceil(this.props.users.length / 10)
+		})
 	}
 
 	render() {
@@ -44,13 +76,30 @@ export default class UsersPage extends React.Component {
 							.includes(this.state.filter.toLowerCase()));
 		}
 
+		let itemCount = 0;
+		let itemsPerPage = 12;
+		let pageCount;
+		let pageNumber = this.state.page;
+		let usersOnPage;
+
+		if (users) {
+			itemCount = users.length;
+
+			usersOnPage = users.filter((elem, index) =>
+				(index >= ((this.state.page - 1) * itemsPerPage)) && 
+				(index < ((this.state.page - 1) * itemsPerPage + itemsPerPage))
+			);
+
+			pageCount = Math.ceil(itemCount / itemsPerPage);
+		};
+
 		return (
 			<div className="content">
 				<section className="users">
 					<table className="table">
 						<TableHeader onChange={this.filter} />
 						<tbody>
-							{users && users.map(user =>
+							{users && usersOnPage.map(user =>
 								<TableRow
 									key = {user.id}
 									id = {user.id}
@@ -61,7 +110,15 @@ export default class UsersPage extends React.Component {
 								/>
 							)}
 						</tbody>
-						<TableFooter userCount={users && users.length} />
+						<TableFooter 
+							userCount={itemCount} 
+							pageNumber={pageNumber}
+							pageCount={pageCount}
+							toStart = {this.showFirstPage}
+							prev = {this.showPreviousPage}
+							next = {this.showNextPage}
+							toEnd = {this.showLastPage}
+						/>
 					</table>
 				</section>
 			</div>

@@ -104,11 +104,11 @@ class MySurveysPage extends React.Component {
 
 			itemCount = this.state.surveyList.length;
 			surveysOnPage = this.state.surveyList.filter((elem, index) =>
-				(index >= ((this.state.page - 1) * 5)) && 
-				(index < ((this.state.page - 1) * 5 + itemsPerPage))
+				(index >= ((this.state.page - 1) * itemsPerPage)) && 
+				(index < ((this.state.page - 1) * itemsPerPage + itemsPerPage))
 			);
 			pageCount = Math.ceil(itemCount / itemsPerPage);
-		}
+		};
 			
 
 		return (
