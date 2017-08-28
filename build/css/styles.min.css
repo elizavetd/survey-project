@@ -2106,7 +2106,7 @@ input[type=text]::-ms-reveal {
   background-color: #F7F7F7;
 }
 .survey-editing .survey-body .survey-body__question:hover {
-  cursor: move;
+  cursor: default;
 }
 .survey-editing .survey-body .survey-body__question_list {
   display: none;
@@ -2169,6 +2169,10 @@ input[type=text]::-ms-reveal {
 .survey-editing .survey-body .survey-body__question_one-answer .survey-body__question-view p,
 .survey-editing .survey-body .survey-body__question_several-answers .survey-body__question-view p {
   margin-bottom: 15px;
+}
+.survey-editing .survey-body .survey-body__question_one-answer .survey-body__question-view p input,
+.survey-editing .survey-body .survey-body__question_several-answers .survey-body__question-view p input {
+  margin-right: 7px;
 }
 .survey-editing .survey-body .survey-body__question_text-answer .survey-body__question-view textarea {
   width: 80%;

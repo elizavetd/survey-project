@@ -10,7 +10,7 @@ import ScaleQuestion from './QuestionTypes/ScaleQuestion'
 export default class Question extends React.Component {			
   	render() {
 		const { 
-			type, id, question, options, isFirst, 
+			type, id, question, options, isFirst, answersEnabled,
 			insertClick, deleteClick, notifySaving } = this.props;
 
 		return (
@@ -24,6 +24,7 @@ export default class Question extends React.Component {
 						insertClick = {insertClick}
 						deleteClick = {deleteClick}
 						notifySaving = {notifySaving}
+						answersEnabled = {answersEnabled}
 					/> 
 				}
 				{ (type === 'severalAnswers') && 
@@ -35,6 +36,7 @@ export default class Question extends React.Component {
 						insertClick = {insertClick}
 						deleteClick = {deleteClick}
 						notifySaving = {notifySaving}
+						answersEnabled = {answersEnabled}
 					/>
 				}
 				{ (type === 'text') && 
@@ -45,6 +47,7 @@ export default class Question extends React.Component {
 						insertClick = {insertClick}
 						deleteClick = {deleteClick}
 						notifySaving = {notifySaving}
+						answersEnabled = {answersEnabled}
 					/>
 				}
 				{ (type === 'file') && 
@@ -55,6 +58,7 @@ export default class Question extends React.Component {
 						insertClick = {insertClick}
 						deleteClick = {deleteClick}
 						notifySaving = {notifySaving}
+						answersEnabled = {answersEnabled}
 					/>
 				}
 				{ (type === 'rating') && 
@@ -65,6 +69,7 @@ export default class Question extends React.Component {
 						insertClick = {insertClick}
 						deleteClick = {deleteClick} 
 						notifySaving = {notifySaving}
+						answersEnabled = {answersEnabled}
 					/>
 				}
 				{ (type === 'scale') && 
@@ -75,6 +80,7 @@ export default class Question extends React.Component {
 						insertClick = {insertClick}
 						deleteClick = {deleteClick}
 						notifySaving = {notifySaving}
+						answersEnabled = {answersEnabled}
 					/>
 				}
 			</div>

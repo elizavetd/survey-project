@@ -94,7 +94,7 @@ export default class Layout extends React.Component {
 }
 
 const Survey = () => (
-	<h1>Здесь будет прохождение опроса</h1>
+	<SurveyPageEditor answersEnabled = {true} />
 );
 
 const mapDispatchToProps = (dispatch) => {

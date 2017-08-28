@@ -53,7 +53,7 @@ class TextQuestion extends React.Component {
 
 
 	render() {
-		const { isFirst, id, question, 
+		const { isFirst, id, question, answersEnabled,
 			insertClick, deleteClick, notifySaving} = this.props;
 	
 		return (
@@ -61,7 +61,15 @@ class TextQuestion extends React.Component {
 				&& "survey-body__question survey-body__question_text-answer survey-body__question_first"
 				|| "survey-body__question survey-body__question_text-answer"
 			}>
-				<button onClick={this.choosingClick} className="survey-body__add-button survey-body__add-button_above-question"><i className={this.state.buttonClass} aria-hidden="true"></i></button>
+				{(answersEnabled !== true) && 
+					<button 
+						onClick={this.choosingClick} 
+						className="survey-body__add-button survey-body__add-button_above-question"
+					>
+						<i className={this.state.buttonClass} aria-hidden="true"></i>
+					</button>
+				}
+				
 				<div className={this.state.choosingClass} data-id={id}>
 					<button onClick={insertClick} onMouseUp={this.hideChoice} data-type="oneAnswer" className="survey-body__question-type">
 						<img src="../img/one-answer.png" /><p>Одиночный выбор</p>
@@ -87,6 +95,7 @@ class TextQuestion extends React.Component {
 					id={id}
 					deleteClick = {deleteClick}
 					editClick = {this.handleOpenModal}
+					answersEnabled = {answersEnabled}
 				/>
 				
 				<ReactModal 
@@ -107,7 +116,7 @@ class TextQuestion extends React.Component {
 
 				<div className="survey-body__question-view">
 					<h4>{question}</h4>
-					<textarea placeholder="Введите ответ..." disabled></textarea>
+					<textarea placeholder="Введите ответ..." disabled={answersEnabled !== true} ></textarea>
 				</div>
 			</article>
 		);

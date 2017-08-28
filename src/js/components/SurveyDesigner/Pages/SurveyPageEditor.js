@@ -81,7 +81,7 @@ export default class SurveyPageEditor extends React.Component {
 	}
 			
   	render() {
-		const { questions } = this.props;
+		const { questions, answersEnabled } = this.props;
 		if (questions.length > 1) {
 			this.state.isChoosingMode = true;
 		}
@@ -99,6 +99,7 @@ export default class SurveyPageEditor extends React.Component {
 						key = {question.id}
 						id = {question.id}
 						type = {question.type}
+						answersEnabled = {answersEnabled}
 						question = {question.question}
 						
 						isFirst = {!(questions.findIndex((elem) => (elem.id === question.id))) && true || false}

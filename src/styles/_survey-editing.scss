@@ -158,7 +158,8 @@
 			}
 		}
 		.survey-body__question:hover {
-			cursor: move;
+			//cursor: move;
+			cursor: default;
 		}
 		.survey-body__question_list {
 			display: none;
@@ -208,6 +209,9 @@
 			.survey-body__question-view {
 				p {
 					margin-bottom: 15px;
+					input {
+						margin-right: 7px;
+					}
 				}
 			}
 		}
