@@ -25,9 +25,15 @@ class MySurveysPage extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			currentId: undefined
+			page: 1,
 		}
+
 		this.filter = this.filter.bind(this);
+
+		this.showFirstPage = this.showFirstPage.bind(this);
+		this.showPreviousPage = this.showPreviousPage.bind(this);
+		this.showNextPage = this.showNextPage.bind(this);
+		this.showLastPage = this.showLastPage.bind(this);
 	}
 	
 	componentWillMount() {
@@ -36,6 +42,30 @@ class MySurveysPage extends React.Component {
 
 	filter(e) {
 		this.setState({filter: e.target.value});
+	}
+
+	showFirstPage() {
+		this.setState({
+			page: 1
+		})
+	}
+
+	showPreviousPage() {
+		this.setState({
+			page: --this.state.page
+		})
+	}
+
+	showNextPage() {
+		this.setState({
+			page: ++this.state.page
+		})
+	}
+
+	showLastPage() {
+		this.setState({
+			page: Math.ceil(this.props.surveys.length / 5)
+		})
 	}
 
 	render() {
@@ -49,12 +79,21 @@ class MySurveysPage extends React.Component {
 
 		let itemCountCaption = "Всего опросов:";
 		let itemCount = 0;
-		if (surveys) 
-			itemCount = surveys.length;
 		let itemsPerPage = 5;
-		let pageCount = Math.ceil(itemCount / itemsPerPage);
-		let pageNumber = 1;
+		let pageCount;
+		let pageNumber = this.state.page;
 		let hasSideInfo = true;
+		let surveysOnPage;
+
+		if (surveys) {
+			itemCount = surveys.length;
+			surveysOnPage = this.props.surveys.filter((elem, index) =>
+				(index >= ((this.state.page - 1) * 5)) && 
+				(index < ((this.state.page - 1) * 5 + itemsPerPage))
+			);
+			pageCount = Math.ceil(itemCount / itemsPerPage);
+		}
+			
 
 		return (
 			<div className="content">
@@ -66,16 +105,22 @@ class MySurveysPage extends React.Component {
 						caption="Новый опрос"
 					/>
 			
-					{(surveys && surveys.length > 0) && <PaginationBar 
-						hasSideInfo = {hasSideInfo}
-						itemCountCaption = {itemCountCaption}
-						itemCount = {itemCount}
-						pageNumber = {pageNumber}
-						pageCount = {pageCount}
-					/>}
+					{(surveys && surveys.length > 0) && 
+						<PaginationBar 
+							hasSideInfo = {hasSideInfo}
+							itemCountCaption = {itemCountCaption}
+							itemCount = {itemCount}
+							pageNumber = {this.state.page}
+							pageCount = {pageCount}
+							toStart = {this.showFirstPage}
+							prev = {this.showPreviousPage}
+							next = {this.showNextPage}
+							toEnd = {this.showLastPage}
+						/>
+					}
 
 					<div className="surveys-list">
-						{surveys && surveys.map(survey =>
+						{surveys && surveysOnPage.map(survey =>
 							<SurveyItem 
 								key = {survey.id}
 								id = {survey.id}
@@ -93,7 +138,19 @@ class MySurveysPage extends React.Component {
 						}
 					</div>
 
-					{(surveys && surveys.length > 0) && <PaginationBar hasSideInfo = {!hasSideInfo} />}
+					{(surveys && surveys.length > 0) && 
+						<PaginationBar 
+							hasSideInfo = {hasSideInfo}
+							itemCountCaption = {itemCountCaption}
+							itemCount = {itemCount}
+							pageNumber = {this.state.page}
+							pageCount = {pageCount}
+							toStart = {this.showFirstPage}
+							prev = {this.showPreviousPage}
+							next = {this.showNextPage}
+							toEnd = {this.showLastPage}
+						/>
+					}
 				</section>
 			</div>
 		);

@@ -1505,11 +1505,18 @@
 .pagination .pagination__nav-buttons .pagination__button {
   width: 50px;
   background-color: transparent;
-  color: #BDBDBD;
+  color: #ef4b50;
   font-size: 30px;
   text-align: center;
   border: none;
   margin: 0 5px;
+}
+.pagination .pagination__nav-buttons .pagination__button:disabled {
+  color: #BDBDBD;
+}
+.pagination .pagination__nav-buttons .pagination__button:disabled:hover {
+  cursor: default;
+  color: #BDBDBD;
 }
 .pagination .pagination__nav-buttons .pagination__button:hover {
   cursor: pointer;
@@ -1517,9 +1524,6 @@
 }
 
 .pagination:last-child {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   padding-top: 0;
   padding-bottom: 100px;
 }

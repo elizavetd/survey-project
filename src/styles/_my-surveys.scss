@@ -25,11 +25,18 @@
 		.pagination__button {
 			width: 50px;
 			background-color: transparent;
-			color: $colorLightGrey;
+			color: lighten($colorRed, 10%);
 			font-size: 30px;
 			text-align: center;
 			border: none;
 			margin: 0 5px;
+			&:disabled {
+				color: $colorLightGrey;
+				&:hover {
+					cursor: default;
+					color: $colorLightGrey;
+				}
+			}
 		}
 		.pagination__button:hover {
 			cursor: pointer;
@@ -39,7 +46,7 @@
 }
 
 .pagination:last-child {
-	justify-content: center;
+	//justify-content: center;
 	padding-top: 0;
 	padding-bottom: 100px;
 }
