@@ -5,6 +5,8 @@ export const CREATE_SURVEY_FROM_TEMPLATE = 'CREATE_SURVEY_FROM_TEMPLATE'
 
 export const LOAD_EXISTING_SURVEY = 'LOAD_EXISTING_SURVEY'
 
+export const ADD_ANSWER = 'ADD_ANSWER'
+
 export const ADD_QUESTION = 'ADD_QUESTION'
 export const INSERT_QUESTION = 'INSERT_QUESTION'
 export const DELETE_QUESTION = 'DELETE_QUESTION'
@@ -51,6 +53,15 @@ export function loadExistingSurvey(survey) {
 	return {
 		type: LOAD_EXISTING_SURVEY,
 		survey: survey
+	}
+}
+
+export function addAnswer(userId, questionId, optionId) {
+	return {
+		type: ADD_ANSWER,
+		userId: userId,
+		questionId: questionId,
+		optionId: optionId
 	}
 }
 

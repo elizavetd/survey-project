@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactModal from 'react-modal'
 
-
 import EditButtons from '../EditButtons'
 import QuestionModal from '../Modals/QuestionModal'
 
@@ -14,11 +13,14 @@ class OneAnswerQuestion extends React.Component {
 			choosingClass: 'survey-body__question_list',
 			showModal: false
 		}
+
 		this.choosingClick = this.choosingClick.bind(this);
 		this.hideChoice = this.hideChoice.bind(this);
 
 		this.handleOpenModal = this.handleOpenModal.bind(this);
 		this.handleCloseModal = this.handleCloseModal.bind(this);
+
+		this.handleAnswer = this.handleAnswer.bind(this);
 	}
 
 	choosingClick(e) {
@@ -53,8 +55,12 @@ class OneAnswerQuestion extends React.Component {
 		this.setState({ showModal: false });
 	}
 
+	handleAnswer(e) {
+		this.props.addQuestionAnswer(this.props.id, e.target.id);
+	}
+
 	render() {
-		const { isFirst, id, question, answersEnabled,
+		const { isFirst, id, question, answersEnabled, addQuestionAnswer, userId,
 			insertClick, deleteClick, notifySaving, ...options} = this.props;
 		
 		return (
@@ -120,7 +126,13 @@ class OneAnswerQuestion extends React.Component {
 					<h4>{question}</h4>
 					{options.options.map(option =>
 						<p key = {Math.random()}>
-							<input type="radio" disabled={answersEnabled !== true} />
+							<input 
+								type="radio" 
+								name={id} 
+								id={option.id}
+								disabled={answersEnabled !== true} 
+								onClick={this.handleAnswer}
+							/>
 							<label>{option.value}</label>
 						</p>
 					)}

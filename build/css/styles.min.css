@@ -2091,6 +2091,7 @@ input[type=text]::-ms-reveal {
 .survey-editing .survey-body .survey-body__question .survey-body__question-view h4 {
   font-size: 20px;
   margin-bottom: 20px;
+  text-align: left;
 }
 .survey-editing .survey-body .survey-body__question .survey-body__add-button_above-question {
   background-color: transparent;
@@ -2174,6 +2175,10 @@ input[type=text]::-ms-reveal {
 .survey-editing .survey-body .survey-body__question_several-answers .survey-body__question-view p input {
   margin-right: 7px;
 }
+.survey-editing .survey-body .survey-body__question_one-answer .survey-body__question-view p input:hover,
+.survey-editing .survey-body .survey-body__question_several-answers .survey-body__question-view p input:hover {
+  cursor: pointer;
+}
 .survey-editing .survey-body .survey-body__question_text-answer .survey-body__question-view textarea {
   width: 80%;
   height: 100px;
@@ -2198,6 +2203,22 @@ input[type=text]::-ms-reveal {
 }
 .survey-editing .survey-body .survey-body__question_first {
   border-top: 1px dashed #BDBDBD;
+}
+.survey-editing .survey-body .survey-body__submit-survey {
+  height: 50px;
+  width: 240px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 17px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  background-color: #7485c5;
+  margin-top: 50px;
+  padding: 5px;
+}
+.survey-editing .survey-body .survey-body__submit-survey:hover {
+  cursor: pointer;
+  background-color: #5065b6;
 }
 .survey-editing .survey-start-editor,
 .survey-editing .survey-finish-editor {

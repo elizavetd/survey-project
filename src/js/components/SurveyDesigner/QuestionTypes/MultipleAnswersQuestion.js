@@ -10,13 +10,22 @@ class MultipleAnswersQuestion extends React.Component {
 		this.state = {
 			clicked: false,
 			buttonClass: 'fa fa-plus-circle',
-			choosingClass: 'survey-body__question_list'
+			choosingClass: 'survey-body__question_list',
+			checkedAnswers: []
 		}
+
 		this.choosingClick = this.choosingClick.bind(this);
 		this.hideChoice = this.hideChoice.bind(this);
 		
 		this.handleOpenModal = this.handleOpenModal.bind(this);
 		this.handleCloseModal = this.handleCloseModal.bind(this);
+
+		this.handleAnswer = this.handleAnswer.bind(this);
+	}
+
+	shouldComponentUpdate(nextProps, nextState) {
+		if(nextState.checkedAnswers)
+			return false;
 	}
 
 	choosingClick(e) {
@@ -51,8 +60,28 @@ class MultipleAnswersQuestion extends React.Component {
 		this.setState({ showModal: false });
 	}
 
+	handleAnswer(e) {
+		let newQuestionAnswer = [];
+
+		alert(e.target.checked)
+		
+
+		if (e.target.checked) {
+			newQuestionAnswer = this.state.checkedAnswers.concat([e.target.id])
+		} else {
+			newQuestionAnswer = this.state.checkedAnswers
+				.filter(elem => (elem !== e.target.id))
+		}
+		
+		this.setState({	checkedAnswers: newQuestionAnswer });
+		if (newQuestionAnswer.length > 0)
+			this.props.addQuestionAnswer(this.props.id, newQuestionAnswer);
+		else 
+			this.props.addQuestionAnswer(this.props.id, undefined);
+	}
+
 	render() {
-		const { isFirst, id, question, answersEnabled,
+		const { isFirst, id, question, answersEnabled, addQuestionAnswer, userId,
 			insertClick, deleteClick, notifySaving, ...options} = this.props;
 	
 		return (
@@ -118,7 +147,12 @@ class MultipleAnswersQuestion extends React.Component {
 					<h4>{question}</h4>
 					{options.options.map(option =>
 						<p key = {Math.random()}>
-							<input type="checkbox" disabled={answersEnabled !== true} />
+							<input 
+								onClick={this.handleAnswer}
+								type="checkbox"
+								id={option.id}
+								disabled={answersEnabled !== true} 
+							/>
 							<label>{option.value}</label>
 						</p>
 					)}

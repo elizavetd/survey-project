@@ -144,7 +144,7 @@ class MySurveysPage extends React.Component {
 								iconType = {survey.iconType}
 								title = {survey.title}
 								description = {survey.description}
-								answersCount = {survey.answersCount}
+								answersCount = {survey.answersList.length}
 								lastChangeDate = {survey.lastChangeDate}
 							/>
 						)}

@@ -18,7 +18,7 @@ if(myStorage.length < 4) {
 	myStorage.setItem('surveys', JSON.stringify(_surveys));
 }
 
-//myStorage.setItem('currentUser', JSON.stringify({"role": "guest"}));
+myStorage.setItem('currentUser', JSON.stringify({"role": "guest"}));
 
 console.log(localStorage);
 

@@ -9,7 +9,8 @@ import { ADD_QUESTION,
 		 EDIT_DETAIL,
 		 RESET_SURVEY,
 		 CREATE_SURVEY_FROM_TEMPLATE,
-		 LOAD_EXISTING_SURVEY } from '../actions/questionActions'
+		 LOAD_EXISTING_SURVEY,
+		 ADD_ANSWER } from '../actions/questionActions'
 import { store, sagaMiddleware } from '../store'
 import { generateSurveyID } from '../lib/generateUniqueID'
 
@@ -27,7 +28,8 @@ function generateInitialState() {
 		finishMessage: 'Благодарим за прохождение опроса!',
 		finishDetail: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.',
 		lastChangeDate: '',
-		questionList: []
+		questionList: [],
+		answersList: []
 	};
 }
 
@@ -55,10 +57,48 @@ export default function userReducer(state = generateInitialState(), action) {
 			);
 		}
 
-		case LOAD_EXISTING_SURVEY : {
+		case LOAD_EXISTING_SURVEY: {
 			return Object.assign(
 				{}, 
 				action.survey
+			);
+		}
+
+		case ADD_ANSWER: {
+
+			let newAnswersList;
+			let newAnswer = {};
+			let newQuestionAnswer = {};
+			for (let i = 0; i < state['answersList'].length; i++) {
+				if (state['answersList'][i].hasOwnProperty(action.userId)) {
+					newQuestionAnswer[action.questionId] = action.optionId;
+
+					newAnswer = Object.assign(
+						{},
+						state['answersList'][i],
+						newQuestionAnswer
+					)
+
+					newAnswersList = [
+						...state['answersList'].slice(0, i),
+						...[newAnswer],
+						...state['answersList'].slice(i)
+					]
+				} else {
+					//newAnswer["userId"] = action.userId;
+					newAnswer[action.questionId] = action.optionId;
+
+					newAnswersList = [
+						...state['answersList'],
+						...[newAnswer]
+					]
+				}
+			}
+
+			return Object.assign(
+				{},
+				state,
+				{answersList: newAnswersList}
 			);
 		}
 

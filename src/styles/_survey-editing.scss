@@ -141,6 +141,7 @@
 				h4 {
 					font-size: 20px;
 					margin-bottom: 20px;
+					text-align: left;
 				}
 			}
 			.survey-body__add-button_above-question {
@@ -211,6 +212,9 @@
 					margin-bottom: 15px;
 					input {
 						margin-right: 7px;
+						&:hover {
+							cursor: pointer;
+						}
 					}
 				}
 			}
@@ -249,6 +253,22 @@
 		}
 		.survey-body__question_first {
 			border-top: 1px dashed $colorLightGrey;
+		}
+		.survey-body__submit-survey {
+			height: 50px;
+			width: 240px;
+			font-family: $mainFont;
+			font-size: 17px;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			background-color: $colorBlue;
+			margin-top: 50px;
+			padding: 5px;
+			&:hover {
+				cursor: pointer;
+				background-color: darken($colorBlue, 10%);
+			}
 		}
 	}
 	.survey-start-editor,
