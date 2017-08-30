@@ -304,16 +304,54 @@ export const api = {
 		});
 	},
 
-	getQuestionList() {
-		return new Promise( resolve => {
-			setTimeout(() => resolve(_questions[0].questionList), TIMEOUT)
-		})
-	},
+	// getQuestionList() {
+	// 	return new Promise( resolve => {
+	// 		setTimeout(() => resolve(_questions[0].questionList), TIMEOUT)
+	// 	})
+	// },
 
-	addQuestion(question) {
-		return new Promise( resolve => setTimeout(() => {
-			resolve(Object.assign(_questions[0].questionList, question ))
-		}, TIMEOUT));
+	// addQuestion(question) {
+	// 	return new Promise( resolve => setTimeout(() => {
+	// 		resolve(Object.assign(_questions[0].questionList, question ))
+	// 	}, TIMEOUT));
+	// },
+
+	addAnswer(surveyId, answer) {
+		return new Promise( (resolve, reject) => {
+			const surveyList = JSON.parse(myStorage.getItem('surveys')).surveyList;
+
+			let searchedSurvey = surveyList.filter(	
+				elem =>	elem.id === surveyId
+			);
+			
+			if (searchedSurvey.length === 1) {
+				const index = surveyList.findIndex(element => 
+					(element.id === surveyId)
+				);
+				
+				const answeredSurvey = Object.assign(
+					{},
+					searchedSurvey[0], 
+					{'answersList': searchedSurvey[0].answersList.concat([answer])}
+				);
+				//const answeredSurvey = searchedSurvey[0].answersList.concat([answer]);
+				console.log(answeredSurvey);
+				
+				const newList = [
+					...surveyList.slice(0, index),
+					...[answeredSurvey],
+					...surveyList.slice(index + 1)
+				];
+				//console.log(newList)
+				myStorage.setItem('surveys', JSON.stringify({"surveyList": newList}));
+				
+				resolve(true);
+			} else {
+				throw new Error("Не получилось добавить ответ пользователя.");
+				reject(false);
+			};
+		
+		});
 	},
 
 	getJobs() {

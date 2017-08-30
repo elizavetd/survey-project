@@ -1,7 +1,7 @@
 import React from 'react'
 import generateId from '../../../lib/generateUniqueID'
 import { connect } from 'react-redux'
-import { store } from '../../../store'
+import { store, history } from '../../../store'
 import { addQuestion, insertQuestion, deleteQuestion, addAnswer } from '../../../actions/questionActions'
 
 import NewQuestion from '../QuestionTypes/NewQuestion'
@@ -10,6 +10,7 @@ import Question from '../Question'
 const mapStateToProps = (store) => {
 	return {
 		questions: store.currentSurvey.questionList,
+		surveyId: store.currentSurvey.id,
 		answers: store.currentSurvey.answersList,
 		currentUser: store.user.currentUser.id
 	};
@@ -19,8 +20,7 @@ const mapDispatchToProps = (dispatch) => {
 	return {
 		addQuestion: (question) => store.dispatch(addQuestion(question)),
 		insertQuestion: (id, question) => store.dispatch(insertQuestion(id, question)),
-		addAnswer: (userId, questionId, optionId) =>
-			store.dispatch(addAnswer(userId, questionId, optionId))
+		addAnswer: (surveyId, answer) => store.dispatch(addAnswer(surveyId, answer))
 	};
 };
 @connect(mapStateToProps, mapDispatchToProps)
@@ -35,6 +35,7 @@ export default class SurveyPageEditor extends React.Component {
 
 		this.checkIfAlreadyPassedSurvey = this.checkIfAlreadyPassedSurvey.bind(this);
 		this.addQuestionAnswer = this.addQuestionAnswer.bind(this);
+		this.sendAnswer = this.sendAnswer.bind(this);
 
 		this.choiceClick = this.choiceClick.bind(this);
 		this.addQuestion = this.addQuestion.bind(this);
@@ -49,6 +50,11 @@ export default class SurveyPageEditor extends React.Component {
 				return true;
 		};
 		return false;
+	}
+
+	sendAnswer() {
+		this.props.addAnswer(this.props.surveyId, this.state.currentAnswer);
+		history.push('/my-surveys')
 	}
 
 	addQuestionAnswer(questionId, optionId) {
@@ -121,11 +127,15 @@ export default class SurveyPageEditor extends React.Component {
 
 	shouldComponentUpdate() {
 		if (this.props.answersEnabled === true)
-			return false;
+			return false
+		else
+			return true;
 	}
 			
   	render() {
-		const { questions, answers, currentUser, answersEnabled } = this.props;
+		const { questions, surveyId, answers, 
+				currentUser, answersEnabled } = this.props;
+		
 		if (questions.length > 1) {
 			this.state.isChoosingMode = true;
 		}
@@ -138,7 +148,8 @@ export default class SurveyPageEditor extends React.Component {
 					isChoosingMode = {this.state.isChoosingMode} 
 				/>}
 				
-				{(!this.checkIfAlreadyPassedSurvey()) ? questions.map(question =>
+				{(!answersEnabled || !this.checkIfAlreadyPassedSurvey()) 
+				? questions.map(question =>
 					<Question
 						key = {question.id}
 						id = {question.id}
@@ -158,7 +169,12 @@ export default class SurveyPageEditor extends React.Component {
 				: <h1>Вы уже проходили этот опрос</h1>}
 
 				{(answersEnabled === true) && !this.checkIfAlreadyPassedSurvey() &&
-					<button className="survey-body__submit-survey">Отправить результаты</button>
+					<button
+						onClick = {this.sendAnswer}
+						className = "survey-body__submit-survey"
+					>
+						Отправить результаты
+					</button>
 				}
 			</section>
 		);

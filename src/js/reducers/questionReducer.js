@@ -9,8 +9,7 @@ import { ADD_QUESTION,
 		 EDIT_DETAIL,
 		 RESET_SURVEY,
 		 CREATE_SURVEY_FROM_TEMPLATE,
-		 LOAD_EXISTING_SURVEY,
-		 ADD_ANSWER } from '../actions/questionActions'
+		 LOAD_EXISTING_SURVEY/*, ADD_ANSWER */} from '../actions/questionActions'
 import { store, sagaMiddleware } from '../store'
 import { generateSurveyID } from '../lib/generateUniqueID'
 
@@ -53,7 +52,8 @@ export default function userReducer(state = generateInitialState(), action) {
 		case CREATE_SURVEY_FROM_TEMPLATE: {
 			return Object.assign(
 				{}, 
-				action.template
+				action.template,
+				{answersList: []}
 			);
 		}
 
@@ -64,43 +64,43 @@ export default function userReducer(state = generateInitialState(), action) {
 			);
 		}
 
-		case ADD_ANSWER: {
+		// case ADD_ANSWER: {
 
-			let newAnswersList;
-			let newAnswer = {};
-			let newQuestionAnswer = {};
-			for (let i = 0; i < state['answersList'].length; i++) {
-				if (state['answersList'][i].hasOwnProperty(action.userId)) {
-					newQuestionAnswer[action.questionId] = action.optionId;
+		// 	let newAnswersList;
+		// 	let newAnswer = {};
+		// 	let newQuestionAnswer = {};
+		// 	for (let i = 0; i < state['answersList'].length; i++) {
+		// 		if (state['answersList'][i].hasOwnProperty(action.userId)) {
+		// 			newQuestionAnswer[action.questionId] = action.optionId;
 
-					newAnswer = Object.assign(
-						{},
-						state['answersList'][i],
-						newQuestionAnswer
-					)
+		// 			newAnswer = Object.assign(
+		// 				{},
+		// 				state['answersList'][i],
+		// 				newQuestionAnswer
+		// 			)
 
-					newAnswersList = [
-						...state['answersList'].slice(0, i),
-						...[newAnswer],
-						...state['answersList'].slice(i)
-					]
-				} else {
-					//newAnswer["userId"] = action.userId;
-					newAnswer[action.questionId] = action.optionId;
+		// 			newAnswersList = [
+		// 				...state['answersList'].slice(0, i),
+		// 				...[newAnswer],
+		// 				...state['answersList'].slice(i)
+		// 			]
+		// 		} else {
+		// 			//newAnswer["userId"] = action.userId;
+		// 			newAnswer[action.questionId] = action.optionId;
 
-					newAnswersList = [
-						...state['answersList'],
-						...[newAnswer]
-					]
-				}
-			}
+		// 			newAnswersList = [
+		// 				...state['answersList'],
+		// 				...[newAnswer]
+		// 			]
+		// 		}
+		// 	}
 
-			return Object.assign(
-				{},
-				state,
-				{answersList: newAnswersList}
-			);
-		}
+		// 	return Object.assign(
+		// 		{},
+		// 		state,
+		// 		{answersList: newAnswersList}
+		// 	);
+		// }
 
 		case ADD_QUESTION: {
 			let options = [];

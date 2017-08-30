@@ -7,16 +7,23 @@ import QuestionModal from '../Modals/QuestionModal'
 class ScaleQuestion extends React.Component {
 	constructor() {
 		super();
+
 		this.state = {
 			clicked: false,
 			buttonClass: 'fa fa-plus-circle',
-			choosingClass: 'survey-body__question_list'
+			choosingClass: 'survey-body__question_list',
+			sliderValue: 50
 		}
+
 		this.choosingClick = this.choosingClick.bind(this);
 		this.hideChoice = this.hideChoice.bind(this);
 
 		this.handleOpenModal = this.handleOpenModal.bind(this);
 		this.handleCloseModal = this.handleCloseModal.bind(this);
+
+		this.handleAnswer = this.handleAnswer.bind(this);
+		this.handleMouseOver = this.handleMouseOver.bind(this);
+		this.handleChange = this.handleChange.bind(this);
 	}
 
 	choosingClick(e) {
@@ -51,6 +58,20 @@ class ScaleQuestion extends React.Component {
 		this.setState({ showModal: false });
 	}
 
+	handleAnswer(e) {
+		console.log(e.target.value);
+		this.props.addQuestionAnswer(this.props.id, e.target.value);
+	}
+
+	handleMouseOver(e) {
+		e.target.style.cursor = 'pointer'	
+	}
+
+	handleChange(e) {
+		this.setState({
+			sliderValue: e.target.value
+		})
+	}
 
 	render() {
 		const { isFirst, id, question, answersEnabled,
@@ -118,14 +139,17 @@ class ScaleQuestion extends React.Component {
 					<h4>{question}</h4>
 					<div className="range-slider">
 						<input 
-							className="range-slider__range" 
-							type="range" 
-							disabled={answersEnabled !== true} 
-							defaultValue="50" 
-							min="0" 
-							max="100"
+							className = "range-slider__range" 
+							type = "range"
+							disabled = {answersEnabled !== true} 
+							defaultValue = "50" 
+							min = "0" 
+							max = "100"
+							onMouseOver = {this.handleMouseOver}
+							onChange = {this.handleChange}
+							onMouseUp = {this.handleAnswer}
 						/>
-						<span className="range-slider__value">50</span>
+						<span className="range-slider__value">{this.state.sliderValue}</span>
 					</div>
 				</div>
 			</article>

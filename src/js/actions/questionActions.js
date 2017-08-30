@@ -6,6 +6,8 @@ export const CREATE_SURVEY_FROM_TEMPLATE = 'CREATE_SURVEY_FROM_TEMPLATE'
 export const LOAD_EXISTING_SURVEY = 'LOAD_EXISTING_SURVEY'
 
 export const ADD_ANSWER = 'ADD_ANSWER'
+export const ADD_ANSWER_SUCCESS = 'ADD_ANSWER_SUCCESS'
+export const ADD_ANSWER_FAILURE = 'ADD_ANSWER_FAILURE'
 
 export const ADD_QUESTION = 'ADD_QUESTION'
 export const INSERT_QUESTION = 'INSERT_QUESTION'
@@ -56,12 +58,23 @@ export function loadExistingSurvey(survey) {
 	}
 }
 
-export function addAnswer(userId, questionId, optionId) {
+export function addAnswer(surveyId, answer) {
 	return {
 		type: ADD_ANSWER,
-		userId: userId,
-		questionId: questionId,
-		optionId: optionId
+		surveyId,
+		answer: answer
+	}
+}
+
+export function addAnswerSuccess() {
+	return {
+		type: ADD_ANSWER_SUCCESS
+	}
+}
+
+export function addAnswerFailure() {
+	return {
+		type: ADD_ANSWER_FAILURE
 	}
 }
 

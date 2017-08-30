@@ -17,6 +17,8 @@ class TextQuestion extends React.Component {
 		
 		this.handleOpenModal = this.handleOpenModal.bind(this);
 		this.handleCloseModal = this.handleCloseModal.bind(this);
+
+		this.handleAnswer = this.handleAnswer.bind(this);
 	}
 
 	choosingClick(e) {
@@ -51,9 +53,12 @@ class TextQuestion extends React.Component {
 		this.setState({ showModal: false });
 	}
 
+	handleAnswer(e) {
+		this.props.addQuestionAnswer(this.props.id, e.target.value);
+	}
 
 	render() {
-		const { isFirst, id, question, answersEnabled,
+		const { isFirst, id, question, answersEnabled, addQuestionAnswer, userId,
 			insertClick, deleteClick, notifySaving} = this.props;
 	
 		return (
@@ -116,7 +121,11 @@ class TextQuestion extends React.Component {
 
 				<div className="survey-body__question-view">
 					<h4>{question}</h4>
-					<textarea placeholder="Введите ответ..." disabled={answersEnabled !== true} ></textarea>
+					<textarea 
+						onChange = {this.handleAnswer}
+						placeholder="Введите ответ..." 
+						disabled={answersEnabled !== true}
+					/>
 				</div>
 			</article>
 		);

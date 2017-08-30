@@ -3,6 +3,7 @@ import ReactModal from 'react-modal';
 
 import EditButtons from '../EditButtons'
 import QuestionModal from '../Modals/QuestionModal'
+import Stars from '../RatingStars'
 
 class RatingQuestion extends React.Component {
 	constructor() {
@@ -17,6 +18,8 @@ class RatingQuestion extends React.Component {
 		
 		this.handleOpenModal = this.handleOpenModal.bind(this);
 		this.handleCloseModal = this.handleCloseModal.bind(this);
+
+		this.handleAnswer = this.handleAnswer.bind(this);
 	}
 
 	choosingClick(e) {
@@ -51,9 +54,12 @@ class RatingQuestion extends React.Component {
 		this.setState({ showModal: false });
 	}
 
+	handleAnswer(e) {
+		alert('over')
+	}
 
 	render() {
-		const { isFirst, id, question, answersEnabled,
+		const { isFirst, id, question, answersEnabled, addQuestionAnswer, userId,
 			insertClick, deleteClick, notifySaving} = this.props;
 	
 		return (
@@ -116,13 +122,12 @@ class RatingQuestion extends React.Component {
 
 				<div className="survey-body__question-view">
 					<h4>{question}</h4>
-					<div className="rating-stars">
-						<i className="fa fa-star" aria-hidden="true"></i>
-						<i className="fa fa-star-o" aria-hidden="true"></i>
-						<i className="fa fa-star-o" aria-hidden="true"></i>
-						<i className="fa fa-star-o" aria-hidden="true"></i>
-						<i className="fa fa-star-o" aria-hidden="true"></i>
-					</div>
+					<Stars
+						id = {id}
+						answersEnabled = {answersEnabled}
+						addQuestionAnswer = {addQuestionAnswer}
+						amount = {0}
+					/>
 				</div>
 			</article>
 		);
