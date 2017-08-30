@@ -24,8 +24,10 @@ class MultipleAnswersQuestion extends React.Component {
 	}
 
 	shouldComponentUpdate(nextProps, nextState) {
-		if(nextState.checkedAnswers)
+		if(this.props.answersEnabled && nextState.checkedAnswers)
 			return false;
+		else
+			return true;
 	}
 
 	choosingClick(e) {
@@ -62,9 +64,6 @@ class MultipleAnswersQuestion extends React.Component {
 
 	handleAnswer(e) {
 		let newQuestionAnswer = [];
-
-		alert(e.target.checked)
-		
 
 		if (e.target.checked) {
 			newQuestionAnswer = this.state.checkedAnswers.concat([e.target.id])

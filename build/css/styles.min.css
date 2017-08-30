@@ -2480,6 +2480,10 @@ input[type=text]::-ms-reveal {
 .survey-editing .survey-results .survey-results__answer-percentage p {
   margin-top: 10px;
 }
+.survey-editing .survey-results .survey-results__no-answer {
+  margin-top: 10px;
+  color: #EB1C23;
+}
 .survey-editing .survey-results .survey-results__graph {
   padding: 30px 0;
   border: 2px solid #F7F7F7;
@@ -2513,6 +2517,9 @@ input[type=text]::-ms-reveal {
 .survey-editing .survey-results .table td:first-child,
 .survey-editing .survey-results .table th:first-child {
   width: 5%;
+}
+.survey-editing .survey-results .survey-results__user-result {
+  width: 100%;
 }
 
 .socials {

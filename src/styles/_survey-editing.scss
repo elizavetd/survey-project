@@ -486,6 +486,10 @@
 		.survey-results__answer-percentage p {
 			margin-top: 10px;
 		}
+		.survey-results__no-answer {
+			margin-top: 10px;
+			color: $colorRed;
+		}
 		.survey-results__graph {
 			padding: 30px 0;
 			border: 2px solid $mainColor;
@@ -518,6 +522,9 @@
 					width: 5%;
 				}
 			}
+		}
+		.survey-results__user-result {
+			width: 100%;
 		}
 	}
 }

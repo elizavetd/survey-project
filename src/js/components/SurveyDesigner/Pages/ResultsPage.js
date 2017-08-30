@@ -1,5 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { store } from '../../../store'
 
 import PaginationBar from '../../PaginationBar'
 
@@ -10,31 +12,40 @@ import FileResult from '../QuestionResults/FileResult'
 import RatingResult from '../QuestionResults/RatingResult'
 import ScaleResult from '../QuestionResults/ScaleResult'
 
+const mapStateToProps = (store) => {
+	return {
+		survey: store.currentSurvey,
+		user: store.user.currentUser
+	};
+};
+@connect(mapStateToProps)
 export default class ResultsPage extends React.Component {
   render() {
+	  const {user, survey} = this.props;
+
     return (
         <section className="survey-results">
 			<h2>Просмотр ответов </h2>
 			<div className="survey-results__info">
-				<p>Вопросов: 12, страниц: 3</p>
-				<p>Всего ответов: 112</p>
+				<p>Вопросов: {survey.questionList.length}</p>
+				<p>Всего ответов: {survey.answersList.length}</p>
 			</div>
 			<div className="survey-results__nav-buttons">
-				<NavLink exact to='/new-survey/results' activeClassName="survey-results__nav-buttons_current"><button>Сводные данные по вопросам</button></NavLink>
-				<NavLink to='/new-survey/results/user111' activeClassName="survey-results__nav-buttons_current"><button>Отдельные ответы</button></NavLink>
+				<NavLink exact to={`/survey_${survey.id}/results`} activeClassName="survey-results__nav-buttons_current"><button>Сводные данные по вопросам</button></NavLink>
+				<NavLink to={`/survey_${survey.id}/results/${user.username}`} activeClassName="survey-results__nav-buttons_current"><button>Ответы пользователя</button></NavLink>
 			</div>
 			<p className="survey-results__view-option"><select defaultValue="Все вопросы">
 				<option>Все вопросы</option>
 				<option value="Какие-то вопросы">Какие-то вопросы</option>
 				<option value="Другие вопросы">Другие вопросы</option>
 			</select></p>
-			<PaginationBar 
+			{/* <PaginationBar 
 				hasSideInfo = {true}
 				itemCountCaption="Вопросов:"
 				itemCount = {12}
 				pageNumber={1}
 				pageCount = {3}
-			/>
+			/> */}
 			<OneAnswerResult 
 				answered = {112}
 				skipped = {0}
@@ -103,7 +114,7 @@ export default class ResultsPage extends React.Component {
 					{user: 'trolleybus666', answer: 93}
 				]}
 			/>
-			<PaginationBar hasSideInfo = {false} hasPadding = {false} />
+			{/* <PaginationBar hasSideInfo = {false} hasPadding = {false} /> */}
 		</section>
     );
   }

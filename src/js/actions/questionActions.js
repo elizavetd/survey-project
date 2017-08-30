@@ -61,7 +61,7 @@ export function loadExistingSurvey(survey) {
 export function addAnswer(surveyId, answer) {
 	return {
 		type: ADD_ANSWER,
-		surveyId,
+		surveyId: surveyId,
 		answer: answer
 	}
 }
@@ -104,7 +104,8 @@ export function editQuestion(version) {
 	return {
 		type: EDIT_QUESTION,
 		id: version.id,
-		question: version.question
+		question: version.question,
+		options: version.options
 	}
 }
 

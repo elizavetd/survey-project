@@ -69,8 +69,6 @@ export default class QuestionModal extends React.Component {
 	}
 
 	changeOption(e) {
-		console.log(e.currentTarget.value)
-
 		let optionToChange = e.currentTarget.dataset.option;
 		const index = this.state.currentQuestion.options.findIndex(
 			element => (element.id === optionToChange)
@@ -118,8 +116,6 @@ export default class QuestionModal extends React.Component {
 		)
 		if (!this.state.currentQuestion)
 			this.state.currentQuestion = questions[index];
-
-		console.log(this.state);
 
 		return (
 			<form onSubmit={this.saveQuestion} className="question-modal">

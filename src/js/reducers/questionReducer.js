@@ -167,9 +167,10 @@ export default function userReducer(state = generateInitialState(), action) {
 				element => (element.id === action.id)
 			);
 			const editedQuestion = {
-				id: index,
+				id: action.id,
 				type: state['questionList'][index].type,
-				question: action.question
+				question: action.question,
+				options: action.options
 			}
 			const newList = [
 				...state['questionList'].slice(0, index),
