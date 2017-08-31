@@ -7,11 +7,9 @@ import FileUserResult from './FileUserResult'
 import RatingUserResult from './RatingUserResult'
 import ScaleUserResult from './ScaleUserResult'
 
-export default class Question extends React.Component {	
+export default class UserResult extends React.Component {	
   	render() {
 		const { question, type, result } = this.props;
-
-		console.log(result)
 
 		return (
 			<div className="survey-results__user-result">

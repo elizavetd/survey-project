@@ -5,12 +5,7 @@ import { store } from '../../../store'
 
 import PaginationBar from '../../PaginationBar'
 
-import OneAnswerResult from '../QuestionResults/OneAnswerResult'
-import MultipleAnswersResult from '../QuestionResults/MultipleAnswersResult'
-import TextResult from '../QuestionResults/TextResult'
-import FileResult from '../QuestionResults/FileResult'
-import RatingResult from '../QuestionResults/RatingResult'
-import ScaleResult from '../QuestionResults/ScaleResult'
+import Result from '../QuestionResults/Result'
 
 const mapStateToProps = (store) => {
 	return {
@@ -20,11 +15,124 @@ const mapStateToProps = (store) => {
 };
 @connect(mapStateToProps)
 export default class ResultsPage extends React.Component {
-  render() {
-	  const {user, survey} = this.props;
+	constructor() {
+		super();
 
-    return (
-        <section className="survey-results">
+		this.getUserById = this.getUserById.bind(this);
+		this.getQuestionResutById = this.getQuestionResutById.bind(this);
+	}
+
+	getUserById(id) {
+		return JSON.parse(localStorage.getItem('userList')).users.filter(
+			elem => elem.id === id
+		)[0];
+	}
+
+	getQuestionResutById(id, type) {
+		switch (type) {
+			case 'oneAnswer': {
+				let answersArray = this.props.survey.answersList.filter(
+					answer => answer.hasOwnProperty(id)
+				).map(
+					answer => answer[id]
+				);
+
+				if(answersArray.length === 0)
+					return [];
+				
+				let answersByOption = {};
+				for (let option of answersArray) {
+					answersByOption[option] = ~~answersByOption[option] + 1;
+				}
+
+				return this.props.survey.questionList.filter(
+					question => question.id === id
+				)[0].options.map(
+					option => {
+						return {
+							"option": option.value,
+							"value": answersByOption[option.id] || 0
+						}
+					}
+				);
+			}
+
+			case 'severalAnswers': {
+				let answers = this.props.survey.answersList.filter(
+					answer => answer.hasOwnProperty(id)
+				)
+
+				if(answers.length === 0)
+					return [];
+				
+				let answersArray = answers
+					.map( answer => answer[id] )
+					.reduce(function(prev, curr) { return prev.concat(curr); });
+				
+				let answersByOption = {};
+				for (let option of answersArray) {
+					answersByOption[option] = ~~answersByOption[option] + 1;
+				}
+
+				return this.props.survey.questionList.filter(
+					question => question.id === id
+				)[0].options.map(
+					option => {
+						return {
+							"option": option.value,
+							"value": answersByOption[option.id] || 0
+						}
+					}
+				);
+			}
+
+			case 'text':
+			case 'file': 
+			case 'scale': {
+				return this.props.survey.answersList.filter(
+					answer => answer.hasOwnProperty(id)
+				).map(
+					answer => {
+						return {
+							"user": this.getUserById(answer.userId).username,
+							"answer": answer[id]
+						}
+					}
+				);
+			}
+
+			case 'rating': {
+				let answersArray = this.props.survey.answersList.filter(
+					answer => answer.hasOwnProperty(id)
+				).map(
+					answer => answer[id]
+				);
+
+				if(answersArray.length === 0)
+					return [];
+				
+				let answersByOption = {};
+				for (let option of answersArray) {
+					answersByOption[option] = ~~answersByOption[option] + 1;
+				}
+
+				return [1, 2, 3, 4, 5].map(
+					option => {
+						return {
+							"option": option,
+							"value": answersByOption[option] || 0
+						}
+					}
+				);
+			}
+		}
+	}
+
+	render() {
+		const {user, survey} = this.props;
+
+	return (
+		<section className="survey-results">
 			<h2>Просмотр ответов </h2>
 			<div className="survey-results__info">
 				<p>Вопросов: {survey.questionList.length}</p>
@@ -46,76 +154,25 @@ export default class ResultsPage extends React.Component {
 				pageNumber={1}
 				pageCount = {3}
 			/> */}
-			<OneAnswerResult 
-				answered = {112}
-				skipped = {0}
-				results = {[
-					{option: 'Вариант ответа 1', value: 14},
-					{option: 'Вариант ответа 2', value: 12},
-					{option: 'Вариант ответа 3', value: 7},
-					{option: 'Вариант ответа 4', value: 6},
-					{option: 'Вариант ответа 5', value: 25},
-					{option: 'Вариант ответа 6', value: 9},
-					{option: 'Вариант ответа 7', value: 5},
-					{option: 'Вариант ответа 8', value: 13},
-					{option: 'Вариант ответа 9', value: 4},
-					{option: 'Вариант ответа 10', value: 17}
-				]}
-			/>
-			<MultipleAnswersResult 
-				answered = {100}
-				skipped = {12}
-				results = {[
-					{option: 'Первый вариант', value: 78},
-					{option: 'Второй вариант', value: 55},
-					{option: 'Третий вариант', value: 92}
-				]}
-			/>
-			<TextResult
-				answered = {112}
-				skipped = {0}
-				results = {[
-					{user: 'ralph.graves32', answer: 'Ответ'},
-					{user: 'stacey.fernandez', answer: 'Привет'},
-					{user: 'tony.smith64', answer: 'Пакет'},
-					{user: 'anna.anna', answer: 'Жакет'},
-					{user: 'zhanna.zhanna', answer: 'Паркет'},
-					{user: 'ivan', answer: 'Мушкет'},
-					{user: 'trolleybus666', answer: 'Берет'}
-				]}
-			/>
-			<FileResult
-				answered = {110}
-				skipped = {2}
-				results = {[
-					{user: 'ralph.graves32', answer: 'report.pdf'},
-					{user: 'stacey.fernandez', answer: 'image.jpg'},
-					{user: 'tony.smith64', answer: 'document.docx'}
-				]}
-			/>
-			<RatingResult
-				answered = {109}
-				skipped = {3}
-				results = {[
-					{option: 1, value: 9},
-					{option: 2, value: 25},
-					{option: 3, value: 50},
-					{option: 4, value: 45},
-					{option: 5, value: 5}
-				]}
-			/>
-			<ScaleResult
-				answered = {4}
-				skipped = {108}
-				results = {[
-					{user: 'anna.anna', answer: 55},
-					{user: 'zhanna.zhanna', answer: 87},
-					{user: 'ivan', answer: 68},
-					{user: 'trolleybus666', answer: 93}
-				]}
-			/>
+			
+			{survey.questionList 
+				? survey.questionList .map(question =>
+					<Result
+						key = {question.id}
+						type = {question.type}
+						question = {question.question}
+						answered = {this.props.survey.answersList.filter(
+							answer => answer.hasOwnProperty(question.id)
+						).length}
+						all = {this.props.survey.answersList.length}
+						results = {this.getQuestionResutById(question.id, question.type)}
+					/>
+				)
+				: <h1>Никто ещё не прошёл этот опрос :(</h1>
+			}
+
 			{/* <PaginationBar hasSideInfo = {false} hasPadding = {false} /> */}
 		</section>
-    );
+	);
   }
 }

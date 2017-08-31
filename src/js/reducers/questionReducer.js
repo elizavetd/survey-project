@@ -64,44 +64,6 @@ export default function userReducer(state = generateInitialState(), action) {
 			);
 		}
 
-		// case ADD_ANSWER: {
-
-		// 	let newAnswersList;
-		// 	let newAnswer = {};
-		// 	let newQuestionAnswer = {};
-		// 	for (let i = 0; i < state['answersList'].length; i++) {
-		// 		if (state['answersList'][i].hasOwnProperty(action.userId)) {
-		// 			newQuestionAnswer[action.questionId] = action.optionId;
-
-		// 			newAnswer = Object.assign(
-		// 				{},
-		// 				state['answersList'][i],
-		// 				newQuestionAnswer
-		// 			)
-
-		// 			newAnswersList = [
-		// 				...state['answersList'].slice(0, i),
-		// 				...[newAnswer],
-		// 				...state['answersList'].slice(i)
-		// 			]
-		// 		} else {
-		// 			//newAnswer["userId"] = action.userId;
-		// 			newAnswer[action.questionId] = action.optionId;
-
-		// 			newAnswersList = [
-		// 				...state['answersList'],
-		// 				...[newAnswer]
-		// 			]
-		// 		}
-		// 	}
-
-		// 	return Object.assign(
-		// 		{},
-		// 		state,
-		// 		{answersList: newAnswersList}
-		// 	);
-		// }
-
 		case ADD_QUESTION: {
 			let options = [];
 			switch (action.question.type) {

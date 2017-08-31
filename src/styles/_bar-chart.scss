@@ -32,12 +32,12 @@
 		position: relative;
 		will-change: width;
 		border: 2px solid rgba(0,0,0,.1);
-		&:after {
-			position: absolute;
-			top: 0; right: 0; content: " ";
-			width: $barChartCapWidth; height: 100%;
-			background: rgba(0,0,0,.1);
-		}
+		// &:after {
+		// 	position: absolute;
+		// 	top: 0; right: 0; content: " ";
+		// 	width: $barChartCapWidth; height: 100%;
+		// 	background: rgba(0,0,0,.1);
+		// }
 
 		.bar-chart__text {
 			position: absolute;
