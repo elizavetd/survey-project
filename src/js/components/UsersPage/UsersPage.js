@@ -24,10 +24,12 @@ export default class UsersPage extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			page: 1
+			page: 1,
+			sortButton: "down"
 		}
 
 		this.filter = this.filter.bind(this);
+		this.sortUsers = this.sortUsers.bind(this);
 
 		this.showFirstPage = this.showFirstPage.bind(this);
 		this.showPreviousPage = this.showPreviousPage.bind(this);
@@ -41,6 +43,35 @@ export default class UsersPage extends React.Component {
 
 	filter(e) {
 		this.setState({filter: e.target.value});
+	}
+
+	sortUsers(e) {
+		if(this.state.sortButton === "down") {
+			this.props.users.sort((a, b) => {
+				if (a.username.toLowerCase() > b.username.toLowerCase()) {
+					return 1;
+				}
+				if (a.username.toLowerCase() < b.username.toLowerCase()) {
+					return -1;
+				}
+				return 0;
+			});
+
+			this.setState({sortButton: "up"});
+
+		} else if (this.state.sortButton === "up") {
+			this.props.users.sort((a, b) => {
+				if (a.username.toLowerCase() > b.username.toLowerCase()) {
+					return -1;
+				}
+				if (a.username.toLowerCase() < b.username.toLowerCase()) {
+					return 1;
+				}
+				return 0;
+			});
+			
+			this.setState({sortButton: "down"});
+		};
 	}
 
 	showFirstPage() {
@@ -97,7 +128,11 @@ export default class UsersPage extends React.Component {
 			<div className="content">
 				<section className="users">
 					<table className="table">
-						<TableHeader onChange={this.filter} />
+						<TableHeader
+							onChange = {this.filter}
+							sortUsers = {this.sortUsers}
+							buttonClass = {this.state.sortButton}
+						/>
 						<tbody>
 							{users && usersOnPage.map(user =>
 								<TableRow

@@ -3280,6 +3280,11 @@ button:focus {
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
   border-top: 10px solid #535558;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.triangle-down:hover {
+  border-top-color: #7485c5;
 }
 
 .triangle-up {
@@ -3289,6 +3294,11 @@ button:focus {
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
   border-bottom: 10px solid #535558;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.triangle-up:hover {
+  border-bottom-color: #7485c5;
 }
 
 .triangle-right {
@@ -3298,6 +3308,11 @@ button:focus {
   border-top: 7px solid transparent;
   border-left: 10px solid #535558;
   border-bottom: 7px solid transparent;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.triangle-right:hover {
+  border-left-color: #7485c5;
 }
 
 .triangle-left {
@@ -3305,8 +3320,22 @@ button:focus {
   height: 0;
   display: inline-block;
   border-top: 7px solid transparent;
-  border-right: 10px solid;
+  border-right: 10px solid #535558;
   border-bottom: 7px solid transparent;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.triangle-left:hover {
+  border-right-color: #7485c5;
+}
+
+.triangle-down:hover,
+.triangle-left:hover,
+.triangle-right:hover,
+.triangle-up:hover {
+  cursor: pointer;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .operations-bar {

@@ -202,6 +202,10 @@ button:focus {
 	border-left: 7px solid transparent;
 	border-right: 7px solid transparent;
 	border-top: 10px solid $colorGrey;
+	transition: 0.4s;
+	&:hover {
+		border-top-color: $colorBlue;
+	}
 }
 
 .triangle-up {
@@ -211,6 +215,10 @@ button:focus {
 	border-left: 7px solid transparent;
 	border-right: 7px solid transparent;
 	border-bottom: 10px solid $colorGrey;
+	transition: 0.4s;
+	&:hover {
+		border-bottom-color: $colorBlue;
+	}
 }
 
 .triangle-right {
@@ -220,6 +228,10 @@ button:focus {
 	border-top: 7px solid transparent;
 	border-left: 10px solid $colorGrey;
 	border-bottom: 7px solid transparent;
+	transition: 0.4s;
+	&:hover {
+		border-left-color: $colorBlue;
+	}
 }
 
 .triangle-left {
@@ -227,8 +239,22 @@ button:focus {
 	height: 0;
 	display: inline-block;
 	border-top: 7px solid transparent;
-	border-right: 10px solid ;
+	border-right: 10px solid $colorGrey;
 	border-bottom: 7px solid transparent;
+	transition: 0.4s;
+	&:hover {
+		border-right-color: $colorBlue;
+	}
+}
+
+.triangle-down,
+.triangle-left,
+.triangle-right,
+.triangle-up {
+	&:hover {
+		cursor: pointer;
+		transition: 0.4s;
+	}
 }
 
 .operations-bar {

@@ -53,6 +53,258 @@
 			"role": "user",
 			"signupDate": "05.06.2017",
 			"surveys": 11
+		},
+		{
+			"id": "7",
+			"username": "organicfish930",
+			"email": "nelson.holmes32@example.com",
+			"password": "hjk777l",
+			"role": "user",
+			"signupDate": "12.06.2017",
+			"surveys": 0
+		},
+		{
+			"id": "8",
+			"username": "bluedog194",
+			"email": "ece.tanrıkulu@example.com",
+			"password": "srbhsrw4254",
+			"role": "user",
+			"signupDate": "15.06.2017",
+			"surveys": 0
+		},
+		{
+			"id": "9",
+			"username": "browngorilla151",
+			"email": "melanie.günther@example.com",
+			"password": "eb56by",
+			"role": "user",
+			"signupDate": "16.06.2017",
+			"surveys": 0
+		},
+		{
+			"id": "10",
+			"username": "purplewolf467",
+			"email": "ceylan.tüzün@example.com",
+			"password": "shrt555",
+			"role": "user",
+			"signupDate": "17.06.2017",
+			"surveys": 0
+		},
+		{
+			"id": "11",
+			"username": "heavymouse429",
+			"email": "grayson.zhang@example.com",
+			"password": "456yvef",
+			"role": "user",
+			"signupDate": "18.06.2017",
+			"surveys": 0
+		},
+		{
+			"id": "12",
+			"username": "smallduck476",
+			"email": "katrine.hansen@example.com",
+			"password": "smal76543lduck476",
+			"role": "user",
+			"signupDate": "22.06.2017",
+			"surveys": 0
+		},
+		{
+			"id": "13",
+			"username": "orangemeercat805",
+			"email": "tobias.jensen@example.com",
+			"password": "q4g4g4rg4a",
+			"role": "user",
+			"signupDate": "23.06.2017",
+			"surveys": 0
+		},
+		{
+			"id": "14",
+			"username": "blackmeercat302",
+			"email": "glenda.watkins@example.com",
+			"password": "q4g411",
+			"role": "user",
+			"signupDate": "24.06.2017",
+			"surveys": 0
+		},
+		{
+			"id": "15",
+			"username": "redduck491",
+			"email": "kate.holland@example.com",
+			"password": "q34gvfr4e3q3g",
+			"role": "user",
+			"signupDate": "25.06.2017",
+			"surveys": 0
+		},
+		{
+			"id": "16",
+			"username": "blacksnake712",
+			"email": "evelyn.graves@example.com",
+			"password": "q43tgfqwf",
+			"role": "user",
+			"signupDate": "26.06.2017",
+			"surveys": 0
+		},
+		{
+			"id": "17",
+			"username": "otto.haataja",
+			"email": "otto.haataja@example.com",
+			"password": "rq4gqgvrqw5g32",
+			"role": "user",
+			"signupDate": "27.06.2017",
+			"surveys": 0
+		},
+		{
+			"id": "18",
+			"username": "crazyrabbit513",
+			"email": "kirk.bowman@example.com",
+			"password": "q4t34qtl",
+			"role": "user",
+			"signupDate": "28.06.2017",
+			"surveys": 0
+		},
+		{
+			"id": "19",
+			"username": "brownpanda265",
+			"email": "francisco.ferrer@example.com",
+			"password": "2r43qt4w4254",
+			"role": "user",
+			"signupDate": "29.06.2017",
+			"surveys": 0
+		},
+		{
+			"id": "20",
+			"username": "raven1",
+			"email": "charlie.baier@example.com",
+			"password": "34qt4tgby",
+			"role": "user",
+			"signupDate": "30.06.2017",
+			"surveys": 0
+		},
+		{
+			"id": "21",
+			"username": "greentiger194",
+			"email": "danielle.crawford@example.com",
+			"password": "srst321355",
+			"role": "user",
+			"signupDate": "01.07.2017",
+			"surveys": 0
+		},
+		{
+			"id": "22",
+			"username": "rush2112",
+			"email": "estelle.sander@example.com",
+			"password": "45stgrssf",
+			"role": "user",
+			"signupDate": "02.07.2017",
+			"surveys": 0
+		},
+		{
+			"id": "23",
+			"username": "goldenostrich841",
+			"email": "nerea.reyes@example.com",
+			"password": "ssgtuck476",
+			"role": "user",
+			"signupDate": "03.07.2017",
+			"surveys": 0
+		},
+		{
+			"id": "24",
+			"username": "greenbutterfly935",
+			"email": "rahul.overdevest@example.com",
+			"password": "aaasth5trgv",
+			"role": "user",
+			"signupDate": "04.07.2017",
+			"surveys": 0
+		},
+		{
+			"id": "25",
+			"username": "smallsnake189",
+			"email": "alfonso.ibañez@example.com",
+			"password": "1bhtwst11",
+			"role": "user",
+			"signupDate": "05.07.2017",
+			"surveys": 0
+		},
+		{
+			"id": "26",
+			"username": "cement",
+			"email": "edilaine.dasneves@example.com",
+			"password": "tswrh5hswt64",
+			"role": "user",
+			"signupDate": "06.07.2017",
+			"surveys": 0
+		},
+		{
+			"id": "27",
+			"username": "Hs6ih2Pf",
+			"email": "fiona.holt@example.com",
+			"password": "ssthw5tf",
+			"role": "user",
+			"signupDate": "07.07.2017",
+			"surveys": 0
+		},
+		{
+			"id": "28",
+			"username": "ralph",
+			"email": "ralph@example.com",
+			"password": "rawgr5g32",
+			"role": "user",
+			"signupDate": "08.07.2017",
+			"surveys": 0
+		},
+		{
+			"id": "29",
+			"username": "lea.wong",
+			"email": "lea.wong@example.com",
+			"password": "hjkwtrh6777l",
+			"role": "user",
+			"signupDate": "10.07.2017",
+			"surveys": 0
+		},
+		{
+			"id": "30",
+			"username": "frosch",
+			"email": "freddie.hudson@example.com",
+			"password": "srbhgwaswrsrw4254",
+			"role": "user",
+			"signupDate": "11.07.2017",
+			"surveys": 0
+		},
+		{
+			"id": "31",
+			"username": "purplecat459",
+			"email": "purplecat459@example.com",
+			"password": "ebwtgrt56by",
+			"role": "user",
+			"signupDate": "16.07.2017",
+			"surveys": 0
+		},
+		{
+			"id": "32",
+			"username": "funfun",
+			"email": "tonya.berry@example.com",
+			"password": "sstgbvhrt555",
+			"role": "user",
+			"signupDate": "17.07.2017",
+			"surveys": 0
+		},
+		{
+			"id": "33",
+			"username": "bauhaus",
+			"email": "bauhaus@example.com",
+			"password": "sbtawrrtf",
+			"role": "user",
+			"signupDate": "18.07.2017",
+			"surveys": 0
+		},
+		{
+			"id": "34",
+			"username": "lumi.savela",
+			"email": "lumi.savela@example.com",
+			"password": "smallduck476",
+			"role": "user",
+			"signupDate": "22.07.2017",
+			"surveys": 0
 		}
 	]
 }

@@ -1,10 +1,17 @@
 import React from 'react'
 
-const TableHeader = ({ onChange }) => (
+const TableHeader = ({ onChange, sortUsers, buttonClass }) => (
 	<thead className="table__header">
 		<tr>
+			{console.log(buttonClass)}
 			<th>Имя
-				<div className="triangle-down"></div>
+				<button	onClick = {sortUsers} >
+					<div className = {
+						(buttonClass === "down" && "triangle-down") ||
+						(buttonClass === "up" && "triangle-up")
+					}/>
+				</button>
+
 				<div className="search-bar-container">
 					<input onChange={onChange} className="search-bar users__search" type="search" placeholder="Найти пользователя" />
 					<i className="fa fa-search" aria-hidden="true"></i>
