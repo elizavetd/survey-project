@@ -10,9 +10,15 @@
 	padding: 20px 0;
 	.pagination__details {
 		display: flex;
-		justify-content: flex-start;
 		align-items: flex-end;
 		margin: 0 20px;
+		width: 200px;
+		&:first-child {
+			justify-content: flex-start;
+		}
+		&:last-child {
+			justify-content: flex-end;
+		}
 		.pagination__item-count,
 		.pagination__page-count {
 			margin-left: 7px;

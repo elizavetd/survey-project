@@ -996,8 +996,7 @@ input[type=text]::-ms-reveal {
 }
 
 .list {
-  margin: 4% 3% 0 3%;
-  padding-bottom: 200px;
+  margin: 0 3% 0 3%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1518,13 +1517,21 @@ input[type=text]::-ms-reveal {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
   margin: 0 20px;
+  width: 200px;
+}
+.pagination .pagination__details:first-child {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.pagination .pagination__details:last-child {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 .pagination .pagination__details .pagination__item-count,
 .pagination .pagination__details .pagination__page-count {

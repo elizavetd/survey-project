@@ -12,10 +12,11 @@ class PaginationBar extends React.Component {
 			  toStart, 
 			  prev, 
 			  next, 
-			  toEnd	} = this.props;
+			  toEnd,
+			  style } = this.props;
 
 		return (
-			<div className={ hasPadding && "pagination" || "pagination pagination_no-padding" }>
+			<div className={ hasPadding && "pagination" || "pagination pagination_no-padding" } style = {style}>
 				{hasSideInfo &&
 					<div className="pagination__details">
 						<h4>{itemCountCaption}</h4>
