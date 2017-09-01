@@ -18,8 +18,42 @@ export default class ResultsPage extends React.Component {
 	constructor() {
 		super();
 
+		this.state = {
+			questionFilter: 'all'
+		}
+
 		this.getUserById = this.getUserById.bind(this);
 		this.getQuestionResutById = this.getQuestionResutById.bind(this);
+
+		this.filter = this.filter.bind(this);
+	}
+
+	filter(e) {
+		switch(e.target.value) {
+			case 'Вопросы с одним ответом': 
+				this.setState({questionFilter: 'oneAnswer'});
+				break;
+
+			case 'Вопросы с несколькими ответами':
+				this.setState({questionFilter: 'severalAnswers'});
+				break;
+
+			case 'Вопросы с текстовым ответом':
+				this.setState({questionFilter: 'text'});
+				break;
+
+			case 'Вопросы-рейтинг':
+				this.setState({questionFilter: 'rating'});
+				break;
+
+			case 'Вопросы-шкала':
+				this.setState({questionFilter: 'scale'});
+				break;
+
+			case 'Все вопросы':
+				this.setState({questionFilter: 'all'});
+				break;
+		}
 	}
 
 	getUserById(id) {
@@ -130,6 +164,16 @@ export default class ResultsPage extends React.Component {
 
 	render() {
 		const {user, survey} = this.props;
+		let list;
+
+		if (survey.questionList && list !== survey.questionList)
+			list = survey.questionList;
+
+		if(this.state.questionFilter !== 'all') {
+			list = list.filter(
+				question => question.type.includes(this.state.questionFilter)
+			);
+		}
 
 	return (
 		<section className="survey-results">
@@ -142,11 +186,16 @@ export default class ResultsPage extends React.Component {
 				<NavLink exact to={`/survey_${survey.id}/results`} activeClassName="survey-results__nav-buttons_current"><button>Сводные данные по вопросам</button></NavLink>
 				<NavLink to={`/survey_${survey.id}/results/${user.username}`} activeClassName="survey-results__nav-buttons_current"><button>Ответы пользователя</button></NavLink>
 			</div>
-			<p className="survey-results__view-option"><select defaultValue="Все вопросы">
-				<option>Все вопросы</option>
-				<option value="Какие-то вопросы">Какие-то вопросы</option>
-				<option value="Другие вопросы">Другие вопросы</option>
-			</select></p>
+			<p className="survey-results__view-option">
+				<select defaultValue="Все вопросы" onChange={this.filter}>
+					<option>Все вопросы</option>
+					<option value="Вопросы с одним ответом">Вопросы с одним ответом</option>
+					<option value="Вопросы с несколькими ответами">Вопросы с несколькими ответами</option>
+					<option value="Вопросы с текстовым ответом">Вопросы с текстовым ответом</option>
+					<option value="Вопросы-рейтинг">Вопросы-рейтинг</option>
+					<option value="Вопросы-шкала">Вопросы-шкала</option>
+				</select>
+			</p>
 			{/* <PaginationBar 
 				hasSideInfo = {true}
 				itemCountCaption="Вопросов:"
@@ -156,7 +205,7 @@ export default class ResultsPage extends React.Component {
 			/> */}
 			
 			{survey.questionList 
-				? survey.questionList .map(question =>
+				? list.map(question =>
 					<Result
 						key = {question.id}
 						type = {question.type}
