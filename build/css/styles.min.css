@@ -2497,7 +2497,8 @@ input[type=text]::-ms-reveal {
 }
 .survey-editing .survey-results .table {
   width: 100%;
-  border: 2px solid #BDBDBD;
+  border: 2px solid #F7F7F7;
+  font-size: 16px;
 }
 .survey-editing .survey-results .table tbody {
   display: block;
@@ -2506,10 +2507,10 @@ input[type=text]::-ms-reveal {
   overflow: hidden;
   overflow-y: auto;
 }
-.survey-editing .survey-results .table thead {
+.survey-editing .survey-results .table .table__header {
   width: 100%;
 }
-.survey-editing .survey-results .table thead tr {
+.survey-editing .survey-results .table .table__header tr {
   background-color: #F7F7F7;
 }
 .survey-editing .survey-results .table tr {
@@ -2517,13 +2518,48 @@ input[type=text]::-ms-reveal {
   width: 100%;
   table-layout: fixed;
 }
-.survey-editing .survey-results .table td,
-.survey-editing .survey-results .table th {
-  width: 47.5%;
+.survey-editing .survey-results .table .table__user-column {
+  width: 33%;
+  text-align: left;
 }
-.survey-editing .survey-results .table td:first-child,
-.survey-editing .survey-results .table th:first-child {
-  width: 5%;
+.survey-editing .survey-results .table .table__user-column a {
+  text-decoration: none;
+  color: #7485c5;
+  font-weight: 600;
+}
+.survey-editing .survey-results .table .table__user-column a:hover {
+  color: #3e5095;
+}
+.survey-editing .survey-results .table .table__user-column .triangle-down,
+.survey-editing .survey-results .table .table__user-column .triangle-up {
+  margin: 0 10px;
+}
+.survey-editing .survey-results .table .table__user-column .survey-results__table-search {
+  background-color: transparent;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid #BDBDBD;
+  padding: 5px 10px;
+  text-align: center;
+  width: 100%;
+}
+.survey-editing .survey-results .table .table__answer-column {
+  width: 63%;
+  text-align: left;
+}
+.survey-editing .survey-results .table td[class='table__answer-column'] {
+  padding: 15px 0;
+}
+.survey-editing .survey-results .table .table__number-column {
+  width: 4%;
+  padding: 0 15px;
+  font-size: 16px;
+  color: #7485c5;
+  font-weight: 600;
+}
+.survey-editing .survey-results .table td[class='table__number-column']::after {
+  content: ".";
 }
 .survey-editing .survey-results .survey-results__user-result {
   width: 100%;

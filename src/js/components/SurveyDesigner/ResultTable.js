@@ -3,11 +3,11 @@ import { NavLink } from 'react-router-dom'
 
 const TableRow = ({ index, user, answer }) => (
 	<tr>
-		<td className="survey-results__index">{index}</td>
-		<td className="survey-results__user">
+		<td className="table__number-column">{index}</td>
+		<td className="table__user-column">
 			<NavLink to={`results/${user}`}>{user}</NavLink>
 		</td>
-		<td className="survey-results__answer">{answer}</td>
+		<td className="table__answer-column">{answer}</td>
 	</tr>
 );
 
@@ -16,9 +16,14 @@ const ResultTable = ({ results }) => (
 		<table className="table">
 			<thead className="table__header">
 				<tr>
-					<th></th>
-					<th>Респондент <div className="triangle-down"></div></th>
-					<th>Ответ</th>
+					<th className="table__number-column"></th>
+					<th className="table__user-column">
+						{/* <input className="survey-results__table-search" type="search" placeholder={'Найти пользователя'} /> */}
+						Респондент
+						<div className="triangle-down"></div>
+						
+					</th>
+					<th className="table__answer-column">Ответ</th>
 				</tr>
 			</thead>
 

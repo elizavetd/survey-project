@@ -496,7 +496,8 @@
 		}
 		.table {
 			width: 100%;
-			border: 2px solid $colorLightGrey;
+			border: 2px solid $mainColor;
+			font-size: 16px;
 			tbody {
 				display: block;
 				width: 100%;
@@ -504,7 +505,7 @@
 				overflow: hidden;
 				overflow-y: auto;
 			}
-			thead {
+			.table__header {
 				width: 100%;
 				tr {
 					background-color: $mainColor;
@@ -515,11 +516,50 @@
 				width: 100%;
 				table-layout: fixed;
 			}
-			td,
-			th {
-				width: 47.5%;
-				&:first-child {
-					width: 5%;
+			.table__user-column {
+				width: 33%;
+				text-align: left;
+				a {
+					text-decoration: none;
+					color: $colorBlue;
+					font-weight: 600;
+					&:hover {
+						color: darken($colorBlue, 20%);
+					}
+				}
+				.triangle-down,
+				.triangle-up {
+					margin: 0 10px;
+				}
+				.survey-results__table-search {
+					background-color: transparent;
+					font-family: $mainFont;
+					font-size: 16px;
+					border: none;
+					border-bottom: 1px solid $colorLightGrey;
+					//margin-left: 40px;
+					padding: 5px 10px;
+					text-align: center;
+					width: 100%;
+				}
+			}
+			.table__answer-column {
+				width: 63%;
+				text-align: left;
+			}
+			td[class='table__answer-column'] {
+				padding: 15px 0;
+			}
+			.table__number-column {
+				width: 4%;
+				padding: 0 15px;
+				font-size: 16px;
+				color: $colorBlue;
+				font-weight: 600;
+			}
+			td[class='table__number-column'] {
+				&::after {
+					content: '.'
 				}
 			}
 		}
