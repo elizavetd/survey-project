@@ -2513,13 +2513,33 @@ input[type=text]::-ms-reveal {
 .survey-editing .survey-results .table .table__header tr {
   background-color: #F7F7F7;
 }
+.survey-editing .survey-results .table .table__header th {
+  height: 60px;
+}
+.survey-editing .survey-results .table .table__header .table__search-row {
+  height: 60px;
+}
+.survey-editing .survey-results .table .table__header .table__search-row th {
+  height: inherit;
+  padding: 0 4%;
+}
+.survey-editing .survey-results .table .table__header .survey-results__table-search {
+  background-color: white;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  border: 1px solid #BDBDBD;
+  border-radius: 5px;
+  padding: 7px;
+  width: 100%;
+  margin-top: 10px;
+}
 .survey-editing .survey-results .table tr {
   display: table;
   width: 100%;
   table-layout: fixed;
 }
 .survey-editing .survey-results .table .table__user-column {
-  width: 33%;
+  width: 40%;
   text-align: left;
 }
 .survey-editing .survey-results .table .table__user-column a {
@@ -2534,18 +2554,8 @@ input[type=text]::-ms-reveal {
 .survey-editing .survey-results .table .table__user-column .triangle-up {
   margin: 0 10px;
 }
-.survey-editing .survey-results .table .table__user-column .survey-results__table-search {
-  background-color: transparent;
-  font-family: "Open Sans", sans-serif;
-  font-size: 16px;
-  border: none;
-  border-bottom: 1px solid #BDBDBD;
-  padding: 5px 10px;
-  text-align: center;
-  width: 100%;
-}
 .survey-editing .survey-results .table .table__answer-column {
-  width: 63%;
+  width: 56%;
   text-align: left;
 }
 .survey-editing .survey-results .table td[class='table__answer-column'] {

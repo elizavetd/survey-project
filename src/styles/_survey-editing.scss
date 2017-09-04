@@ -510,6 +510,26 @@
 				tr {
 					background-color: $mainColor;
 				}
+				th {
+					height: 60px;
+				}
+				.table__search-row {
+					height: 60px;
+					th {
+						height: inherit;
+						padding: 0 4%;
+					}
+				}
+				.survey-results__table-search {
+					background-color: white;
+					font-family: $mainFont;
+					font-size: 16px;
+					border: 1px solid $colorLightGrey;
+					border-radius: 5px;
+					padding: 7px;
+					width: 100%;
+					margin-top: 10px;
+				}
 			}
 			tr {
 				display: table;
@@ -517,7 +537,7 @@
 				table-layout: fixed;
 			}
 			.table__user-column {
-				width: 33%;
+				width: 40%;
 				text-align: left;
 				a {
 					text-decoration: none;
@@ -531,20 +551,9 @@
 				.triangle-up {
 					margin: 0 10px;
 				}
-				.survey-results__table-search {
-					background-color: transparent;
-					font-family: $mainFont;
-					font-size: 16px;
-					border: none;
-					border-bottom: 1px solid $colorLightGrey;
-					//margin-left: 40px;
-					padding: 5px 10px;
-					text-align: center;
-					width: 100%;
-				}
 			}
 			.table__answer-column {
-				width: 63%;
+				width: 56%;
 				text-align: left;
 			}
 			td[class='table__answer-column'] {

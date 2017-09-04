@@ -100,7 +100,7 @@ export default class TemplatesPage extends React.Component {
 			<div className="content">
 				<section className="templates">
 					<div className="my-surveys">
-						<SearchBar 
+						<SearchBar
 							onChange = {this.filter}
 							placeholder="Найти шаблон" 
 							link="/new-survey"

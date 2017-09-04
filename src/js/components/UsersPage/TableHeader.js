@@ -3,9 +3,8 @@ import React from 'react'
 const TableHeader = ({ onChange, sortUsers, buttonClass }) => (
 	<thead className="table__header">
 		<tr>
-			{console.log(buttonClass)}
 			<th>Имя
-				<button	onClick = {sortUsers} >
+				<button	onClick = {sortUsers}>
 					<div className = {
 						(buttonClass === "down" && "triangle-down") ||
 						(buttonClass === "up" && "triangle-up")
