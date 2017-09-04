@@ -2428,7 +2428,7 @@ input[type=text]::-ms-reveal {
   width: 100%;
 }
 .survey-editing .survey-results .survey-results__nav-buttons button {
-  width: 49%;
+  width: 50%;
   font-family: "Open Sans", sans-serif;
   font-size: 18px;
   font-weight: 600;

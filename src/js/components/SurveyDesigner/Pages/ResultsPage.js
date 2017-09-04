@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import Select from 'react-select'
 import { connect } from 'react-redux'
 import { store } from '../../../store'
 
@@ -23,13 +24,14 @@ export default class ResultsPage extends React.Component {
 		}
 
 		this.getUserById = this.getUserById.bind(this);
+		this.translateState = this.translateState.bind(this);
 		this.getQuestionResutById = this.getQuestionResutById.bind(this);
 
 		this.filter = this.filter.bind(this);
 	}
 
-	filter(e) {
-		switch(e.target.value) {
+	filter(val) {
+		switch(val.value) {
 			case 'Вопросы с одним ответом': 
 				this.setState({questionFilter: 'oneAnswer'});
 				break;
@@ -60,6 +62,23 @@ export default class ResultsPage extends React.Component {
 		return JSON.parse(localStorage.getItem('userList')).users.filter(
 			elem => elem.id === id
 		)[0];
+	}
+
+	translateState(filter) {
+		switch(filter) {
+			case 'all':
+				return "Все вопросы";
+			case 'oneAnswer':
+				return "Вопросы с одним ответом";
+			case 'severalAnswers':
+				return "Вопросы с несколькими ответами";
+			case 'text':
+				return "Вопросы с текстовым ответом";
+			case 'rating':
+				return "Вопросы-рейтинг";
+			case 'scale':
+				return "Вопросы-шкала";
+		};
 	}
 
 	getQuestionResutById(id, type) {
@@ -164,6 +183,15 @@ export default class ResultsPage extends React.Component {
 
 	render() {
 		const {user, survey} = this.props;
+		const questionTypes = [
+			{value: "Все вопросы", label: "Все вопросы"},
+			{value: "Вопросы с одним ответом", label: "Вопросы с одним ответом"},
+			{value: "Вопросы с несколькими ответами", label: "Вопросы с несколькими ответами"},
+			{value: "Вопросы с текстовым ответом", label: "Вопросы с текстовым ответом"},
+			{value: "Вопросы-рейтинг", label: "Вопросы-рейтинг"},
+			{value: "Вопросы-шкала", label: "Вопросы-шкала"}
+		];
+
 		let list;
 
 		if (survey.questionList && list !== survey.questionList)
@@ -177,16 +205,16 @@ export default class ResultsPage extends React.Component {
 
 	return (
 		<section className="survey-results">
-			<h2>Просмотр ответов </h2>
+			<h2>Просмотр всех ответов</h2>
 			<div className="survey-results__info">
 				<p>Вопросов: {survey.questionList.length}</p>
 				<p>Всего ответов: {survey.answersList.length}</p>
 			</div>
 			<div className="survey-results__nav-buttons">
 				<NavLink exact to={`/survey_${survey.id}/results`} activeClassName="survey-results__nav-buttons_current"><button>Сводные данные по вопросам</button></NavLink>
-				<NavLink to={`/survey_${survey.id}/results/${user.username}`} activeClassName="survey-results__nav-buttons_current"><button>Ответы пользователя</button></NavLink>
+				<NavLink to={`/survey_${survey.id}/results/${survey.answersList.length > 0 && this.getUserById(survey.answersList[0].userId).username}`} activeClassName="survey-results__nav-buttons_current"><button>Ответы пользователя</button></NavLink>
 			</div>
-			<p className="survey-results__view-option">
+			{/* <p className="survey-results__view-option">
 				<select defaultValue="Все вопросы" onChange={this.filter}>
 					<option>Все вопросы</option>
 					<option value="Вопросы с одним ответом">Вопросы с одним ответом</option>
@@ -195,7 +223,17 @@ export default class ResultsPage extends React.Component {
 					<option value="Вопросы-рейтинг">Вопросы-рейтинг</option>
 					<option value="Вопросы-шкала">Вопросы-шкала</option>
 				</select>
-			</p>
+			</p> */}
+
+			<Select
+					className = 'survey-results__view-option'
+					name="select-question-type-to-view"
+					value={this.translateState(this.state.questionFilter)}
+					clearable={false}
+					options={questionTypes}
+					onChange={this.filter}
+				/>
+
 			{/* <PaginationBar 
 				hasSideInfo = {true}
 				itemCountCaption="Вопросов:"
