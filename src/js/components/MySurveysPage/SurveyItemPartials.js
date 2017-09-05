@@ -16,6 +16,7 @@ const mapDispatchToProps = (dispatch) => {
 const mapStateToProps = (store) => {
 	return {
 		currentUserId: store.user.currentUser.id,
+		currentUserUsername: store.user.currentUser.username,
 		surveyList: store.surveys.surveyList
 	};
 };
@@ -42,7 +43,7 @@ export class Options extends React.Component {
 	}
 
 	render() {
-		const { id, currentUserId, surveyList } = this.props;
+		const { id, creator, currentUserId, currentUserUsername, surveyList } = this.props;
 
 		return (
 			<div className="survey-item__options">
@@ -54,13 +55,18 @@ export class Options extends React.Component {
 					<i className="fa fa-users" aria-hidden="true"></i>
 				</button></NavLink>
 				
-				<NavLink exact to={`/survey_${id}/results`}><button 
-					onClick={this.loadSurvey}
-					className="survey-item__button survey-item__button_results" 
-					title="Результаты опроса"
-				>
-					<i className="fa fa-bar-chart" aria-hidden="true"></i>
-				</button></NavLink>
+				<NavLink exact to={creator === currentUserId 
+					? `/survey_${id}/results`
+					: `/survey_${id}/results/${currentUserUsername}`
+				}>
+					<button 
+						onClick={this.loadSurvey}
+						className="survey-item__button survey-item__button_results" 
+						title="Результаты опроса"
+					>
+						<i className="fa fa-bar-chart" aria-hidden="true"></i>
+					</button>
+				</NavLink>
 				
 				{/* <button 
 					className="survey-item__button survey-item__button_edit" 
@@ -71,6 +77,7 @@ export class Options extends React.Component {
 				
 				<button 
 					onClick = {this.handleRemoval}
+					disabled = {creator !== currentUserId}
 					className="survey-item__button survey-item__button_delete" 
 					title="Удалить опрос"
 				>
@@ -94,15 +101,36 @@ export const Caption = ({ imageSrc, iconType, title, description }) => (
 	</div>
 );
 
-export const Details = ({ answersCount, lastChangeDate }) => (
-	<div className="survey-item__info">
-		<div>
-			<h4 className="survey-item__info-name">Ответы:</h4>
-			<p className="survey-item__info-value">{answersCount}</p>
-		</div>
-		<div>
-			<h4 className="survey-item__info-name">Изменён:</h4>
-			<p className="survey-item__info-value">{lastChangeDate}</p>
-		</div>
-	</div>
-);
+export class Details extends React.Component {
+	constructor() {
+		super();
+		this.getUsernameById = this.getUsernameById.bind(this);
+	}
+
+	getUsernameById(id) {
+		return JSON.parse(localStorage.getItem('userList')).users.filter(
+			elem => elem.id === id
+		)[0].username;
+	}
+
+	render() {
+		const { answersCount, lastChangeDate, creator } = this.props;
+
+		return (
+			<div className="survey-item__info">
+				<div>
+					<h4 className="survey-item__info-name">Создатель:</h4>
+					<p className="survey-item__info-value">{this.getUsernameById(creator)}</p>
+				</div>
+				<div>
+					<h4 className="survey-item__info-name">Ответы:</h4>
+					<p className="survey-item__info-value">{answersCount}</p>
+				</div>
+				<div>
+					<h4 className="survey-item__info-name">Изменён:</h4>
+					<p className="survey-item__info-value">{lastChangeDate}</p>
+				</div>
+			</div>
+		);
+	};
+};

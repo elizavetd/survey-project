@@ -4,6 +4,7 @@ import {Caption, Details, Options } from './SurveyItemPartials'
 
 const SurveyItem = ({ 
 	id,
+	creator,
 	imageSrc,
 	iconType,
 	title,
@@ -23,8 +24,9 @@ const SurveyItem = ({
 			<Details
 				answersCount = {answersCount} 
 				lastChangeDate = {lastChangeDate}
+				creator = {creator}
 			/>
-			<Options id = {id}/>
+			<Options id = {id} creator = {creator}/>
 		</div>
 	</article>
 );

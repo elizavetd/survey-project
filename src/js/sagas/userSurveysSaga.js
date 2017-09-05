@@ -7,6 +7,11 @@ export function* getUserSurveys(action) {
 	yield put(surveyActions.receiveSurveys(surveys));
 };
 
+export function* getPassedSurveys(action) {
+	const surveys = yield call(api.getPassedSurveys, action.id);
+	yield put(surveyActions.receivePassedSurveys(surveys));
+};
+
 export function* removeSurvey(action) {
 	const isRemoved = yield call(api.removeSurvey, action.id);
 	if (isRemoved) {
@@ -21,6 +26,10 @@ export function* watchGetSurveys() {
 	yield takeEvery(surveyActions.GET_USER_SURVEYS, getUserSurveys);
 };
 
+export function* watchGetPassedSurveys() {
+	yield takeEvery(surveyActions.GET_USER_PASSED_SURVEYS, getPassedSurveys);
+};
+
 export function* watchRequestSurveyRemoval() {
 	yield takeEvery(surveyActions.REQUEST_SURVEY_REMOVAL, removeSurvey);
 };
@@ -29,6 +38,7 @@ export default function* root() {
 	yield all([
 		//fork(getUserSurveys),
 		fork(watchGetSurveys),
+		fork(watchGetPassedSurveys),
 		fork(watchRequestSurveyRemoval)
 	]);
 };

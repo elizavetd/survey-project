@@ -214,25 +214,15 @@ export default class ResultsPage extends React.Component {
 				<NavLink exact to={`/survey_${survey.id}/results`} activeClassName="survey-results__nav-buttons_current"><button>Сводные данные по вопросам</button></NavLink>
 				<NavLink to={`/survey_${survey.id}/results/${survey.answersList.length > 0 && this.getUserById(survey.answersList[0].userId).username}`} activeClassName="survey-results__nav-buttons_current"><button>Ответы пользователя</button></NavLink>
 			</div>
-			{/* <p className="survey-results__view-option">
-				<select defaultValue="Все вопросы" onChange={this.filter}>
-					<option>Все вопросы</option>
-					<option value="Вопросы с одним ответом">Вопросы с одним ответом</option>
-					<option value="Вопросы с несколькими ответами">Вопросы с несколькими ответами</option>
-					<option value="Вопросы с текстовым ответом">Вопросы с текстовым ответом</option>
-					<option value="Вопросы-рейтинг">Вопросы-рейтинг</option>
-					<option value="Вопросы-шкала">Вопросы-шкала</option>
-				</select>
-			</p> */}
 
 			<Select
-					className = 'survey-results__view-option'
-					name="select-question-type-to-view"
-					value={this.translateState(this.state.questionFilter)}
-					clearable={false}
-					options={questionTypes}
-					onChange={this.filter}
-				/>
+				className = 'survey-results__view-option'
+				name="select-question-type-to-view"
+				value={this.translateState(this.state.questionFilter)}
+				clearable={false}
+				options={questionTypes}
+				onChange={this.filter}
+			/>
 
 			{/* <PaginationBar 
 				hasSideInfo = {true}

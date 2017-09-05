@@ -1570,6 +1570,22 @@ input[type=text]::-ms-reveal {
   padding-bottom: 0;
 }
 
+.my-surveys__survey-filter {
+  margin-left: 1.3%;
+  font-size: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #535558;
+}
+.my-surveys__survey-filter input {
+  margin: 0 5px;
+  cursor: pointer;
+}
+.my-surveys__survey-filter label {
+  margin-right: 20px;
+}
+
 .surveys-list {
   margin-top: 50px;
 }
@@ -1764,6 +1780,13 @@ input[type=text]::-ms-reveal {
 }
 .surveys-list .survey-item:hover .survey-item__details .survey-item__options .survey-item__button_delete:hover {
   color: #EB1C23;
+}
+.surveys-list .survey-item:hover .survey-item__details .survey-item__options .survey-item__button:disabled {
+  color: #BDBDBD;
+}
+.surveys-list .survey-item:hover .survey-item__details .survey-item__options .survey-item__button:disabled:hover {
+  cursor: default;
+  color: #BDBDBD;
 }
 
 @media all and (max-width: 980px) {

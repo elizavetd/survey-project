@@ -53,7 +53,6 @@ export default class ResultsPage extends React.Component {
 	}
 
 	changeViewedUser(val) {
-		console.log(val)
 		history.push(`/survey_${this.props.survey.id}/results/${val.value}`);
 	}
 
@@ -81,11 +80,27 @@ export default class ResultsPage extends React.Component {
 					<p>Всего ответов: {survey.answersList.length}</p>
 				</div>
 				<div className="survey-results__nav-buttons">
-					<NavLink exact to={`/survey_${survey.id}/results`} activeClassName="survey-results__nav-buttons_current"><button>Сводные данные по вопросам</button></NavLink>
-					<NavLink to={`/survey_${survey.id}/results/${user.username}`} activeClassName="survey-results__nav-buttons_current"><button>Ответы пользователя</button></NavLink>
+					<NavLink 
+						exact to={`/survey_${survey.id}/results`}
+						activeClassName="survey-results__nav-buttons_current"
+					>
+						<button disabled = {survey.creator !== currentUser.id}>
+							Сводные данные по вопросам
+						</button>
+					</NavLink>
+
+					<NavLink 
+						to={`/survey_${survey.id}/results/${user.username}`}
+						activeClassName="survey-results__nav-buttons_current"
+					>
+						<button>
+							Ответы пользователя
+						</button>
+					</NavLink>
 				</div>
 
 				<Select
+					disabled = {survey.creator !== currentUser.id}
 					className = 'survey-results__view-option'
 					name="select-user-to-view"
 					value={user.username}

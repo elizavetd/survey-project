@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { store } from '../../store'
-import { getUserSurveys } from '../../actions/userSurveysActions'
+import { getUserSurveys, getUserPassedSurveys } from '../../actions/userSurveysActions'
 
 import SearchBar from '../SearchBar'
 import PaginationBar from '../PaginationBar'
@@ -9,7 +9,8 @@ import SurveyItem from './SurveyItem'
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		getUserSurveys: (id) => store.dispatch(getUserSurveys(id))
+		getUserSurveys: (id) => store.dispatch(getUserSurveys(id)),
+		getUserPassedSurveys: (id) => store.dispatch(getUserPassedSurveys(id))
 	};
 };
 
@@ -26,10 +27,12 @@ class MySurveysPage extends React.Component {
 		super();
 		this.state = {
 			page: 1,
+			surveyFilter: 'created',
 			surveyList: undefined
 		}
 
 		this.filter = this.filter.bind(this);
+		this.filterSurveys = this.filterSurveys.bind(this);
 
 		this.showFirstPage = this.showFirstPage.bind(this);
 		this.showPreviousPage = this.showPreviousPage.bind(this);
@@ -38,19 +41,34 @@ class MySurveysPage extends React.Component {
 	}
 	
 	componentWillMount() {
-		this.props.getUserSurveys(this.props.user.id)
+		this.props.getUserSurveys(this.props.user.id);
 	}
 
 	componentWillReceiveProps(nextProps) {
 		if(nextProps.surveys) {
 			this.setState({
 				surveyList: nextProps.surveys
-			})
-		}
+			});
+		};
 	}
 
 	filter(e) {
 		this.setState({filter: e.target.value});
+	}
+
+	filterSurveys(e) {
+		switch(e.target.id) {
+			case 'created-by-me':
+				this.setState({ surveyFilter: 'created' });
+				this.props.getUserSurveys(this.props.user.id);
+				console.log('******' + e.target.id)
+				break;
+			case 'passed-by-me':
+				console.log('******' + e.target.id)
+				this.setState({ surveyFilter: 'passed' });
+				this.props.getUserPassedSurveys(this.props.user.id);
+				break;
+		}
 	}
 
 	showFirstPage() {
@@ -110,7 +128,7 @@ class MySurveysPage extends React.Component {
 			pageCount = Math.ceil(itemCount / itemsPerPage);
 		};
 			
-
+console.log(this.state.surveyFilter)
 		return (
 			<div className="content">
 				<section className="my-surveys">
@@ -120,6 +138,28 @@ class MySurveysPage extends React.Component {
 						link="/new-survey"
 						caption="Новый опрос"
 					/>
+
+					<div className="my-surveys__survey-filter">
+						<div>
+							<input
+								type = "radio"
+								defaultChecked
+								name = "survey-filter"
+								id = "created-by-me"
+								onClick = {this.filterSurveys}
+							/>
+							<label htmlFor="created-by-me">Созданные опросы</label>
+						</div>
+						<div>
+							<input
+								type = "radio"
+								name = "survey-filter"
+								id = "passed-by-me"
+								onClick = {this.filterSurveys}
+							/>
+							<label htmlFor="passed-by-me">Пройденные опросы</label>
+						</div>
+					</div>
 			
 					{(surveys && surveys.length > 0) && 
 						<PaginationBar 
@@ -140,6 +180,7 @@ class MySurveysPage extends React.Component {
 							<SurveyItem 
 								key = {survey.id}
 								id = {survey.id}
+								creator = {survey.creator}
 								imageSrc = {survey.imageSrc}
 								iconType = {survey.iconType}
 								title = {survey.title}

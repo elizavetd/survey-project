@@ -185,6 +185,22 @@ export const api = {
 		});
 	},
 
+	getPassedSurveys(id) {
+		return new Promise( resolve => {
+			const surveys = JSON.parse(myStorage
+				.getItem('surveys')).surveyList
+				.filter(survey => {
+					for (let i = 0; i < survey.answersList.length; i++) {
+						if (survey.answersList[i].userId === id)
+							return true;
+					}
+					return false;
+				});
+				
+			resolve({surveyList: surveys});
+		});
+	},
+
 	removeSurvey(id) {
 		return new Promise( (resolve, reject) => {
 			const surveyList = JSON.parse(

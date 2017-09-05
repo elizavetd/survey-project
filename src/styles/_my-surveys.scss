@@ -61,6 +61,21 @@
 	padding-bottom: 0;
 }
 
+.my-surveys__survey-filter {
+	margin-left: 1.3%;
+	font-size: 16px;
+	display: flex;
+	color: $colorGrey;
+
+	input {
+		margin: 0 5px;
+		cursor: pointer;
+	}
+	label {
+		margin-right: 20px;
+	}
+}
+
 .surveys-list {
 	margin-top: 50px;
 	.surveys-list__no-surveys {
@@ -205,6 +220,13 @@
 					color: lighten($colorRed, 30%);
 					&:hover {
 						color: $colorRed;
+					}
+				}
+				.survey-item__button:disabled {
+					color: $colorLightGrey;
+					&:hover {
+						cursor: default;
+						color: $colorLightGrey;
 					}
 				}
 			}
